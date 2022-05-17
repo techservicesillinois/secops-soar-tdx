@@ -1,3 +1,16 @@
+# SOAR
+*.tar
+*.tgz
+*.vscode
+
+# Our Makefile
+.commit
+.deploy
+.lint
+.requirements.venv
+.static
+.tag
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -20,6 +33,7 @@ parts/
 sdist/
 var/
 wheels/
+*.whl
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
@@ -50,6 +64,9 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+.commit
+.tag
+.deployed
 
 # Translations
 *.mo

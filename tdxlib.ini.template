@@ -1,0 +1,11 @@
+[TDX API Settings]
+orgname = myuniversity
+fullhost = help.uillinois.edu
+sandbox = True
+username = techsvc-securityapi
+password = ADD_PASSWORD_HERE # pragma: allowlist secret
+ticketAppId = 66
+assetAppId =
+caching = False
+timezone = -0500
+logLevel = ERROR

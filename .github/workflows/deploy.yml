@@ -1,0 +1,54 @@
+# DO NOT EDIT - Update techservicesillinois/splunk-soar-template first
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  release:
+    types:
+      - edited
+      - released
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Virtual Env
+      run: |
+        make venv
+    - name: Linter
+      run: |
+        make lint
+    - name: Static checks
+      run: |
+        make static 
+    - name: Tests
+      run: |
+        make test
+    - name: Build Package (Prod)
+      if: github.event_name == 'release'
+      run: |
+        make build
+    - name: Build Package (Test)
+      if: github.event_name == 'pull_request'
+      run: |
+        make build-test
+    - name: Store build as an artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: deployed tar file
+        path: app.tar
+        retention-days: 7
+    - name: Post to Splunk SOAR API
+      if: github.event_name == 'release' || github.event_name == 'pull_request'
+      run: |
+        make deploy
+      env:
+        SOAR_TOKEN: ${{ secrets.SOAR_TOKEN }}
+        SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}

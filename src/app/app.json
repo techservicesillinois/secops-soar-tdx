@@ -1,0 +1,349 @@
+{
+    "appid": "APP_ID",
+    "name": "APP_NAME",
+    "description": "Application for managing TDX",
+    "type": "ticketing",
+    "product_vendor": "Team Dynamix",
+    "logo": "tdx.png",
+    "logo_dark": "tdx_dark.png",
+    "product_name": "TDX Ticketing",
+    "python_version": "3",
+    "product_version_regex": ".*",
+    "publisher": "University of Illinois Technology Services Cybersecurity",
+    "license": "NCSA",
+    "app_version": "GITHUB_TAG",
+    "utctime_updated": "BUILD_TIME",
+    "package_name": "MODULE",
+    "main_module": "app.py",
+    "min_phantom_version": "5.3.3.92213",
+    "app_wizard_version": "1.0.0",
+    "configuration": {
+        "username": {
+            "description": "Username",
+            "data_type": "string",
+            "required": true,
+            "order": 0,
+            "name": "username",
+            "id": 0
+        },
+        "password": {
+            "description": "Password",
+            "data_type": "password",
+            "required": true,
+            "order": 1,
+            "name": "password",
+            "id": 1
+        },
+        "appid": {
+            "description": "AppID",
+            "data_type": "string",
+            "required": true,
+            "value_list": [],
+            "default": "66",
+            "order": 2,
+            "name": "appid",
+            "id": 2
+        },
+        "endpoint": {
+            "description": "Endpoint URL <teamdynamix.example.edu>. Do not set if 'Organization Name' is set.",
+            "data_type": "string",
+            "required": false,
+            "value_list": [],
+            "default": "help.uillinois.edu",
+            "order": 3,
+            "name": "endpoint",
+            "id": 3
+        },
+        "sandbox": {
+            "description": "This asset should use the TDX Sandbox",
+            "data_type": "boolean",
+            "required": false,
+            "default": false,
+            "order": 4,
+            "name": "sandbox",
+            "id": 4
+        },
+        "timezone": {
+            "description": "Timezone the TDX server runs in",
+            "data_type": "string",
+            "required": false,
+            "default": "-0500",
+            "order": 5,
+            "name": "timezone",
+            "id": 5
+        },
+        "loglevel": {
+            "description": "Logging level",
+            "data_type": "string",
+            "required": true,
+            "default": "ERROR",
+            "order": 6,
+            "name": "loglevel",
+            "id": 6
+        },
+        "orgname": {
+            "description": "Organization Name <orgname>.teamdynamix.com. Do not set if 'endpoint' is set.",
+            "data_type": "string",
+            "required": false,
+            "order": 7,
+            "name": "orgname",
+            "id": 7
+        }
+    },
+    "actions": [
+        {
+            "action": "test connectivity",
+            "identifier": "test_connectivity",
+            "description": "Validate the asset configuration for connectivity using supplied configuration",
+            "verbose": "",
+            "type": "test",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "create ticket",
+            "identifier": "create_ticket",
+            "description": "Create a ticket (issue)",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "requestor": {
+                    "description": "Requestor User ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "requestor"
+                },
+                "title": {
+                    "description": "Ticket title",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 2,
+                    "name": "title"
+                },
+                "description": {
+                    "description": "Ticket description",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 3,
+                    "name": "description"
+                },
+                "type": {
+                    "description": "Ticket type",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "CSOC",
+                    "order": 4,
+                    "name": "type"
+                },
+                "notify": {
+                    "description": "Notify requestor and responsible",
+                    "data_type": "boolean",
+                    "required": false,
+                    "primary": false,
+                    "default": false,
+                    "order": 5,
+                    "name": "notify"
+                },
+                "responsible": {
+                    "description": "Group responsible for ticket",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "UIUC-TechServices-Cybersecurity Incident Response",
+                    "order": 6,
+                    "name": "responsible"
+                },
+                "TLP": {
+                    "description": "TLP Level",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "Amber",
+                    "order": 8,
+                    "name": "TLP"
+                },
+                "formid": {
+                    "description": "ID of the Form, defaults to 'UIUC-TechSvc-CSOC Incidents'",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "default": "UIUC-TechSvc-CSOC Incidents",
+                    "order": 9,
+                    "name": "FormId"
+                },
+                "severity": {
+                    "description": "UIUC-TechSvc-CSOC Incident Severity",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "default": "To Be Determined",
+                    "order": 10,
+                    "name": "severity"
+                },
+                "priority": {
+                    "description": "Ticket priorty",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "default": "Low",
+                    "order": 11,
+                    "name": "priority"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.data.*.ticket_id",
+                    "data_type": "string"
+                }
+            ],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "update ticket",
+            "identifier": "update_ticket",
+            "description": "Update a ticket",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "ticket_id": {
+                    "description": "Ticket ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "ticketID"
+                },
+                "comments": {
+                    "description": "Add comment to ticket",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "comment"
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "reassign group",
+            "identifier": "reassign_group",
+            "description": "Reassign a ticket (issue) to a particular group",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "ticket_id": {
+                    "description": "Ticket ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "priority"
+                },
+                "responsible": {
+                    "description": "Group responsible",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "requestor"
+                }
+            },
+            "output": [],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "reassign user",
+            "identifier": "reassign_user",
+            "description": "Reassign a ticket (issue) to a particular user",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "ticket_id": {
+                    "description": "Ticket ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "priority"
+                },
+                "responsible": {
+                    "description": "NetID or email of user responsible",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "requestor"
+                }
+            },
+            "output": [],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
+        }
+    ],
+    "pip3_dependencies": {
+        "wheel": [
+            {
+                "module": "TDXLib",
+                "input_file": "wheels/WHEEL_TDX"
+            },
+            {
+                "module": "phantom-toolbox",
+                "input_file": "wheels/WHEEL_TOOLBOX"
+            }
+        ]
+    }
+}

@@ -1,0 +1,106 @@
+interactions:
+- request:
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '67'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
+  response:
+    body:
+      string: Invalid username or password.
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '29'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 22 May 2023 20:20:26 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '57'
+      X-RateLimit-Reset:
+      - Mon, 22 May 2023 20:21:20 GMT
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 6b409627-8961-4062-b9c9-5dfc1ae59b26
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 403
+      message: Forbidden
+- request:
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '67'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
+  response:
+    body:
+      string: Invalid username or password.
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '29'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 22 May 2023 20:20:28 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '56'
+      X-RateLimit-Reset:
+      - Mon, 22 May 2023 20:21:20 GMT
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 421f0b12-a724-4b78-b315-65510c828a2a
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 403
+      message: Forbidden
+version: 1

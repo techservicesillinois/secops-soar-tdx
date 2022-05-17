@@ -1,0 +1,246 @@
+interactions:
+- request:
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '102'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
+  response:
+    body:
+      string: !!binary |  # pragma: allowlist secret
+        H4sIAOxri2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
+        yQYA/EJXWGkAAAA=
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Thu, 15 Jun 2023 19:52:08 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '54'
+      X-RateLimit-Reset:
+      - Thu, 15 Jun 2023 19:52:54 GMT
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 0c4c6121-2dba-4843-8ef5-eae38bf4d574
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"search": {"SearchText": "None/Not found", "IsActive": true, "MaxResults":
+      5}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '79'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/accounts/search
+  response:
+    body:
+      string: '[{"ID": 7902, "Name": "None/Not Found", "ParentID": null, "ParentName":
+        null, "IsActive": true, "Address1": "", "Address2": "", "Address3": "", "Address4":
+        "", "City": "", "StateName": "", "StateAbbr": "  ", "PostalCode": "", "Country":
+        "", "Phone": "", "Fax": "", "Url": "", "Notes": "", "CreatedDate": "2020-12-04T16:55:00Z",
+        "ModifiedDate": "2020-12-04T16:55:00Z", "Code": "", "IndustryID": 0, "IndustryName":
+        null, "ManagerUID": "00000000-0000-0000-0000-000000000000", "ManagerFullName":
+        null, "Attributes": []}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '4143691'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Jun 2023 19:52:10 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '58'
+      X-RateLimit-Reset:
+      - Thu, 15 Jun 2023 19:53:04 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 2c9188dd-709e-497c-b7cf-33e436654790
+      X-TDX-UID:
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/priorities
+  response:
+    body:
+      string: '[{"ID":19,"Name":"Low","Description":null,"Order":1.0,"IsActive":true,"IsDefault":false},{"ID":20,"Name":"Medium","Description":null,"Order":2.0,"IsActive":true,"IsDefault":true},{"ID":21,"Name":"High","Description":null,"Order":3.0,"IsActive":true,"IsDefault":false},{"ID":22,"Name":"Emergency","Description":null,"Order":4.0,"IsActive":true,"IsDefault":false},{"ID":23,"Name":"VIP","Description":"Used
+        to flag people as VIPs on tickets","Order":5.0,"IsActive":true,"IsDefault":false},{"ID":24,"Name":"IT
+        Pro","Description":"Used to flag people as IT Pros on tickets","Order":6.0,"IsActive":true,"IsDefault":false}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Jun 2023 19:52:11 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '58'
+      X-RateLimit-Reset:
+      - Thu, 15 Jun 2023 19:53:07 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 30495d10-4a1a-44b9-adcc-5ac553a4d77a
+      X-TDX-UID:
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=no_such_user&maxResults=1
+  response:
+    body:
+      string: '[]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Jun 2023 19:52:12 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '75'
+      X-RateLimit-Remaining:
+      - '73'
+      X-RateLimit-Reset:
+      - Thu, 15 Jun 2023 19:52:17 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 5cd258de-33c1-4772-908b-c768bf4ea02e
+      X-TDX-UID:
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+version: 1
