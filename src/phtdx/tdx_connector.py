@@ -11,7 +11,6 @@ from __future__ import print_function, unicode_literals
 
 # Phantom App imports
 import phantom.app as phantom
-from bhr_client.rest import login_from_env
 from phantom.base_connector import BaseConnector
 from phantom.action_result import ActionResult
 
@@ -30,9 +29,6 @@ class RetVal(tuple):
 class TDXConnector(BaseConnector):
 
     def __init__(self):
-
-        # Call the BaseConnectors init first
-        super(Soar_Null_RouterConnector, self).__init__()
 
         self._state = None
 
@@ -170,7 +166,7 @@ class TDXConnector(BaseConnector):
         self.save_progress("Connecting to endpoint")
 
         # make rest call
-        self._bhr.query('127.0.0.1/32')
+        raise NotImplementedError("TODO")
 
         # if phantom.is_fail(ret_val):
             # the call to the 3rd party device or service failed, action result should contain all the error details
@@ -191,7 +187,8 @@ class TDXConnector(BaseConnector):
         #raise Exception(f"*********{cidr_conf}**********")
         #self.debug_print(dir(phantom))
         #cidr = phantom.get_string(cidr_conf)
-        result = self._bhr.block(cidr=cidr, source='SOAR', why='Appears in our suspicious event list.')
+
+        raise NotImplementedError("TODO")
 
         return action_result.set_status(phantom.APP_SUCCESS)
 
@@ -214,7 +211,7 @@ class TDXConnector(BaseConnector):
         # Load the state in initialize, use it to store data
         # that needs to be accessed across actions
         self._state = self.load_state()
-        self._bhr = login_from_env()
+        raise NotImplementedError("TODO")
 
         # get the asset config
         config = self.get_config()
@@ -261,8 +258,6 @@ def main():
 
     if username and password:
         try:
-            login_url = Soar_Null_RouterConnector._get_phantom_base_url() + '/login'
-
             print("Accessing the Login page")
             r = requests.get(login_url, verify=False)
             csrftoken = r.cookies['csrftoken']
@@ -288,7 +283,7 @@ def main():
         in_json = json.loads(in_json)
         print(json.dumps(in_json, indent=4))
 
-        connector = Soar_Null_RouterConnector()
+        raise NotImplementedError("TODO")
         connector.print_progress_message = True
 
         if session_id is not None:
