@@ -1,5 +1,6 @@
 import logging
 import pathlib
+import json
 
 import pytest
 import vcr
@@ -20,11 +21,25 @@ pytest_plugins = ("splunk-soar-connectors")
 #     return conn
 
 
+def remove_creds(request):
+    data = json.loads(request.body)
+
+    if 'password' in data:
+        data['password'] = 'FAKE'
+    if 'username' in data:
+        data['username'] = 'FOOBAR'
+
+    request.body = json.dumps(data)
+    return request
+
+
 @pytest.fixture
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
         cassette_library_dir='cassettes',
         record_mode='once',
+        before_record_request=remove_creds,
+        filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')]
     )
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml') as tape:
