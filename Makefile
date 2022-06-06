@@ -2,7 +2,9 @@
 PACKAGE:=tdx
 SRCS_DIR:=src/ph$(PACKAGE)
 SRCS:=$(shell find $(SRCS_DIR) -type f)
-TAG_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json __init__.py)
+# TODO: Add this line back
+# TAG_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json __init__.py)
+TAG_FILES:=$(addprefix $(SRCS_DIR)/, __init__.py)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 
