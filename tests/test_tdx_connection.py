@@ -1,5 +1,5 @@
 import tdxlib
-import vcrpy
+import vcr
 
 
 def test_tdx_connection(cassette):
