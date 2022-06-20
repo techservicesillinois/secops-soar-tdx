@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: '{"username": "FOOBAR", "password": "FAKE"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '67'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.0
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
+        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
+        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
+        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
+        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n98Wb6e6XT79690VxVfzU7z2/ovffvfjpr+izn9j5
+        8s3pNcFf/T6/908UX/706d6LN1/de/HmYveLN4BR/mB6TbiVr07P6N3f5/f+ybf0bpF9+9XO9Ntf
+        fPr8+uG92b3pevb5T84n3311H2PJfu+L9e+z97B9fk0D/Ynj7S/ePP/ph188PF3sFZOfuvy9zn/R
+        6cNm997zJ9XpL5r+/qvpD5ofnBc/+fv89O/z/wC2MLwQOQEAAA==
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 20 Jun 2022 20:55:12 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 20 Jun 2022 20:56:12 GMT
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 286edf0f-e4c0-4ada-bf56-1cbb54af608f
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+version: 1
