@@ -1,7 +1,10 @@
 # Built into SOAR
 beautifulsoup4
 # Production dependencies (Pulled from soar_null_router.json)
-tdxlib
+# TODO: Add back in tdxlib below and remove git+ssh when #52 is merged
+# See: https://github.com/cedarville-university/tdxlib/pull/52
+# tdxlib
+git+ssh://git@github.com/zdc217/tdxlib.git@59876c3b531b5e7a32b3048b1996d9d5c4b7aac3
 # Testing dependencies
 pytest
 vcrpy
