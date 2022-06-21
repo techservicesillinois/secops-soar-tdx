@@ -31,7 +31,8 @@ deploy: $(PACKAGE).tgz
 	python deploy.py
 
 venv: requirements-test.txt
-	python -m venv venv
+	rm -rf $@
+	python -m venv $@
 	$(VENV_PYTHON) -m pip install wheel
 	$(VENV_PYTHON) -m pip install -r requirements-test.txt
 
