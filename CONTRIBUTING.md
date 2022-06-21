@@ -11,7 +11,6 @@ pyenv local 3.9.11
 python -m venv venv
 source venv/bin/activate
 
-pip install wheel
 pip install -r requirements-test.txt
 
 pytest

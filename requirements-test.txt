@@ -13,7 +13,7 @@ Pygments==2.12.0
 PyJWT==2.4.0
 pyparsing==3.0.9
 pytest==7.1.2
-pytest-splunk-soar-connectors @ git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@ae6a8f80776aa1fb82ad663a9e8d6e616b3dbc8c
+pytest-splunk-soar-connectors==0.1.0
 python-dateutil==2.8.2
 PyYAML==6.0
 requests==2.28.0
@@ -22,7 +22,7 @@ six==1.16.0
 soupsieve==2.3.2.post1
 TDXLib @ git+ssh://git@github.com/cedarville-university/tdxlib.git@9e3d7a9bd1c7678e38c4d817f9a532b7aed53191
 tomli==2.0.1
-typing_extensions==4.2.0
+typing-extensions==4.2.0
 urllib3==1.26.9
 vcrpy==4.1.1
 wrapt==1.14.1

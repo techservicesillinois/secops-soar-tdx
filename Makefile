@@ -35,7 +35,9 @@ venv: requirements-test.txt
 	python -m venv $@
 	$(VENV_PYTHON) -m pip install -r requirements-test.txt
 
-requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@d05e170c5c3f7592d33110e148f4ccbaa6425eeb
+# TODO: Why do we need this line? We don't need it for TDXLib. 
+# TDXLib @ git+ssh://git@github.com/cedarville-university/tdxlib.git@9e3d7a9bd1c7678e38c4d817f9a532b7aed53191
+requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@424aa098ce7bda5c16bf2c90555ef1f504b88b1f
 requirements-test.txt: requirements-test.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
