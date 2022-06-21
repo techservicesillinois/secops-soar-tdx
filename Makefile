@@ -33,7 +33,6 @@ deploy: $(PACKAGE).tgz
 venv: requirements-test.txt
 	rm -rf $@
 	python -m venv $@
-	$(VENV_PYTHON) -m pip install wheel
 	$(VENV_PYTHON) -m pip install -r requirements-test.txt
 
 requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@d05e170c5c3f7592d33110e148f4ccbaa6425eeb

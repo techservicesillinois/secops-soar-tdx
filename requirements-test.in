@@ -23,4 +23,4 @@ vcrpy
 #pytest-splunk-soar-connectors
 # TODO: Remove use of temporary fork after issue #3 is resolved.
 wheel # required by the pytest-splunk-soar-connectors package
-git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@d05e170c5c3f7592d33110e148f4ccbaa6425eeb
+git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@feature/wheel
