@@ -20,7 +20,7 @@ requests==2.28.0
 rich==12.4.4
 six==1.16.0
 soupsieve==2.3.2.post1
-TDXLib @ git+ssh://git@github.com/zdc217/tdxlib.git@59876c3b531b5e7a32b3048b1996d9d5c4b7aac3
+TDXLib==0.3.4
 tomli==2.0.1
 typing-extensions==4.2.0
 urllib3==1.26.9
