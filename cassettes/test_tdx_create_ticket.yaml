@@ -23,10 +23,10 @@ interactions:
         VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
         n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
         n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
-        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n98Wb6e6XT79690VxVfzU7z2/ovffvfjpr+izn9j5
-        8s3pNcFf/T6/908UX/706d6LN1/de/HmYveLN4BR/mB6TbiVr07P6N3f5/f+ybf0bpF9+9XO9Ntf
-        fPr8+uG92b3pevb5T84n3311H2PJfu+L9e+z97B9fk0D/Ynj7S/ePP/ph188PF3sFZOfuvy9zn/R
-        6cNm997zJ9XpL5r+/qvpD5ofnBc/+fv89O/z/wC2MLwQOQEAAA==
+        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n98Wbt9cvfvrtD14UV8VP/d7zK3r/3Yuf/mrvi6en
+        P/jiB1/sEfzV7/N7/0Tx5U+f7r1489X9L37697n/xQ9+H4JR/mB6TbiVr07P6N3f5/f+ybf0bpF9
+        +9XO9NtffPr8+uG92b3pevb5T84n3311H2PJfu+L9e+z97B9fk0Dffb2wbTIX50tV693Xq9f7D/7
+        /Dvfflf//s23P1+2zZtXP/3Vu8UPrp/MvvP8/s7/A9FtH3U5AQAA
     headers:
       Cache-Control:
       - no-cache
@@ -37,7 +37,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 20 Jun 2022 20:55:12 GMT
+      - Wed, 22 Jun 2022 19:42:15 GMT
       Expires:
       - '-1'
       Pragma:
@@ -49,11 +49,78 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 20 Jun 2022 20:56:12 GMT
+      - Wed, 22 Jun 2022 19:43:15 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 286edf0f-e4c0-4ada-bf56-1cbb54af608f
+      - b03d61cb-3461-455f-af1e-f0c358e90e97
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.0
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/types
+  response:
+    body:
+      string: '[{"ID":313,"AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","Name":"CSOC","Description":"Work
+        done by the Cybersecurity Operations Center","CategoryID":72,"CategoryName":"UIUC-Privacy
+        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / CSOC","IsActive":true,"ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":""},{"ID":230,"AppID":66,"AppName":"UIUC
+        - Tech Services Privacy and Cybersecurity","Name":"General","Description":"","CategoryID":64,"CategoryName":"UIUC
+        - Tech Services Privacy General","FullName":"UIUC - Tech Services Privacy
+        General / General","IsActive":true,"ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":""},{"ID":288,"AppID":66,"AppName":"UIUC
+        - Tech Services Privacy and Cybersecurity","Name":"Generic","Description":"","CategoryID":72,"CategoryName":"UIUC-Privacy
+        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Generic","IsActive":true,"ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":""},{"ID":293,"AppID":66,"AppName":"UIUC
+        - Tech Services Privacy and Cybersecurity","Name":"GRC","Description":"Testing
+        an Alternate unit in PrivSec","CategoryID":72,"CategoryName":"UIUC-Privacy
+        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / GRC","IsActive":true,"ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":""},{"ID":292,"AppID":66,"AppName":"UIUC
+        - Tech Services Privacy and Cybersecurity","Name":"Security Support","Description":"mab
+        testing - Ticket Type for testing Security Support workflows.","CategoryID":72,"CategoryName":"UIUC-Privacy
+        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Security Support","IsActive":true,"ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":""}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '2751'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 Jun 2022 19:42:17 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Wed, 22 Jun 2022 19:43:17 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - b4126397-df37-4153-a494-8b90ae87f0c7
+      X-TDX-UID:
+      - 23efc301-65b7-ec11-a99b-0050f2e6419a
       X-UA-Compatible:
       - IE=edge
     status:
