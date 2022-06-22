@@ -22,7 +22,9 @@ pytest_plugins = ("splunk-soar-connectors")
 
 
 def remove_creds(request):
-    data = json.loads(request.body)
+    if not request.body:
+        return request
+    data = json.loads(request.body.decode('utf-8'))
 
     if 'password' in data:
         data['password'] = 'FAKE'
