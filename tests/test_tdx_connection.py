@@ -29,13 +29,13 @@ def test_tdx_create_ticket(cassette):
     tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration('tdxlib.ini')
     # ticket = tdxlib.tdx_ticket.TDXTicket(tdx) 
     ticket_attributes = {'title_template':'test ticket',
-    'ticket_type':'292',
+    'ticket_type':292,
     'account':'None/Not found',
     'responsible':'buch1',
     'requestor':'buch1',
     }
     ticket = tdx.generate_ticket(**ticket_attributes)
-    create_ticket(ticket)
+    tdx.create_ticket(ticket)
      # Code dies HERE!
 #    ticket.ticket_data['StatusID'] = \
 #        ticket.tdx_api.search_ticket_status('Resolved')['ID']
