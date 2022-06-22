@@ -1,5 +1,5 @@
 [TDX API Settings]
-# orgname = myuniversity
+orgname = myuniversity
 fullhost = help.uillinois.edu
 sandbox = True
 username = techsvc-securityapi
