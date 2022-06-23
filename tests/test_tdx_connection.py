@@ -27,14 +27,22 @@ def test_tdx_connection(cassette):
 
 def test_tdx_create_ticket(cassette):
     tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration('tdxlib.ini')
-    # ticket = tdxlib.tdx_ticket.TDXTicket(tdx) 
-    ticket_attributes = {'title_template':'test ticket',
-    'ticket_type':292,
-    'account':'None/Not found',
-    'responsible':'buch1',
-    'requestor':'buch1',
+#    ticket_attributes = {
+#        'title_template':'test ticket',
+#        'ticket_type':292,
+#        'account':'None/Not found',
+#        'responsible':'buch1',
+#        'requestor':'buch1',
+#    }
+    # ticket = tdx.generate_ticket(**ticket_attributes)
+    json_dict = {
+        "AccountID": 7902,
+        "PriorityID": 24,
+        "RequestorUid": tdx.get_person_by_name_email('buch1')['UID'],
+        "Title": "Boo",
+        "TypeID": 292,
     }
-    ticket = tdx.generate_ticket(**ticket_attributes)
+    ticket = tdxlib.tdx_ticket.TDXTicket(tdx, json_dict) 
     tdx.create_ticket(ticket)
      # Code dies HERE!
 #    ticket.ticket_data['StatusID'] = \
