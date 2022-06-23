@@ -43,7 +43,14 @@ def test_tdx_create_ticket(cassette):
         "TypeID": 292,
     }
     ticket = tdxlib.tdx_ticket.TDXTicket(tdx, json_dict) 
-    tdx.create_ticket(ticket)
+    response = tdx.create_ticket(ticket)
+    assert response.ticket_data['ID'] == 216780
+
+def test_tdx_update_ticket(cassette):
+    tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration('tdxlib.ini')
+    response = tdx.update_ticket(216780,"Updated Ticket","Resolved")
+    assert response['ID'] == 911867
+
      # Code dies HERE!
 #    ticket.ticket_data['StatusID'] = \
 #        ticket.tdx_api.search_ticket_status('Resolved')['ID']
