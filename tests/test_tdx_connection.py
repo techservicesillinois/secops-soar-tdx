@@ -5,9 +5,9 @@ import tdxlib
 # from dotenv import load_dotenv
 from pprint import PrettyPrinter
 
-#Authenticate (must be run before any subsequent API calls)
+# Authenticate (must be run before any subsequent API calls)
 # load_dotenv()
-#def get_token():
+# def get_token():
 #    my_headers = {'Content-Type' : 'application/json'}
 #    query = {'username':os.environ['TDX_USERNAME'], 'password':os.environ['TDX_PASSWORD']}
 #    response = requests.post('https://help.uillinois.edu/SBTDWebApi/api/auth', headers=my_headers, data=json.dumps(query))
@@ -15,15 +15,15 @@ from pprint import PrettyPrinter
 #    return token
 #
 #
-#def test_token_length(cassette):
+# def test_token_length(cassette):
 #    token = get_token()
 #    assert len(token) == 313
-    
+
 
 def test_tdx_connection(cassette):
     tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration('tdxlib.ini')
     search = tdx.search_tickets("test")
- 
+
 
 def test_tdx_create_ticket(cassette):
     tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration('tdxlib.ini')
@@ -42,16 +42,32 @@ def test_tdx_create_ticket(cassette):
         "Title": "Boo",
         "TypeID": 292,
     }
-    ticket = tdxlib.tdx_ticket.TDXTicket(tdx, json_dict) 
+    ticket = tdxlib.tdx_ticket.TDXTicket(tdx, json_dict)
     response = tdx.create_ticket(ticket)
     assert response.ticket_data['ID'] == 216780
 
+
 def test_tdx_update_ticket(cassette):
     tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration('tdxlib.ini')
-    response = tdx.update_ticket(216780,"Updated Ticket","Resolved")
+    response = tdx.update_ticket(216780, "Updated Ticket", "Resolved")
     assert response['ID'] == 911867
 
-     # Code dies HERE!
+
+def test_tdx_integration_from_json(cassette):
+    json = {
+        "orgname": "myuniversity",
+        "fullhost": "help.uillinois.edu",
+        "sandbox": True,
+        "username": "techsvc-securityapi",
+        "ticketAppId": 66,
+        "assetAppId": "",
+        "caching": False,
+        "timezone": "-0500",
+        "logLevel": "ERROR",
+    }
+    tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(json=json)
+
+    # Code dies HERE!
 #    ticket.ticket_data['StatusID'] = \
 #        ticket.tdx_api.search_ticket_status('Resolved')['ID']
 #    ticket.ticket_data['Title'] = "Ticket from unit test"
