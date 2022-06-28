@@ -18,7 +18,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-from tdx_client import tdx_test_connection
+from .tdx_client import tdx_test_connection
 
 class RetVal(tuple):
 
