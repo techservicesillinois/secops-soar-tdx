@@ -18,7 +18,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-from .tdx_client import tdx_test_connection
+import tdxlib
+# from .tdx_client import tdx_test_connection
 
 class RetVal(tuple):
 
@@ -164,6 +165,7 @@ class TdxConnector(BaseConnector):
         #TODO build connection before it's time to test connectivity
         #TODO get the actual config in here
         #TODO why aren't we getting a cassette? Runs with VPN disabled
+        # tdx = tdxlib.tdx_integration.TDXIntegration(config={ 
         tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
             'TDX API Settings': {
                 "orgname": "myuniversity",
@@ -177,7 +179,9 @@ class TdxConnector(BaseConnector):
                 "timezone": "-0500",
                 "logLevel": "ERROR",
         }})
-        tdx.search('connectivity_test')
+        tdx.search_tickets({
+            'SearchText': 'Test Connectivity'
+        })
 
         self.save_progress("Connecting to endpoint")
         
