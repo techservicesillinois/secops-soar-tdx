@@ -41,6 +41,8 @@ class TdxConnector(BaseConnector):
         # modify this as you deem fit.
         self._base_url = None
 
+
+
     def _process_empty_response(self, response, action_result):
         if response.status_code == 200:
             return RetVal(phantom.APP_SUCCESS, {})
@@ -162,26 +164,7 @@ class TdxConnector(BaseConnector):
         # Add an action result object to self (BaseConnector) to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
         
-        #TODO build connection before it's time to test connectivity
-        #TODO get the actual config in here
-        #TODO why aren't we getting a cassette? Runs with VPN disabled
-        # tdx = tdxlib.tdx_integration.TDXIntegration(config={ 
-        tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
-            'TDX API Settings': {
-                "orgname": "myuniversity",
-                "fullhost": "help.uillinois.edu",
-                "sandbox": True,
-                "username": self.config['TDX_USERNAME'],
-                "password": self.config['TDX_PASSWORD'],
-                "ticketAppId": 66,
-                "assetAppId": "",
-                "caching": False,
-                "timezone": "-0500",
-                "logLevel": "ERROR",
-        }})
-        tdx_password = self.config['TDX_PASSWORD']
-        # import pdb; pdb.set_trace()
-        tdx.search_tickets({
+        self.tdx.search_tickets({
             'SearchText': 'Test Connectivity'
         })
 
@@ -224,6 +207,22 @@ class TdxConnector(BaseConnector):
         # Optional values should use the .get() function
         optional_config_name = config.get('optional_config_name')
         """
+
+        # TODO: Most of this config should be available in SOAR settings.
+        self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
+            'TDX API Settings': {
+                "orgname": "myuniversity",
+                "fullhost": "help.uillinois.edu",
+                "sandbox": True,
+                "username": config.get('TDX_USERNAME'),
+                "password": config.get('TDX_PASSWORD'),
+                "ticketAppId": 66,
+                "assetAppId": "",
+                "caching": False,
+                "timezone": "-0500",
+                "logLevel": "ERROR",
+        }})
+
 
         self._base_url = config.get('base_url')
 
