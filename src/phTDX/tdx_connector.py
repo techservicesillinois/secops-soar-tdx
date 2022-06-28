@@ -161,22 +161,17 @@ class TdxConnector(BaseConnector):
         return self._process_response(r, action_result)
 
     def _handle_test_connectivity(self, param):
-        # Add an action result object to self (BaseConnector) to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
-        
-        self.tdx.search_tickets({
-            'SearchText': 'Test Connectivity'
-        })
-
         self.save_progress("Connecting to endpoint")
-        
-        #config = self.get_config()
-#        if tdx_test_connection():
-#            self.save_progress("Test Connectivity Passed")
-#            return action_result.set_status(phantom.APP_SUCCESS)  
-#        else:
-#            self.save_progress("Test Connectivity Failed")
-        return action_result.set_status(phantom.APP_ERROR)
+        try:
+            # Search for a ticket we will not find.
+            self.tdx.get_ticket_by_id(-999) 
+        except:  # TODO: catch a specific error here. break the URL
+            self.save_progress("Test Connectivity Failed")
+            return action_result.set_status(phantom.APP_ERROR)
+
+        self.save_progress("Test Connectivity Passed")
+        return action_result.set_status(phantom.APP_SUCCESS)  
 
     def handle_action(self, param):
         ret_val = phantom.APP_SUCCESS
