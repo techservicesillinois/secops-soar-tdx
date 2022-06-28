@@ -163,7 +163,7 @@ class TdxConnector(BaseConnector):
         
         #TODO build connection before it's time to test connectivity
         #TODO get the actual config in here
-        #TODO why aren't we getting a cassette? 
+        #TODO why aren't we getting a cassette? Runs with VPN disabled
         tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
             'TDX API Settings': {
                 "orgname": "myuniversity",
