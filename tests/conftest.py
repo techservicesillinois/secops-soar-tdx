@@ -1,6 +1,7 @@
-import logging
-import pathlib
 import json
+import logging
+import os
+import pathlib
 
 import pytest
 import vcr
@@ -13,11 +14,11 @@ pytest_plugins = ("splunk-soar-connectors")
 
 @pytest.fixture
 def connector(monkeypatch) -> TdxConnector:
-    #TODO Fake Username and Password for TDX should be inserted below
-    # monkeypatch.setenv("BHR_HOST", "https://nr-test.techservices.illinois.edu")
-    # monkeypatch.setenv("BHR_TOKEN", "FAKETOKEN")
-
     conn = TdxConnector()
+    conn.config = {
+        "TDX_USERNAME": os.environ.get('TDX_USERNAME',"techsvc-securityapi"), 
+        "TDX_PASSWORD": os.environ.get('TDX_PASSWORD',"fakepassword"),
+    }
     conn.logger.setLevel(logging.INFO)
     return conn
 

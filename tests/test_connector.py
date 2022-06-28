@@ -13,7 +13,7 @@ from phTDX.tdx_connector import TdxConnector
 
 
 
-def test_connectivity_fail(cassette, connector: TdxConnector):
+def test_connectivity(cassette, connector: TdxConnector):
     in_json = {
             "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
             "identifier": "test_connectivity",

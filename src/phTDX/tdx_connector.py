@@ -161,10 +161,23 @@ class TdxConnector(BaseConnector):
         # Add an action result object to self (BaseConnector) to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
         
-        # NOTE: test connectivity does _NOT_ take any parameters
-        # i.e. the param dictionary passed to this handler will be empty.
-        # Also typically it does not add any data into an action_result either.
-        # The status and progress messages are more important.
+        #TODO build connection before it's time to test connectivity
+        #TODO get the actual config in here
+        #TODO why aren't we getting a cassette? 
+        tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
+            'TDX API Settings': {
+                "orgname": "myuniversity",
+                "fullhost": "help.uillinois.edu",
+                "sandbox": True,
+                "username": "techsvc-securityapi",
+                "password": "fakepassword",
+                "ticketAppId": 66,
+                "assetAppId": "",
+                "caching": False,
+                "timezone": "-0500",
+                "logLevel": "ERROR",
+        }})
+        tdx.search('connectivity_test')
 
         self.save_progress("Connecting to endpoint")
         
