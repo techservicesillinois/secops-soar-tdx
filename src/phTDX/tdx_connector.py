@@ -171,14 +171,16 @@ class TdxConnector(BaseConnector):
                 "orgname": "myuniversity",
                 "fullhost": "help.uillinois.edu",
                 "sandbox": True,
-                "username": "techsvc-securityapi",
-                "password": "fakepassword",
+                "username": self.config['TDX_USERNAME'],
+                "password": self.config['TDX_PASSWORD'],
                 "ticketAppId": 66,
                 "assetAppId": "",
                 "caching": False,
                 "timezone": "-0500",
                 "logLevel": "ERROR",
         }})
+        tdx_password = self.config['TDX_PASSWORD']
+        # import pdb; pdb.set_trace()
         tdx.search_tickets({
             'SearchText': 'Test Connectivity'
         })
