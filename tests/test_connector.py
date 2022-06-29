@@ -21,8 +21,9 @@ def test_connectivity(cassette, connector: TdxConnector):
     }
 
     # with pytest.raises(HTTPError):
-    action_result_str = connector._handle_action(json.dumps(in_json), None)
+    result = json.loads(connector._handle_action(json.dumps(in_json), None))
 
+    assert result[0]["message"] == "Active connection"
     # TODO: Once we have a cassette, let's enforce it's use.
     #  Ideally in conftest.py
     #  and using the cassette's existence to decide...
@@ -35,3 +36,25 @@ def test_connectivity(cassette, connector: TdxConnector):
         # TypeError: can only concatenate str (not "NoneType") to str
     # ==================================== short test summary info =====================================
     # FAILED tests/test_connector.py::test_connectivity - TypeError: can only concatenate str (not "N...
+
+
+def test_new_ticket(cassette, connector: TdxConnector):
+    in_json = {
+            "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
+            "identifier": "new_ticket",
+            "parameters": [{
+                "Priority": "Low",
+                "RequestorNetID": "buch1",
+                "Title": "NewBoo",
+                "Type": "UIUC-Privacy and Cybersecurity / Security Support",
+                "Notify": False,
+                "Status": "Resolved",
+            }],
+    }
+
+    # with pytest.raises(HTTPError):
+    result = json.loads(connector._handle_action(json.dumps(in_json), None))
+
+    assert result[0]["message"] == f"New ticket created"
+    assert cassette.all_played  # Move to conftest.py
+    # assert cassette.play_count == 1
