@@ -43,12 +43,12 @@ def test_new_ticket(cassette, connector: TdxConnector):
             "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
             "identifier": "new_ticket",
             "parameters": [{
-                "Priority": "Low",
-                "RequestorNetID": "buch1",
-                "Title": "NewBoo",
-                "Type": "UIUC-Privacy and Cybersecurity / Security Support",
-                "Notify": False,
-                "Status": "Resolved",
+                "priority": "Low",
+                "requestor_netid": "buch1",
+                "title": "NewBoo",
+                "type": "UIUC-Privacy and Cybersecurity / Security Support",
+                "notify": False,
+                "status": "Resolved",
             }],
     }
 

@@ -68,6 +68,151 @@
             "parameters": {},
             "output": [],
             "versions": "EQ(*)"
+        },
+        {
+            "action": "create ticket",
+            "identifier": "create_ticket",
+            "description": "Create a ticket (issue)",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "priority": {
+                    "description": "Ticket priorty",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "priority"
+                },
+                "requestor_netid": {
+                    "description": "Requestor network ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "requestor_netid"
+                },
+                "title": {
+                    "description": "Ticket title",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 2,
+                    "name": "title"
+                },
+                "type": {
+                    "description": "Ticket type",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 3,
+                    "name": "type"
+                },
+                "notify": {
+                    "description": "Notification setting",
+                    "data_type": "boolean",
+                    "required": true,
+                    "primary": false,
+                    "contains": [
+                        "vault id"
+                    ],
+                    "default": "",
+                    "order": 4,
+                    "name": "notify"
+                },
+                "status": {
+                    "description": "Ticket status",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 5,
+                    "name": "status"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.parameter.priority",
+                    "data_type": "string",
+                    "contains": [],
+                    "column_name": "priority",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.parameter.requestor_netid",
+                    "data_type": "string",
+                    "contains": [],
+                    "column_name": "requestor_netid",
+                    "column_order": 1
+                },
+                {
+                    "data_path": "action_result.parameter.title",
+                    "data_type": "string",
+                    "contains": [],
+                    "column_name": "title",
+                    "column_order": 2
+                },
+                {
+                    "data_path": "action_result.parameter.type",
+                    "data_type": "string",
+                    "contains": [],
+                    "column_name": "type",
+                    "column_order": 3
+                },
+                {
+                    "data_path": "action_result.parameter.notify",
+                    "data_type": "boolean",
+                    "contains": [
+                        "vault id"
+                    ],
+                    "column_name": "notify",
+                    "column_order": 4
+                },
+                {
+                    "data_path": "action_result.parameter.status",
+                    "data_type": "string",
+                    "contains": [],
+                    "column_name": "status",
+                    "column_order": 5
+                },
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "status",
+                    "column_order": 6
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
         }
     ],
     "pip3_dependencies": {
