@@ -29,14 +29,7 @@ def test_connectivity(cassette, connector: TdxConnector):
     #  Ideally in conftest.py
     #  and using the cassette's existence to decide...
     assert cassette.all_played
-    # assert cassette.play_count == 1
-    # TODO: Submit a bug to tdxlib - bad password becomes TypeError
-    #    should be raised as an auth error
-    #
-    #  "Authorization": 'Bearer ' + self.token,
-        # TypeError: can only concatenate str (not "NoneType") to str
-    # ==================================== short test summary info =====================================
-    # FAILED tests/test_connector.py::test_connectivity - TypeError: can only concatenate str (not "N...
+    assert cassette.play_count == 1
 
 
 def test_create_ticket(cassette, connector: TdxConnector):

@@ -169,6 +169,8 @@ class TdxConnector(BaseConnector):
         except:  # TODO: catch a specific error here. break the URL
             # TODO: Current exception is TypeError, which will probably change
             #       in an update to TDXLib.
+            # See TDXLib #55 for status. 
+            # https://github.com/cedarville-university/tdxlib/issues/55
             self.save_progress("Test Connectivity Failed")
             return action_result.set_status(
                 phantom.APP_ERROR, "Failed connection")
