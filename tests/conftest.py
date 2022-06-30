@@ -14,6 +14,8 @@ pytest_plugins = ("splunk-soar-connectors")
 
 @pytest.fixture
 def connector(monkeypatch) -> TdxConnector:
+    # TODO: Add warning (or raise an Error) when
+    # credentials are not present and a cassette is also not present.
     conn = TdxConnector()
     conn.config = {
         "TDX_USERNAME": os.environ.get('TDX_USERNAME',"FAKE_USERNAME"), 
