@@ -38,10 +38,10 @@ def test_connectivity(cassette, connector: TdxConnector):
     # FAILED tests/test_connector.py::test_connectivity - TypeError: can only concatenate str (not "N...
 
 
-def test_new_ticket(cassette, connector: TdxConnector):
+def test_create_ticket(cassette, connector: TdxConnector):
     in_json = {
             "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
-            "identifier": "new_ticket",
+            "identifier": "create_ticket",
             "parameters": [{
                 "priority": "Low",
                 "requestor_netid": "buch1",
@@ -55,7 +55,7 @@ def test_new_ticket(cassette, connector: TdxConnector):
     # with pytest.raises(HTTPError):
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
 
-    assert response.ticket_data['ID'] == response.get_id()
+    # assert response.ticket_data['ID'] == response.get_id()
     assert result[0]["message"] == f"New ticket created"
     assert cassette.all_played  # Move to conftest.py
     # assert cassette.play_count == 1

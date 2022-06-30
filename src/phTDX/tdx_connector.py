@@ -179,6 +179,8 @@ class TdxConnector(BaseConnector):
         # Add an action result object to self (BaseConnector) to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
+        tdx = self.tdx
+
         ticket = tdxlib.tdx_ticket.TDXTicket(tdx, {
             "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
             "PriorityID": tdx.get_ticket_priority_by_name_id(param['priority'])['ID'],
@@ -225,6 +227,8 @@ class TdxConnector(BaseConnector):
         # Optional values should use the .get() function
         optional_config_name = config.get('optional_config_name')
         """
+
+        self.account_name = "None/Not found" # TODO: pull from config
 
         # TODO: Most of this config should be available in SOAR settings.
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
