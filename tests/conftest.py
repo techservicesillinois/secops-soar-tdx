@@ -16,7 +16,7 @@ pytest_plugins = ("splunk-soar-connectors")
 def connector(monkeypatch) -> TdxConnector:
     conn = TdxConnector()
     conn.config = {
-        "TDX_USERNAME": os.environ.get('TDX_USERNAME',"techsvc-securityapi"), 
+        "TDX_USERNAME": os.environ.get('TDX_USERNAME',"FAKE_USERNAME"), 
         "TDX_PASSWORD": os.environ.get('TDX_PASSWORD',"fakepassword"),
     }
     conn.logger.setLevel(logging.INFO)
