@@ -15,3 +15,18 @@ pip install -r requirements-test.txt
 
 pytest
 ```
+
+If there's changes that require recreating cassettes, set the necessary environment variables:
+
+```
+export TDX_PASSWORD="{password}"
+export TDX_USERNAME="techsvc-securityapi"
+```
+
+TDX Ticket Types:
+
+```
+Security Support
+CSOC
+Generic
+```

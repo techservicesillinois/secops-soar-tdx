@@ -46,7 +46,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
                 "priority": "Low",
                 "requestor_netid": "buch1",
                 "title": "NewBoo",
-                "type": "UIUC-Privacy and Cybersecurity / Security Support",
+                "type": "Security Support",
                 "notify": False,
                 "status": "Resolved",
             }],

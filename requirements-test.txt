@@ -1,7 +1,7 @@
 attrs==21.4.0
 beautifulsoup4==4.11.1
 certifi==2022.6.15
-charset-normalizer==2.0.12
+charset-normalizer==2.1.0
 commonmark==0.9.1
 idna==3.3
 iniconfig==1.1.1
@@ -16,7 +16,7 @@ pytest==7.1.2
 git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@424aa098ce7bda5c16bf2c90555ef1f504b88b1f
 python-dateutil==2.8.2
 PyYAML==6.0
-requests==2.28.0
+requests==2.28.1
 rich==12.4.4
 six==1.16.0
 soupsieve==2.3.2.post1
@@ -24,6 +24,6 @@ TDXLib @ git+ssh://git@github.com/zdc217/tdxlib.git@0ae9d012d39f40c8192b15a47fe2
 tomli==2.0.1
 typing_extensions==4.2.0
 urllib3==1.26.9
-vcrpy==4.1.1
+vcrpy==4.2.0
 wrapt==1.14.1
 yarl==1.7.2

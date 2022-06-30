@@ -189,9 +189,9 @@ class TdxConnector(BaseConnector):
             "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
         })
         response = tdx.create_ticket(ticket, silent=(not param['notify']))
-        # id = response.get_id()
-
-        action_result.add_data(response.ticket_data)
+        
+        keys = ["ID", "Title"]
+        action_result.add_data({k: response.ticket_data[k] for k in keys})
 
         return action_result.set_status(phantom.APP_SUCCESS, "New ticket created")
 
