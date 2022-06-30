@@ -165,13 +165,19 @@ class TdxConnector(BaseConnector):
         self.save_progress("Connecting to endpoint")
         try:
             # Search for a ticket we will not find.
-            self.tdx.get_ticket_by_id(-999) 
+            self.tdx.get_ticket_by_id(-999)
         except:  # TODO: catch a specific error here. break the URL
+            # TODO: Current exception is TypeError, which will probably change
+            #       in an update to TDXLib.
             self.save_progress("Test Connectivity Failed")
-            return action_result.set_status(phantom.APP_ERROR)
+            return action_result.set_status(
+                phantom.APP_ERROR, "Failed connection")
 
         self.save_progress("Test Connectivity Passed")
-        return action_result.set_status(phantom.APP_SUCCESS)
+        
+        action_result.add_data({})
+        return action_result.set_status(
+            phantom.APP_SUCCESS, "Active connection")
 
     def _handle_create_ticket(self, param):
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
