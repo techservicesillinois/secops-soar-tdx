@@ -39,12 +39,23 @@ def remove_creds(request):
     return request
 
 
+def remove_token(response):
+    if not response.body:
+        return response
+    
+    if '!!binary' in response.body:
+        response.body = 'TOKEN0WAS0HERE=='
+
+    return response
+
+
 @pytest.fixture
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
         cassette_library_dir='cassettes',
         record_mode='once',
         before_record_request=remove_creds,
+        before_record_response=remove_token,
         filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')]
     )
 
