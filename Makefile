@@ -1,5 +1,5 @@
 .PHONY: all build clean
-PACKAGE:=tdx
+PACKAGE:=TDX
 SRCS_DIR:=src/ph$(PACKAGE)
 SRCS:=$(shell find $(SRCS_DIR) -type f)
 # TODO: Add this line back
