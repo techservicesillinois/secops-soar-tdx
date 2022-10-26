@@ -40,7 +40,7 @@ def remove_creds(request):
 
 
 def remove_token(response):
-    if not response.body:
+    if not hasattr(response, "body"):
         return response
     
     if '!!binary' in response.body:
@@ -61,3 +61,5 @@ def cassette(request) -> vcr.cassette.Cassette:
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml') as tape:
         yield tape
+        assert tape.all_played
+        assert tape.play_count == 1

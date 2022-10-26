@@ -23,13 +23,7 @@ def test_connectivity(cassette, connector: TdxConnector):
     # with pytest.raises(HTTPError):
     # import pdb; pdb.set_trace()
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
-
     assert result[0]["message"] == "Active connection"
-    # TODO: Once we have a cassette, let's enforce it's use.
-    #  Ideally in conftest.py
-    #  and using the cassette's existence to decide...
-    assert cassette.all_played
-    assert cassette.play_count == 1
 
 
 def test_create_ticket(cassette, connector: TdxConnector):
