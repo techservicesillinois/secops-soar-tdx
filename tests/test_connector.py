@@ -26,6 +26,17 @@ def test_connectivity(cassette, connector: TdxConnector):
     assert result[0]["message"] == "Active connection"
 
 
+def test_failed_connectivity(cassette, connector: TdxConnector):
+    in_json = {
+            "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
+            "identifier": "test_connectivity",
+            "parameters": [{}],
+    }
+
+    result = json.loads(connector._handle_action(json.dumps(in_json), None))
+    assert result[0]["message"] == "Failed connection"
+
+
 def test_create_ticket(cassette, connector: TdxConnector):
     in_json = {
             "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",

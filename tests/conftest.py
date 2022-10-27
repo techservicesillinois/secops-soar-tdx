@@ -53,10 +53,11 @@ def remove_token(response):
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
         cassette_library_dir='cassettes',
-        record_mode='none', # Use 'once' in development, 'none' when done
+        record_mode='once', # Use 'once' in development, 'none' when done
         before_record_request=remove_creds,
         before_record_response=remove_token,
-        filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')]
+        filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
+        match_on=['uri', 'method'],
     )
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml') as tape:
