@@ -40,11 +40,13 @@ def remove_creds(request):
 
 
 def remove_token(response):
-    if not hasattr(response, "body"):
+    if not "body" in response:
         return response
-    
-    if '!!binary' in response.body:
-        response.body = 'TOKEN0WAS0HERE=='
+    # import ipdb; ipdb.set_trace()
+    # TODO: Strip newlines from our expired token.
+    if "'string': b'" in str(response["body"]):
+        with open('./cassettes/expired_token.txt', 'r') as f:
+            response["body"]["string"] = "".join(f.readlines())
 
     return response
 
@@ -63,4 +65,3 @@ def cassette(request) -> vcr.cassette.Cassette:
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml') as tape:
         yield tape
         assert tape.all_played, f"Only played back {len(tape.responses)} responses"
-        assert tape.play_count == 1

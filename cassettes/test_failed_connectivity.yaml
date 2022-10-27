@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '57'
+      - '83'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
@@ -18,33 +18,189 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
-      string: Invalid username or password.
+      string: !!binary |
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
+        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
+        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
+        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
+        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdv
+        Lu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am
+        3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU
+        37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA=
     headers:
       Cache-Control:
       - no-cache
-      Content-Length:
-      - '29'
+      Connection:
+      - close
+      Content-Encoding:
+      - gzip
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Thu, 27 Oct 2022 16:08:49 GMT
+      - Thu, 27 Oct 2022 20:10:32 GMT
       Expires:
       - '-1'
       Pragma:
       - no-cache
+      Vary:
+      - Accept-Encoding
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '58'
       X-RateLimit-Reset:
-      - Thu, 27 Oct 2022 16:09:49 GMT
+      - Thu, 27 Oct 2022 20:11:28 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 8e03b9d5-8630-4e14-bf95-02c6c0ace62e
+      - d29294b4-bf8f-4428-aff7-8adf5988d83b
       X-UA-Compatible:
       - IE=edge
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
+  response:
+    body:
+      string: '{"ID":-1,"Message":"id must be greater than 0."}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 27 Oct 2022 20:10:33 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - d0079e75-d042-4ea7-9749-124803eb1126
+      X-TDX-UID:
+      - f23b01f3-2f22-ed11-bd6e-0050f2e67210
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
+  response:
+    body:
+      string: '{"ID":-1,"Message":"id must be greater than 0."}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 27 Oct 2022 20:10:33 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 1da3f774-79c1-4a82-a2d7-cb0d4cea4d6f
+      X-TDX-UID:
+      - f23b01f3-2f22-ed11-bd6e-0050f2e67210
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
+  response:
+    body:
+      string: '{"ID":-1,"Message":"id must be greater than 0."}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 27 Oct 2022 20:10:33 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 074f8fbe-a1c9-4131-b4ff-95c36c1953eb
+      X-TDX-UID:
+      - f23b01f3-2f22-ed11-bd6e-0050f2e67210
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 400
+      message: Bad Request
 version: 1
