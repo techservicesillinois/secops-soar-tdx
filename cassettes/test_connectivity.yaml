@@ -18,28 +18,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
-      string: 'H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
-
-
-        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
-
-
-        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
-
-
-        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
-
-
-        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdv
-
-
-        Lu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am
-
-
-        3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU
-
-
-        37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA='
+      string: H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wnn0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1+/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdvLu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -50,7 +29,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Thu, 27 Oct 2022 20:57:45 GMT
+      - Tue, 01 Nov 2022 16:29:31 GMT
       Expires:
       - '-1'
       Pragma:
@@ -62,11 +41,11 @@ interactions:
       X-RateLimit-Remaining:
       - '58'
       X-RateLimit-Reset:
-      - Thu, 27 Oct 2022 20:58:11 GMT
+      - Tue, 01 Nov 2022 16:29:56 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 42df5632-9940-4dac-828b-1fe63cd1dc8d
+      - 5fbc82f6-c31d-485f-b901-24cd55d45471
       X-UA-Compatible:
       - IE=edge
     status:
@@ -91,28 +70,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
   response:
     body:
-      string: 'H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
-
-
-        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
-
-
-        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
-
-
-        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
-
-
-        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdv
-
-
-        Lu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am
-
-
-        3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU
-
-
-        37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA='
+      string: H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wnn0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1+/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdvLu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -121,7 +79,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 27 Oct 2022 20:57:46 GMT
+      - Tue, 01 Nov 2022 16:29:32 GMT
       Expires:
       - '-1'
       Pragma:
@@ -133,7 +91,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - c8219e30-abfb-4b7a-ac30-54088217e6a5
+      - d3426900-6cc2-4bd1-ba3a-fc37e2b010b1
       X-TDX-UID:
       - f23b01f3-2f22-ed11-bd6e-0050f2e67210
       X-UA-Compatible:
@@ -160,28 +118,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
   response:
     body:
-      string: 'H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
-
-
-        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
-
-
-        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
-
-
-        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
-
-
-        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdv
-
-
-        Lu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am
-
-
-        3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU
-
-
-        37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA='
+      string: H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wnn0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1+/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdvLu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -190,7 +127,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 27 Oct 2022 20:57:45 GMT
+      - Tue, 01 Nov 2022 16:29:32 GMT
       Expires:
       - '-1'
       Pragma:
@@ -202,7 +139,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 293e0517-b347-453f-9798-e4b098cd1d15
+      - 91670023-ee58-4802-bc30-16911c76156f
       X-TDX-UID:
       - f23b01f3-2f22-ed11-bd6e-0050f2e67210
       X-UA-Compatible:
@@ -229,28 +166,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
   response:
     body:
-      string: 'H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
-
-
-        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
-
-
-        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
-
-
-        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
-
-
-        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdv
-
-
-        Lu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am
-
-
-        3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU
-
-
-        37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA='
+      string: H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wnn0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1+/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78VPv7364s1P/OCL4qr4qd97fkXvv3vx07/P3pdvLu59+fSLa4K/+n1+758ovvzpU2r7+9z/4unpzhc/AIzyB9Nrwq18dXpG7/4+v/dPvqV3i+zbr3am3/7i0+fXD+/N7k3Xs89/cj757qv7GEv2e1+sf5+9h+3zaxro828/Xc+++L2zr746+Pzg1e9/dVoU37n3xbOf/O5PfufBF8++nP1eT/funTz/dLda7vw/YJnT+DkBAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -259,7 +175,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 27 Oct 2022 20:57:46 GMT
+      - Tue, 01 Nov 2022 16:29:32 GMT
       Expires:
       - '-1'
       Pragma:
@@ -271,7 +187,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - c75a06f9-f9dc-4e90-a3e1-be4d0816ec3f
+      - ac9534db-d8af-47af-b4be-0094cdff8455
       X-TDX-UID:
       - f23b01f3-2f22-ed11-bd6e-0050f2e67210
       X-UA-Compatible:

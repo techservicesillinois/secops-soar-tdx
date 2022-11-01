@@ -18,8 +18,8 @@ def connector(monkeypatch) -> TdxConnector:
     # credentials are not present and a cassette is also not present.
     conn = TdxConnector()
     conn.config = {
-        "TDX_USERNAME": os.environ.get('TDX_USERNAME',"FAKE_USERNAME"), 
-        "TDX_PASSWORD": os.environ.get('TDX_PASSWORD',"fakepassword"),
+        "TDX_USERNAME": os.environ.get('TDX_USERNAME', "FAKE_USERNAME"),
+        "TDX_PASSWORD": os.environ.get('TDX_PASSWORD', "fakepassword"),
     }
     conn.logger.setLevel(logging.INFO)
     return conn
@@ -42,11 +42,12 @@ def remove_creds(request):
 def remove_token(response):
     if not "body" in response:
         return response
-    # import ipdb; ipdb.set_trace()
     # TODO: Strip newlines from our expired token.
     if "'string': b'" in str(response["body"]):
         with open('./cassettes/expired_token.txt', 'r') as f:
-            response["body"]["string"] = "".join(f.readlines())
+            # import ipdb; ipdb.set_trace()
+            response["body"]["string"] = \
+                str.encode("".join(f.read().splitlines()))
 
     return response
 
@@ -55,7 +56,7 @@ def remove_token(response):
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
         cassette_library_dir='cassettes',
-        record_mode='once', # Use 'once' in development, 'none' when done
+        record_mode='once',  # Use 'once' in development, 'none' when done
         before_record_request=remove_creds,
         before_record_response=remove_token,
         filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
