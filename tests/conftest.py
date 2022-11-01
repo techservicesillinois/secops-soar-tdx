@@ -47,7 +47,7 @@ def remove_token(response):
         with open('./cassettes/expired_token.txt', 'r') as f:
             # import ipdb; ipdb.set_trace()
             response["body"]["string"] = \
-                str.encode("".join(f.read().splitlines()))
+                bytes("".join(f.read().splitlines()), "ascii")
 
     return response
 
