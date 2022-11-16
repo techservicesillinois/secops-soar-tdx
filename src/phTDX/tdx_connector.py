@@ -210,6 +210,7 @@ class TdxConnector(BaseConnector):
         action_id = self.get_action_identifier()
 
         self.debug_print("action_id", self.get_action_identifier())
+        self.debug_print("git_hash", __git_hash__)
 
         if action_id == 'create_ticket':
             ret_val = self._handle_create_ticket(param)
