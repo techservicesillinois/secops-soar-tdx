@@ -11,6 +11,9 @@ from phTDX.tdx_connector import TdxConnector
 # Required pytest plugins
 pytest_plugins = ("splunk-soar-connectors")
 
+CASSETTE_USERNAME = "FAKE_USERNAME"
+CASSETTE_PASSWORD = "FAKE_PASSWORD"
+
 
 @pytest.fixture
 def connector(monkeypatch) -> TdxConnector:
@@ -18,8 +21,8 @@ def connector(monkeypatch) -> TdxConnector:
     # credentials are not present and a cassette is also not present.
     conn = TdxConnector()
     conn.config = {
-        "TDX_USERNAME": os.environ.get('TDX_USERNAME', "FAKE_USERNAME"),
-        "TDX_PASSWORD": os.environ.get('TDX_PASSWORD', "fakepassword"),
+        "TDX_USERNAME": os.environ.get('TDX_USERNAME', CASSETTE_USERNAME),
+        "TDX_PASSWORD": os.environ.get('TDX_PASSWORD', CASSETTE_PASSWORD),
     }
     conn.logger.setLevel(logging.INFO)
     return conn
@@ -31,9 +34,9 @@ def remove_creds(request):
     data = json.loads(request.body.decode('utf-8'))
 
     if 'password' in data:
-        data['password'] = 'FAKE'
+        data['password'] = CASSETTE_PASSWORD
     if 'username' in data:
-        data['username'] = 'FOOBAR'
+        data['username'] = CASSETTE_USERNAME
 
     request.body = json.dumps(data)
     return request
@@ -42,13 +45,10 @@ def remove_creds(request):
 def remove_token(response):
     if not "body" in response:
         return response
-    # TODO: Strip newlines from our expired token.
     if "'string': b'" in str(response["body"]):
         with open('./cassettes/expired_token.txt', 'r') as f:
-            # import ipdb; ipdb.set_trace()
             response["body"]["string"] = \
                 bytes("".join(f.read().splitlines()), "ascii")
-
     return response
 
 
@@ -58,7 +58,7 @@ def cassette(request) -> vcr.cassette.Cassette:
         cassette_library_dir='cassettes',
         record_mode='once',  # Use 'once' in development, 'none' when done
         before_record_request=remove_creds,
-        before_record_response=remove_token,
+        # before_record_response=remove_token,
         filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
         match_on=['uri', 'method'],
     )
