@@ -21,6 +21,9 @@ from bs4 import BeautifulSoup
 import tdxlib
 # from .tdx_client import tdx_test_connection
 
+__version__ = 'GITHUB_TAG'
+__git_hash__ = 'GITHUB_SHA'
+
 class RetVal(tuple):
 
     def __new__(cls, val1, val2=None):
