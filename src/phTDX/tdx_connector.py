@@ -165,7 +165,7 @@ class TdxConnector(BaseConnector):
 
     def _handle_test_connectivity(self, param):
         action_result = self.add_action_result(ActionResult(dict(param)))
-        self.save_progress("Connectinog to endpoint")
+        self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
         success = self.tdx.auth() # This call results in a second call to `auth`
 
