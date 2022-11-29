@@ -65,4 +65,4 @@ def cassette(request) -> vcr.cassette.Cassette:
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml') as tape:
         yield tape
-        # assert tape.all_played, f"Only played back {len(tape.responses)} responses"
+        assert tape.all_played, f"Only played back {len(tape.responses)} responses"
