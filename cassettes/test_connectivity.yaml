@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"username": "FOOBAR", "password": "FAKE"}'
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '67'
+      - '72'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
@@ -23,10 +23,10 @@ interactions:
         VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
         n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
         n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
-        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n98VP/z7XX7w5/sGXJ1fFT/3e8yt6/92Ln/5q78UP
-        ju+9ePrFPsFf/T6/908UX/706d6LN7/P3hc/fXr1xQ8uCEb5g+k14Va+Oj0rrorf5/f+ybf0bpF9
-        +9XO9NtffPr8+uG92b3pevb5T84n3311H2PJfu+L9e+z97B9fk0D/Yn609/7yU+8Pnj7e/2i1foF
-        4fF7v3r98OV0sZj84NvHeXF19oOfXH2xl//Uu7OL/wf9p3oROQEAAA==
+        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78s3v8+9L376J959cX1V/NTvPb+i99+9+Onf5/6L
+        H3y1/+XT0x8Q/NXv83v/RPHlT5/uvfjpt3svfnC288WbLwhG+YPpNeFWvjo9K66K3+f3/sm39G6R
+        ffvVzvTbX3z6/Prhvdm96Xr2+U/OJ999dR9jyX7vi/Xvs/ewfX5NA3375uz8xcGXP7H/7Kvzy4Pf
+        e//zye7v/xNffPH8B80PXi1f3vvOd7LJl1l+dlr/our/AZ1Fx8E5AQAA
     headers:
       Cache-Control:
       - no-cache
@@ -37,11 +37,13 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Thu, 30 Jun 2022 20:30:38 GMT
+      - Mon, 28 Nov 2022 21:53:32 GMT
       Expires:
       - '-1'
       Pragma:
       - no-cache
+      Strict-Transport-Security:
+      - max-age=86400
       Vary:
       - Accept-Encoding
       X-RateLimit-Limit:
@@ -49,158 +51,76 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Thu, 30 Jun 2022 20:31:37 GMT
+      - Mon, 28 Nov 2022 21:54:32 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 7a1322d9-25b8-4659-a966-8177effbf45d
+      - 143eb446-6aa7-45ef-a89d-64ef9fcabac5
       X-UA-Compatible:
       - IE=edge
     status:
       code: 200
       message: OK
 - request:
-    body: null
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - Bearer FAKE_TOKEN
       Connection:
       - keep-alive
+      Content-Length:
+      - '72'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
       - python-requests/2.28.1
-    method: GET
-    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
-      string: '{"ID":-1,"Message":"id must be greater than 0."}'
+      string: !!binary |
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
+        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
+        n0+LL4vvnH31g7PdF8VZc7Z8dX96cvbp2dvV7/2TJ995OKZGu5NF+W723Z88nyyetT/1mr5cvip/
+        n735D2aLL9rp3k/+9Oz3/s5q9u1yPv38bfH85Ds7P/Xt+flPfff+TvZ7v7p/9tNV8YUAfps/e3j1
+        +/ze38Hnq8nePnV8ds2dLu4XP1WcffrFm99n78s3v8+9L376J969OLkqfur3nl/R++9e/PTvc//F
+        D77a//Lp6Q7BX/0+v/dPFF/+9Onei59+u/fiB2c7X7z5CYJR/mB6TbiVr07Piqvi9/m9f/ItvVtk
+        3361M/32F58+v354b3Zvup59/pPzyXdf3cdYst/7Yv377D1sn1/TQB+cr1fV7oPyp9f1/N13v3zz
+        1Vn5E/VPfPvzN985+fTdcufyxb0fFL9o+flPz3/66v8BnzxYxDkBAAA=
     headers:
       Cache-Control:
       - no-cache
-      Content-Length:
-      - '48'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Thu, 30 Jun 2022 20:30:39 GMT
-      Expires:
-      - '-1'
-      Pragma:
-      - no-cache
-      X-TDX-Entity:
-      - '2'
-      X-TDX-EntityName:
-      - University of Illinois System
-      X-TDX-Partition:
-      - '26'
-      X-TDX-TraceID:
-      - 95d2eb38-8d47-4b28-b664-c0ba82066dc9
-      X-TDX-UID:
-      - 23efc301-65b7-ec11-a99b-0050f2e6419a
-      X-UA-Compatible:
-      - IE=edge
-    status:
-      code: 400
-      message: Bad Request
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Bearer FAKE_TOKEN
       Connection:
-      - keep-alive
+      - close
+      Content-Encoding:
+      - gzip
       Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - python-requests/2.28.1
-    method: GET
-    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
-  response:
-    body:
-      string: '{"ID":-1,"Message":"id must be greater than 0."}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Length:
-      - '48'
-      Content-Type:
-      - application/json; charset=utf-8
+      - text/plain; charset=utf-8
       Date:
-      - Thu, 30 Jun 2022 20:30:39 GMT
+      - Mon, 28 Nov 2022 21:53:34 GMT
       Expires:
       - '-1'
       Pragma:
       - no-cache
-      X-TDX-Entity:
-      - '2'
-      X-TDX-EntityName:
-      - University of Illinois System
+      Strict-Transport-Security:
+      - max-age=86400
+      Vary:
+      - Accept-Encoding
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '58'
+      X-RateLimit-Reset:
+      - Mon, 28 Nov 2022 21:54:32 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 8ce70287-f0f9-466f-9c35-e4875bb7ff77
-      X-TDX-UID:
-      - 23efc301-65b7-ec11-a99b-0050f2e6419a
+      - 0eb56111-0d98-4162-8929-deab8bb543e7
       X-UA-Compatible:
       - IE=edge
     status:
-      code: 400
-      message: Bad Request
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Bearer FAKE_TOKEN
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - python-requests/2.28.1
-    method: GET
-    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/-999
-  response:
-    body:
-      string: '{"ID":-1,"Message":"id must be greater than 0."}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Length:
-      - '48'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Thu, 30 Jun 2022 20:30:40 GMT
-      Expires:
-      - '-1'
-      Pragma:
-      - no-cache
-      X-TDX-Entity:
-      - '2'
-      X-TDX-EntityName:
-      - University of Illinois System
-      X-TDX-Partition:
-      - '26'
-      X-TDX-TraceID:
-      - 262c109e-4f26-4962-b3a6-f8a843684e77
-      X-TDX-UID:
-      - 23efc301-65b7-ec11-a99b-0050f2e6419a
-      X-UA-Compatible:
-      - IE=edge
-    status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
 version: 1

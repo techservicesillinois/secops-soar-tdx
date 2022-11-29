@@ -2,9 +2,8 @@
 PACKAGE:=TDX
 SRCS_DIR:=src/ph$(PACKAGE)
 SRCS:=$(shell find $(SRCS_DIR) -type f)
-# TODO: Add this line back
-# TAG_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json __init__.py)
-TAG_FILES:=$(addprefix $(SRCS_DIR)/, __init__.py)
+TAG_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json tdx_connector.py)
+HASH_FILES:=$(addprefix $(SRCS_DIR)/, tdx_connector.py)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 
@@ -21,10 +20,14 @@ build: $(PACKAGE).tgz
 $(PACKAGE).tgz: .tag $(SRCS)
 	tar zcvf $@ -C src .
 
-version: .tag
+version: .tag .commit
 .tag: $(TAG_FILES)
 	echo version $(TAG)
 	sed -i s/GITHUB_TAG/$(TAG)/ $^
+	touch $@
+.commit: $(HASH_FILES)
+	echo commit $(GITHUB_SHA)
+	sed -i s/GITHUB_SHA/$(GITHUB_SHA)/ $^
 	touch $@
 
 deploy: $(PACKAGE).tgz
