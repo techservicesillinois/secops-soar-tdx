@@ -1,3 +1,4 @@
+import datetime
 import gzip
 import json
 import jwt
@@ -54,7 +55,7 @@ def remove_token(response):
         return response
     if "'string': b'" in str(response["body"]):
         token = \
-            jwt.encode({'exp':'secretssecrets'},'arenofun', algorithm='HS256')
+            jwt.encode({'exp':datetime.datetime(2049, 6, 25)},'arenofun', algorithm='HS256')
         response['body']['string'] = gzip.compress(bytes(token, "ascii"))
     return response
 
