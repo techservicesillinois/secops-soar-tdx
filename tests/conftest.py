@@ -19,6 +19,7 @@ pytest_plugins = ("splunk-soar-connectors")
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
 # Use 'once' in development, 'none' when done
+URL = "https://help.uillinois.edu"
 VCRMODE = os.environ.get('VCRMODE', 'none'),
 
 
@@ -31,6 +32,8 @@ class CleanYAMLSerializer:
         # cassette['interactions'][0]['response']['body']
         for interaction in cassette['interactions']:
             clean_token(interaction)
+            clean_search(interaction)
+            clean_new_ticket(interaction)
         return yamlserializer.serialize(cassette)
 
     def deserialize(cassette: str):
@@ -38,7 +41,7 @@ class CleanYAMLSerializer:
 
 
 def clean_token(interaction: dict):
-    uri = "https://help.uillinois.edu/SBTDWebApi/api/auth"
+    uri = f"{URL}/SBTDWebApi/api/auth"
     if interaction['request']['uri'] != uri:
         return
 
@@ -50,6 +53,47 @@ def clean_token(interaction: dict):
         response['headers']['Content-Encoding'] == ['gzip']:
         token = gzip.compress(bytes(token, "ascii"))
     response['body']['string'] = token
+
+
+def clean_search(interaction: dict):
+    uri = f"{URL}/SBTDWebApi/api/accounts/search"
+    if interaction['request']['uri'] != uri:
+        return
+    
+    body = json.loads(interaction['response']['body']['string'])
+    result = {}
+    for item in body:
+        if item['Name'] == "None/Not Found":  # TODO: Pull from config?
+            result = item
+    body = [result]
+
+    interaction['response']['body']['string'] = json.dumps(body)
+    # 5125:5250
+    # 5125:5167 - PASS 
+    # 5125:5156 - PASS 
+    # 5125:5140 - PASS 
+    # 5132:5140 - PASS 
+    # 5136:5140 - PASS 
+    # 5136:5138 - PASS 
+    # 5137 - PASS
+    # with open("debug.txt", "w") as f:
+    #     f.write(f"Length: {len(body)}")
+    # Length: 8134
+
+
+def clean_new_ticket(interaction: dict):
+    id = 564073
+    uri = f"{URL}/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False" + \
+        "&NotifyRequestor=False&NotifyResponsible=False" + \
+        "&AllowRequestorCreation=False"
+    
+    if interaction['request']['uri'] != uri:
+        return
+    
+    body = json.loads(interaction['response']['body']['string'])
+    body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
+    body['ID'] = id
+    interaction['response']['body']['string'] = json.dumps(body)
 
 
 @pytest.fixture
