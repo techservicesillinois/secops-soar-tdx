@@ -15,8 +15,8 @@ pytest_plugins = ("splunk-soar-connectors")
 
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
-VCRMODE = 'none'  # Use 'once' in development, 'none' when done
-
+# Use 'once' in development, 'none' when done
+VCRMODE = os.environ.get('VCRMODE', 'none'),
 
 @pytest.fixture
 def connector(monkeypatch) -> TdxConnector:
@@ -53,7 +53,9 @@ def remove_creds(request):
 def remove_token(response):
     if not "body" in response:
         return response
-    if "'string': b'" in str(response["body"]):
+    # import pdb; pdb.set_trace()
+    if 'Content-Encoding' in response['headers'].keys() and \
+        response['headers']['Content-Encoding'] == ['gzip']:
         token = \
             jwt.encode({'exp':datetime.datetime(2049, 6, 25)},'arenofun', algorithm='HS256')
         response['body']['string'] = gzip.compress(bytes(token, "ascii"))
