@@ -54,6 +54,7 @@ def remove_token(response):
     if not "body" in response:
         return response
     # import pdb; pdb.set_trace()
+    # 'Content-Encoding: gzip' is a hack for trouble decoding the JWT
     if 'Content-Encoding' in response['headers'].keys() and \
         response['headers']['Content-Encoding'] == ['gzip']:
         token = \
@@ -69,6 +70,7 @@ def cassette(request) -> vcr.cassette.Cassette:
         record_mode=VCRMODE,
         before_record_request=remove_creds,
         before_record_response=remove_token,
+        filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
         match_on=['uri', 'method'],
     )
     my_vcr.allow_playback_repeats = True # Required due to double Auth()
