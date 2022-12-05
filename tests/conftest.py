@@ -31,6 +31,7 @@ class CleanYAMLSerializer:
             clean_token(interaction)
             clean_search(interaction)
             clean_new_ticket(interaction)
+            clean_people_lookup(interaction)
         return yamlserializer.serialize(cassette)
 
     def deserialize(cassette: str):
@@ -79,6 +80,28 @@ def clean_new_ticket(interaction: dict):
     body = json.loads(interaction['response']['body']['string'])
     body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
     body['ID'] = id
+    body['RequestorEmail'] = 'nobody@example.com'
+    body['Notify'][0]['Name'] = 'Jane Doe'
+    body['Notify'][0]['Value'] = 'nobody@example.com'
+    interaction['response']['body']['string'] = json.dumps(body)
+
+def clean_people_lookup(interaction: dict):
+    uri = f"{URL}/SBTDWebApi/api/people/lookup?searchText=buch1&maxResults=1"
+
+    if interaction['request']['uri'] != uri:
+        return
+
+    body = json.loads(interaction['response']['body']['string'])
+    body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
+
+    body[0]['FirstName'] = 'Jane'
+    body[0]['LastName'] = 'Doe'
+    body[0]['MiddleName'] = None
+    body[0]['FullName'] = 'Jane Doe'
+    body[0]['PrimaryEmail'] = 'nobody@example.com'
+    body[0]['AlternateEmail'] = 'nobody@example.com'
+    body[0]['AlertEmail'] = 'nobody@example.com'
+
     interaction['response']['body']['string'] = json.dumps(body)
 
 
