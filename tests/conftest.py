@@ -18,9 +18,11 @@ pytest_plugins = ("splunk-soar-connectors")
 
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
-# Use 'once' in development, 'none' when done
 URL = "https://help.uillinois.edu"
-VCRMODE = os.environ.get('VCRMODE', 'none'),
+ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
+
+# To record, `export VCRMODE=once`
+VCRMODE = os.environ.get('VCRMODE', 'none'), 
 
 
 class CleanYAMLSerializer:
@@ -58,22 +60,11 @@ def clean_search(interaction: dict):
     body = json.loads(interaction['response']['body']['string'])
     result = {}
     for item in body:
-        if item['Name'] == "None/Not Found":  # TODO: Pull from config?
+        if item['Name'] == ACCOUNT_NAME:
             result = item
     body = [result]
 
     interaction['response']['body']['string'] = json.dumps(body)
-    # 5125:5250
-    # 5125:5167 - PASS 
-    # 5125:5156 - PASS 
-    # 5125:5140 - PASS 
-    # 5132:5140 - PASS 
-    # 5136:5140 - PASS 
-    # 5136:5138 - PASS 
-    # 5137 - PASS
-    # with open("debug.txt", "w") as f:
-    #     f.write(f"Length: {len(body)}")
-    # Length: 8134
 
 
 def clean_new_ticket(interaction: dict):
