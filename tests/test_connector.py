@@ -52,8 +52,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
 
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
 
-    if VCRMODE == 'none':
-        # Ticket ID will match only during playback
+    if VCRMODE == 'none':  # Tests only valid when not recording
         assert result[0]["data"][0]["ID"] == 564073
 
     assert result[0]["data"][0]["Title"] == in_json["parameters"][0]["title"]

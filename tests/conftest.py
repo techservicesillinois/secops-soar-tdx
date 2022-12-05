@@ -193,4 +193,6 @@ def cassette(request) -> vcr.cassette.Cassette:
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:
         yield tape
-        assert tape.all_played, f"Only played back {len(tape.responses)} responses"
+        if my_vcr.record_mode == 'none':  # Tests only valid when not recording
+            assert tape.all_played, \
+                f"Only played back {len(tape.responses)} responses"
