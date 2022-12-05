@@ -11,7 +11,7 @@ from requests.exceptions import HTTPError
 
 from phTDX.tdx_connector import TdxConnector
 
-from conftest import VCRMODE
+from conftest import VCRMODE, CASSETTE_NETID
 
 
 def test_connectivity(cassette, connector: TdxConnector):
@@ -48,7 +48,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "identifier": "create_ticket",
             "parameters": [{
                 "priority": "Low",
-                "requestor_netid": "buch1",
+                "requestor_netid": os.environ.get('TDX_NETID', CASSETTE_NETID),
                 "title": "NewBoo",
                 "type": "Security Support",
                 "notify": False,

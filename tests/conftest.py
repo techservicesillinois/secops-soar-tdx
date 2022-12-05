@@ -18,6 +18,7 @@ pytest_plugins = ("splunk-soar-connectors")
 
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
+CASSETTE_NETID = 'thor2'
 URL = "https://help.uillinois.edu"
 ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
 
@@ -92,7 +93,8 @@ def clean_new_ticket(interaction: dict):
 
 def clean_people_lookup(interaction: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
-    uri = f"{URL}/SBTDWebApi/api/people/lookup?searchText=buch1&maxResults=1"
+    netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
+    uri = f"{URL}/SBTDWebApi/api/people/lookup?searchText={netid}&maxResults=1"
 
     if interaction['request']['uri'] != uri:
         return
@@ -127,6 +129,7 @@ def connector(monkeypatch) -> TdxConnector:
             "TDX_USERNAME": CASSETTE_USERNAME,
             "TDX_PASSWORD": CASSETTE_PASSWORD,
         }
+        del os.environ['TDX_NETID']
     else:  # User environment values
         username = os.environ.get('TDX_USERNAME', None)
         if not username:
@@ -135,6 +138,9 @@ def connector(monkeypatch) -> TdxConnector:
         password = os.environ.get('TDX_PASSWORD', None)
         if not password:
             raise ValueError('TDX_PASSWORD unset or empty with record mode')
+
+        if not os.environ.get('TDX_NETID', None):
+            raise ValueError('TDX_NETID unset or empty with record mode')
 
         conn.config = {
             "TDX_USERNAME": username,
