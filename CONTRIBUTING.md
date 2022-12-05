@@ -21,6 +21,7 @@ If there's changes that require recreating cassettes, set the necessary environm
 ```sh
 export TDX_PASSWORD="{password}"
 export TDX_USERNAME="techsvc-securityapi"
+export TDX_NETID="{netid}" # A valid TDX user on your instance
 ```
 
 To record a cassette, set `VCRMODE` in the environment as needed.
