@@ -18,9 +18,15 @@ pytest
 
 If there's changes that require recreating cassettes, set the necessary environment variables:
 
-```
+```sh
 export TDX_PASSWORD="{password}"
 export TDX_USERNAME="techsvc-securityapi"
+```
+
+To record a cassette, set `VCRMODE` in the environment as needed.
+
+```sh
+export VCRMODE=once
 ```
 
 TDX Ticket Types:
