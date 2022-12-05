@@ -253,7 +253,6 @@ class TdxConnector(BaseConnector):
                 "logLevel": "ERROR",
         }})
 
-
         self._base_url = config.get('base_url')
 
         return phantom.APP_SUCCESS
