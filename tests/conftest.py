@@ -1,5 +1,3 @@
-import re
-from typing import Union
 import datetime
 import gzip
 import json
