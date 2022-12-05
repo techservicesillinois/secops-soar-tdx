@@ -25,11 +25,6 @@ VCRMODE = os.environ.get('VCRMODE', 'none'),
 
 class CleanYAMLSerializer:
     def serialize(cassette: dict):
-        # import ipdb; ipdb.set_trace()
-        # cassette['interactions'][0].keys()
-        # dict_keys(['request', 'response'])
-        # cassette['interactions'][0]['request']['uri']
-        # cassette['interactions'][0]['response']['body']
         for interaction in cassette['interactions']:
             clean_token(interaction)
             clean_search(interaction)
@@ -98,18 +93,26 @@ def clean_new_ticket(interaction: dict):
 
 @pytest.fixture
 def connector(monkeypatch) -> TdxConnector:
-    # TODO: Add warning (or raise an Error) when
-    # credentials are not present and a cassette is also not present.
     conn = TdxConnector()
-    conn.config = {
-        "TDX_USERNAME": os.environ.get('TDX_USERNAME', CASSETTE_USERNAME),
-        "TDX_PASSWORD": os.environ.get('TDX_PASSWORD', CASSETTE_PASSWORD),
-    }
     if VCRMODE == 'none':  # Always use cassette values when using cassette
         conn.config = {
             "TDX_USERNAME": CASSETTE_USERNAME,
             "TDX_PASSWORD": CASSETTE_PASSWORD,
         }
+    else:  # User environment values
+        username = os.environ.get('TDX_USERNAME', None)
+        if not username:
+            raise ValueError('TDX_USERNAME unset or empty with record mode')
+
+        password = os.environ.get('TDX_PASSWORD', None)
+        if not password:
+            raise ValueError('TDX_PASSWORD unset or empty with record mode')
+
+        conn.config = {
+            "TDX_USERNAME": username,
+            "TDX_PASSWORD": password,
+        }
+
     conn.logger.setLevel(logging.INFO)
     return conn
 
