@@ -81,28 +81,30 @@ def clean_new_ticket(interaction: dict):
     body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
     body['ID'] = id
     body['RequestorEmail'] = 'nobody@example.com'
-    body['RequestorName'] = 'Jane Doe'
+    body['RequestorName'] = 'Jane Foster'
     body['RequestorFirstName'] = 'Jane'
-    body['RequestorLastName'] = 'Doe'
+    body['RequestorLastName'] = 'Foster'
     body['RequestorPhone'] = None
 
-    body['Notify'][0]['Name'] = 'Jane Doe'
+    body['Notify'][0]['Name'] = 'Jane Foster'
     body['Notify'][0]['Value'] = 'nobody@example.com'
     interaction['response']['body']['string'] = json.dumps(body)
 
 def clean_people_lookup(interaction: dict):
+    # TODO: Switch the NetID here based on ENV settings and record mode
     uri = f"{URL}/SBTDWebApi/api/people/lookup?searchText=buch1&maxResults=1"
 
     if interaction['request']['uri'] != uri:
         return
 
     body = json.loads(interaction['response']['body']['string'])
-    # body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
 
+    body[0]['Salutation'] = 'Doctor'
     body[0]['FirstName'] = 'Jane'
-    body[0]['LastName'] = 'Doe'
+    body[0]['LastName'] = 'Foster'
     body[0]['MiddleName'] = None
-    body[0]['FullName'] = 'Jane Doe'
+    body[0]['FullName'] = 'Jane Foster'
+    body[0]['Nickname'] = 'The Mighty Thor'
 
     body[0]['HomePhone'] = None
     body[0]['PrimaryPhone'] = None
