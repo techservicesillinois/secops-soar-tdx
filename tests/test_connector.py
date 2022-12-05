@@ -21,6 +21,12 @@ def test_connectivity(cassette, connector: TdxConnector):
             "parameters": [{}], # TODO: Submit an issue asking to allow [] here.
     }
 
+    # We call `auth` a second time to inpsect the return value
+    cassette.allow_playback_repeats = True 
+    # In 2022 December, allow_playback_repeats prevents mysterious test failures
+    # See https://github.com/kevin1024/vcrpy/issues/533
+    # and https://github.com/kevin1024/vcrpy/issues/673
+
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
     assert result[0]["message"] == "Active connection"
 
