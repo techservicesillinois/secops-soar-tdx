@@ -84,6 +84,8 @@ def clean_new_ticket(interaction: dict):
     body['RequestorName'] = 'Jane Doe'
     body['RequestorFirstName'] = 'Jane'
     body['RequestorLastName'] = 'Doe'
+    body['RequestorPhone'] = None
+
     body['Notify'][0]['Name'] = 'Jane Doe'
     body['Notify'][0]['Value'] = 'nobody@example.com'
     interaction['response']['body']['string'] = json.dumps(body)
@@ -101,6 +103,13 @@ def clean_people_lookup(interaction: dict):
     body[0]['LastName'] = 'Doe'
     body[0]['MiddleName'] = None
     body[0]['FullName'] = 'Jane Doe'
+
+    body[0]['HomePhone'] = None
+    body[0]['PrimaryPhone'] = None
+    body[0]['WorkPhone'] = None
+    body[0]['OtherPhone'] = None
+    body[0]['MobilePhone'] = None
+
     body[0]['PrimaryEmail'] = 'nobody@example.com'
     body[0]['AlternateEmail'] = 'nobody@example.com'
     body[0]['AlertEmail'] = 'nobody@example.com'
