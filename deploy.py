@@ -6,7 +6,7 @@ import os
 import requests
 import sys
 
-file_contents = open('soar_app.tgz', 'rb').read()
+file_contents = open(sys.argv[1], 'rb').read()
 encoded_contents = base64.b64encode(file_contents)
 payload = {'app': encoded_contents.decode('ascii')}
 headers = {'ph-auth-token': os.environ['SOAR_TOKEN']}

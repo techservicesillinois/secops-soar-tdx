@@ -31,7 +31,7 @@ version: .tag .commit
 	touch $@
 
 deploy: $(PACKAGE).tgz
-	python deploy.py
+	python deploy.py $^
 
 venv: requirements-test.txt
 	rm -rf $@
