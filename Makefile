@@ -17,7 +17,7 @@ all: build
 
 build: $(PACKAGE).tgz
 
-$(PACKAGE).tgz: .tag $(SRCS)
+$(PACKAGE).tgz: version $(SRCS)
 	tar zcvf $@ -C src .
 
 version: .tag .commit
