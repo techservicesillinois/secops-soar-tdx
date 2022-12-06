@@ -183,7 +183,8 @@ class TdxConnector(BaseConnector):
     def _handle_create_ticket(self, param):
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector) to represent the action for this param
+        # Add an action result object to self (BaseConnector) to
+        # represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
         tdx = self.tdx
