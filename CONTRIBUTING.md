@@ -45,3 +45,7 @@ In GitHub, under
 
 `SOAR_HOSTNAME` set to `automate-illinois.soar.splunkcloud.com`
 `SOAR_TOKEN` with your SOAR API token.
+
+### Debugging Deployment
+
+To read deploy logs, visit SOAR `Administration`, and look under `System Health` and then `Debugging`.
