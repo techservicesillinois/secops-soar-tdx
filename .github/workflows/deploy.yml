@@ -16,4 +16,5 @@ jobs:
         make deploy
       env:
         SOAR_TOKEN: ${{ secrets.CICD_GITHUB_AUTOMATION }}
-        SOAR_URL: ${{ secrets.SOAR_URL }}
+        SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}
+
