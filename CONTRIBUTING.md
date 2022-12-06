@@ -37,3 +37,11 @@ Security Support
 CSOC
 Generic
 ```
+
+## Deployment
+
+In GitHub, under 
+`Secrets` then `Actions` add the following `Repository Secrets`:
+
+`SOAR_HOSTNAME` set to `automate-illinois.soar.splunkcloud.com`
+`SOAR_TOKEN` with your SOAR API token.
