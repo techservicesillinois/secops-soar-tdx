@@ -197,7 +197,7 @@ class TdxConnector(BaseConnector):
         })
         response = tdx.create_ticket(ticket, silent=(not param['notify']))
         
-        keys = ["ID", "Title"]
+        keys = ["ID"]
         action_result.add_data({k: response.ticket_data[k] for k in keys})
 
         return action_result.set_status(phantom.APP_SUCCESS, "New ticket created")

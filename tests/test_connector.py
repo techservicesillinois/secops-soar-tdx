@@ -61,5 +61,4 @@ def test_create_ticket(cassette, connector: TdxConnector):
     if VCRMODE == 'none':  # Tests only valid when not recording
         assert result[0]["data"][0]["ID"] == 564073
 
-    assert result[0]["data"][0]["Title"] == in_json["parameters"][0]["title"]
     assert result[0]["message"] == "New ticket created"
