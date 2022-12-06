@@ -147,6 +147,10 @@
             },
             "output": [
                 {
+                    "data_path": "action_result.data.*.id",
+                    "data_type": "string"
+                },
+                {
                     "data_path": "action_result.parameter.priority",
                     "data_type": "string",
                     "contains": [],
