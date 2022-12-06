@@ -13,7 +13,7 @@
     "license": "Copyright (c) Cybersecurity, 2022",
     "app_version": "GITHUB_TAG",
     "utctime_updated": "2022-05-17T20:22:06.731266Z",
-    "package_name": "phantom_tdx",
+    "package_name": "phTDX",
     "main_module": "tdx_connector.py",
     "min_phantom_version": "5.3.1.84890",
     "app_wizard_version": "1.0.0",
