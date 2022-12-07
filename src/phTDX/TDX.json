@@ -218,5 +218,12 @@
             },
             "versions": "EQ(*)"
         }
-    ]
+    ],
+    "pip3_dependencies": {
+        "pypi": [
+            {
+                "module": "TDXLib==0.4.2"
+            }
+        ]
+    }
 }
