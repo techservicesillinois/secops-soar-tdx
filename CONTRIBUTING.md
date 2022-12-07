@@ -24,10 +24,10 @@ export TDX_USERNAME="techsvc-securityapi"
 export TDX_NETID="{netid}" # A valid TDX user on your instance
 ```
 
-To record a cassette, set `VCRMODE` in the environment as needed.
+To record a cassette, set `VCR_RECORD` in the environment as needed.
 
 ```sh
-export VCRMODE=once
+export VCR_RECORD=True
 ```
 
 TDX Ticket Types:
