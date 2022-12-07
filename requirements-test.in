@@ -25,5 +25,5 @@ autopep8
 # TODO: Uncomment after it is available on PyPI:
 #pytest-splunk-soar-connectors
 # TODO: Remove use of temporary fork after issue #3 is resolved.
-git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git
+git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@master
 #git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@master

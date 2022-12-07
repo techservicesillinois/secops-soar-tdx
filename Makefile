@@ -13,7 +13,7 @@ else
 	TAG?=0.0.0
 endif
 
-all: build
+all: test
 
 build: $(PACKAGE).tgz
 
@@ -38,7 +38,7 @@ venv: requirements-test.txt
 	python -m venv $@
 	$(VENV_PYTHON) -m pip install -r requirements-test.txt
 
-requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@424aa098ce7bda5c16bf2c90555ef1f504b88b1f
+requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@424aa098ce7bda5c16bf2c90555ef1f504b88b1f
 requirements-test.txt: requirements-test.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
