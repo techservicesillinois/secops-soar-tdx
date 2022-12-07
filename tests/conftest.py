@@ -92,11 +92,12 @@ def clean_new_ticket(interaction: dict):
 def clean_people_lookup(interaction: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
     netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
-    uri = f"{URL}/SBTDWebApi/api/people/lookup?searchText={netid}&maxResults=1"
+    uri = "%s/SBTDWebApi/api/people/lookup?searchText=%s&maxResults=1"
 
-    if interaction['request']['uri'] != uri:
+    if interaction['request']['uri'] != uri % (URL, netid):
         return
 
+    interaction['request']['uri'] = uri % (URL, 'thor2')
     body = json.loads(interaction['response']['body']['string'])
 
     body[0]['Salutation'] = 'Doctor'
