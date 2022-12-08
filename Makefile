@@ -4,6 +4,7 @@ SRCS_DIR:=src/ph$(PACKAGE)
 SRCS:=$(shell find $(SRCS_DIR) -type f)
 TAG_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json tdx_connector.py)
 HASH_FILES:=$(addprefix $(SRCS_DIR)/, tdx_connector.py)
+GITHUB_DEPLOYED:=$(shell date -u +%FT%X.%6NZ)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 
@@ -30,8 +31,7 @@ version: .tag .commit .deployed
 	sed -i s/GITHUB_SHA/$(GITHUB_SHA)/ $^
 	touch $@
 .deployed: $(TAG_FILES)
-	GITHUB_DEPLOYED:=$(date -u +%FT%X.%6NZ)
-	echo commit $(GITHUB_DEPLOYED)
+	echo deployed $(GITHUB_DEPLOYED)
 	sed -i s/GITHUB_DEPLOYED/$(GITHUB_DEPLOYED)/ $^
 	touch $@
 

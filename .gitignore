@@ -52,6 +52,7 @@ coverage.xml
 .pytest_cache/
 .commit
 .tag
+.deployed
 
 # Translations
 *.mo
