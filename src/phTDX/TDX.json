@@ -22,8 +22,6 @@
             "description": "TDX Username",
             "data_type": "string",
             "required": true,
-            "value_list": [],
-            "default": "",
             "order": 0,
             "name": "TDX_USERNAME",
             "id": 0
