@@ -18,8 +18,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
+# Third-party
 import tdxlib
-# from .tdx_client import tdx_test_connection
 
 __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
@@ -206,7 +206,7 @@ class TdxConnector(BaseConnector):
             'TDX API Settings': {
                 "orgname": "myuniversity",
                 "fullhost": "help.uillinois.edu",
-                "sandbox": True,
+                "sandbox": True,  # TODO: How does this become /SBTDWebApi/ ??
                 "username": config['username'],
                 "password": config['password'],
                 "ticketAppId": 66,
