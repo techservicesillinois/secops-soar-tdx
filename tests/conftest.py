@@ -20,8 +20,8 @@ CASSETTE_NETID = 'thor2'
 URL = "https://help.uillinois.edu"
 ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
 
-# To record, `export VCRMODE=once`
-VCRMODE = os.environ.get('VCRMODE', 'none'), 
+# To record, `export VCR_RECORD=True`
+VCR_RECORD = "VCR_RECORD" in os.environ
 
 
 class CleanYAMLSerializer:
@@ -43,8 +43,7 @@ def clean_token(interaction: dict):
         return
 
     token = jwt.encode(
-        {'exp': datetime.datetime(2049, 6, 25)},
-        'arenofun', algorithm='HS256')
+        {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
     response = interaction['response']
     if 'Content-Encoding' in response['headers'].keys() and \
         response['headers']['Content-Encoding'] == ['gzip']:
@@ -92,11 +91,12 @@ def clean_new_ticket(interaction: dict):
 def clean_people_lookup(interaction: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
     netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
-    uri = f"{URL}/SBTDWebApi/api/people/lookup?searchText={netid}&maxResults=1"
+    uri = "%s/SBTDWebApi/api/people/lookup?searchText=%s&maxResults=1"
 
-    if interaction['request']['uri'] != uri:
+    if interaction['request']['uri'] != uri % (URL, netid):
         return
 
+    interaction['request']['uri'] = uri % (URL, 'thor2')
     body = json.loads(interaction['response']['body']['string'])
 
     body[0]['Salutation'] = 'Doctor'
@@ -122,12 +122,12 @@ def clean_people_lookup(interaction: dict):
 @pytest.fixture
 def connector(monkeypatch) -> TdxConnector:
     conn = TdxConnector()
-    if VCRMODE == 'none':  # Always use cassette values when using cassette
+    if not VCR_RECORD:  # Always use cassette values when using cassette
         conn.config = {
             "TDX_USERNAME": CASSETTE_USERNAME,
             "TDX_PASSWORD": CASSETTE_PASSWORD,
         }
-        del os.environ['TDX_NETID']
+        os.environ.pop('TDX_NETID', None)
     else:  # User environment values
         username = os.environ.get('TDX_USERNAME', None)
         if not username:
@@ -167,7 +167,7 @@ def remove_creds(request):
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
         cassette_library_dir='cassettes',
-        record_mode=VCRMODE,
+        record_mode='once' if VCR_RECORD else 'none',
         before_record_request=remove_creds,
         filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
         match_on=['uri', 'method'],

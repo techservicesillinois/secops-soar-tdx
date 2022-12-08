@@ -2,8 +2,8 @@
 PACKAGE:=TDX
 SRCS_DIR:=src/ph$(PACKAGE)
 SRCS:=$(shell find $(SRCS_DIR) -type f)
-TAG_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json tdx_connector.py)
-HASH_FILES:=$(addprefix $(SRCS_DIR)/, tdx_connector.py)
+VERSION_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json tdx_connector.py)
+GITHUB_DEPLOYED:=$(shell date -u +%FT%X.%6NZ)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 
@@ -13,32 +13,36 @@ else
 	TAG?=0.0.0
 endif
 
-all: build
+all: test
 
 build: $(PACKAGE).tgz
 
-$(PACKAGE).tgz: .tag $(SRCS)
+$(PACKAGE).tgz: version $(SRCS)
 	tar zcvf $@ -C src .
 
-version: .tag .commit
-.tag: $(TAG_FILES)
+version: .tag .commit .deployed
+.tag: $(VERSION_FILES)
 	echo version $(TAG)
 	sed -i s/GITHUB_TAG/$(TAG)/ $^
 	touch $@
-.commit: $(HASH_FILES)
+.commit: $(VERSION_FILES)
 	echo commit $(GITHUB_SHA)
 	sed -i s/GITHUB_SHA/$(GITHUB_SHA)/ $^
 	touch $@
+.deployed: $(VERSION_FILES)
+	echo deployed $(GITHUB_DEPLOYED)
+	sed -i s/GITHUB_DEPLOYED/$(GITHUB_DEPLOYED)/ $^
+	touch $@
 
 deploy: $(PACKAGE).tgz
-	python deploy.py
+	python deploy.py $^
 
 venv: requirements-test.txt
 	rm -rf $@
 	python -m venv $@
 	$(VENV_PYTHON) -m pip install -r requirements-test.txt
 
-requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@424aa098ce7bda5c16bf2c90555ef1f504b88b1f
+requirements-test.txt: export SOAR_CONNECTOR_FORK=git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@424aa098ce7bda5c16bf2c90555ef1f504b88b1f
 requirements-test.txt: requirements-test.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
@@ -52,7 +56,7 @@ test: venv
 	
 clean:
 	rm -rf venv $(VENV_REQS)
-	rm -f $(PACKAGE).tgz .tag
+	rm -f $(PACKAGE).tgz .tag .commit .deployed
 	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
 	git checkout -- $(TAG_FILES)
 

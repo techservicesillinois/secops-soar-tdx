@@ -23,6 +23,7 @@ import tdxlib
 
 __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
+__deployed__ = 'GITHUB_DEPLOYED'
 
 class RetVal(tuple):
 
@@ -38,12 +39,6 @@ class TdxConnector(BaseConnector):
         super(TdxConnector, self).__init__()
 
         self._state = None
-
-        # Variable to hold a base_url in case the app makes REST calls
-        # Do note that the app json defines the asset config, so please
-        # modify this as you deem fit.
-        self._base_url = None
-
 
 
     def _process_empty_response(self, response, action_result):
@@ -129,39 +124,6 @@ class TdxConnector(BaseConnector):
 
         return RetVal(action_result.set_status(phantom.APP_ERROR, message), None)
 
-    def _make_rest_call(self, endpoint, action_result, method="get", **kwargs):
-        # **kwargs can be any additional parameters that requests.request accepts
-
-        config = self.get_config()
-
-        resp_json = None
-
-        try:
-            request_func = getattr(requests, method)
-        except AttributeError:
-            return RetVal(
-                action_result.set_status(phantom.APP_ERROR, "Invalid method: {0}".format(method)),
-                resp_json
-            )
-
-        # Create a URL to connect to
-        url = self._base_url + endpoint
-
-        try:
-            r = request_func(
-                url,
-                # auth=(username, password),  # basic authentication
-                verify=config.get('verify_server_cert', False),
-                **kwargs
-            )
-        except Exception as e:
-            return RetVal(
-                action_result.set_status(
-                    phantom.APP_ERROR, "Error Connecting to server. Details: {0}".format(str(e))
-                ), resp_json
-            )
-
-        return self._process_response(r, action_result)
 
     def _handle_test_connectivity(self, param):
         action_result = self.add_action_result(ActionResult(dict(param)))
@@ -183,7 +145,8 @@ class TdxConnector(BaseConnector):
     def _handle_create_ticket(self, param):
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector) to represent the action for this param
+        # Add an action result object to self (BaseConnector) 
+        # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
         tdx = self.tdx
@@ -197,8 +160,8 @@ class TdxConnector(BaseConnector):
         })
         response = tdx.create_ticket(ticket, silent=(not param['notify']))
         
-        keys = ["ID", "Title"]
-        action_result.add_data({k: response.ticket_data[k] for k in keys})
+        keys = ["ID"]
+        action_result.add_data({k.lower(): response.ticket_data[k] for k in keys})
 
         return action_result.set_status(phantom.APP_SUCCESS, "New ticket created")
 
@@ -252,8 +215,6 @@ class TdxConnector(BaseConnector):
                 "timezone": "-0500",
                 "logLevel": "ERROR",
         }})
-
-        self._base_url = config.get('base_url')
 
         return phantom.APP_SUCCESS
 

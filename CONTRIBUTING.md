@@ -24,10 +24,10 @@ export TDX_USERNAME="techsvc-securityapi"
 export TDX_NETID="{netid}" # A valid TDX user on your instance
 ```
 
-To record a cassette, set `VCRMODE` in the environment as needed.
+To record a cassette, set `VCR_RECORD` in the environment as needed.
 
 ```sh
-export VCRMODE=once
+export VCR_RECORD=True
 ```
 
 TDX Ticket Types:
@@ -37,3 +37,15 @@ Security Support
 CSOC
 Generic
 ```
+
+## Deployment
+
+In GitHub, under 
+`Secrets` then `Actions` add the following `Repository Secrets`:
+
+`SOAR_HOSTNAME` set to `automate-illinois.soar.splunkcloud.com`
+`SOAR_TOKEN` with your SOAR API token.
+
+### Debugging Deployment
+
+To read deploy logs, visit SOAR `Administration`, and look under `System Health` and then `Debugging`.

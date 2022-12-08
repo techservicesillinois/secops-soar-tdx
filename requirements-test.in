@@ -3,8 +3,8 @@ beautifulsoup4
 # Production dependencies (Pulled from soar_null_router.json)
 # TODO: Add back in tdxlib below and remove git+ssh when #62 is merged
 # See: https://github.com/cedarville-university/tdxlib/pull/62
-# tdxlib
-git+ssh://git@github.com/zdc217/tdxlib.git@feature/broken_imports
+TDXLib
+#git+ssh://git@github.com/zdc217/tdxlib.git@feature/broken_imports
 #git+ssh://git@github.com/cedarville-university/tdxlib.git
 # Testing dependencies
 pytest
@@ -25,5 +25,5 @@ autopep8
 # TODO: Uncomment after it is available on PyPI:
 #pytest-splunk-soar-connectors
 # TODO: Remove use of temporary fork after issue #3 is resolved.
-# git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@feature/wheel
-git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@master
+git+ssh://git@github.com/edthedev/pytest-splunk-soar-connectors.git@master
+#git+ssh://git@github.com/splunk/pytest-splunk-soar-connectors.git@master

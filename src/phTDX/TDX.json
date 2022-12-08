@@ -12,8 +12,8 @@
     "publisher": "Cybersecurity",
     "license": "Copyright (c) Cybersecurity, 2022",
     "app_version": "GITHUB_TAG",
-    "utctime_updated": "2022-05-17T20:22:06.731266Z",
-    "package_name": "phantom_tdx",
+    "utctime_updated": "GITHUB_DEPLOYED",
+    "package_name": "phTDX",
     "main_module": "tdx_connector.py",
     "min_phantom_version": "5.3.1.84890",
     "app_wizard_version": "1.0.0",
@@ -147,6 +147,10 @@
             },
             "output": [
                 {
+                    "data_path": "action_result.data.*.id",
+                    "data_type": "string"
+                },
+                {
                     "data_path": "action_result.parameter.priority",
                     "data_type": "string",
                     "contains": [],
@@ -218,7 +222,7 @@
     "pip3_dependencies": {
         "pypi": [
             {
-                "module": "requests"
+                "module": "TDXLib==0.4.2"
             }
         ]
     }
