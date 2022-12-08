@@ -46,7 +46,7 @@ def clean_token(interaction: dict):
         {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
     response = interaction['response']
     if 'Content-Encoding' in response['headers'].keys() and \
-        response['headers']['Content-Encoding'] == ['gzip']:
+            response['headers']['Content-Encoding'] == ['gzip']:
         token = gzip.compress(bytes(token, "ascii"))
     response['body']['string'] = token
 
@@ -55,7 +55,7 @@ def clean_search(interaction: dict):
     uri = f"{URL}/SBTDWebApi/api/accounts/search"
     if interaction['request']['uri'] != uri:
         return
-    
+
     body = json.loads(interaction['response']['body']['string'])
     result = {}
     for item in body:
@@ -71,10 +71,10 @@ def clean_new_ticket(interaction: dict):
     uri = f"{URL}/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False" + \
         "&NotifyRequestor=False&NotifyResponsible=False" + \
         "&AllowRequestorCreation=False"
-    
+
     if interaction['request']['uri'] != uri:
         return
-    
+
     body = json.loads(interaction['response']['body']['string'])
     body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
     body['ID'] = id
@@ -87,6 +87,7 @@ def clean_new_ticket(interaction: dict):
     body['Notify'][0]['Name'] = 'Jane Foster'
     body['Notify'][0]['Value'] = 'nobody@example.com'
     interaction['response']['body']['string'] = json.dumps(body)
+
 
 def clean_people_lookup(interaction: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
@@ -124,8 +125,8 @@ def connector(monkeypatch) -> TdxConnector:
     conn = TdxConnector()
     if not VCR_RECORD:  # Always use cassette values when using cassette
         conn.config = {
-            "TDX_USERNAME": CASSETTE_USERNAME,
-            "TDX_PASSWORD": CASSETTE_PASSWORD,
+            "username": CASSETTE_USERNAME,
+            "password": CASSETTE_PASSWORD,
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
@@ -141,8 +142,8 @@ def connector(monkeypatch) -> TdxConnector:
             raise ValueError('TDX_NETID unset or empty with record mode')
 
         conn.config = {
-            "TDX_USERNAME": username,
-            "TDX_PASSWORD": password,
+            "username": username,
+            "password": password,
         }
 
     conn.logger.setLevel(logging.INFO)
