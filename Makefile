@@ -20,7 +20,7 @@ build: $(PACKAGE).tgz
 $(PACKAGE).tgz: version $(SRCS)
 	tar zcvf $@ -C src .
 
-version: .tag .commit
+version: .tag .commit .deployed
 .tag: $(TAG_FILES)
 	echo version $(TAG)
 	sed -i s/GITHUB_TAG/$(TAG)/ $^
@@ -28,6 +28,11 @@ version: .tag .commit
 .commit: $(HASH_FILES)
 	echo commit $(GITHUB_SHA)
 	sed -i s/GITHUB_SHA/$(GITHUB_SHA)/ $^
+	touch $@
+.deployed: $(TAG_FILES)
+	GITHUB_DEPLOYED:=$(date -u +%FT%X.%6NZ)
+	echo commit $(GITHUB_DEPLOYED)
+	sed -i s/GITHUB_DEPLOYED/$(GITHUB_DEPLOYED)/ $^
 	touch $@
 
 deploy: $(PACKAGE).tgz
@@ -52,7 +57,7 @@ test: venv
 	
 clean:
 	rm -rf venv $(VENV_REQS)
-	rm -f $(PACKAGE).tgz .tag
+	rm -f $(PACKAGE).tgz .tag .commit .deployed
 	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
 	git checkout -- $(TAG_FILES)
 
