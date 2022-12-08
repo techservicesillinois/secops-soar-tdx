@@ -205,11 +205,11 @@ class TdxConnector(BaseConnector):
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
             'TDX API Settings': {
                 "orgname": "myuniversity",
-                "fullhost": "help.uillinois.edu",
+                "fullhost": config['endpoint'],
                 "sandbox": True,  # TODO: How does this become /SBTDWebApi/ ??
                 "username": config['username'],
                 "password": config['password'],
-                "ticketAppId": 66,
+                "ticketAppId": config['appid'],
                 "assetAppId": "",
                 "caching": False,
                 "timezone": "-0500",
