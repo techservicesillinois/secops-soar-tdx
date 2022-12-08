@@ -124,6 +124,7 @@ def clean_people_lookup(interaction: dict):
 def connector(monkeypatch) -> TdxConnector:
     conn = TdxConnector()
     if not VCR_RECORD:  # Always use cassette values when using cassette
+        #  TODO: Lots more configs!
         conn.config = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
