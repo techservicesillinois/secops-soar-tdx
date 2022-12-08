@@ -127,6 +127,8 @@ def connector(monkeypatch) -> TdxConnector:
         conn.config = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
+            "endpoint": "help.uillinois.edu",
+            "appid": "66",
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values

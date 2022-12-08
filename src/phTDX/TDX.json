@@ -39,7 +39,7 @@
             "data_type": "string",
             "required": true,
             "value_list": [],
-            "default": "",
+            "default": "66",
             "order": 2,
             "name": "appid",
             "id": 2
@@ -49,7 +49,7 @@
             "data_type": "string",
             "required": true,
             "value_list": [],
-            "default": "",
+            "default": "help.uillinois.edu",
             "order": 3,
             "name": "endpoint",
             "id": 3
