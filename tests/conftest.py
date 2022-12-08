@@ -43,8 +43,7 @@ def clean_token(interaction: dict):
         return
 
     token = jwt.encode(
-        {'exp': datetime.datetime(2049, 6, 25)},
-        'arenofun', algorithm='HS256')
+        {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
     response = interaction['response']
     if 'Content-Encoding' in response['headers'].keys() and \
         response['headers']['Content-Encoding'] == ['gzip']:
