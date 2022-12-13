@@ -133,21 +133,17 @@ def connector(monkeypatch) -> TdxConnector:
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
-        username = os.environ.get('TDX_USERNAME', None)
-        if not username:
-            raise ValueError('TDX_USERNAME unset or empty with record mode')
+        env_keys = ['username','password','netid',
+                    'endpoint','appid', 'orgname',
+                    'timezone', 'loglevel']
 
-        password = os.environ.get('TDX_PASSWORD', None)
-        if not password:
-            raise ValueError('TDX_PASSWORD unset or empty with record mode')
-
-        if not os.environ.get('TDX_NETID', None):
-            raise ValueError('TDX_NETID unset or empty with record mode')
-
-        conn.config = {
-            "username": username,
-            "password": password,
-        }
+        for key in env_keys:
+            env_key = f"TDX_{key.upper()}"
+            conn.config[key] = os.environ.get(env_key, None)
+            if not conn.config[key]:
+                raise ValueError(f'{env_key} unset or empty with record mode')
+        
+        conn.config['sandbox'] = True  # Always True - no testing in production.
 
     conn.logger.setLevel(logging.INFO)
     return conn

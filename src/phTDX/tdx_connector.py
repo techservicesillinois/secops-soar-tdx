@@ -201,21 +201,18 @@ class TdxConnector(BaseConnector):
 
         self.account_name = "None/Not found" # TODO: pull from config
 
-        # TODO: Most of this config should be available in SOAR settings.
-        # TODO: Pull orgname, sandbox, timezone, logLevel from config.
-        # TODO: Add above to TDX.json.
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
             'TDX API Settings': {
-                "orgname": "myuniversity",
+                "orgname": config['orgname'],  # This seems to have no effect.
                 "fullhost": config['endpoint'],
-                "sandbox": True,  # TODO: How does this become /SBTDWebApi/ ??
+                "sandbox": config['sandbox'],
                 "username": config['username'],
                 "password": config['password'],
                 "ticketAppId": config['appid'],
                 "assetAppId": "",
                 "caching": False,
-                "timezone": "-0500",
-                "logLevel": "ERROR",
+                "timezone": config['timezone'],
+                "logLevel": config['loglevel'],
         }})
 
         return phantom.APP_SUCCESS
