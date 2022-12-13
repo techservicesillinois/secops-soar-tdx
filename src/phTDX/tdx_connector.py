@@ -18,8 +18,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
+# Third-party
 import tdxlib
-# from .tdx_client import tdx_test_connection
 
 __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
@@ -202,14 +202,16 @@ class TdxConnector(BaseConnector):
         self.account_name = "None/Not found" # TODO: pull from config
 
         # TODO: Most of this config should be available in SOAR settings.
+        # TODO: Pull orgname, sandbox, timezone, logLevel from config.
+        # TODO: Add above to TDX.json.
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
             'TDX API Settings': {
                 "orgname": "myuniversity",
-                "fullhost": "help.uillinois.edu",
-                "sandbox": True,
-                "username": config.get('TDX_USERNAME'),
-                "password": config.get('TDX_PASSWORD'),
-                "ticketAppId": 66,
+                "fullhost": config['endpoint'],
+                "sandbox": True,  # TODO: How does this become /SBTDWebApi/ ??
+                "username": config['username'],
+                "password": config['password'],
+                "ticketAppId": config['appid'],
                 "assetAppId": "",
                 "caching": False,
                 "timezone": "-0500",
