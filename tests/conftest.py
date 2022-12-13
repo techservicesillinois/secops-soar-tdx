@@ -17,9 +17,13 @@ pytest_plugins = ("splunk-soar-connectors")
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
 CASSETTE_NETID = 'thor2'
+CASSETTE_ENDPOINT = "help.uillinois.edu"
+CASSETTE_ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
+CASSETTE_ORG_NAME = "Marvel U"
+CASSETTE_TIMEZONE = "0000"
+CASSETTE_LOG_LEVEL = "DEBUG"
 APPID = 66  # APPID and URL are also CASSETTE but need short names
-URL = "https://help.uillinois.edu"
-ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
+URL = f"https://{CASSETTE_ENDPOINT}"
 
 # To record, `export VCR_RECORD=True`
 VCR_RECORD = "VCR_RECORD" in os.environ
@@ -60,7 +64,7 @@ def clean_search(interaction: dict):
     body = json.loads(interaction['response']['body']['string'])
     result = {}
     for item in body:
-        if item['Name'] == ACCOUNT_NAME:
+        if item['Name'] == CASSETTE_ACCOUNT_NAME:
             result = item
     body = [result]
 
@@ -129,8 +133,12 @@ def connector(monkeypatch) -> TdxConnector:
         conn.config = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
-            "endpoint": URL,
+            "endpoint": CASSETTE_ENDPOINT,
             "appid": APPID,
+            "orgname": CASSETTE_ORG_NAME,
+            "timezone": CASSETTE_TIMEZONE,
+            "loglevel": CASSETTE_LOG_LEVEL,
+            "sandbox": True,
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
