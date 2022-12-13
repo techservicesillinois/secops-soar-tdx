@@ -17,6 +17,7 @@ pytest_plugins = ("splunk-soar-connectors")
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
 CASSETTE_NETID = 'thor2'
+APPID = 66  # APPID and URL are also CASSETTE but need short names
 URL = "https://help.uillinois.edu"
 ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
 
@@ -68,7 +69,7 @@ def clean_search(interaction: dict):
 
 def clean_new_ticket(interaction: dict):
     id = 564073
-    uri = f"{URL}/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False" + \
+    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/?EnableNotifyReviewer=False" + \
         "&NotifyRequestor=False&NotifyResponsible=False" + \
         "&AllowRequestorCreation=False"
 
@@ -128,8 +129,8 @@ def connector(monkeypatch) -> TdxConnector:
         conn.config = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
-            "endpoint": "help.uillinois.edu",
-            "appid": "66",
+            "endpoint": URL,
+            "appid": APPID,
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
