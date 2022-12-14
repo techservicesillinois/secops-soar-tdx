@@ -19,9 +19,17 @@ pytest
 If there's changes that require recreating cassettes, set the necessary environment variables:
 
 ```sh
+export TDX_USERNAME="{api username}"
 export TDX_PASSWORD="{password}"
-export TDX_USERNAME="techsvc-securityapi"
-export TDX_NETID="{netid}" # A valid TDX user on your instance
+
+export VCR_RECORD=true
+
+export TDX_NETID="{netid}" # Sets requestor to a valid ID on create_ticket.
+export TDX_APPID=66
+export TDX_ENDPOINT="help.uillinois.edu"
+export TDX_ORGNAME='University of Illinois'  # Does not seem to matter.
+export TDX_TIMEZONE='-0500'
+export TDX_LOGLEVEL='ERROR'
 ```
 
 To record a cassette, set `VCR_RECORD` in the environment as needed.

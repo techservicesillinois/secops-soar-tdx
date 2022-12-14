@@ -53,6 +53,41 @@
             "order": 3,
             "name": "endpoint",
             "id": 3
+        },
+        "sandbox": {
+            "description": "This asset should use the TDX Sandbox",
+            "data_type": "boolean",
+            "required": false,
+            "default": false,
+            "order": 4,
+            "name": "sandbox",
+            "id": 4
+        },
+        "timezone": {
+            "description": "Timezone the TDX server runs in",
+            "data_type": "string",
+            "required": false,
+            "default": "-0500",
+            "order": 5,
+            "name": "timezone",
+            "id": 5
+        },
+        "loglevel": {
+            "description": "Logging level",
+            "data_type": "string",
+            "required": true,
+            "default": "ERROR",
+            "order": 6,
+            "name": "loglevel",
+            "id": 6
+        },
+        "orgname": {
+            "description": "Organization Name",
+            "data_type": "string",
+            "required": true,
+            "order": 7,
+            "name": "orgname",
+            "id": 7
         }
     },
     "actions": [
