@@ -157,12 +157,9 @@
                 "notify": {
                     "description": "Notification setting",
                     "data_type": "boolean",
-                    "required": true,
+                    "required": false,
                     "primary": false,
-                    "contains": [
-                        "vault id"
-                    ],
-                    "default": "",
+                    "default": false,
                     "order": 4,
                     "name": "notify"
                 },
