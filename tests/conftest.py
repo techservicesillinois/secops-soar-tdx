@@ -17,8 +17,13 @@ pytest_plugins = ("splunk-soar-connectors")
 CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
 CASSETTE_NETID = 'thor2'
-URL = "https://help.uillinois.edu"
-ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
+CASSETTE_ENDPOINT = "help.uillinois.edu"
+CASSETTE_ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
+CASSETTE_ORG_NAME = "Marvel U"
+CASSETTE_TIMEZONE = "0000"
+CASSETTE_LOG_LEVEL = "DEBUG"
+APPID = 66  # APPID and URL are also CASSETTE but need short names
+URL = f"https://{CASSETTE_ENDPOINT}"
 
 # To record, `export VCR_RECORD=True`
 VCR_RECORD = "VCR_RECORD" in os.environ
@@ -59,7 +64,7 @@ def clean_search(interaction: dict):
     body = json.loads(interaction['response']['body']['string'])
     result = {}
     for item in body:
-        if item['Name'] == ACCOUNT_NAME:
+        if item['Name'] == CASSETTE_ACCOUNT_NAME:
             result = item
     body = [result]
 
@@ -68,7 +73,7 @@ def clean_search(interaction: dict):
 
 def clean_new_ticket(interaction: dict):
     id = 564073
-    uri = f"{URL}/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False" + \
+    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/?EnableNotifyReviewer=False" + \
         "&NotifyRequestor=False&NotifyResponsible=False" + \
         "&AllowRequestorCreation=False"
 
@@ -128,26 +133,26 @@ def connector(monkeypatch) -> TdxConnector:
         conn.config = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
-            "endpoint": "help.uillinois.edu",
-            "appid": "66",
+            "endpoint": CASSETTE_ENDPOINT,
+            "appid": APPID,
+            "orgname": CASSETTE_ORG_NAME,
+            "timezone": CASSETTE_TIMEZONE,
+            "loglevel": CASSETTE_LOG_LEVEL,
+            "sandbox": True,
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
-        username = os.environ.get('TDX_USERNAME', None)
-        if not username:
-            raise ValueError('TDX_USERNAME unset or empty with record mode')
+        env_keys = ['username','password','netid',
+                    'endpoint','appid', 'orgname',
+                    'timezone', 'loglevel']
 
-        password = os.environ.get('TDX_PASSWORD', None)
-        if not password:
-            raise ValueError('TDX_PASSWORD unset or empty with record mode')
-
-        if not os.environ.get('TDX_NETID', None):
-            raise ValueError('TDX_NETID unset or empty with record mode')
-
-        conn.config = {
-            "username": username,
-            "password": password,
-        }
+        for key in env_keys:
+            env_key = f"TDX_{key.upper()}"
+            conn.config[key] = os.environ.get(env_key, None)
+            if not conn.config[key]:
+                raise ValueError(f'{env_key} unset or empty with record mode')
+        
+        conn.config['sandbox'] = True  # Always True - no testing in production.
 
     conn.logger.setLevel(logging.INFO)
     return conn
