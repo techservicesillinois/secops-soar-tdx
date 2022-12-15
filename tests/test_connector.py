@@ -68,14 +68,11 @@ def test_update_ticket(cassette, connector: TdxConnector):
                 "ticket_id": TICKET_ID,
                 "comments": "This is a test comment.",
                 "new_status": "Resolved",
-                "notify": "",
-                "private": "false",
+                "notify": [],
+                "private": False,
             }],
     }
 
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
-
-    if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["id"] == 564073
 
     assert result[0]["message"] == "Ticket updated"
