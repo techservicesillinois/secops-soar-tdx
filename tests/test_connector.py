@@ -65,7 +65,7 @@ def test_update_ticket(cassette, connector: TdxConnector):
             "appid": APP_ID,
             "identifier": "update_ticket",
             "parameters": [{
-                "ticket_id": TICKET_ID
+                "ticket_id": TICKET_ID,
                 "comments": "This is a test comment.",
                 "new_status": "Resolved",
                 "notify": "",
