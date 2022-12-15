@@ -20,6 +20,7 @@ from bs4 import BeautifulSoup
 
 # Third-party
 import tdxlib
+from tdxlib import tdx_api_exceptions as tdx_ex
 
 __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
@@ -151,20 +152,29 @@ class TdxConnector(BaseConnector):
 
         tdx = self.tdx
 
-        ticket = tdxlib.tdx_ticket.TDXTicket(tdx, {
-            "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
-            "PriorityID": tdx.get_ticket_priority_by_name_id(param['priority'])['ID'],
-            "RequestorUid": tdx.get_person_by_name_email(param['requestor_netid'])['UID'],
-            "Title": param['title'],
-            "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
-        })
-        response = tdx.create_ticket(ticket, silent=(not param['notify']))
-        
-        keys = ["ID"]
-        action_result.add_data({k.lower(): response.ticket_data[k] for k in keys})
+        try:
+            ticket = tdxlib.tdx_ticket.TDXTicket(tdx, {
+                "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
+                "PriorityID": tdx.get_ticket_priority_by_name_id(
+                    param['priority'])['ID'],
+                "RequestorUid": tdx.get_person_by_name_email(
+                    param['requestor'])['UID'],
+                "Title": param['title'],
+                "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
+            })
+            response = tdx.create_ticket(ticket, silent=(not param['notify']))
+        except Exception as ex:
+            if not ex.__class__.__name__ in dir(tdx_ex):
+                raise ex  # Raise unexpected exceptions
+            return action_result.set_status(phantom.APP_ERROR, 
+                f"Create ticket failed: {str(ex)}")
 
-        # TODO: Add error handling
-        return action_result.set_status(phantom.APP_SUCCESS, "New ticket created")
+        keys = ["ID"]
+        action_result.add_data(
+            {k.lower(): response.ticket_data[k] for k in keys})
+
+        return action_result.set_status(phantom.APP_SUCCESS, 
+            "Create ticket succeeded")
 
     def _handle_update_ticket(self, param):
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
@@ -176,9 +186,14 @@ class TdxConnector(BaseConnector):
         tdx = self.tdx
 
         update_args = param
-        response = tdx.update_ticket(**update_args)
+        try:
+            response = tdx.update_ticket(**update_args)
+        except Exception as ex:
+            if not ex.__class__.__name__ in dir(tdx_ex):
+                raise ex  # Raise unexpected exceptions
+            return action_result.set_status(phantom.APP_ERROR, 
+                f"Ticket update failed: {str(ex)}")
 
-        # TODO: Add error handling
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
 
     def handle_action(self, param):
