@@ -158,7 +158,7 @@ class TdxConnector(BaseConnector):
                 "PriorityID": tdx.get_ticket_priority_by_name_id(
                     param['priority'])['ID'],
                 "RequestorUid": tdx.get_person_by_name_email(
-                    param['requestor_netid'])['UID'],
+                    param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
             })

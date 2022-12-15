@@ -44,7 +44,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "identifier": "create_ticket",
             "parameters": [{
                 "priority": "Low",
-                "requestor_netid": os.environ.get('TDX_NETID', CASSETTE_NETID),
+                "requestor": os.environ.get('TDX_NETID', CASSETTE_NETID),
                 "title": "NewBoo",
                 "type": "Security Support",
                 "notify": False,
@@ -66,7 +66,7 @@ def test_failed_create(cassette, connector: TdxConnector):
             "identifier": "create_ticket",
             "parameters": [{
                 "priority": "Low",
-                "requestor_netid": "no_such_user",
+                "requestor": "no_such_user",
                 "title": "NewBoo",
                 "type": "No Such Type",
                 "notify": False,

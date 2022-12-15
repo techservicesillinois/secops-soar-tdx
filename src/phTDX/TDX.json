@@ -121,8 +121,8 @@
                     "order": 0,
                     "name": "priority"
                 },
-                "requestor_netid": {
-                    "description": "Requestor network ID",
+                "requestor": {
+                    "description": "Requestor User ID",
                     "data_type": "string",
                     "required": true,
                     "primary": false,
@@ -130,7 +130,7 @@
                     "value_list": [],
                     "default": "",
                     "order": 1,
-                    "name": "requestor_netid"
+                    "name": "requestor"
                 },
                 "title": {
                     "description": "Ticket title",
