@@ -163,7 +163,23 @@ class TdxConnector(BaseConnector):
         keys = ["ID"]
         action_result.add_data({k.lower(): response.ticket_data[k] for k in keys})
 
+        # TODO: Add error handling
         return action_result.set_status(phantom.APP_SUCCESS, "New ticket created")
+
+    def _handle_update_ticket(self, param):
+        self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
+
+        # Add an action result object to self (BaseConnector) 
+        # to represent the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+
+        tdx = self.tdx
+
+        update_args = param
+        response = tdx.update_ticket(**update_args)
+
+        # TODO: Add error handling
+        return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
 
     def handle_action(self, param):
         ret_val = phantom.APP_SUCCESS
@@ -176,6 +192,9 @@ class TdxConnector(BaseConnector):
 
         if action_id == 'create_ticket':
             ret_val = self._handle_create_ticket(param)
+
+        if action_id == 'update_ticket':
+            ret_val = self._handle_update_ticket(param)
 
         if action_id == 'test_connectivity':
             ret_val = self._handle_test_connectivity(param)

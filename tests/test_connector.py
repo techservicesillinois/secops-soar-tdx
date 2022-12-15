@@ -13,10 +13,12 @@ from phTDX.tdx_connector import TdxConnector
 
 from conftest import VCR_RECORD, CASSETTE_NETID
 
+APP_ID = "fceeaac1-8f96-46d6-9c3b-896e363eb004"
+TICKET_ID = 564073  # Must match cassette
 
 def test_connectivity(cassette, connector: TdxConnector):
     in_json = {
-            "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
+            "appid": APP_ID,
             "identifier": "test_connectivity",
             "parameters": [{}], # TODO: Submit an issue asking to allow [] here.
     }
@@ -27,7 +29,7 @@ def test_connectivity(cassette, connector: TdxConnector):
 
 def test_failed_connectivity(cassette, connector: TdxConnector):
     in_json = {
-            "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
+            "appid": APP_ID,
             "identifier": "test_connectivity",
             "parameters": [{}],
     }
@@ -38,7 +40,7 @@ def test_failed_connectivity(cassette, connector: TdxConnector):
 
 def test_create_ticket(cassette, connector: TdxConnector):
     in_json = {
-            "appid": "fceeaac1-8f96-46d6-9c3b-896e363eb004",
+            "appid": APP_ID,
             "identifier": "create_ticket",
             "parameters": [{
                 "priority": "Low",
@@ -56,3 +58,21 @@ def test_create_ticket(cassette, connector: TdxConnector):
         assert result[0]["data"][0]["id"] == 564073
 
     assert result[0]["message"] == "New ticket created"
+
+
+def test_update_ticket(cassette, connector: TdxConnector):
+    in_json = {
+            "appid": APP_ID,
+            "identifier": "update_ticket",
+            "parameters": [{
+                "ticket_id": TICKET_ID,
+                "comments": "This is a test comment.",
+                "new_status": "Resolved",
+                "notify": [],
+                "private": False,
+            }],
+    }
+
+    result = json.loads(connector._handle_action(json.dumps(in_json), None))
+
+    assert result[0]["message"] == "Ticket updated"
