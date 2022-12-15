@@ -96,3 +96,22 @@ def test_update_ticket(cassette, connector: TdxConnector):
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
 
     assert result[0]["message"] == "Ticket updated"
+
+
+def test_failed_update(cassette, connector: TdxConnector):
+    in_json = {
+            "appid": APP_ID,
+            "identifier": "update_ticket",
+            "parameters": [{
+                "ticket_id": TICKET_ID,
+                "comments": "This is a test comment.",
+                "new_status": "GARBAGE",
+                "notify": [],
+                "private": False,
+            }],
+    }
+
+    result = json.loads(connector._handle_action(json.dumps(in_json), None))
+
+    assert result[0]["message"] == \
+        "Ticket update failed: No status found for GARBAGE"

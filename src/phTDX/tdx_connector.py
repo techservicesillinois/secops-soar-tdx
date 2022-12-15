@@ -186,9 +186,14 @@ class TdxConnector(BaseConnector):
         tdx = self.tdx
 
         update_args = param
-        response = tdx.update_ticket(**update_args)
+        try:
+            response = tdx.update_ticket(**update_args)
+        except Exception as ex:
+            if not ex.__class__.__name__ in dir(tdx_ex):
+                raise ex  # Raise unexpected exceptions
+            return action_result.set_status(phantom.APP_ERROR, 
+                f"Ticket update failed: {str(ex)}")
 
-        # TODO: Add error handling
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
 
     def handle_action(self, param):

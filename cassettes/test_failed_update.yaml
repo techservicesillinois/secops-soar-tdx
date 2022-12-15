@@ -1,0 +1,121 @@
+interactions:
+- request:
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '72'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
+  response:
+    body:
+      string: !!binary |
+        H4sIAHJam2MC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
+        dAUADT92RmkAAAA=
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Thu, 15 Dec 2022 17:33:36 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Thu, 15 Dec 2022 17:34:36 GMT
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 3f39ad44-14dd-46b6-a307-d2a38ec7ff78
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"SearchText": "GARBAGE"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '25'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/statuses/search
+  response:
+    body:
+      string: '[]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Dec 2022 17:33:37 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Thu, 15 Dec 2022 17:34:37 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - 56f23773-e71a-499f-a1bd-8b721d151044
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+version: 1
