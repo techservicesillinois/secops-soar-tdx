@@ -19,10 +19,10 @@ jobs:
     - name: Build Package
       run: |
         make build
-    - name: Post to Splunk SOAR API
-      run: |
-        make deploy
-      env:
-        SOAR_TOKEN: ${{ secrets.SOAR_TOKEN }}
-        SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}
+#    - name: Post to Splunk SOAR API
+#      run: |
+#        make deploy
+#      env:
+#        SOAR_TOKEN: ${{ secrets.SOAR_TOKEN }}
+#        SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}
 
