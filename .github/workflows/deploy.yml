@@ -1,28 +1,43 @@
-# This workflow tests the code in a production-like environment on our internal dev machine.
+# DO NOT EDIT - Update techservicesillinois/splunk-soar-template first
 name: CI/CD
 
 on: [push, pull_request]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
-    - name: Test
+    - name: Virtual Env
       run: |
-        mkdir -p 700 $HOME/.ssh
-        echo "$DEPLOY_KEY" > $HOME/.ssh/id_rsa
-        chmod 400 $HOME/.ssh/id_rsa
+        make venv
+    - name: Linter
+      run: |
+        make lint
+    - name: Static checks
+      run: |
+        make static 
+    - name: Tests
+      run: |
         make test
-      env:
-        DEPLOY_KEY: ${{ secrets.PYTEST_TEMP_RO_DEPLOY_KEY }}
-    - name: Build Package
+    - name: Build Package (Prod)
+      if: startsWith(github.ref, 'refs/tags')
       run: |
         make build
-#    - name: Post to Splunk SOAR API
-#      run: |
-#        make deploy
-#      env:
-#        SOAR_TOKEN: ${{ secrets.SOAR_TOKEN }}
-#        SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}
-
+    - name: Build Package (Test)
+      if: ${{ !startsWith(github.ref, 'refs/tags') }}
+      run: |
+        make build-test
+    - name: Store build as an artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: deployed tar file
+        path: app.tar
+        retention-days: 7
+    - name: Post to Splunk SOAR API
+      if: github.event_name != 'pull_request'
+      run: |
+        make deploy
+      env:
+        SOAR_TOKEN: ${{ secrets.SOAR_TOKEN }}
+        SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}

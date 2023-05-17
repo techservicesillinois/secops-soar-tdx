@@ -1,3 +1,17 @@
+# SOAR
+*.tar
+*.tgz
+*.vscode
+
+# Our Makefile
+.appjson
+.commit
+.deploy
+.lint
+.requirements.venv
+.static
+.tag
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -130,9 +144,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# TDXLIB
-*.ini
-*.tgz
-*.vscode
-.requirements.venv

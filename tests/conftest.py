@@ -8,7 +8,7 @@ import os
 import pytest
 import vcr
 
-from phTDX.tdx_connector import TdxConnector
+from app.app import TdxConnector
 from vcr.serializers import yamlserializer
 
 # Required pytest plugins
@@ -18,7 +18,8 @@ CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
 CASSETTE_NETID = 'thor2'
 CASSETTE_ENDPOINT = "help.uillinois.edu"
-CASSETTE_ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
+# TODO: Pull from config as part of issue #13
+CASSETTE_ACCOUNT_NAME = "None/Not Found"
 CASSETTE_ORG_NAME = "Marvel U"
 CASSETTE_TIMEZONE = "0000"
 CASSETTE_LOG_LEVEL = "DEBUG"
@@ -30,7 +31,7 @@ VCR_RECORD = "VCR_RECORD" in os.environ
 
 
 class CleanYAMLSerializer:
-    def serialize(cassette: dict):
+    def serialize(self, cassette: dict):
         for interaction in cassette['interactions']:
             clean_token(interaction)
             clean_search(interaction)
@@ -38,7 +39,7 @@ class CleanYAMLSerializer:
             clean_people_lookup(interaction)
         return yamlserializer.serialize(cassette)
 
-    def deserialize(cassette: str):
+    def deserialize(self, cassette: str):
         return yamlserializer.deserialize(cassette)
 
 
@@ -47,12 +48,12 @@ def clean_token(interaction: dict):
     if interaction['request']['uri'] != uri:
         return
 
-    token = jwt.encode(
+    jwt_token = jwt.encode(
         {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
     response = interaction['response']
     if 'Content-Encoding' in response['headers'].keys() and \
             response['headers']['Content-Encoding'] == ['gzip']:
-        token = gzip.compress(bytes(token, "ascii"))
+        token = gzip.compress(bytes(jwt_token, "ascii"))
     response['body']['string'] = token
 
 
@@ -73,9 +74,10 @@ def clean_search(interaction: dict):
 
 def clean_new_ticket(interaction: dict):
     id = 564073
-    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/?EnableNotifyReviewer=False" + \
-        "&NotifyRequestor=False&NotifyResponsible=False" + \
-        "&AllowRequestorCreation=False"
+    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/" + \
+          "?EnableNotifyReviewer=False" + \
+          "&NotifyRequestor=False&NotifyResponsible=False" + \
+          "&AllowRequestorCreation=False"
 
     if interaction['request']['uri'] != uri:
         return
@@ -142,8 +144,8 @@ def connector(monkeypatch) -> TdxConnector:
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
-        env_keys = ['username','password','netid',
-                    'endpoint','appid', 'orgname',
+        env_keys = ['username', 'password', 'netid',
+                    'endpoint', 'appid', 'orgname',
                     'timezone', 'loglevel']
 
         for key in env_keys:
@@ -151,8 +153,9 @@ def connector(monkeypatch) -> TdxConnector:
             conn.config[key] = os.environ.get(env_key, None)
             if not conn.config[key]:
                 raise ValueError(f'{env_key} unset or empty with record mode')
-        
-        conn.config['sandbox'] = True  # Always True - no testing in production.
+
+        # Always True - no testing in production.
+        conn.config['sandbox'] = True
 
     conn.logger.setLevel(logging.INFO)
     return conn

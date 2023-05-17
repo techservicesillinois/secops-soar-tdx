@@ -26,6 +26,7 @@ __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
 __deployed__ = 'GITHUB_DEPLOYED'
 
+
 class RetVal(tuple):
 
     def __new__(cls, val1, val2=None):
@@ -41,14 +42,14 @@ class TdxConnector(BaseConnector):
 
         self._state = None
 
-
     def _process_empty_response(self, response, action_result):
         if response.status_code == 200:
             return RetVal(phantom.APP_SUCCESS, {})
 
         return RetVal(
             action_result.set_status(
-                phantom.APP_ERROR, "Empty response and no information in the header"
+                phantom.APP_ERROR,
+                "Empty response and no information in the header"
             ), None
         )
 
@@ -62,13 +63,15 @@ class TdxConnector(BaseConnector):
             split_lines = error_text.split('\n')
             split_lines = [x.strip() for x in split_lines if x.strip()]
             error_text = '\n'.join(split_lines)
-        except:
+        except Exception:
             error_text = "Cannot parse error details"
 
-        message = "Status Code: {0}. Data from server:\n{1}\n".format(status_code, error_text)
+        message = "Status Code: {0}. Data from server:\n{1}\n" \
+                  .format(status_code, error_text)
 
         message = message.replace(u'{', '{{').replace(u'}', '}}')
-        return RetVal(action_result.set_status(phantom.APP_ERROR, message), None)
+        return RetVal(action_result.set_status(phantom.APP_ERROR, message),
+                      None)
 
     def _process_json_response(self, r, action_result):
         # Try a json parse
@@ -77,7 +80,8 @@ class TdxConnector(BaseConnector):
         except Exception as e:
             return RetVal(
                 action_result.set_status(
-                    phantom.APP_ERROR, "Unable to parse JSON response. Error: {0}".format(str(e))
+                    phantom.APP_ERROR,
+                    "Unable to parse JSON response. Error: {0}".format(str(e))
                 ), None
             )
 
@@ -86,15 +90,18 @@ class TdxConnector(BaseConnector):
             return RetVal(phantom.APP_SUCCESS, resp_json)
 
         # You should process the error returned in the json
-        message = "Error from server. Status Code: {0} Data from server: {1}".format(
-            r.status_code,
-            r.text.replace(u'{', '{{').replace(u'}', '}}')
-        )
+        message = "Error from server. Status Code: {0} Data from server: {1}" \
+            .format(
+                r.status_code,
+                r.text.replace(u'{', '{{').replace(u'}', '}}')
+            )
 
-        return RetVal(action_result.set_status(phantom.APP_ERROR, message), None)
+        return RetVal(action_result.set_status(phantom.APP_ERROR, message),
+                      None)
 
     def _process_response(self, r, action_result):
-        # store the r_text in debug data, it will get dumped in the logs if the action fails
+        # store the r_text in debug data,
+        # it will get dumped in the logs if the action fails
         if hasattr(action_result, 'add_debug_data'):
             action_result.add_debug_data({'r_status_code': r.status_code})
             action_result.add_debug_data({'r_text': r.text})
@@ -118,19 +125,22 @@ class TdxConnector(BaseConnector):
             return self._process_empty_response(r, action_result)
 
         # everything else is actually an error at this point
-        message = "Can't process response from server. Status Code: {0} Data from server: {1}".format(
-            r.status_code,
-            r.text.replace('{', '{{').replace('}', '}}')
-        )
+        message = "Can't process response from server." \
+                  "Status Code: {0} Data from server: {1}" \
+            .format(
+                r.status_code,
+                r.text.replace('{', '{{').replace('}', '}}')
+            )
 
-        return RetVal(action_result.set_status(phantom.APP_ERROR, message), None)
-
+        return RetVal(action_result.set_status(phantom.APP_ERROR, message),
+                      None)
 
     def _handle_test_connectivity(self, param):
         action_result = self.add_action_result(ActionResult(dict(param)))
         self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
-        success = self.tdx.auth() # This call results in a second call to `auth`
+        # This call results in a second call to `auth`
+        success = self.tdx.auth()
 
         action_result.add_data({})
 
@@ -144,9 +154,10 @@ class TdxConnector(BaseConnector):
                 phantom.APP_ERROR, "Failed connection")
 
     def _handle_create_ticket(self, param):
-        self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
+        self.save_progress("In action handler for: {0}".format(
+            self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector) 
+        # Add an action result object to self (BaseConnector)
         # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
@@ -164,22 +175,23 @@ class TdxConnector(BaseConnector):
             })
             response = tdx.create_ticket(ticket, silent=(not param['notify']))
         except Exception as ex:
-            if not ex.__class__.__name__ in dir(tdx_ex):
+            if ex.__class__.__name__ not in dir(tdx_ex):
                 raise ex  # Raise unexpected exceptions
-            return action_result.set_status(phantom.APP_ERROR, 
-                f"Create ticket failed: {str(ex)}")
+            return action_result.set_status(phantom.APP_ERROR,
+                                            f"Create ticket failed: {str(ex)}")
 
         keys = ["ID"]
         action_result.add_data(
             {k.lower(): response.ticket_data[k] for k in keys})
 
-        return action_result.set_status(phantom.APP_SUCCESS, 
-            "Create ticket succeeded")
+        return action_result.set_status(phantom.APP_SUCCESS,
+                                        "Create ticket succeeded")
 
     def _handle_update_ticket(self, param):
-        self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
+        self.save_progress("In action handler for: {0}".format(
+            self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector) 
+        # Add an action result object to self (BaseConnector)
         # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
@@ -187,12 +199,12 @@ class TdxConnector(BaseConnector):
 
         update_args = param
         try:
-            response = tdx.update_ticket(**update_args)
+            _ = tdx.update_ticket(**update_args)
         except Exception as ex:
-            if not ex.__class__.__name__ in dir(tdx_ex):
+            if ex.__class__.__name__ not in dir(tdx_ex):
                 raise ex  # Raise unexpected exceptions
-            return action_result.set_status(phantom.APP_ERROR, 
-                f"Ticket update failed: {str(ex)}")
+            return action_result.set_status(phantom.APP_ERROR,
+                                            f"Ticket update failed: {str(ex)}")
 
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
 
@@ -233,9 +245,9 @@ class TdxConnector(BaseConnector):
         optional_config_name = config.get('optional_config_name')
         """
 
-        self.account_name = "None/Not found" # TODO: pull from config
+        self.account_name = "None/Not found"  # TODO: pull from config
 
-        self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={ 
+        self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={
             'TDX API Settings': {
                 "orgname": config['orgname'],  # This seems to have no effect.
                 "fullhost": config['endpoint'],
@@ -247,7 +259,7 @@ class TdxConnector(BaseConnector):
                 "caching": False,
                 "timezone": config['timezone'],
                 "logLevel": config['loglevel'],
-        }})
+            }})
 
         return phantom.APP_SUCCESS
 
@@ -296,10 +308,12 @@ def main():
             headers['Referer'] = login_url
 
             print("Logging into Platform to get the session id")
-            r2 = requests.post(login_url, verify=False, data=data, headers=headers)
+            r2 = requests.post(login_url, verify=False,
+                               data=data, headers=headers)
             session_id = r2.cookies['sessionid']
         except Exception as e:
-            print("Unable to get session id from the platform. Error: " + str(e))
+            print("Unable to get session id from the platform. Error: "
+                  + str(e))
             exit(1)
 
     with open(args.input_test_json) as f:
