@@ -31,7 +31,8 @@ VCR_RECORD = "VCR_RECORD" in os.environ
 
 
 class CleanYAMLSerializer:
-    def serialize(self, cassette: dict):
+    @staticmethod
+    def serialize(cassette: dict):
         for interaction in cassette['interactions']:
             clean_token(interaction)
             clean_search(interaction)
@@ -39,7 +40,8 @@ class CleanYAMLSerializer:
             clean_people_lookup(interaction)
         return yamlserializer.serialize(cassette)
 
-    def deserialize(self, cassette: str):
+    @staticmethod
+    def deserialize(cassette: str):
         return yamlserializer.deserialize(cassette)
 
 
