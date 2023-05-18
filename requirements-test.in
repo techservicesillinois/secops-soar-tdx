@@ -1,8 +1,8 @@
 # Built into SOAR
 beautifulsoup4
 # Production dependencies (Pulled from soar_null_router.json)
-TDXLib
-#git+ssh://git@github.com/cedarville-university/tdxlib.git
+#TDXLib
+git+ssh://git@github.com/techservicesillinois/tdxlib.git@feature/soar
 # Testing dependencies
 flake8
 mypy

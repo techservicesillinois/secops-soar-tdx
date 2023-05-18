@@ -247,8 +247,8 @@ class TdxConnector(BaseConnector):
 
         self.account_name = "None/Not found"  # TODO: pull from config
 
-        self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(config={
-            'TDX API Settings': {
+        self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(
+            config={
                 "orgname": config['orgname'],  # This seems to have no effect.
                 "fullhost": config['endpoint'],
                 "sandbox": config['sandbox'],
@@ -259,7 +259,7 @@ class TdxConnector(BaseConnector):
                 "caching": False,
                 "timezone": config['timezone'],
                 "logLevel": config['loglevel'],
-            }})
+            })
 
         return phantom.APP_SUCCESS
 
