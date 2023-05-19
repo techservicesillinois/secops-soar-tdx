@@ -20,7 +20,7 @@ CASSETTE_NETID = 'thor2'
 CASSETTE_ENDPOINT = "help.uillinois.edu"
 # TODO: Pull from config as part of issue #13
 CASSETTE_ACCOUNT_NAME = "None/Not Found"
-CASSETTE_ORG_NAME = "Marvel U"
+CASSETTE_ORG_NAME = CASSETTE_ENDPOINT
 CASSETTE_TIMEZONE = "0000"
 CASSETTE_LOG_LEVEL = "DEBUG"
 APPID = 66  # APPID and URL are also CASSETTE but need short names
