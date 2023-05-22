@@ -80,7 +80,8 @@ def clean_new_ticket(request: dict, response: dict):
 
     body['Notify'][0]['Name'] = 'Jane Foster'
     body['Notify'][0]['Value'] = 'nobody@example.com'
-    response['body']['string'] = json.dumps(body)
+    env_netid = os.environ.get('TDX_NETID', None)
+    response['body']['string'] = json.dumps(body).replace(env_netid, 'thor2')
 
 
 def clean_people_lookup(request: dict, response: dict):
@@ -112,6 +113,9 @@ def clean_people_lookup(request: dict, response: dict):
     body[0]['AlertEmail'] = 'nobody@example.com'
 
     response['body']['string'] = json.dumps(body)
+    env_netid = os.environ.get('TDX_NETID', None)
+    response['body']['string'].replace(env_netid, 'thor2')
+
 
 
 @pytest.fixture
