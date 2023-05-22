@@ -44,6 +44,8 @@ def clean_token(request: dict, response: dict):
     response['body']['string'] = token
 
 # TODO: Move clean_env_string into the vcr_cleaner library for shared use.
+
+
 def clean_env_strings(request: dict, response: dict):
     clean_strings = os.environ.get('CLEAN_STRINGS', "").split(',')
     if 'bytes' in str(type(response['body']['string'])):
@@ -52,6 +54,7 @@ def clean_env_strings(request: dict, response: dict):
     for clean_me in clean_strings:
         body = body.replace(clean_me, 'CLEANED')
     response['body']['string'] = body
+
 
 def clean_search(request: dict, response: dict):
     uri = f"{URL}/SBTDWebApi/api/accounts/search"
@@ -123,7 +126,6 @@ def clean_people_lookup(request: dict, response: dict):
     response['body']['string'] = json.dumps(body)
     env_netid = os.environ.get('TDX_NETID', None)
     response['body']['string'].replace(env_netid, 'thor2')
-
 
 
 @pytest.fixture
