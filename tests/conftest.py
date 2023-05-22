@@ -43,6 +43,15 @@ def clean_token(request: dict, response: dict):
         token = gzip.compress(bytes(jwt_token, "ascii"))
     response['body']['string'] = token
 
+# TODO: Move clean_env_string into the vcr_cleaner library for shared use.
+def clean_env_strings(request: dict, response: dict):
+    clean_strings = os.environ.get('CLEAN_STRINGS', "").split(',')
+    if 'bytes' in str(type(response['body']['string'])):
+        return
+    body = response['body']['string']
+    for clean_me in clean_strings:
+        body = body.replace(clean_me, 'CLEANED')
+    response['body']['string'] = body
 
 def clean_search(request: dict, response: dict):
     uri = f"{URL}/SBTDWebApi/api/accounts/search"
@@ -80,8 +89,7 @@ def clean_new_ticket(request: dict, response: dict):
 
     body['Notify'][0]['Name'] = 'Jane Foster'
     body['Notify'][0]['Value'] = 'nobody@example.com'
-    env_netid = os.environ.get('TDX_NETID', None)
-    response['body']['string'] = json.dumps(body).replace(env_netid, 'thor2')
+    response['body']['string'] = json.dumps(body)
 
 
 def clean_people_lookup(request: dict, response: dict):
@@ -180,6 +188,7 @@ def cassette(request) -> vcr.cassette.Cassette:
     yaml_cleaner.register_cleaner(clean_search)
     yaml_cleaner.register_cleaner(clean_new_ticket)
     yaml_cleaner.register_cleaner(clean_people_lookup)
+    yaml_cleaner.register_cleaner(clean_env_strings)
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:
