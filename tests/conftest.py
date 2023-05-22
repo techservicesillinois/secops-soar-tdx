@@ -1,7 +1,4 @@
-import datetime
-import gzip
 import json
-import jwt
 import logging
 import os
 
@@ -11,6 +8,7 @@ import vcr
 from app.app import TdxConnector
 
 from vcr_cleaner import CleanYAMLSerializer
+from vcr_cleaner.cleaners.jwt_token import clean_token
 
 # Required pytest plugins
 pytest_plugins = ("splunk-soar-connectors")
@@ -30,19 +28,6 @@ URL = f"https://{CASSETTE_ENDPOINT}"
 # To record, `export VCR_RECORD=True`
 VCR_RECORD = "VCR_RECORD" in os.environ
 
-
-# TODO: Update this to use clean_token from vcr_cleaner
-def clean_token(request: dict, response: dict):
-    uri = f"{URL}/SBTDWebApi/api/auth"
-    if request['uri'] != uri:
-        return
-
-    jwt_token = jwt.encode(
-        {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
-    if 'Content-Encoding' in response['headers'].keys() and \
-            response['headers']['Content-Encoding'] == ['gzip']:
-        token = gzip.compress(bytes(jwt_token, "ascii"))
-        response['body']['string'] = token
 
 # TODO: Move clean_env_string into the vcr_cleaner library for shared use.
 
