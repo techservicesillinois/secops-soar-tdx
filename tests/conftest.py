@@ -31,6 +31,7 @@ URL = f"https://{CASSETTE_ENDPOINT}"
 VCR_RECORD = "VCR_RECORD" in os.environ
 
 
+# TODO: Update this to use clean_token from vcr_cleaner
 def clean_token(request: dict, response: dict):
     uri = f"{URL}/SBTDWebApi/api/auth"
     if request['uri'] != uri:
@@ -41,7 +42,7 @@ def clean_token(request: dict, response: dict):
     if 'Content-Encoding' in response['headers'].keys() and \
             response['headers']['Content-Encoding'] == ['gzip']:
         token = gzip.compress(bytes(jwt_token, "ascii"))
-    response['body']['string'] = token
+        response['body']['string'] = token
 
 # TODO: Move clean_env_string into the vcr_cleaner library for shared use.
 
