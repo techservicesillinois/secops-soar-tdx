@@ -27,7 +27,7 @@ def test_failed_connectivity(cassette, connector: TdxConnector):
         "identifier": "test_connectivity",
         "parameters": [{}],
     }
-    # BEWARE: You can uncomment this line to force a 403, but leaving it 
+    # BEWARE: You can uncomment this line to force a 403, but leaving it
     # uncommented while recording will lock out our test account.
     # connector.config['password'] = 'this_is_nonsense'
     result = json.loads(connector._handle_action(json.dumps(in_json), None))
