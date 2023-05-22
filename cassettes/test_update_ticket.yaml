@@ -13,13 +13,13 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.30.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIAFlOm2MC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        H4sIABvIa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
         8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
         dAUADT92RmkAAAA=
     headers:
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 16:41:59 GMT
+      - Mon, 22 May 2023 19:52:58 GMT
       Expires:
       - '-1'
       Pragma:
@@ -46,13 +46,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '50'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 16:42:58 GMT
+      - Mon, 22 May 2023 19:53:19 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - c29850df-d102-4def-a6fe-6b739b945992
+      - eda3edf6-9b4a-49ee-a789-3618029eebc7
       X-UA-Compatible:
       - IE=edge
     status:
@@ -74,7 +74,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.30.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/statuses/search
   response:
@@ -88,7 +88,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 16:42:00 GMT
+      - Mon, 22 May 2023 19:52:58 GMT
       Expires:
       - '-1'
       Pragma:
@@ -102,7 +102,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 16:43:00 GMT
+      - Mon, 22 May 2023 19:53:59 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -110,7 +110,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - f5c3b16b-2691-412d-ad20-4a95b0b006f5
+      - 5d2c7570-7aaa-471c-98a8-70e8cfccc897
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -135,26 +135,25 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.30.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/564073/feed
   response:
     body:
-      string: '{"ID":2340477,"CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedRefID":355130,"CreatedFullName":"Tech
+      string: '{"ID":2341638,"CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedRefID":355130,"CreatedFullName":"Tech
         Services Security API","CreatedFirstName":"Tech Services","CreatedLastName":"Security
-        API","CreatedByPicPath":null,"CreatedDate":"2022-12-15T16:42:00.94Z","LastUpdatedDate":"2022-12-15T16:42:00.94Z","ProjectID":0,"ProjectName":null,"PlanID":0,"PlanName":null,"ItemType":9,"ItemID":564073,"ItemTitle":"NewBoo","ReferenceID":null,"Body":"Changed
-        Status from \"<b>Open</b>\" to \"<b>Resolved</b>\".<br><br>This is a test
-        comment.","IsRichHtml":false,"UpdateType":2,"NotifiedList":null,"IsPrivate":false,"IsParent":false,"Replies":[],"RepliesCount":0,"Likes":[],"ILike":false,"LikesCount":0,"Participants":[{"FullName":"Tech
-        Services Security API","Email":""}],"BreadcrumbsHtml":null,"HasAttachment":false,"Uri":"api/feed/2340477"}'
+        API","CreatedByPicPath":null,"CreatedDate":"2023-05-22T19:52:59.663Z","LastUpdatedDate":"2023-05-22T19:52:59.663Z","ProjectID":0,"ProjectName":null,"PlanID":0,"PlanName":null,"ItemType":9,"ItemID":564073,"ItemTitle":"NewBoo","ReferenceID":null,"Body":"This
+        is a test comment.","IsRichHtml":false,"UpdateType":1,"NotifiedList":null,"IsPrivate":false,"IsParent":false,"Replies":[],"RepliesCount":0,"Likes":[],"ILike":false,"LikesCount":0,"Participants":[{"FullName":"Tech
+        Services Security API","Email":""}],"BreadcrumbsHtml":null,"HasAttachment":false,"Uri":"api/feed/2341638"}'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '839'
+      - '774'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 16:42:00 GMT
+      - Mon, 22 May 2023 19:52:59 GMT
       Expires:
       - '-1'
       Pragma:
@@ -168,7 +167,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 16:43:00 GMT
+      - Mon, 22 May 2023 19:53:59 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -176,7 +175,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 479eee17-fedc-49eb-a73b-631528207c9a
+      - 7f6d7075-9a40-4791-baf8-94a5a03af3d9
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:

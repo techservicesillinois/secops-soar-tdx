@@ -13,15 +13,15 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.30.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIAHSDhmMC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwBCnK
-        jIzwzEwL1MvzqHArzU5Mq6owr/RIrQxIc3J1L06vCMzMC6n0L6xy9ysrLQnP93IxL7QAAKLoH7Nj
-        AAAA
+        H4sIAArIa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
+        dAUADT92RmkAAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -32,25 +32,27 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Tue, 29 Nov 2022 22:10:59 GMT
+      - Mon, 22 May 2023 19:52:39 GMT
       Expires:
       - '-1'
       Pragma:
       - no-cache
       Strict-Transport-Security:
-      - max-age=86400
+      - max-age=31536000
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '56'
       X-RateLimit-Reset:
-      - Tue, 29 Nov 2022 22:11:59 GMT
+      - Mon, 22 May 2023 19:53:19 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 8623835d-1b02-4145-8148-71bf59edeb76
+      - 2a7b774c-920f-4208-8596-27dedad47afa
       X-UA-Compatible:
       - IE=edge
     status:
@@ -70,15 +72,15 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.30.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIAHWDhmMC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwBCnK
-        jIzwzEwL1MvzqHArzU5Mq6owr/RIrQxIc3J1L06vCMzMC6n0L6xy9ysrLQnP93IxL7QAAKLoH7Nj
-        AAAA
+        H4sIAArIa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
+        dAUADT92RmkAAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -89,25 +91,27 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Tue, 29 Nov 2022 22:11:01 GMT
+      - Mon, 22 May 2023 19:52:41 GMT
       Expires:
       - '-1'
       Pragma:
       - no-cache
       Strict-Transport-Security:
-      - max-age=86400
+      - max-age=31536000
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '58'
+      - '55'
       X-RateLimit-Reset:
-      - Tue, 29 Nov 2022 22:11:59 GMT
+      - Mon, 22 May 2023 19:53:19 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 3575f8d7-aa72-4865-b529-a2147ac65352
+      - 7a287b19-8283-45bd-a258-dd148a4f69cc
       X-UA-Compatible:
       - IE=edge
     status:
