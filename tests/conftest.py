@@ -11,6 +11,8 @@ import vcr
 from app.app import TdxConnector
 from vcr.serializers import yamlserializer
 
+from vcr_cleaner import CleanYAMLSerializer
+
 # Required pytest plugins
 pytest_plugins = ("splunk-soar-connectors")
 
@@ -28,21 +30,6 @@ URL = f"https://{CASSETTE_ENDPOINT}"
 
 # To record, `export VCR_RECORD=True`
 VCR_RECORD = "VCR_RECORD" in os.environ
-
-
-class CleanYAMLSerializer:
-    @staticmethod
-    def serialize(cassette: dict):
-        for interaction in cassette['interactions']:
-            clean_token(interaction)
-            clean_search(interaction)
-            clean_new_ticket(interaction)
-            clean_people_lookup(interaction)
-        return yamlserializer.serialize(cassette)
-
-    @staticmethod
-    def deserialize(cassette: str):
-        return yamlserializer.deserialize(cassette)
 
 
 def clean_token(interaction: dict):
@@ -185,7 +172,12 @@ def cassette(request) -> vcr.cassette.Cassette:
         filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
         match_on=['uri', 'method'],
     )
-    my_vcr.register_serializer("cleanyaml", CleanYAMLSerializer)
+    yaml_cleaner = CleanYAMLSerializer()
+    yaml_cleaer.register_cleaner(clean_token)
+    yaml_cleaer.register_cleaner(clean_search)
+    yaml_cleaer.register_cleaner(clean_new_ticket)
+    yaml_cleaer.register_cleaner(clean_people_lookup)
+    my_vcr.register_serializer("cleanyaml", yaml_cleaner)
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:
