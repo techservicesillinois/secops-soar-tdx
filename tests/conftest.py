@@ -9,6 +9,7 @@ from app.app import TdxConnector
 
 from vcr_cleaner import CleanYAMLSerializer, clean_if
 from vcr_cleaner.cleaners.jwt_token import clean_token
+from vcr_cleaner.cleaners.env_strings import clean_env_strings
 
 # Required pytest plugins
 pytest_plugins = ("splunk-soar-connectors")
@@ -27,19 +28,6 @@ URL = f"https://{CASSETTE_ENDPOINT}"
 
 # To record, `export VCR_RECORD=True`
 VCR_RECORD = "VCR_RECORD" in os.environ
-
-
-# TODO: Move clean_env_string into the vcr_cleaner library for shared use.
-
-
-def clean_env_strings(request: dict, response: dict):
-    clean_strings = os.environ.get('CLEAN_STRINGS', "").split(',')
-    if 'bytes' in str(type(response['body']['string'])):
-        return
-    body = response['body']['string']
-    for clean_me in clean_strings:
-        body = body.replace(clean_me, 'CLEANED')
-    response['body']['string'] = body
 
 
 def clean_search(request: dict, response: dict):
