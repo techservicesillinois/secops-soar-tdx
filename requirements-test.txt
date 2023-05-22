@@ -1,3 +1,4 @@
+autopep8==2.0.2
 beautifulsoup4==4.12.2
 certifi==2023.5.7
 charset-normalizer==3.1.0
@@ -33,7 +34,7 @@ types-requests==2.30.0.0
 types-urllib3==1.26.25.13
 typing_extensions==4.5.0
 urllib3==1.26.15
-vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@7f5c1459e994ff733a989878eaecd3ec72ae6052
+vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@eaf2def82b139f767809c7f75b9d5e2551dcca43
 vcrpy==4.2.1
 wrapt==1.15.0
 yarl==1.9.2
