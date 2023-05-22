@@ -13,15 +13,15 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIAArIa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
-        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
-        dAUADT92RmkAAAA=
+        H4sIAInOa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
+        yQYA/EJXWGkAAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:39 GMT
+      - Mon, 22 May 2023 20:20:20 GMT
       Expires:
       - '-1'
       Pragma:
@@ -46,13 +46,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '56'
+      - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:19 GMT
+      - Mon, 22 May 2023 20:21:20 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 2a7b774c-920f-4208-8596-27dedad47afa
+      - ed532263-c7d3-4b71-89fe-322c5dff7767
       X-UA-Compatible:
       - IE=edge
     status:
@@ -72,15 +72,15 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIAArIa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
-        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
-        dAUADT92RmkAAAA=
+        H4sIAInOa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
+        yQYA/EJXWGkAAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -91,7 +91,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:41 GMT
+      - Mon, 22 May 2023 20:20:24 GMT
       Expires:
       - '-1'
       Pragma:
@@ -105,13 +105,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '55'
+      - '58'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:19 GMT
+      - Mon, 22 May 2023 20:21:20 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 7a287b19-8283-45bd-a258-dd148a4f69cc
+      - e6cf6f8f-890f-4934-9faf-33eca50a56d7
       X-UA-Compatible:
       - IE=edge
     status:

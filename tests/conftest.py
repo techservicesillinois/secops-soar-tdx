@@ -7,7 +7,7 @@ import vcr
 
 from app.app import TdxConnector
 
-from vcr_cleaner import CleanYAMLSerializer
+from vcr_cleaner import CleanYAMLSerializer, clean_if
 from vcr_cleaner.cleaners.jwt_token import clean_token
 
 # Required pytest plugins
@@ -161,6 +161,11 @@ def remove_creds(request):
     return request
 
 
+@clean_if(uri=f"{URL}/SBTDWebApi/api/auth")
+def clean_auth(request, response):
+    clean_token(request, response)
+
+
 @pytest.fixture
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
@@ -172,7 +177,7 @@ def cassette(request) -> vcr.cassette.Cassette:
     )
     yaml_cleaner = CleanYAMLSerializer()
     my_vcr.register_serializer("cleanyaml", yaml_cleaner)
-    yaml_cleaner.register_cleaner(clean_token)
+    yaml_cleaner.register_cleaner(clean_auth)
     yaml_cleaner.register_cleaner(clean_search)
     yaml_cleaner.register_cleaner(clean_new_ticket)
     yaml_cleaner.register_cleaner(clean_people_lookup)

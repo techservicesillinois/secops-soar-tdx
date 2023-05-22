@@ -13,15 +13,15 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIABPIa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
-        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
-        dAUADT92RmkAAAA=
+        H4sIAJjOa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
+        yQYA/EJXWGkAAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:46 GMT
+      - Mon, 22 May 2023 20:20:29 GMT
       Expires:
       - '-1'
       Pragma:
@@ -46,13 +46,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '52'
+      - '55'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:19 GMT
+      - Mon, 22 May 2023 20:21:20 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - a55a248e-9f29-45bf-a216-5f090bb73525
+      - b4da3463-f0fd-497a-9ada-55fa4891caec
       X-UA-Compatible:
       - IE=edge
     status:
@@ -75,7 +75,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/accounts/search
   response:
@@ -95,7 +95,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:48 GMT
+      - Mon, 22 May 2023 20:20:31 GMT
       Expires:
       - '-1'
       Pragma:
@@ -109,7 +109,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:48 GMT
+      - Mon, 22 May 2023 20:21:31 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -117,7 +117,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 148c9d9b-7dd8-46f1-8cff-13e068a80310
+      - 6112f319-56d8-415e-b8e3-76741a6e399f
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -139,7 +139,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: GET
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/priorities
   response:
@@ -155,7 +155,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:50 GMT
+      - Mon, 22 May 2023 20:20:36 GMT
       Expires:
       - '-1'
       Pragma:
@@ -169,7 +169,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:50 GMT
+      - Mon, 22 May 2023 20:21:36 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -177,7 +177,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 17fdabb4-1bad-4416-b636-e02c938ca281
+      - 04eca4b3-52f2-4447-95c9-810b7f2bebce
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -199,7 +199,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: GET
     uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=thor2&maxResults=1
   response:
@@ -235,7 +235,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:50 GMT
+      - Mon, 22 May 2023 20:20:37 GMT
       Expires:
       - '-1'
       Pragma:
@@ -249,7 +249,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:00 GMT
+      - Mon, 22 May 2023 20:20:47 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -257,7 +257,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - cd2612a0-40a2-455c-be33-5d869514ee59
+      - 980523bc-a0af-406d-a6a8-8739ad4d1026
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -279,7 +279,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: GET
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/types
   response:
@@ -313,7 +313,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:50 GMT
+      - Mon, 22 May 2023 20:20:38 GMT
       Expires:
       - '-1'
       Pragma:
@@ -327,7 +327,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:51 GMT
+      - Mon, 22 May 2023 20:21:38 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -335,7 +335,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 00476a8f-1313-49cf-a674-c779929495a7
+      - e0174b24-eb9f-4d05-aa1f-fec3adc9a35f
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -360,7 +360,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False&NotifyRequestor=False&NotifyResponsible=False&AllowRequestorCreation=False
   response:
@@ -378,9 +378,9 @@ interactions:
         false, "IsSlaResolveByViolated": false, "RespondByDate": "0001-01-01T00:00:00",
         "ResolveByDate": "0001-01-01T00:00:00", "SlaBeginDate": "0001-01-01T00:00:00",
         "IsOnHold": false, "PlacedOnHoldDate": "0001-01-01T00:00:00", "GoesOffHoldDate":
-        "0001-01-01T00:00:00", "CreatedDate": "2023-05-22T19:52:51.647Z", "CreatedUid":
+        "0001-01-01T00:00:00", "CreatedDate": "2023-05-22T20:20:40.287Z", "CreatedUid":
         "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "CreatedFullName": "Tech Services
-        Security API", "CreatedEmail": "", "ModifiedDate": "2023-05-22T19:52:51.647Z",
+        Security API", "CreatedEmail": "", "ModifiedDate": "2023-05-22T20:20:40.287Z",
         "ModifiedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "ModifiedFullName":
         "Tech Services Security API", "RequestorName": "Jane Foster", "RequestorFirstName":
         "Jane", "RequestorLastName": "Foster", "RequestorEmail": "nobody@example.com",
@@ -388,7 +388,7 @@ interactions:
         "ActualMinutes": 0, "EstimatedMinutes": 0, "DaysOld": 0, "StartDate": null,
         "EndDate": null, "ResponsibleUid": null, "ResponsibleFullName": "Unassigned",
         "ResponsibleEmail": "", "ResponsibleGroupID": 611, "ResponsibleGroupName":
-        "UIUC-TechServices-Privacy Office", "RespondedDate": "2023-05-22T19:52:51.647Z",
+        "UIUC-TechServices-Privacy Office", "RespondedDate": "2023-05-22T20:20:40.287Z",
         "RespondedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "RespondedFullName":
         "Tech Services Security API", "CompletedDate": "0001-01-01T00:00:00", "CompletedUid":
         null, "CompletedFullName": "", "ReviewerUid": null, "ReviewerFullName": "",
@@ -417,7 +417,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 19:52:51 GMT
+      - Mon, 22 May 2023 20:20:40 GMT
       Expires:
       - '-1'
       Pragma:
@@ -431,7 +431,7 @@ interactions:
       X-RateLimit-Remaining:
       - '119'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 19:53:51 GMT
+      - Mon, 22 May 2023 20:21:39 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -439,7 +439,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 4c68d313-4d4b-42a8-b332-cc145de50868
+      - 5544a746-73a9-43e7-957a-25fab44d4722
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:

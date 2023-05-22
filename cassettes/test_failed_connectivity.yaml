@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
@@ -27,7 +27,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:00:09 GMT
+      - Mon, 22 May 2023 20:20:26 GMT
       Expires:
       - '-1'
       Pragma:
@@ -39,13 +39,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '57'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:01:07 GMT
+      - Mon, 22 May 2023 20:21:20 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - b7c2ffa2-54f1-4560-939d-96eb9fded4a6
+      - 6b409627-8961-4062-b9c9-5dfc1ae59b26
       X-UA-Compatible:
       - IE=edge
     status:
@@ -65,7 +65,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
@@ -79,7 +79,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:00:10 GMT
+      - Mon, 22 May 2023 20:20:28 GMT
       Expires:
       - '-1'
       Pragma:
@@ -91,13 +91,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '58'
+      - '56'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:01:07 GMT
+      - Mon, 22 May 2023 20:21:20 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - d5a13189-be5f-4055-bee4-e6fe0a703932
+      - 421f0b12-a724-4b78-b315-65510c828a2a
       X-UA-Compatible:
       - IE=edge
     status:
