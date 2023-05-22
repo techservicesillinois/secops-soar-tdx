@@ -9,7 +9,6 @@ import pytest
 import vcr
 
 from app.app import TdxConnector
-from vcr.serializers import yamlserializer
 
 from vcr_cleaner import CleanYAMLSerializer
 
@@ -32,46 +31,45 @@ URL = f"https://{CASSETTE_ENDPOINT}"
 VCR_RECORD = "VCR_RECORD" in os.environ
 
 
-def clean_token(interaction: dict):
+def clean_token(request: dict, response: dict):
     uri = f"{URL}/SBTDWebApi/api/auth"
-    if interaction['request']['uri'] != uri:
+    if request['uri'] != uri:
         return
 
     jwt_token = jwt.encode(
         {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
-    response = interaction['response']
     if 'Content-Encoding' in response['headers'].keys() and \
             response['headers']['Content-Encoding'] == ['gzip']:
         token = gzip.compress(bytes(jwt_token, "ascii"))
     response['body']['string'] = token
 
 
-def clean_search(interaction: dict):
+def clean_search(request: dict, response: dict):
     uri = f"{URL}/SBTDWebApi/api/accounts/search"
-    if interaction['request']['uri'] != uri:
+    if request['uri'] != uri:
         return
 
-    body = json.loads(interaction['response']['body']['string'])
+    body = json.loads(response['body']['string'])
     result = {}
     for item in body:
         if item['Name'] == CASSETTE_ACCOUNT_NAME:
             result = item
     body = [result]
 
-    interaction['response']['body']['string'] = json.dumps(body)
+    response['body']['string'] = json.dumps(body)
 
 
-def clean_new_ticket(interaction: dict):
+def clean_new_ticket(request: dict, response: dict):
     id = 564073
     uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/" + \
           "?EnableNotifyReviewer=False" + \
           "&NotifyRequestor=False&NotifyResponsible=False" + \
           "&AllowRequestorCreation=False"
 
-    if interaction['request']['uri'] != uri:
+    if request['uri'] != uri:
         return
 
-    body = json.loads(interaction['response']['body']['string'])
+    body = json.loads(response['body']['string'])
     body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
     body['ID'] = id
     body['RequestorEmail'] = 'nobody@example.com'
@@ -82,19 +80,19 @@ def clean_new_ticket(interaction: dict):
 
     body['Notify'][0]['Name'] = 'Jane Foster'
     body['Notify'][0]['Value'] = 'nobody@example.com'
-    interaction['response']['body']['string'] = json.dumps(body)
+    response['body']['string'] = json.dumps(body)
 
 
-def clean_people_lookup(interaction: dict):
+def clean_people_lookup(request: dict, response: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
     netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
     uri = "%s/SBTDWebApi/api/people/lookup?searchText=%s&maxResults=1"
 
-    if interaction['request']['uri'] != uri % (URL, netid):
+    if request['uri'] != uri % (URL, netid):
         return
 
-    interaction['request']['uri'] = uri % (URL, 'thor2')
-    body = json.loads(interaction['response']['body']['string'])
+    request['uri'] = uri % (URL, 'thor2')
+    body = json.loads(response['body']['string'])
 
     body[0]['Salutation'] = 'Doctor'
     body[0]['FirstName'] = 'Jane'
@@ -113,7 +111,7 @@ def clean_people_lookup(interaction: dict):
     body[0]['AlternateEmail'] = 'nobody@example.com'
     body[0]['AlertEmail'] = 'nobody@example.com'
 
-    interaction['response']['body']['string'] = json.dumps(body)
+    response['body']['string'] = json.dumps(body)
 
 
 @pytest.fixture
@@ -173,11 +171,11 @@ def cassette(request) -> vcr.cassette.Cassette:
         match_on=['uri', 'method'],
     )
     yaml_cleaner = CleanYAMLSerializer()
-    yaml_cleaer.register_cleaner(clean_token)
-    yaml_cleaer.register_cleaner(clean_search)
-    yaml_cleaer.register_cleaner(clean_new_ticket)
-    yaml_cleaer.register_cleaner(clean_people_lookup)
     my_vcr.register_serializer("cleanyaml", yaml_cleaner)
+    yaml_cleaner.register_cleaner(clean_token)
+    yaml_cleaner.register_cleaner(clean_search)
+    yaml_cleaner.register_cleaner(clean_new_ticket)
+    yaml_cleaner.register_cleaner(clean_people_lookup)
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:
