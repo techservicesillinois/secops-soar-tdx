@@ -139,7 +139,6 @@ def connector(monkeypatch) -> TdxConnector:
             "password": CASSETTE_PASSWORD,
             "endpoint": CASSETTE_ENDPOINT,
             "appid": APPID,
-            "orgname": CASSETTE_ORG_NAME,
             "timezone": CASSETTE_TIMEZONE,
             "loglevel": CASSETTE_LOG_LEVEL,
             "sandbox": True,
@@ -147,7 +146,7 @@ def connector(monkeypatch) -> TdxConnector:
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
         env_keys = ['username', 'password', 'netid',
-                    'endpoint', 'appid', 'orgname',
+                    'endpoint', 'appid',
                     'timezone', 'loglevel']
 
         for key in env_keys:

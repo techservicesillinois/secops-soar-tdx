@@ -249,8 +249,7 @@ class TdxConnector(BaseConnector):
 
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(
             config={
-                "orgname": config['orgname'],  # This seems to have no effect.
-                "fullhost": config['endpoint'],
+                "full_host": config['endpoint'],
                 "sandbox": config['sandbox'],
                 "username": config['username'],
                 "password": config['password'],
