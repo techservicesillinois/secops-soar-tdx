@@ -30,6 +30,7 @@ export TDX_APPID=66
 export TDX_ENDPOINT="help.uillinois.edu"
 export TDX_TIMEZONE='-0500'
 export TDX_LOGLEVEL='ERROR'
+export CLEAN_STRINGS='Edward Delaporte,delaport'
 ```
 
 To record a cassette, set `VCR_RECORD` in the environment as needed.
