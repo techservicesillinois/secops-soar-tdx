@@ -30,11 +30,11 @@ TDXLib @ git+https://github.com/techservicesillinois/tdxlib.git@9184e50573954717
 tomli==2.0.1
 types-beautifulsoup4==4.12.0.5
 types-html5lib==1.1.11.14
-types-requests==2.30.0.0
+types-requests==2.31.0.0
 types-urllib3==1.26.25.13
-typing_extensions==4.5.0
+typing_extensions==4.6.1
 urllib3==1.26.15
-vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@eaf2def82b139f767809c7f75b9d5e2551dcca43
-vcrpy==4.2.1
+vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@6d5a04537ee2e3facf87d1e022cbf73236bb4d3d
+vcrpy==4.3.0
 wrapt==1.15.0
 yarl==1.9.2

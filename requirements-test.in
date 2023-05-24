@@ -31,5 +31,4 @@ urllib3==1.26.15
 #pytest-splunk-soar-connectors
 wheel # required by the pytest-splunk-soar-connectors package
 git+https://github.com/splunk/pytest-splunk-soar-connectors.git
-# TODO: Unpin after branch is merged
-git+https://github.com/techservicesillinois/vcrpy-cleaner.git@fix/clean_token
+git+https://github.com/techservicesillinois/vcrpy-cleaner.git
