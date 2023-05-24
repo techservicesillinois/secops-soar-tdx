@@ -6,6 +6,9 @@ on: [push, pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: ["3.9"]
     steps:
     - uses: actions/checkout@v2
     - name: Virtual Env
