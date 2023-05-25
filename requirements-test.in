@@ -3,7 +3,7 @@ beautifulsoup4
 # Production dependencies (Pulled from soar_null_router.json)
 #TDXLib
 # TODO: Unpin after https://github.com/cedarville-university/tdxlib/pull/68
-git+https://github.com/techservicesillinois/tdxlib.git@feature/soar
+git+https://github.com/techservicesillinois/tdxlib.git
 # Testing dependencies
 autopep8
 flake8
