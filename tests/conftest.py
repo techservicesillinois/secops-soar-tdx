@@ -1,15 +1,15 @@
-import datetime
-import gzip
 import json
-import jwt
 import logging
 import os
 
 import pytest
 import vcr
 
-from phTDX.tdx_connector import TdxConnector
-from vcr.serializers import yamlserializer
+from app.app import TdxConnector
+
+from vcr_cleaner import CleanYAMLSerializer, clean_if
+from vcr_cleaner.cleaners.jwt_token import clean_token
+from vcr_cleaner.cleaners.env_strings import clean_env_strings
 
 # Required pytest plugins
 pytest_plugins = ("splunk-soar-connectors")
@@ -18,8 +18,9 @@ CASSETTE_USERNAME = "FAKE_USERNAME"
 CASSETTE_PASSWORD = "FAKE_PASSWORD"
 CASSETTE_NETID = 'thor2'
 CASSETTE_ENDPOINT = "help.uillinois.edu"
-CASSETTE_ACCOUNT_NAME = "None/Not Found"  # TODO: Pull from config as part of issue #13
-CASSETTE_ORG_NAME = "Marvel U"
+# TODO: Pull from config as part of issue #13
+CASSETTE_ACCOUNT_NAME = "None/Not Found"
+CASSETTE_ORG_NAME = CASSETTE_ENDPOINT
 CASSETTE_TIMEZONE = "0000"
 CASSETTE_LOG_LEVEL = "DEBUG"
 APPID = 66  # APPID and URL are also CASSETTE but need short names
@@ -29,58 +30,32 @@ URL = f"https://{CASSETTE_ENDPOINT}"
 VCR_RECORD = "VCR_RECORD" in os.environ
 
 
-class CleanYAMLSerializer:
-    def serialize(cassette: dict):
-        for interaction in cassette['interactions']:
-            clean_token(interaction)
-            clean_search(interaction)
-            clean_new_ticket(interaction)
-            clean_people_lookup(interaction)
-        return yamlserializer.serialize(cassette)
-
-    def deserialize(cassette: str):
-        return yamlserializer.deserialize(cassette)
-
-
-def clean_token(interaction: dict):
-    uri = f"{URL}/SBTDWebApi/api/auth"
-    if interaction['request']['uri'] != uri:
-        return
-
-    token = jwt.encode(
-        {'exp': datetime.datetime(2049, 6, 25)}, 'arenofun', algorithm='HS256')
-    response = interaction['response']
-    if 'Content-Encoding' in response['headers'].keys() and \
-            response['headers']['Content-Encoding'] == ['gzip']:
-        token = gzip.compress(bytes(token, "ascii"))
-    response['body']['string'] = token
-
-
-def clean_search(interaction: dict):
+def clean_search(request: dict, response: dict):
     uri = f"{URL}/SBTDWebApi/api/accounts/search"
-    if interaction['request']['uri'] != uri:
+    if request['uri'] != uri:
         return
 
-    body = json.loads(interaction['response']['body']['string'])
+    body = json.loads(response['body']['string'])
     result = {}
     for item in body:
         if item['Name'] == CASSETTE_ACCOUNT_NAME:
             result = item
     body = [result]
 
-    interaction['response']['body']['string'] = json.dumps(body)
+    response['body']['string'] = json.dumps(body)
 
 
-def clean_new_ticket(interaction: dict):
+def clean_new_ticket(request: dict, response: dict):
     id = 564073
-    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/?EnableNotifyReviewer=False" + \
-        "&NotifyRequestor=False&NotifyResponsible=False" + \
-        "&AllowRequestorCreation=False"
+    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/" + \
+          "?EnableNotifyReviewer=False" + \
+          "&NotifyRequestor=False&NotifyResponsible=False" + \
+          "&AllowRequestorCreation=False"
 
-    if interaction['request']['uri'] != uri:
+    if request['uri'] != uri:
         return
 
-    body = json.loads(interaction['response']['body']['string'])
+    body = json.loads(response['body']['string'])
     body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
     body['ID'] = id
     body['RequestorEmail'] = 'nobody@example.com'
@@ -91,19 +66,19 @@ def clean_new_ticket(interaction: dict):
 
     body['Notify'][0]['Name'] = 'Jane Foster'
     body['Notify'][0]['Value'] = 'nobody@example.com'
-    interaction['response']['body']['string'] = json.dumps(body)
+    response['body']['string'] = json.dumps(body)
 
 
-def clean_people_lookup(interaction: dict):
+def clean_people_lookup(request: dict, response: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
     netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
     uri = "%s/SBTDWebApi/api/people/lookup?searchText=%s&maxResults=1"
 
-    if interaction['request']['uri'] != uri % (URL, netid):
+    if request['uri'] != uri % (URL, netid):
         return
 
-    interaction['request']['uri'] = uri % (URL, 'thor2')
-    body = json.loads(interaction['response']['body']['string'])
+    request['uri'] = uri % (URL, 'thor2')
+    body = json.loads(response['body']['string'])
 
     body[0]['Salutation'] = 'Doctor'
     body[0]['FirstName'] = 'Jane'
@@ -122,7 +97,9 @@ def clean_people_lookup(interaction: dict):
     body[0]['AlternateEmail'] = 'nobody@example.com'
     body[0]['AlertEmail'] = 'nobody@example.com'
 
-    interaction['response']['body']['string'] = json.dumps(body)
+    response['body']['string'] = json.dumps(body)
+    env_netid = os.environ.get('TDX_NETID', None)
+    response['body']['string'].replace(env_netid, 'thor2')
 
 
 @pytest.fixture
@@ -135,15 +112,14 @@ def connector(monkeypatch) -> TdxConnector:
             "password": CASSETTE_PASSWORD,
             "endpoint": CASSETTE_ENDPOINT,
             "appid": APPID,
-            "orgname": CASSETTE_ORG_NAME,
             "timezone": CASSETTE_TIMEZONE,
             "loglevel": CASSETTE_LOG_LEVEL,
             "sandbox": True,
         }
         os.environ.pop('TDX_NETID', None)
     else:  # User environment values
-        env_keys = ['username','password','netid',
-                    'endpoint','appid', 'orgname',
+        env_keys = ['username', 'password', 'netid',
+                    'endpoint', 'appid',
                     'timezone', 'loglevel']
 
         for key in env_keys:
@@ -151,8 +127,9 @@ def connector(monkeypatch) -> TdxConnector:
             conn.config[key] = os.environ.get(env_key, None)
             if not conn.config[key]:
                 raise ValueError(f'{env_key} unset or empty with record mode')
-        
-        conn.config['sandbox'] = True  # Always True - no testing in production.
+
+        # Always True - no testing in production.
+        conn.config['sandbox'] = True
 
     conn.logger.setLevel(logging.INFO)
     return conn
@@ -172,6 +149,11 @@ def remove_creds(request):
     return request
 
 
+@clean_if(uri=f"{URL}/SBTDWebApi/api/auth")
+def clean_auth(request, response):
+    clean_token(request, response)
+
+
 @pytest.fixture
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
@@ -181,7 +163,13 @@ def cassette(request) -> vcr.cassette.Cassette:
         filter_headers=[('Authorization', 'Bearer FAKE_TOKEN')],
         match_on=['uri', 'method'],
     )
-    my_vcr.register_serializer("cleanyaml", CleanYAMLSerializer)
+    yaml_cleaner = CleanYAMLSerializer()
+    my_vcr.register_serializer("cleanyaml", yaml_cleaner)
+    yaml_cleaner.register_cleaner(clean_auth)
+    yaml_cleaner.register_cleaner(clean_search)
+    yaml_cleaner.register_cleaner(clean_new_ticket)
+    yaml_cleaner.register_cleaner(clean_people_lookup)
+    yaml_cleaner.register_cleaner(clean_env_strings)
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:

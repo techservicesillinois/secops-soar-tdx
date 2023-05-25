@@ -26,10 +26,11 @@ export VCR_RECORD=true
 
 export TDX_NETID="{netid}" # Sets requestor to a valid ID on create_ticket.
 export TDX_APPID=66
+# Do not set ORGNAME or it will override endpoint.
 export TDX_ENDPOINT="help.uillinois.edu"
-export TDX_ORGNAME='University of Illinois'  # Does not seem to matter.
 export TDX_TIMEZONE='-0500'
 export TDX_LOGLEVEL='ERROR'
+export CLEAN_STRINGS='Edward Delaporte,delaport'
 ```
 
 To record a cassette, set `VCR_RECORD` in the environment as needed.

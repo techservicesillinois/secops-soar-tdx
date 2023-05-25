@@ -13,15 +13,15 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
       string: !!binary |
-        H4sIACVTm2MC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
-        8jT0dUmv8A/xLPd1cbLU0w2qKixz8/K3CAsOcYwMCgj2yjMITTEw9Yi38C+LMHYONg3MKvf3dHIu
-        dAUADT92RmkAAAA=
+        H4sIAKDOa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
+        yQYA/EJXWGkAAAA=
     headers:
       Cache-Control:
       - no-cache
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 17:02:23 GMT
+      - Mon, 22 May 2023 20:20:41 GMT
       Expires:
       - '-1'
       Pragma:
@@ -46,13 +46,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '54'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 17:03:23 GMT
+      - Mon, 22 May 2023 20:21:20 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 265d3404-b3e1-4036-badd-955d84234308
+      - d5d1e448-86b2-4368-818f-858dca9d35ef
       X-UA-Compatible:
       - IE=edge
     status:
@@ -75,7 +75,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.31.0
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/accounts/search
   response:
@@ -91,11 +91,11 @@ interactions:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '4141595'
+      - '4143691'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 17:02:24 GMT
+      - Mon, 22 May 2023 20:20:42 GMT
       Expires:
       - '-1'
       Pragma:
@@ -107,9 +107,9 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '58'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 17:03:25 GMT
+      - Mon, 22 May 2023 20:21:31 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -117,7 +117,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - e52431a6-bc66-4b32-b1fd-460e218a2772
+      - deab4fd2-ee79-409f-a79b-1d0c3b736d00
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -139,7 +139,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.31.0
     method: GET
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/priorities
   response:
@@ -155,7 +155,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 17:02:26 GMT
+      - Mon, 22 May 2023 20:20:45 GMT
       Expires:
       - '-1'
       Pragma:
@@ -167,9 +167,9 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '59'
+      - '58'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 17:03:26 GMT
+      - Mon, 22 May 2023 20:21:36 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -177,7 +177,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 446e294d-f157-4eae-80ff-16c98eed3f8d
+      - 95e1fed6-6eaf-434e-87c6-6cdea92710f5
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -199,7 +199,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.31.0
     method: GET
     uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=no_such_user&maxResults=1
   response:
@@ -213,7 +213,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Dec 2022 17:02:28 GMT
+      - Mon, 22 May 2023 20:20:47 GMT
       Expires:
       - '-1'
       Pragma:
@@ -225,9 +225,9 @@ interactions:
       X-RateLimit-Limit:
       - '75'
       X-RateLimit-Remaining:
-      - '74'
+      - '75'
       X-RateLimit-Reset:
-      - Thu, 15 Dec 2022 17:02:37 GMT
+      - Mon, 22 May 2023 20:20:57 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -235,7 +235,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 7a548384-54ea-4347-9b18-6241336940c9
+      - e7fdc485-1164-4aec-8828-36dab3ffd7ce
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
