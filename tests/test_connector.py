@@ -13,7 +13,6 @@ def test_connectivity(cassette, connector: TdxConnector):
     in_json = {
         "appid": APP_ID,
         "identifier": "test_connectivity",
-        # TODO: Submit an issue asking to allow [] here.
         "parameters": [{}],
     }
 
