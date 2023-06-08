@@ -209,7 +209,7 @@ class TdxConnector(BaseConnector):
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
 
     def handle_action(self, param):
-        ret_val = phantom.APP_SUCCESS
+        ret_val = phantom.APP_ERROR
 
         # Get the action that we are supposed to execute for this App Run
         action_id = self.get_action_identifier()
