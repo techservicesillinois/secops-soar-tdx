@@ -14,8 +14,7 @@ def test_reassign_group(cassette, connector: TdxConnector):
         "identifier": "reassign_group",
         "parameters": [{
             "ticket_id": TICKET_ID,
-            "responsible": "the_group",
-            "group": True
+            "responsible": "UIUC-TechServices-Cybersecurity Developers"
         }],
     }
 
