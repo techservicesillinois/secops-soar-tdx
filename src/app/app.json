@@ -1,4 +1,4 @@
-{   
+{
     "appid": "APP_ID",
     "name": "APP_NAME",
     "description": "Application for managing TDX",
@@ -173,6 +173,90 @@
                     "default": "",
                     "order": 5,
                     "name": "status"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.data.*.id",
+                    "data_type": "string"
+                }
+            ],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "reassign group",
+            "identifier": "reassign_group",
+            "description": "Reassign a ticket (issue) to a particular group",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "ticket_id": {
+                    "description": "Ticket ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "priority"
+                },
+                "responsible": {
+                    "description": "Group responsible",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "requestor"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.data.*.id",
+                    "data_type": "string"
+                }
+            ],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "reassign user",
+            "identifier": "reassign_user",
+            "description": "Reassign a ticket (issue) to a particular user",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "ticket_id": {
+                    "description": "Ticket ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "priority"
+                },
+                "responsible": {
+                    "description": "User responsible",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "requestor"
                 }
             },
             "output": [
