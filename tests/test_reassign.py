@@ -1,12 +1,9 @@
 import json
-import os
-
 from app.app import TdxConnector
-
-from conftest import VCR_RECORD, CASSETTE_NETID
 
 APP_ID = "tacosalad"
 TICKET_ID = 564073  # Must match cassette
+
 
 def test_reassign_group(cassette, connector: TdxConnector):
     in_json = {
@@ -22,7 +19,6 @@ def test_reassign_group(cassette, connector: TdxConnector):
 
     assert result[0]["message"] == "Ticket reassigned"
     # TODO: Implement reassign in connector and json
-    
     # ticket_id: Union[str, int]
     # responsible: str
     # group: bool

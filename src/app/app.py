@@ -207,7 +207,7 @@ class TdxConnector(BaseConnector):
                 phantom.APP_ERROR, f"Ticket update failed: {str(ex)}")
 
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
-    
+
     def _handle_reassign_group(self, param):
         return self._handle_reassign(param, group=True)
 
@@ -217,7 +217,7 @@ class TdxConnector(BaseConnector):
     def _handle_reassign(self, param, group=False):
         self.save_progress("In action handler for: {0}".format(
             self.get_action_identifier()))
-        
+
         # Add an action result object to self (BaseConnector)
         # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
@@ -236,7 +236,6 @@ class TdxConnector(BaseConnector):
         return action_result.set_status(
             phantom.APP_SUCCESS, "Ticket reassigned")
 
-
     def handle_action(self, param):
         ret_val = phantom.APP_ERROR
 
@@ -251,17 +250,15 @@ class TdxConnector(BaseConnector):
 
         if action_id == 'update_ticket':
             ret_val = self._handle_update_ticket(param)
-        
+
         if action_id == 'reassign_group':
             ret_val = self._handle_reassign_group(param)
-        
+
         if action_id == 'reassign_user':
             ret_val = self._handle_reassign_user(param)
 
         if action_id == 'test_connectivity':
             ret_val = self._handle_test_connectivity(param)
-        
-        
 
         return ret_val
 
