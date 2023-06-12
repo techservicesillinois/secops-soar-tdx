@@ -209,6 +209,12 @@ class TdxConnector(BaseConnector):
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
     
     def _handle_reassign_group(self, param):
+        return self._handle_reassign(param, group=True)
+
+    def _handle_reassign_user(self, param):
+        return self._handle_reassign(param, group=False)
+
+    def _handle_reassign(self, param, group=False):
         self.save_progress("In action handler for: {0}".format(
             self.get_action_identifier()))
         
@@ -220,7 +226,7 @@ class TdxConnector(BaseConnector):
         update_args = param
 
         try:
-            _ = tdx.reassign_ticket(group=True, **update_args)
+            _ = tdx.reassign_ticket(group=group, **update_args)
         except Exception as ex:
             if ex.__class__.__name__ not in dir(tdx_ex):
                 raise ex  # Raise unexpected exceptions
@@ -248,9 +254,13 @@ class TdxConnector(BaseConnector):
         
         if action_id == 'reassign_group':
             ret_val = self._handle_reassign_group(param)
+        
+        if action_id == 'reassign_user':
+            ret_val = self._handle_reassign_user(param)
 
         if action_id == 'test_connectivity':
             ret_val = self._handle_test_connectivity(param)
+        
         
 
         return ret_val
