@@ -139,5 +139,3 @@ def test_bad_config(endpoint, orgname, exception,
     with pytest.raises(exception):
         result = json.loads(
             connector._handle_action(json.dumps(in_json), None))
-
-        assert result[0]["message"] != "Active connection"
