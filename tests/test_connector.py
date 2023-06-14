@@ -129,4 +129,4 @@ def test_bad_config(cassette, connector: TdxConnector):
         result = json.loads(
             connector._handle_action(json.dumps(in_json), None))
 
-    assert result[0]["message"] != "Active connection"
+        assert result[0]["message"] != "Active connection"
