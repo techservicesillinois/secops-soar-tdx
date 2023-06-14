@@ -18,6 +18,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
+from app.exceptions import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
+
 # Third-party
 import tdxlib
 from tdxlib import tdx_api_exceptions as tdx_ex
@@ -295,12 +297,10 @@ class TdxConnector(BaseConnector):
         }
 
         if tdxlib_config['orgname'] and tdxlib_config['full_host']:
-            raise Exception(
-                "'Organization Name' and 'endpoint' cannot both be set.")
+            raise OrgNameAndEndpointSet()
 
         if not (tdxlib_config['orgname'] or tdxlib_config['full_host']):
-            raise Exception(
-                "You must set either 'Organization Name' or 'endpoint'.")
+            raise OrgNameAndEndpointNotSet()
 
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(
             config=tdxlib_config)

@@ -3,6 +3,7 @@ import os
 import pytest
 
 from app.app import TdxConnector
+from app.exceptions import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
 
 from conftest import VCR_RECORD, CASSETTE_NETID
 
@@ -113,19 +114,29 @@ def test_failed_update(cassette, connector: TdxConnector):
         "Ticket update failed: No status found for GARBAGE"
 
 
-def test_bad_config(cassette, connector: TdxConnector):
+def config_set(config, key, value):
+    if value:
+        config[key] = value
+    elif key in config:
+        del config[key]
+
+
+@pytest.mark.parametrize("endpoint,orgname,exception", [
+    (None, None, OrgNameAndEndpointNotSet),
+    ('foo', 'bar', OrgNameAndEndpointSet),
+])
+def test_bad_config(endpoint, orgname, exception,
+                    cassette, connector: TdxConnector):
     in_json = {
         "appid": APP_ID,
         "identifier": "test_connectivity",
         "parameters": [{}],
     }
 
-    if 'endpoint' in connector.config:
-        del connector.config['endpoint']
-    if 'orgname' in connector.config:
-        del connector.config['orgname']
+    config_set(connector.config, 'endpoint', endpoint)
+    config_set(connector.config, 'orgname', orgname)
 
-    with pytest.raises(Exception):
+    with pytest.raises(exception):
         result = json.loads(
             connector._handle_action(json.dumps(in_json), None))
 
