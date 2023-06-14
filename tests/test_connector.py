@@ -137,5 +137,4 @@ def test_bad_config(endpoint, orgname, exception,
     config_set(connector.config, 'orgname', orgname)
 
     with pytest.raises(exception):
-        result = json.loads(
-            connector._handle_action(json.dumps(in_json), None))
+        json.loads(connector._handle_action(json.dumps(in_json), None))
