@@ -45,9 +45,9 @@
             "id": 2
         },
         "endpoint": {
-            "description": "Endpoint URL",
+            "description": "Endpoint URL <teamdynamix.example.edu>. Do not set if 'Organization Name' is set.",
             "data_type": "string",
-            "required": true,
+            "required": false,
             "value_list": [],
             "default": "help.uillinois.edu",
             "order": 3,
@@ -82,9 +82,9 @@
             "id": 6
         },
         "orgname": {
-            "description": "Organization Name",
+            "description": "Organization Name <orgname>.teamdynamix.com. Do not set if 'endpoint' is set.",
             "data_type": "string",
-            "required": true,
+            "required": false,
             "order": 7,
             "name": "orgname",
             "id": 7

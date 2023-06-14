@@ -1,5 +1,6 @@
 import json
 import os
+import pytest
 
 from app.app import TdxConnector
 
@@ -110,3 +111,22 @@ def test_failed_update(cassette, connector: TdxConnector):
 
     assert result[0]["message"] == \
         "Ticket update failed: No status found for GARBAGE"
+
+
+def test_bad_config(cassette, connector: TdxConnector):
+    in_json = {
+        "appid": APP_ID,
+        "identifier": "test_connectivity",
+        "parameters": [{}],
+    }
+
+    if 'endpoint' in connector.config:
+        del connector.config['endpoint']
+    if 'orgname' in connector.config:
+        del connector.config['orgname']
+
+    with pytest.raises(Exception):
+        result = json.loads(
+            connector._handle_action(json.dumps(in_json), None))
+
+    assert result[0]["message"] != "Active connection"
