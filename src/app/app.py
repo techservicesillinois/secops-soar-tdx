@@ -18,6 +18,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
+from app.exceptions import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
+
 # Third-party
 import tdxlib
 from tdxlib import tdx_api_exceptions as tdx_ex
@@ -281,18 +283,27 @@ class TdxConnector(BaseConnector):
 
         self.account_name = "None/Not found"  # TODO: pull from config
 
+        tdxlib_config = {
+            "full_host": config.get('endpoint', ''),
+            "orgname": config.get('orgname', ''),
+            "sandbox": config['sandbox'],
+            "username": config['username'],
+            "password": config['password'],
+            "ticketAppId": config['appid'],
+            "assetAppId": "",
+            "caching": False,
+            "timezone": config['timezone'],
+            "logLevel": config['loglevel'],
+        }
+
+        if tdxlib_config['orgname'] and tdxlib_config['full_host']:
+            raise OrgNameAndEndpointSet()
+
+        if not (tdxlib_config['orgname'] or tdxlib_config['full_host']):
+            raise OrgNameAndEndpointNotSet()
+
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(
-            config={
-                "full_host": config['endpoint'],
-                "sandbox": config['sandbox'],
-                "username": config['username'],
-                "password": config['password'],
-                "ticketAppId": config['appid'],
-                "assetAppId": "",
-                "caching": False,
-                "timezone": config['timezone'],
-                "logLevel": config['loglevel'],
-            })
+            config=tdxlib_config)
 
         return phantom.APP_SUCCESS
 
