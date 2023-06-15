@@ -154,6 +154,21 @@ def clean_auth(request, response):
     clean_token(request, response)
 
 
+@clean_if(uri=f"{URL}/SBTDWebApi/api/groups/search")
+def clean_so_many_groups(request, response):
+    cleaned_groups = """[{
+        "ID": 787,
+        "Name": "UIUC-TechServices-Cybersecurity Developers",
+        "Description": "",
+        "IsActive": true,
+        "ExternalID": "",
+        "CreatedDate": "2022-11-14T15: 14: 07.957Z",
+        "ModifiedDate": "2022-11-14T15: 14: 07.957Z",
+        "PlatformApplications": []
+    }]"""
+    response['body']['string'] = cleaned_groups
+
+
 @pytest.fixture
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
@@ -170,6 +185,7 @@ def cassette(request) -> vcr.cassette.Cassette:
     yaml_cleaner.register_cleaner(clean_new_ticket)
     yaml_cleaner.register_cleaner(clean_people_lookup)
     yaml_cleaner.register_cleaner(clean_env_strings)
+    yaml_cleaner.register_cleaner(clean_so_many_groups)
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:

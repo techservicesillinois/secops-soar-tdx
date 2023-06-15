@@ -1,5 +1,8 @@
 import json
+import os
+
 from app.app import TdxConnector
+from conftest import CASSETTE_NETID
 
 APP_ID = "tacosalad"
 TICKET_ID = 564073  # Must match cassette
@@ -30,7 +33,7 @@ def test_reassign_user(cassette, connector: TdxConnector):
         "identifier": "reassign_user",
         "parameters": [{
             "ticket_id": TICKET_ID,
-            "responsible": "delaport"
+            "responsible": os.environ.get('TDX_NETID', CASSETTE_NETID),
         }],
     }
 
