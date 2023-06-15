@@ -34,7 +34,7 @@ types-requests==2.31.0.1
 types-urllib3==1.26.25.13
 typing_extensions==4.6.3
 urllib3==1.26.15
-vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@6559faf1b8e8cb493155e118d57c149fb3b33c15
+vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@9cb27bcc8d0ef5e90588b562cbb7fc355a5fd212
 vcrpy==4.3.1
 wrapt==1.15.0
 yarl==1.9.2

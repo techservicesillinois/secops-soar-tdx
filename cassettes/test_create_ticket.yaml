@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '72'
+      - '102'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAJjOa2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        H4sIAOhri2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
         8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
         yQYA/EJXWGkAAAA=
     headers:
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:20:29 GMT
+      - Thu, 15 Jun 2023 19:52:02 GMT
       Expires:
       - '-1'
       Pragma:
@@ -48,11 +48,11 @@ interactions:
       X-RateLimit-Remaining:
       - '55'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:21:20 GMT
+      - Thu, 15 Jun 2023 19:52:54 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - b4da3463-f0fd-497a-9ada-55fa4891caec
+      - 834c684c-5325-4a33-aec3-b61ec23b474d
       X-UA-Compatible:
       - IE=edge
     status:
@@ -95,7 +95,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:20:31 GMT
+      - Thu, 15 Jun 2023 19:52:04 GMT
       Expires:
       - '-1'
       Pragma:
@@ -109,7 +109,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:21:31 GMT
+      - Thu, 15 Jun 2023 19:53:04 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -117,9 +117,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 6112f319-56d8-415e-b8e3-76741a6e399f
+      - 18280ee7-7031-42df-8b21-5104246c4947
       X-TDX-UID:
-      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -155,7 +155,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:20:36 GMT
+      - Thu, 15 Jun 2023 19:52:06 GMT
       Expires:
       - '-1'
       Pragma:
@@ -169,7 +169,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:21:36 GMT
+      - Thu, 15 Jun 2023 19:53:07 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -177,9 +177,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 04eca4b3-52f2-4447-95c9-810b7f2bebce
+      - e679890b-7524-4b18-96be-f69e58c28b08
       X-TDX-UID:
-      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -204,7 +204,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=thor2&maxResults=1
   response:
     body:
-      string: '[{"UID": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 8831,
+      string: '[{"UID": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 48436,
         "BEID": "0f7df9ca-3924-4806-8adc-6e880a796ddc", "BEIDInt": 2, "IsActive":
         true, "IsConfidential": false, "UserName": "", "FullName": "Jane Foster",
         "FirstName": "Jane", "LastName": "Foster", "MiddleName": null, "Salutation":
@@ -216,7 +216,7 @@ interactions:
         null, "GroupIDs": null, "AlertEmail": "nobody@example.com", "ProfileImageFileName":
         "", "Company": null, "Title": null, "HomePhone": null, "PrimaryPhone": null,
         "WorkPhone": null, "Pager": null, "OtherPhone": null, "MobilePhone": null,
-        "Fax": null, "DefaultPriorityID": 24, "DefaultPriorityName": "IT Pro", "AboutMe":
+        "Fax": null, "DefaultPriorityID": 0, "DefaultPriorityName": "None", "AboutMe":
         null, "WorkAddress": "", "WorkCity": "", "WorkState": "", "WorkZip": null,
         "WorkCountry": "", "HomeAddress": "", "HomeCity": "", "HomeState": "", "HomeZip":
         "", "HomeCountry": "", "LocationID": 0, "LocationName": null, "LocationRoomID":
@@ -231,11 +231,11 @@ interactions:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '1589'
+      - '1563'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:20:37 GMT
+      - Thu, 15 Jun 2023 19:52:07 GMT
       Expires:
       - '-1'
       Pragma:
@@ -249,7 +249,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:20:47 GMT
+      - Thu, 15 Jun 2023 19:52:17 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -257,9 +257,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 980523bc-a0af-406d-a6a8-8739ad4d1026
+      - bf7a9058-63e8-419b-8974-e0b9c50b8733
       X-TDX-UID:
-      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -313,7 +313,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:20:38 GMT
+      - Thu, 15 Jun 2023 19:52:07 GMT
       Expires:
       - '-1'
       Pragma:
@@ -327,7 +327,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:21:38 GMT
+      - Thu, 15 Jun 2023 19:53:08 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -335,16 +335,16 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - e0174b24-eb9f-4d05-aa1f-fec3adc9a35f
+      - ff2db9ba-3f1a-4549-9d1c-1b16333b26c2
       X-TDX-UID:
-      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
       code: 200
       message: OK
 - request:
-    body: '{"AccountID": 7902, "PriorityID": 19, "RequestorUid": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7",
+    body: '{"AccountID": 7902, "PriorityID": 19, "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7",
       "Title": "NewBoo", "TypeID": 312}'
     headers:
       Accept:
@@ -378,23 +378,23 @@ interactions:
         false, "IsSlaResolveByViolated": false, "RespondByDate": "0001-01-01T00:00:00",
         "ResolveByDate": "0001-01-01T00:00:00", "SlaBeginDate": "0001-01-01T00:00:00",
         "IsOnHold": false, "PlacedOnHoldDate": "0001-01-01T00:00:00", "GoesOffHoldDate":
-        "0001-01-01T00:00:00", "CreatedDate": "2023-05-22T20:20:40.287Z", "CreatedUid":
-        "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "CreatedFullName": "Tech Services
-        Security API", "CreatedEmail": "", "ModifiedDate": "2023-05-22T20:20:40.287Z",
-        "ModifiedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "ModifiedFullName":
-        "Tech Services Security API", "RequestorName": "Jane Foster", "RequestorFirstName":
+        "0001-01-01T00:00:00", "CreatedDate": "2023-06-15T19:52:08.413Z", "CreatedUid":
+        "0bfec2fa-e406-ee11-87dd-0050f2e6c034", "CreatedFullName": "Security SOAR
+        API Service Account", "CreatedEmail": "", "ModifiedDate": "2023-06-15T19:52:08.413Z",
+        "ModifiedUid": "0bfec2fa-e406-ee11-87dd-0050f2e6c034", "ModifiedFullName":
+        "Security SOAR API Service Account", "RequestorName": "Jane Foster", "RequestorFirstName":
         "Jane", "RequestorLastName": "Foster", "RequestorEmail": "nobody@example.com",
-        "RequestorPhone": null, "RequestorUid": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7",
+        "RequestorPhone": null, "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7",
         "ActualMinutes": 0, "EstimatedMinutes": 0, "DaysOld": 0, "StartDate": null,
         "EndDate": null, "ResponsibleUid": null, "ResponsibleFullName": "Unassigned",
         "ResponsibleEmail": "", "ResponsibleGroupID": 611, "ResponsibleGroupName":
-        "UIUC-TechServices-Privacy Office", "RespondedDate": "2023-05-22T20:20:40.287Z",
-        "RespondedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "RespondedFullName":
-        "Tech Services Security API", "CompletedDate": "0001-01-01T00:00:00", "CompletedUid":
-        null, "CompletedFullName": "", "ReviewerUid": null, "ReviewerFullName": "",
-        "ReviewerEmail": "", "ReviewingGroupID": 0, "ReviewingGroupName": "", "TimeBudget":
-        0.0, "ExpensesBudget": 0.0, "TimeBudgetUsed": 0.0, "ExpensesBudgetUsed": 0.0,
-        "IsConvertedToTask": false, "ConvertedToTaskDate": "0001-01-01T00:00:00",
+        "UIUC-TechServices-Privacy Office", "RespondedDate": "2023-06-15T19:52:08.413Z",
+        "RespondedUid": "0bfec2fa-e406-ee11-87dd-0050f2e6c034", "RespondedFullName":
+        "Security SOAR API Service Account", "CompletedDate": "0001-01-01T00:00:00",
+        "CompletedUid": null, "CompletedFullName": "", "ReviewerUid": null, "ReviewerFullName":
+        "", "ReviewerEmail": "", "ReviewingGroupID": 0, "ReviewingGroupName": "",
+        "TimeBudget": 0.0, "ExpensesBudget": 0.0, "TimeBudgetUsed": 0.0, "ExpensesBudgetUsed":
+        0.0, "IsConvertedToTask": false, "ConvertedToTaskDate": "0001-01-01T00:00:00",
         "ConvertedToTaskUid": null, "ConvertedToTaskFullName": "", "TaskProjectID":
         0, "TaskProjectName": "", "TaskPlanID": 0, "TaskPlanName": "", "TaskID": 0,
         "TaskTitle": "", "TaskStartDate": "0001-01-01T00:00:00", "TaskEndDate": "0001-01-01T00:00:00",
@@ -406,18 +406,18 @@ interactions:
         null, "AppID": 66, "Attributes": [], "Attachments": [], "Tasks": [], "Notify":
         [{"ItemRole": "Responsible Group", "Name": "Jane Foster", "Initials": null,
         "Value": "nobody@example.com", "RefValue": 0, "ProfileImageFileName": null},
-        {"ItemRole": "Requestor", "Name": "CLEANED", "Initials": null, "Value": "CLEANED@illinois.edu",
-        "RefValue": 0, "ProfileImageFileName": null}], "WorkflowID": 0, "WorkflowConfigurationID":
-        0, "WorkflowName": ""}'
+        {"ItemRole": "Requestor", "Name": "CLEANED CLEANED", "Initials": null, "Value":
+        "CLEANED@illinois.edu", "RefValue": 0, "ProfileImageFileName": null}], "WorkflowID":
+        0, "WorkflowConfigurationID": 0, "WorkflowName": ""}'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '3229'
+      - '3225'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 22 May 2023 20:20:40 GMT
+      - Thu, 15 Jun 2023 19:52:08 GMT
       Expires:
       - '-1'
       Pragma:
@@ -431,7 +431,7 @@ interactions:
       X-RateLimit-Remaining:
       - '119'
       X-RateLimit-Reset:
-      - Mon, 22 May 2023 20:21:39 GMT
+      - Thu, 15 Jun 2023 19:53:08 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -439,9 +439,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 5544a746-73a9-43e7-957a-25fab44d4722
+      - a6dbfd95-d8e0-4168-ac94-e9a32dd406ea
       X-TDX-UID:
-      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
