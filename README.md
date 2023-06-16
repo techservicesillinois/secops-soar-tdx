@@ -35,7 +35,6 @@ To configure the TDX SOAR app to connect to your TeamDynamix instance, add an as
 Use the `Test Connectivity` button in SOAR to verify your settings.
 
 
-After configuring the application, it's recommended to [test the connectivity](#testing-connectivity) to the TeamDynamix ticketing system to ensure that the application is properly configured and able to communicate with its remote endpoint.
 
 ## Support
 
