@@ -1,5 +1,36 @@
 # About
 
+This Splunk SOAR Python application is designed to integrate Splunk SOAR with the TeamDynamix ticketing system. Through this integration, the application streamlines and automates cybersecurity workflows by creating and managing tickets in TeamDynamix directly from the Splunk SOAR platform. This app is particularly useful for Security Operations Centers (SOCs), IT departments, and incident response teams that use Splunk SOAR for orchestrating their security workflows and TeamDynamix for ticket management. By integrating these platforms, the application enables automatic ticket creation and management based on security events, thus speeding up incident response and improving operational efficiency.
+
+## Key Features
+
+- **Creating Tickets**: The application allows you to create new tickets in TeamDynamix through SOAR actions. This can be used to automatically create tickets based on alerts and incidents detected by your security tools.
+
+- **Reassigning Tickets**: The application provides actions to reassign existing TeamDynamix tickets. This feature helps in efficiently managing tickets and ensuring they are handled by the appropriate teams or individuals.
+
+## Dependencies
+
+- **Splunk SOAR**: The application is designed to be deployed on the Splunk SOAR platform (formerly Phantom). 
+
+- **Python 3.9**: The application is built with Python 3.9. The end-of-life date for this Python version is October 31, 2025.
+
+- **tdxlib**: The application relies on the [`tdxlib` Python package](https://github.com/cedarville-university/tdxlib) developed by the University of Cedarville.
+
+## Getting Started
+
+Follow the instructions in the [Manual Deployment](#manual-deployment) or [Automated Deployment](#automated-deployment) sections to install the application, then follow [Configuring in SOAR](#configuring-in-soar) to connect to your TDX instance.
+
+## Configuring in SOAR
+
+To configure the TDX SOAR app to connect to your TeamDynamix instance, add an asset configuration to the TDX SOAR app with the following values:
+
+- Your `Organization Name` if TeamDynamix hosts your TDX instance **or** the `Endpoint URL` of your TDX instance if self-hosted.
+- An API `username` and `password` from configured in your TDX instance
+- The `AppID` of the application within TDX that you need to interact with from SOAR
+- The `timezone` your TDX server runs in
+- Your preferred `logging level` for the TDX SOAR app (ERROR is recommended)
+
+Use the `Test Connectivity` button in SOAR to verify your settings.
 
 ## Support
 
