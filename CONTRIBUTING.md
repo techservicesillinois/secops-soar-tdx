@@ -87,4 +87,4 @@ Obtain the following credentials from your Splunk SOAR instance:
 
 1. Once the secrets are configured, make a change in your repository or manually trigger the GitHub Actions workflow
 2. Go to the `Actions` tab in your repository to see the workflow running
-3. If everything is configured correctly, you should see the workflow completing successfully
+3. If everything is configured correctly, the updated application code will be deployed to your Splunk SOAR instance
