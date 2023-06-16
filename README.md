@@ -19,7 +19,21 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
 
 ## Getting Started
 
-Please follow the instructions in the [Manual Deployment](#manual-deployment), [Automated Deployment](#automated-deployment), and [Configuring in SOAR](#configuring-in-soar) sections to set up and configure the application in your Splunk SOAR instance.
+
+Follow the instructions in the [Manual Deployment](#manual-deployment) or [Automated Deployment](#automated-deployment), sections to install the application, then follow [Configuring in SOAR](#configuring-in-soar) to connect to your TDX instance.
+
+## Configuring in SOAR
+
+To configure the TDX SOAR app to connect to your TeamDynamix instance, add an asset configuration to the TDX SOAR app with the following values:
+
+- Your `Organization Name` if TeamDynamix hosts your TDX instance **or** the `Endpoint URL` of your TDX instance if self-hosted.
+- An API `username` and `password` from configured in your TDX instance
+- The `AppID` of the application within TDX that you need to interact with from SOAR
+- The `timezone` your TDX server runs in
+- Your preferred `logging level` for the TDX SOAR app (ERROR is recommended)
+
+Use the `Test Connectivity` button in SOAR to verify your settings.
+
 
 After configuring the application, it's recommended to [test the connectivity](#testing-connectivity) to the TeamDynamix ticketing system to ensure that the application is properly configured and able to communicate with its remote endpoint.
 
