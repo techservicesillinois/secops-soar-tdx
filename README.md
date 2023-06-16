@@ -16,9 +16,7 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
 
 - **tdxlib**: The application relies on the [`tdxlib` Python package](https://github.com/cedarville-university/tdxlib) developed by the University of Cedarville.
 
-
 ## Getting Started
-
 
 Follow the instructions in the [Manual Deployment](#manual-deployment) or [Automated Deployment](#automated-deployment), sections to install the application, then follow [Configuring in SOAR](#configuring-in-soar) to connect to your TDX instance.
 
@@ -33,8 +31,6 @@ To configure the TDX SOAR app to connect to your TeamDynamix instance, add an as
 - Your preferred `logging level` for the TDX SOAR app (ERROR is recommended)
 
 Use the `Test Connectivity` button in SOAR to verify your settings.
-
-
 
 ## Support
 
