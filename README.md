@@ -18,7 +18,7 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
 
 ## Getting Started
 
-Follow the instructions in the [Manual Deployment](#manual-deployment) or [Automated Deployment](#automated-deployment), sections to install the application, then follow [Configuring in SOAR](#configuring-in-soar) to connect to your TDX instance.
+Follow the instructions in the [Manual Deployment](#manual-deployment) or [Automated Deployment](#automated-deployment) sections to install the application, then follow [Configuring in SOAR](#configuring-in-soar) to connect to your TDX instance.
 
 ## Configuring in SOAR
 
