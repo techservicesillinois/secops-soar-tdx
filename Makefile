@@ -9,7 +9,6 @@ TEST_APP_NAME:=Test $(PROD_APP_NAME)
 PACKAGE:=app
 SRCS_DIR:=src/$(MODULE)
 TSCS_DIR:=tests
-CASSETTES_DIR:=cassettes
 SOAR_SRCS:=$(shell find $(SRCS_DIR) -type f)
 SRCS:=$(shell find $(SRCS_DIR) -name '*.py')
 TSCS:=$(shell find $(TSCS_DIR) -name '*.py')
@@ -88,7 +87,6 @@ requirements-test.txt: requirements-test.in
 # REMOVE once pytest-splunk-soar-connectors is on pypi
 	sed $(SED_INPLACE) "s;^pytest-splunk-soar-connectors==.*;$(PYTEST_SOAR_REPO);" $@
 
-
 lint: venv .lint
 .lint: $(SRCS) $(TSCS)
 	$(VENV_PYTHON) -m flake8 $?
@@ -104,9 +102,6 @@ static: venv .static
 test: venv lint static
 	$(VENV_PYTHON) -m pytest
 	
-record:
-	rm -f $(CASSETTES_DIR)/*.yaml
-
 clean:
 	rm -rf venv $(VENV_REQS)
 	rm -rf .lint .static
