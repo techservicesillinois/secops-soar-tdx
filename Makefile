@@ -99,6 +99,9 @@ static: venv .static
 	$(VENV_PYTHON) -m mypy $^
 	touch $@
 
+autopep8:
+	autopep8 --in-place $(SRCS)
+
 test: venv lint static
 	$(VENV_PYTHON) -m pytest
 	
