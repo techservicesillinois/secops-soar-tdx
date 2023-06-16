@@ -61,7 +61,9 @@ To read deploy logs, visit SOAR `Administration`, and look under `System Health`
 
 ## GitHub Actions Setup for Splunk SOAR Deployment
 
-This document guides you through the setup process for GitHub Actions to automatically deploy your application to Splunk SOAR using the provided `.yaml` file in the repository. To achieve this, you will need to configure a couple of secrets in your GitHub repository which will be used by the GitHub Actions pipeline.
+This section guides you through the setup process for GitHub Actions to automatically deploy your application to Splunk SOAR. 
+
+You will need to configure a couple of secrets in your GitHub repository which will be used by the GitHub Actions pipeline.
 
 ### Prerequisites
 
