@@ -12,7 +12,7 @@ import phantom.app as phantom
 from phantom.base_connector import BaseConnector
 from phantom.action_result import ActionResult
 
-from app.exceptions import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
+# from app.exceptions import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
 
 # Third-party
 import tdxlib
@@ -20,7 +20,19 @@ from tdxlib import tdx_api_exceptions as tdx_ex
 
 __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
-__deployed__ = 'GITHUB_DEPLOYED'
+__deployed__ = 'BUILD_TIME'
+
+
+class OrgNameAndEndpointSet(Exception):
+    def __init__(self):
+        super().__init__(
+            "'Organization Name' and 'endpoint' cannot both be set.")
+
+
+class OrgNameAndEndpointNotSet(Exception):
+    def __init__(self):
+        super().__init__(
+            "You must set either 'Organization Name' or 'endpoint'.")
 
 
 class RetVal(tuple):
