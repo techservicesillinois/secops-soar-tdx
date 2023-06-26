@@ -272,9 +272,10 @@
         }
     ],
     "pip3_dependencies": {
-        "pypi": [
+        "wheel": [
             {
-                "module": "TDXLib"
+                "module": "TDXLib",
+                "input_file": "wheels/TDXLib-0.4.3-py3-none-any.whl"
             }
         ]
     }

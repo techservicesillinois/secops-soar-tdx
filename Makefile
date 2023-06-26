@@ -1,6 +1,6 @@
 # DO NOT EDIT - All project-specific values belong in config.mk!
 
-.PHONY: all build clean lint static
+.PHONY: all build clean lint static wheels
 include config.mk
 
 MODULE:=app
@@ -17,6 +17,7 @@ BUILD_TIME:=$(shell date -u +%FT%X.%6NZ)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 UNAME:=$(shell uname -s)
+WHEELS:=$(SRCS_DIR)/wheels
 
 # BSD `sed` treats the `-i` option differently than Linux and others.
 # Check for Mac OS X 'Darwin' and set our `-i` option accordingly.
@@ -45,7 +46,7 @@ build-test: export APP_ID=$(TEST_APP_ID)
 build-test: export APP_NAME=$(TEST_APP_NAME)
 build-test: .appjson $(PACKAGE).tar
 
-$(PACKAGE).tar: version $(SOAR_SRCS)
+$(PACKAGE).tar: version $(SOAR_SRCS) wheels
 	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
 	tar cvf $@ -C src $(MODULE)
 
@@ -77,6 +78,10 @@ venv: requirements-test.txt
 	rm -rf $@
 	python -m venv venv
 	$(VENV_PYTHON) -m pip install -r $^
+
+wheels: $(WHEELS)
+$(WHEELS): requirements.in
+	pip wheel --no-deps --wheel-dir=$@ -r $^
 
 requirements-test.txt: export PYTEST_SOAR_REPO=git+https://github.com/splunk/pytest-splunk-soar-connectors.git
 requirements-test.txt: requirements-test.in
