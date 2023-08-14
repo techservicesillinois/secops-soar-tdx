@@ -74,10 +74,11 @@ version: .tag .commit .deployed
 deploy: $(PACKAGE).tar
 	python deploy.py $^
 
-venv: requirements-test.txt
+venv: requirements-test.txt requirements.in
 	rm -rf $@
 	python -m venv venv
-	$(VENV_PYTHON) -m pip install -r $^
+	$(VENV_PYTHON) -m pip install -r requirements-test.txt
+	$(VENV_PYTHON) -m pip install -r requirements.in
 
 wheels: $(WHEELS)
 $(WHEELS): requirements.in
