@@ -197,21 +197,21 @@ class TdxConnector(BaseConnector):
 
         tdxlib_config = {
             "full_host": config.get('endpoint', ''),
-            "orgname": config.get('orgname', ''),
+            "org_name": config.get('orgname', ''),
             "sandbox": config['sandbox'],
             "username": config['username'],
             "password": config['password'],
-            "ticketAppId": config['appid'],
-            "assetAppId": "",
+            "ticket_app_id": config['appid'],
+            "asset_app_id": "",
             "caching": False,
             "timezone": config['timezone'],
             "logLevel": config['loglevel'],
         }
 
-        if tdxlib_config['orgname'] and tdxlib_config['full_host']:
+        if tdxlib_config['org_name'] and tdxlib_config['full_host']:
             raise OrgNameAndEndpointSet()
 
-        if not (tdxlib_config['orgname'] or tdxlib_config['full_host']):
+        if not (tdxlib_config['org_name'] or tdxlib_config['full_host']):
             raise OrgNameAndEndpointNotSet()
 
         self.tdx = tdxlib.tdx_ticket_integration.TDXTicketIntegration(

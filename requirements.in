@@ -1,4 +1,5 @@
 # Production dependencies (Pulled from soar_null_router.json)
 # TDXLib
 # TODO: Unpin after https://github.com/cedarville-university/tdxlib/pull/69
-git+https://github.com/techservicesillinois/tdxlib.git
+#git+https://github.com/techservicesillinois/tdxlib.git
+git+https://github.com/cedarville-university/tdxlib.git
