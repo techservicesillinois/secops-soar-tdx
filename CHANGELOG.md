@@ -14,11 +14,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This release requires deleting and re-creating the SOAR `configured asset`.
 
 - Update config keys (#48) 
-
-### Updated
-
-- Organization Name is no longer required (#40)
-- Pin TDXLIB (#44)
+  - Organization Name is no longer required (#40)
+  - Pin TDXLIB (#44)
 
 ### Added
 
