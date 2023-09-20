@@ -14,6 +14,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This release requires deleting the previous deployed TDX SOAR App.
 This release requires deleting and re-creating the SOAR `configured asset`.
 
+- Update package metadata
 - Update config keys (#48) 
   - Organization Name is no longer required (#40)
   - Pin TDXLIB (#44)
