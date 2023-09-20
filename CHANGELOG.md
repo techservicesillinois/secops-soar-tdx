@@ -7,8 +7,25 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### [1.1.0] - 2023-09-21
+
+### Updated
+
+- Update config keys (#48) 
+- Organization Name is no longer required (#40)
+- Pin TDXLIB (#44)
+
+### Added
+
+- Add `reassign` blocks (#38)
+- Add error handling (#28)
+- Add update_ticket function (#27)
+- Add simpler test_connectivity (#4)
+
 ## [1.0.0] - 2022-05-17
 
 ### Added
 
 - Initial release
+- Prototype SOAR TDX app (#1)
+- Provides `test_connectivity` and `create_ticket`
