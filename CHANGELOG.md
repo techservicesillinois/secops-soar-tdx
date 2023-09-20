@@ -19,9 +19,9 @@ This release requires deleting and re-creating the SOAR `configured asset`.
 
 ### Added
 
-- Add `reassign` blocks (#38)
+- Add `reassign` block (#38)
+- Add `update_ticket` block (#27)
 - Add error handling (#28)
-- Add update_ticket function (#27)
 - Add simpler test_connectivity (#4)
 
 ## [1.0.0] - 2022-05-17
