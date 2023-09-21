@@ -275,7 +275,7 @@
         "wheel": [
             {
                 "module": "TDXLib",
-                "input_file": "wheels/TDXLib-0.4.3-py3-none-any.whl"
+                "input_file": "wheels/WHEEL"
             }
         ]
     }
