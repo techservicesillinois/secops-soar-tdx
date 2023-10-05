@@ -40,17 +40,17 @@ all: build
 
 build: export APP_ID=$(PROD_APP_ID)
 build: export APP_NAME=$(PROD_APP_NAME)
-build: .appjson $(PACKAGE).tar
+build: $(PACKAGE).tar
 
 build-test: export APP_ID=$(TEST_APP_ID)
 build-test: export APP_NAME=$(TEST_APP_NAME)
-build-test: .appjson $(PACKAGE).tar
+build-test: $(PACKAGE).tar
 
 $(PACKAGE).tar: version $(SOAR_SRCS) wheels
 	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
 	tar cvf $@ -C src $(MODULE)
 
-version: .tag .commit .deployed
+version: .tag .commit .deployed $(SRCS_DIR)/$(PACKAGE).json
 .tag: $(VERSIONED_FILES)
 	echo version $(TAG)
 	sed $(SED_INPLACE) "s/GITHUB_TAG/$(TAG)/" $^
@@ -63,13 +63,14 @@ version: .tag .commit .deployed
 	echo deployed $(BUILD_TIME)
 	sed $(SED_INPLACE) "s/BUILD_TIME/$(BUILD_TIME)/" $^
 	touch $@
-.appjson: $(SRCS_DIR)/$(PACKAGE).json
+$(SRCS_DIR)/$(PACKAGE).json: $(WHEELS)
 	echo appid: $(APP_ID)
 	echo name:  $(APP_NAME)
-	sed $(SED_INPLACE) "s/APP_ID/$(APP_ID)/" $^
-	sed $(SED_INPLACE) "s/APP_NAME/$(APP_NAME)/" $^
-	sed $(SED_INPLACE) "s/MODULE/$(MODULE)/" $^
-	touch $@
+	echo wheel: $(shell ls $(WHEELS))
+	sed $(SED_INPLACE) "s/APP_ID/$(APP_ID)/" $@
+	sed $(SED_INPLACE) "s/APP_NAME/$(APP_NAME)/" $@
+	sed $(SED_INPLACE) "s/MODULE/$(MODULE)/" $@
+	sed $(SED_INPLACE) "s/WHEEL/$(shell ls $(WHEELS))/" $@
 
 deploy: $(PACKAGE).tar
 	python deploy.py $^
@@ -115,7 +116,7 @@ clean:
 	rm -rf venv $(VENV_REQS)
 	rm -rf .lint .static
 	rm -rf .mypy_cache
-	rm -f $(PACKAGE).tar .tag
+	rm -f $(PACKAGE).tar .tag .wheel .commit .deployed
 	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
 	git checkout -- $(TAG_FILES)
 
