@@ -146,7 +146,7 @@
                 "description": {
                     "description": "Ticket description",
                     "data_type": "string",
-                    "required": true,
+                    "required": false,
                     "primary": false,
                     "contains": [],
                     "value_list": [],
