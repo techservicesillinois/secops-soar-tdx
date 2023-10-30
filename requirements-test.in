@@ -8,11 +8,10 @@ mypy
 pytest
 types-beautifulsoup4
 vcrpy
-# TODO: Unpin when a new version of urllib3 is released
-# Latest version 2.0.2 has a bug that breaks vcrpy import
+# The latest versions of the following dependencies require Python>=3.10 
 # https://github.com/kevin1024/vcrpy/issues/688
+urllib3==1.26.15 
 types-requests==2.31.0.2
-urllib3==1.26.15
 #  ⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀
 #⠀⠀⣿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣿⠀⠀
 #⠀⠀⠛⠀⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⠀⠛⠀⠀
