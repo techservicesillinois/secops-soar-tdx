@@ -86,6 +86,7 @@ $(WHEELS): requirements.in
 	pip wheel --no-deps --wheel-dir=$@ -r $^
 
 requirements-test.txt: export PYTEST_SOAR_REPO=git+https://github.com/splunk/pytest-splunk-soar-connectors.git
+requirements-test.txt: export VCR_CLEANER_REPO=git+https://github.com/techservicesillinois/vcrpy-cleaner.git
 requirements-test.txt: requirements-test.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
@@ -93,6 +94,7 @@ requirements-test.txt: requirements-test.in
 	$(VENV_REQS)/bin/python -m pip freeze -qqq > $@
 # REMOVE once pytest-splunk-soar-connectors is on pypi
 	sed $(SED_INPLACE) "s;^pytest-splunk-soar-connectors==.*;$(PYTEST_SOAR_REPO);" $@
+	sed $(SED_INPLACE) "s;^vcr-cleaner==.*;$(VCR_CLEANER_REPO);" $@
 
 lint: venv .lint
 .lint: $(SRCS) $(TSCS)
