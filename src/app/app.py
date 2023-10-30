@@ -86,6 +86,7 @@ class TdxConnector(BaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
+                "Description": param['description']
             })
             response = tdx.create_ticket(ticket, silent=(not param['notify']))
         except Exception as ex:
