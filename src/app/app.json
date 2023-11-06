@@ -143,6 +143,17 @@
                     "order": 2,
                     "name": "title"
                 },
+                "description": {
+                    "description": "Ticket description",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 3,
+                    "name": "description"
+                },
                 "type": {
                     "description": "Ticket type",
                     "data_type": "string",
@@ -151,7 +162,7 @@
                     "contains": [],
                     "value_list": [],
                     "default": "",
-                    "order": 3,
+                    "order": 4,
                     "name": "type"
                 },
                 "notify": {
@@ -160,7 +171,7 @@
                     "required": false,
                     "primary": false,
                     "default": false,
-                    "order": 4,
+                    "order": 5,
                     "name": "notify"
                 },
                 "status": {
@@ -171,7 +182,7 @@
                     "contains": [],
                     "value_list": [],
                     "default": "",
-                    "order": 5,
+                    "order": 6,
                     "name": "status"
                 }
             },

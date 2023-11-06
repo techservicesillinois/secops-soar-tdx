@@ -46,6 +46,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "type": "Security Support",
             "notify": False,
             "status": "Resolved",
+            "description": "",
         }],
     }
 
@@ -68,6 +69,7 @@ def test_failed_create(cassette, connector: TdxConnector):
             "type": "No Such Type",
             "notify": False,
             "status": "Resolved",
+            "description": "",
         }],
     }
 
