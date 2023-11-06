@@ -78,7 +78,7 @@ class TdxConnector(BaseConnector):
         tdx = self.tdx
 
         try:
-            ticket = tdxlib.tdx_ticket.TDXTicket(tdx, {
+            params = {
                 "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
                 "PriorityID": tdx.get_ticket_priority_by_name_id(
                     param['priority'])['ID'],
@@ -86,8 +86,12 @@ class TdxConnector(BaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
-                "Description": param['description']
-            })
+            }
+
+            if "description" in param and param["description"]:
+                params["Description"] = param["description"]
+
+            ticket = tdxlib.tdx_ticket.TDXTicket(tdx, params)
             response = tdx.create_ticket(ticket, silent=(not param['notify']))
         except Exception as ex:
             if ex.__class__.__name__ not in dir(tdx_ex):
