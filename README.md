@@ -34,6 +34,17 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
 
 - **Reassigning Tickets**: The application provides actions to reassign existing TeamDynamix tickets. This feature helps in efficiently managing tickets and ensuring they are handled by the appropriate teams or individuals.
 
+  + Action: reassign group
+    + parameters
+      + ticket id: The ticket ID
+      + responsible: name of the group to assign responsibility to
+        + Example: 'Cybersecurity Developers' or 'Cybersecurity Engineers'
+
+  + Action: reassign user
+    + parameters
+      + ticket id: The ticket ID
+      + responsible: NetID or email of user responsible
+
 ## Dependencies
 
 - **Splunk SOAR**: The application is designed to be deployed on the Splunk SOAR platform (formerly Phantom). 

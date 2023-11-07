@@ -259,7 +259,7 @@
                     "name": "priority"
                 },
                 "responsible": {
-                    "description": "User responsible",
+                    "description": "NetID or email of user responsible",
                     "data_type": "string",
                     "required": true,
                     "primary": false,
