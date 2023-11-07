@@ -161,12 +161,12 @@
                     "primary": false,
                     "contains": [],
                     "value_list": [],
-                    "default": "",
+                    "default": "CSOC",
                     "order": 4,
                     "name": "type"
                 },
                 "notify": {
-                    "description": "Notification setting",
+                    "description": "Notify requestor and responsible",
                     "data_type": "boolean",
                     "required": false,
                     "primary": false,
