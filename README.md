@@ -6,6 +6,32 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
 
 - **Creating Tickets**: The application allows you to create new tickets in TeamDynamix through SOAR actions. This can be used to automatically create tickets based on alerts and incidents detected by your security tools.
 
+  + Parameters:
+    + priority: Ticket priority
+      + Low
+      + Medium
+      + High
+      + Emergency
+      + VIP
+      + IT Pro
+    + requestor: Requestor User ID
+    + title: Ticket title
+    + description: Ticket description
+    + type: Ticket type
+      + For CSOC tickets this should be 'CSOC'
+    + notify: If selected, notify requestor and responsible
+    + status: Ticket Status
+      + New
+      + Open
+      + In Process
+      + Awaiting Response
+      + Resolved
+      + Closed
+      + Cancelled
+      + On Hold
+      + Duplicate
+      + Spam
+
 - **Reassigning Tickets**: The application provides actions to reassign existing TeamDynamix tickets. This feature helps in efficiently managing tickets and ensuring they are handled by the appropriate teams or individuals.
 
 ## Dependencies
