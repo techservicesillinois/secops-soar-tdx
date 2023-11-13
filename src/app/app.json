@@ -198,6 +198,40 @@
             "versions": "EQ(*)"
         },
         {
+            "action": "update ticket",
+            "identifier": "update_ticket",
+            "description": "Update a ticket",
+            "verbose": "",
+            "type": "generic",
+            "read_only": false,
+            "parameters": {
+                "ticket_id": {
+                    "description": "Ticket ID",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0,
+                    "name": "ticketID"
+                },
+                "comments": {
+                    "description": "Add comment to ticket",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1,
+                    "name": "comment"
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
             "action": "reassign group",
             "identifier": "reassign_group",
             "description": "Reassign a ticket (issue) to a particular group",
