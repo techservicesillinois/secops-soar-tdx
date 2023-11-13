@@ -227,7 +227,9 @@
                     "order": 1,
                     "name": "comment"
                 }
-            }
+            },
+            "output": [],
+            "versions": "EQ(*)"
         },
         {
             "action": "reassign group",
