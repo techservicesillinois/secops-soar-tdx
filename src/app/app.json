@@ -185,19 +185,17 @@
                     "order": 6,
                     "name": "status"
                 },
-                "attributes": [
-                    {
-                        "description": "TLP",
-                        "data_type": "string",
-                        "required": false,
-                        "primary": false,
-                        "contains": [],
-                        "value_list": [],
-                        "default": "8172",
-                        "order": 7,
-                        "name": "4363"
-                    }
-                ]
+                "TLP": {
+                    "description": "TLP Level",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "8172",
+                    "order": 7,
+                    "name": "4363"
+                }
             },
             "output": [
                 {

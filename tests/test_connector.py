@@ -47,12 +47,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "notify": False,
             "status": "Resolved",
             "description": "",
-            "attributes": [
-                {
-                    "ID": "4363",  # UIUC-TechSvc-Security TLP
-                    "Value": "8172"  # "TLP:RED"
-                }
-            ]
+            "TLP": "8172",
         }],
     }
 
