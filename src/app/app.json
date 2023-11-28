@@ -181,7 +181,7 @@
                     "primary": false,
                     "contains": [],
                     "value_list": [],
-                    "default": "",
+                    "default": "New",
                     "order": 6,
                     "name": "status"
                 }
