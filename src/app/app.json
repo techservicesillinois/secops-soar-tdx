@@ -184,6 +184,15 @@
                     "default": "",
                     "order": 6,
                     "name": "status"
+                },
+                "formid": {
+                    "description": "ID of the Form, defaults to 'UIUC-TechSvc-CSOC Incidents'",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "default": "1069",
+                    "order": 7,
+                    "name": "FormId"
                 }
             },
             "output": [

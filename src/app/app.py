@@ -86,6 +86,7 @@ class TdxConnector(BaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
+                "FormID": param['formid'],
             }
 
             if "description" in param and param["description"]:
