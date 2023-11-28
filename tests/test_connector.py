@@ -47,6 +47,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "notify": False,
             "status": "Resolved",
             "description": "",
+            "formid": "1069",
         }],
     }
 
