@@ -47,7 +47,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "notify": False,
             "status": "Resolved",
             "description": "",
-            "TLP": "8172",
+            "TLP": "8172",  # TLP (Traffic Light Protocol) level red
         }],
     }
 

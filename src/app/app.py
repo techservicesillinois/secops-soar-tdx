@@ -21,6 +21,8 @@ __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
 __deployed__ = 'BUILD_TIME'
 
+TLP_CUSTOM_ATTR_ID = "4363"
+
 
 class OrgNameAndEndpointSet(Exception):
     def __init__(self):
@@ -87,8 +89,9 @@ class TdxConnector(BaseConnector):
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
                 # TODO: Find a programmatic way to determine the ID to send
-                # for the TLP Attribute
-                "Attributes": [{"ID": "4363", "Value": param['TLP']}],
+                # for the TLP Attribute #73
+                "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
+                               "Value": param['TLP']}],
             }
 
             if "description" in param and param["description"]:
