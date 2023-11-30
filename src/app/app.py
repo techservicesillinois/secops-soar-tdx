@@ -89,6 +89,11 @@ class TdxConnector(BaseConnector):
         tdx = self.tdx
 
         try:
+            try:
+                attr_value = TLP_TABLE[param['TLP'].upper()]
+            except KeyError:
+                raise Exception(
+                    f'Please enter a valid TLP Color: {TLP_TABLE.keys()}')
             params = {
                 "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
                 "PriorityID": tdx.get_ticket_priority_by_name_id(
@@ -98,10 +103,9 @@ class TdxConnector(BaseConnector):
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
                 # TODO: Find a programmatic way to determine the ID to send
-                # for the TLP Attribute #73
                 "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
-                               "Value": TLP_TABLE[param['TLP']]}],
-            }
+                                "Value": attr_value}],
+                }
 
             if "description" in param and param["description"]:
                 params["Description"] = param["description"]
