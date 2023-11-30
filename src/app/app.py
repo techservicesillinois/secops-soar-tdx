@@ -21,7 +21,16 @@ __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
 __deployed__ = 'BUILD_TIME'
 
+# Custom Attribute 'UIUC-TechSvc-Security TLP' has ID 4363
 TLP_CUSTOM_ATTR_ID = "4363"
+
+TLP_TABLE = {
+    "CLEAR": "8175",
+    "GREEN": "8174",
+    "AMBER": "8173",
+    "AMBER+STRICT": "14037",
+    "RED": "8172",
+}
 
 
 class OrgNameAndEndpointSet(Exception):
@@ -91,7 +100,7 @@ class TdxConnector(BaseConnector):
                 # TODO: Find a programmatic way to determine the ID to send
                 # for the TLP Attribute #73
                 "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
-                               "Value": param['TLP']}],
+                               "Value": TLP_TABLE[param['TLP']]}],
             }
 
             if "description" in param and param["description"]:
