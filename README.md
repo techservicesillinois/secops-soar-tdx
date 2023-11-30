@@ -32,6 +32,13 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
       + Duplicate
       + Spam
     + formid: Form of the ticket, default is 'UIUC-TechSvc-CSOC Incidents'
+    + severity: 'UIUC-TechSvc-CSOC Incident Severity'
+      + Low
+      + Medium
+      + High
+      + Critical
+      + To Be Determined
+      + Non-Event
 
 - **Reassigning Tickets**: The application provides actions to reassign existing TeamDynamix tickets. This feature helps in efficiently managing tickets and ensuring they are handled by the appropriate teams or individuals.
 

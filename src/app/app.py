@@ -22,7 +22,9 @@ __git_hash__ = 'GITHUB_SHA'
 __deployed__ = 'BUILD_TIME'
 
 # Custom Attribute 'UIUC-TechSvc-Security TLP' has ID 4363
-TLP_CUSTOM_ATTR_ID = "4363"
+TLP_ID = "4363"
+# Custom Attribute 'UIUC-TechSvc-CSOC Incident Severity' has ID 4902
+SEVERITY_ID = "4902"
 
 TLP_TABLE = {
     "CLEAR": "8175",
@@ -31,6 +33,31 @@ TLP_TABLE = {
     "AMBER+STRICT": "14037",
     "RED": "8172",
 }
+
+SEVERITY_TABLE = {
+    "TO BE DETERMINED": "10539",
+    "NON-EVENT": "10541",
+    "LOW": "10540",
+    "MEDIUM": "10203",
+    "HIGH": "10204",
+    "CRITICAL": "10542",
+}
+
+
+def tlp(color: str):
+    try:
+        return TLP_TABLE[color.upper()]
+    except KeyError:
+        raise Exception(
+            f'Please enter a valid TLP Color: {TLP_TABLE.keys()}')
+
+
+def severity(level: str):
+    try:
+        return SEVERITY_TABLE[level.upper()]
+    except KeyError:
+        raise Exception(
+            f'Please enter a valid severity: {SEVERITY_TABLE.keys()}')
 
 
 class OrgNameAndEndpointSet(Exception):
@@ -89,11 +116,6 @@ class TdxConnector(BaseConnector):
         tdx = self.tdx
 
         try:
-            try:
-                attr_value = TLP_TABLE[param['TLP'].upper()]
-            except KeyError:
-                raise Exception(
-                    f'Please enter a valid TLP Color: {TLP_TABLE.keys()}')
             params = {
                 "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
                 "PriorityID": tdx.get_ticket_priority_by_name_id(
@@ -102,8 +124,10 @@ class TdxConnector(BaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
-                "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
-                                "Value": attr_value}],
+                "Attributes": [
+                    {"ID": TLP_ID, "Value": tlp(param["TLP"])},
+                    {"ID": SEVERITY_ID, "Value": severity(param["severity"])},
+                ],
                 "FormID": param['formid'],
             }
 
