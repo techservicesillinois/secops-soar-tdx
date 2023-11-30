@@ -204,6 +204,15 @@
                     "default": "1069",
                     "order": 8,
                     "name": "FormId"
+                },
+                "severity": {
+                    "description": "UIUC-TechSvc-CSOC Incident Severity",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "default": "To Be Determined",
+                    "order": 9,
+                    "name": "severity"
                 }
             },
             "output": [

@@ -49,6 +49,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "description": "",
             "TLP": "Red",
             "formid": "1069",
+            "severity": "To Be Determined",
         }],
     }
 
@@ -73,6 +74,7 @@ def test_failed_create(cassette, connector: TdxConnector):
             "status": "Resolved",
             "description": "",
             "TLP": "Red",
+            "severity": "To Be Determined",
         }],
     }
 
