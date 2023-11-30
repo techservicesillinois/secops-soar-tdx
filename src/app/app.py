@@ -21,6 +21,17 @@ __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
 __deployed__ = 'BUILD_TIME'
 
+# Custom Attribute 'UIUC-TechSvc-Security TLP' has ID 4363
+TLP_CUSTOM_ATTR_ID = "4363"
+
+TLP_TABLE = {
+    "CLEAR": "8175",
+    "GREEN": "8174",
+    "AMBER": "8173",
+    "AMBER+STRICT": "14037",
+    "RED": "8172",
+}
+
 
 class OrgNameAndEndpointSet(Exception):
     def __init__(self):
@@ -78,6 +89,11 @@ class TdxConnector(BaseConnector):
         tdx = self.tdx
 
         try:
+            try:
+                attr_value = TLP_TABLE[param['TLP'].upper()]
+            except KeyError:
+                raise Exception(
+                    f'Please enter a valid TLP Color: {TLP_TABLE.keys()}')
             params = {
                 "AccountID": tdx.get_account_by_name(self.account_name)['ID'],
                 "PriorityID": tdx.get_ticket_priority_by_name_id(
@@ -86,6 +102,8 @@ class TdxConnector(BaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
+                "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
+                                "Value": attr_value}],
                 "FormID": param['formid'],
             }
 

@@ -185,13 +185,24 @@
                     "order": 6,
                     "name": "status"
                 },
+                "TLP": {
+                    "description": "TLP Level",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "Amber",
+                    "order": 7,
+                    "name": "TLP"
+                },
                 "formid": {
                     "description": "ID of the Form, defaults to 'UIUC-TechSvc-CSOC Incidents'",
                     "data_type": "string",
                     "required": true,
                     "primary": false,
                     "default": "1069",
-                    "order": 7,
+                    "order": 8,
                     "name": "FormId"
                 }
             },
