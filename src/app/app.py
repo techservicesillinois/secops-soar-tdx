@@ -102,7 +102,6 @@ class TdxConnector(BaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
-                # TODO: Find a programmatic way to determine the ID to send
                 "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
                                 "Value": attr_value}],
                 "FormID": param['formid'],
