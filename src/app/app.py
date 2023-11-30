@@ -105,7 +105,8 @@ class TdxConnector(BaseConnector):
                 # TODO: Find a programmatic way to determine the ID to send
                 "Attributes": [{"ID": TLP_CUSTOM_ATTR_ID,
                                 "Value": attr_value}],
-                }
+                "FormID": param['formid'],
+            }
 
             if "description" in param and param["description"]:
                 params["Description"] = param["description"]
