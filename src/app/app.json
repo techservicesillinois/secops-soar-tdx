@@ -110,6 +110,17 @@
             "type": "generic",
             "read_only": false,
             "parameters": {
+                "priority": {
+                    "description": "Ticket priorty",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": ["Low"],
+                    "default": "Low",
+                    "order": 0,
+                    "name": "priority"
+                },
                 "requestor": {
                     "description": "Requestor User ID",
                     "data_type": "string",
