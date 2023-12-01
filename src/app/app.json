@@ -117,7 +117,7 @@
                     "primary": false,
                     "contains": [],
                     "value_list": [],
-                    "default": "",
+                    "default": "Low",
                     "order": 0,
                     "name": "priority"
                 },
