@@ -118,7 +118,7 @@
                     "contains": [],
                     "value_list": ["Low"],
                     "default": "Low",
-                    "order": 0,
+                    "order": 10,
                     "name": "priority"
                 },
                 "requestor": {
