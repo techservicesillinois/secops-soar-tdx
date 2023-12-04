@@ -209,7 +209,7 @@
                     "required": true,
                     "primary": false,
                     "contains": [],
-                    "value_list": ["Low"],
+                    "value_list": ["Low", "Medium", "High"],
                     "default": "Low",
                     "order": 10,
                     "name": "priority"
