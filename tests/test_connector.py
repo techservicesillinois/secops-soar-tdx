@@ -48,7 +48,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "status": "Resolved",
             "description": "",
             "TLP": "Red",
-            "formid": "1069",
+            "formid": "UIUC-TechSvc-CSOC Incidents",
             "severity": "To Be Determined",
         }],
     }
@@ -75,6 +75,7 @@ def test_failed_create(cassette, connector: TdxConnector):
             "description": "",
             "TLP": "Red",
             "severity": "To Be Determined",
+            "formid": "UIUC-TechSvc-CSOC Incidents",
         }],
     }
 
