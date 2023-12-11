@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAOhri2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        H4sIAMh0d2UC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
         8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
         yQYA/EJXWGkAAAA=
     headers:
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Thu, 15 Jun 2023 19:52:02 GMT
+      - Mon, 11 Dec 2023 20:44:52 GMT
       Expires:
       - '-1'
       Pragma:
@@ -46,13 +46,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '55'
+      - '59'
       X-RateLimit-Reset:
-      - Thu, 15 Jun 2023 19:52:54 GMT
+      - Mon, 11 Dec 2023 20:45:51 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 834c684c-5325-4a33-aec3-b61ec23b474d
+      - '3345419373167109285'
       X-UA-Compatible:
       - IE=edge
     status:
@@ -91,11 +91,11 @@ interactions:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '4143691'
+      - '4167946'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Jun 2023 19:52:04 GMT
+      - Mon, 11 Dec 2023 20:44:53 GMT
       Expires:
       - '-1'
       Pragma:
@@ -109,7 +109,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Thu, 15 Jun 2023 19:53:04 GMT
+      - Mon, 11 Dec 2023 20:45:53 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -117,9 +117,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - 18280ee7-7031-42df-8b21-5104246c4947
+      - '6758738251409011500'
       X-TDX-UID:
-      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -155,7 +155,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Jun 2023 19:52:06 GMT
+      - Mon, 11 Dec 2023 20:44:54 GMT
       Expires:
       - '-1'
       Pragma:
@@ -169,7 +169,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Thu, 15 Jun 2023 19:53:07 GMT
+      - Mon, 11 Dec 2023 20:45:55 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -177,9 +177,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - e679890b-7524-4b18-96be-f69e58c28b08
+      - '5988445569559771640'
       X-TDX-UID:
-      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -235,7 +235,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Jun 2023 19:52:07 GMT
+      - Mon, 11 Dec 2023 20:44:54 GMT
       Expires:
       - '-1'
       Pragma:
@@ -249,7 +249,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Thu, 15 Jun 2023 19:52:17 GMT
+      - Mon, 11 Dec 2023 20:45:05 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -257,9 +257,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - bf7a9058-63e8-419b-8974-e0b9c50b8733
+      - '8423273371909577072'
       X-TDX-UID:
-      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -284,7 +284,10 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/types
   response:
     body:
-      string: '[{"ID":310,"AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","Name":"CSOC","Description":"Work
+      string: '[{"ID":364,"AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","Name":"Copyright","Description":"Copyright
+        infringement tickets","CategoryID":89,"CategoryName":"UIUC-Privacy and Cybersecurity","FullName":"UIUC-Privacy
+        and Cybersecurity / Copyright","IsActive":true,"CreatedDate":"2022-12-16T20:37:08.87Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-12-16T20:37:08.87Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":310,"AppID":66,"AppName":"UIUC
+        - Tech Services Privacy and Cybersecurity","Name":"CSOC","Description":"Work
         done by the Cybersecurity Operations Center","CategoryID":89,"CategoryName":"UIUC-Privacy
         and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / CSOC","IsActive":true,"CreatedDate":"2022-06-29T20:23:50.147Z","CreatedByUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-06-29T20:23:50.147Z","ModifiedByUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":341,"AppID":66,"AppName":"UIUC
         - Tech Services Privacy and Cybersecurity","Name":"GRC","Description":"","CategoryID":89,"CategoryName":"UIUC-Privacy
@@ -303,17 +306,16 @@ interactions:
         and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Security Support","IsActive":true,"CreatedDate":"2022-06-30T19:43:49.887Z","CreatedByUid":"fdb3b2ee-90c9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-10-27T19:52:38.63Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":345,"AppID":66,"AppName":"UIUC
         - Tech Services Privacy and Cybersecurity","Name":"Vulnerability","Description":"Vulnerability
         management tickets, currently worked by SecEng","CategoryID":89,"CategoryName":"UIUC-Privacy
-        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Vulnerability","IsActive":true,"CreatedDate":"2022-11-22T20:38:32.15Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-11-22T20:38:34.573Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":786,"ReviewingGroupName":"UIUC-TechServices-Cybersecurity
-        Engineers","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false}]'
+        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Vulnerability","IsActive":true,"CreatedDate":"2022-11-22T20:38:32.15Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-12-19T20:26:47.343Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false}]'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '5645'
+      - '6385'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Jun 2023 19:52:07 GMT
+      - Mon, 11 Dec 2023 20:44:54 GMT
       Expires:
       - '-1'
       Pragma:
@@ -327,7 +329,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Thu, 15 Jun 2023 19:53:08 GMT
+      - Mon, 11 Dec 2023 20:45:55 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -335,9 +337,126 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - ff2db9ba-3f1a-4549-9d1c-1b16333b26c2
+      - '3691534179145196312'
       X-TDX-UID:
-      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      - a68e93bc-e406-ee11-87dd-0050f2e6c034
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/forms
+  response:
+    body:
+      string: '[{"ID":640,"Name":"Change Form","AppID":66,"AppName":"UIUC - Tech Services
+        Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2021-07-13T18:48:46.043Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2021-07-13T18:48:46.177Z","ModifiedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"Nathan
+        Carpenter","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":637,"Name":"Incident
+        Form","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2021-07-13T18:48:46.023Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2021-07-13T18:48:46.157Z","ModifiedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"Nathan
+        Carpenter","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":638,"Name":"Major
+        Incident Form","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2021-07-13T18:48:46.033Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2021-07-13T18:48:46.163Z","ModifiedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"Nathan
+        Carpenter","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1310,"Name":"Out
+        of Office Request","AppID":66,"AppName":"UIUC - Tech Services Privacy and
+        Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":true,"CreatedDate":"2023-06-15T16:07:41.54Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2023-07-14T21:00:05.697Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":639,"Name":"Problem
+        Form","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2021-07-13T18:48:46.04Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2022-12-19T19:48:33.27Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":641,"Name":"Release
+        Form","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2021-07-13T18:48:46.05Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2021-07-13T18:48:46.183Z","ModifiedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"Nathan
+        Carpenter","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1274,"Name":"Test
+        Approval Form","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2023-05-24T15:47:41.72Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2023-05-24T15:49:49.353Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":693,"Name":"UIUC-TechServices-Privacy
+        New Request","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":true,"CreatedDate":"2021-10-06T18:16:01.103Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2022-12-14T20:40:09.41Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1068,"Name":"UIUC-TechSvc-CSOC
+        Events","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T20:23:46.43Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
+        Shanahan","ModifiedDate":"2023-05-31T19:30:42.903Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1069,"Name":"UIUC-TechSvc-CSOC
+        Incidents","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T19:56:54.657Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
+        Shanahan","ModifiedDate":"2023-05-31T19:40:06.407Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1070,"Name":"UIUC-TechSvc-CSOC
+        Informational","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T20:06:49.573Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
+        Shanahan","ModifiedDate":"2023-05-31T19:30:50.84Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1071,"Name":"UIUC-TechSvc-CSOC
+        Processes","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T20:10:31.903Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
+        Shanahan","ModifiedDate":"2023-05-31T19:30:46.487Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1170,"Name":"UIUC-TechSvc-GRC
+        Service Request","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-12-06T17:45:15.88Z","CreatedUid":"20f6f9a6-90c9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Zane
+        Budnovich","ModifiedDate":"2023-02-09T17:46:52.043Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1175,"Name":"UIUC-TechSvc-Privacy
+        Triage","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-12-19T21:39:27.87Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2022-12-19T21:39:41.653Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1173,"Name":"UIUC-TechSvc-Security
+        Development","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-12-14T19:39:11.78Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2022-12-14T20:41:20.573Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1074,"Name":"UIUC-TechSvc-Security
+        Engineering","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T20:26:59.253Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
+        Shanahan","ModifiedDate":"2022-12-19T22:04:08.21Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1168,"Name":"UIUC-TechSvc-Security
+        Support","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":true,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2022-11-22T22:05:29.7Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2023-02-15T21:37:21.473Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1174,"Name":"UIUC-TechSvc-Vulnerability","AppID":66,"AppName":"UIUC
+        - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":false,"CreatedDate":"2022-12-14T20:46:18.923Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2023-02-15T21:13:31.43Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1421,"Name":"Urgent
+        Access Termination","AppID":66,"AppName":"UIUC - Tech Services Privacy and
+        Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":true,"ShouldExpandHelp":true,"CreatedDate":"2023-08-02T19:38:13.33Z","CreatedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"CLEANED
+        CLEANED","ModifiedDate":"2023-08-09T19:40:26.36Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '10164'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 11 Dec 2023 20:44:55 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 11 Dec 2023 20:45:55 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '7167059365412705991'
+      X-TDX-UID:
+      - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:
@@ -345,7 +464,8 @@ interactions:
       message: OK
 - request:
     body: '{"AccountID": 7902, "PriorityID": 19, "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7",
-      "Title": "NewBoo", "TypeID": 312}'
+      "Title": "NewBoo", "TypeID": 312, "Attributes": [{"ID": "4363", "Value": "8172"},
+      {"ID": "4902", "Value": "10539"}], "FormID": 1069}'
     headers:
       Accept:
       - '*/*'
@@ -356,7 +476,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '127'
+      - '226'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
@@ -368,56 +488,80 @@ interactions:
       string: '{"ID": 564073, "ParentID": 0, "ParentTitle": "", "ParentClass": 0,
         "TypeID": 312, "TypeName": "Security Support", "TypeCategoryID": 89, "TypeCategoryName":
         "UIUC-Privacy and Cybersecurity", "Classification": 46, "ClassificationName":
-        "Service Request", "FormID": 693, "FormName": "UIUC-TechServices-Privacy New
-        Request", "Title": "NewBoo", "Description": "", "IsRichHtml": false, "Uri":
-        "api/66/tickets/564073", "AccountID": 7902, "AccountName": "None/Not Found",
-        "SourceID": 8, "SourceName": "Webform (External)", "StatusID": 358, "StatusName":
-        "Open", "StatusClass": 2, "ImpactID": 0, "ImpactName": "", "UrgencyID": 0,
-        "UrgencyName": "", "PriorityID": 19, "PriorityName": "Low", "PriorityOrder":
-        1.0, "SlaID": 0, "SlaName": "", "IsSlaViolated": false, "IsSlaRespondByViolated":
-        false, "IsSlaResolveByViolated": false, "RespondByDate": "0001-01-01T00:00:00",
-        "ResolveByDate": "0001-01-01T00:00:00", "SlaBeginDate": "0001-01-01T00:00:00",
-        "IsOnHold": false, "PlacedOnHoldDate": "0001-01-01T00:00:00", "GoesOffHoldDate":
-        "0001-01-01T00:00:00", "CreatedDate": "2023-06-15T19:52:08.413Z", "CreatedUid":
-        "0bfec2fa-e406-ee11-87dd-0050f2e6c034", "CreatedFullName": "Security SOAR
-        API Service Account", "CreatedEmail": "", "ModifiedDate": "2023-06-15T19:52:08.413Z",
-        "ModifiedUid": "0bfec2fa-e406-ee11-87dd-0050f2e6c034", "ModifiedFullName":
+        "Service Request", "FormID": 1069, "FormName": "UIUC-TechSvc-CSOC Incidents",
+        "Title": "NewBoo", "Description": "", "IsRichHtml": false, "Uri": "api/66/tickets/564073",
+        "AccountID": 7902, "AccountName": "None/Not Found", "SourceID": 0, "SourceName":
+        "", "StatusID": 357, "StatusName": "New", "StatusClass": 1, "ImpactID": 0,
+        "ImpactName": "", "UrgencyID": 0, "UrgencyName": "", "PriorityID": 19, "PriorityName":
+        "Low", "PriorityOrder": 1.0, "SlaID": 0, "SlaName": "", "IsSlaViolated": false,
+        "IsSlaRespondByViolated": false, "IsSlaResolveByViolated": false, "RespondByDate":
+        "0001-01-01T00:00:00", "ResolveByDate": "0001-01-01T00:00:00", "SlaBeginDate":
+        "0001-01-01T00:00:00", "IsOnHold": false, "PlacedOnHoldDate": "0001-01-01T00:00:00",
+        "GoesOffHoldDate": "0001-01-01T00:00:00", "CreatedDate": "2023-12-11T20:44:56.267Z",
+        "CreatedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "CreatedFullName": "Security
+        SOAR API Service Account", "CreatedEmail": "", "ModifiedDate": "2023-12-11T20:44:56.267Z",
+        "ModifiedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "ModifiedFullName":
         "Security SOAR API Service Account", "RequestorName": "Jane Foster", "RequestorFirstName":
         "Jane", "RequestorLastName": "Foster", "RequestorEmail": "nobody@example.com",
         "RequestorPhone": null, "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7",
         "ActualMinutes": 0, "EstimatedMinutes": 0, "DaysOld": 0, "StartDate": null,
         "EndDate": null, "ResponsibleUid": null, "ResponsibleFullName": "Unassigned",
-        "ResponsibleEmail": "", "ResponsibleGroupID": 611, "ResponsibleGroupName":
-        "UIUC-TechServices-Privacy Office", "RespondedDate": "2023-06-15T19:52:08.413Z",
-        "RespondedUid": "0bfec2fa-e406-ee11-87dd-0050f2e6c034", "RespondedFullName":
-        "Security SOAR API Service Account", "CompletedDate": "0001-01-01T00:00:00",
-        "CompletedUid": null, "CompletedFullName": "", "ReviewerUid": null, "ReviewerFullName":
-        "", "ReviewerEmail": "", "ReviewingGroupID": 0, "ReviewingGroupName": "",
-        "TimeBudget": 0.0, "ExpensesBudget": 0.0, "TimeBudgetUsed": 0.0, "ExpensesBudgetUsed":
-        0.0, "IsConvertedToTask": false, "ConvertedToTaskDate": "0001-01-01T00:00:00",
-        "ConvertedToTaskUid": null, "ConvertedToTaskFullName": "", "TaskProjectID":
-        0, "TaskProjectName": "", "TaskPlanID": 0, "TaskPlanName": "", "TaskID": 0,
-        "TaskTitle": "", "TaskStartDate": "0001-01-01T00:00:00", "TaskEndDate": "0001-01-01T00:00:00",
-        "TaskPercentComplete": 0, "LocationID": 0, "LocationName": "", "LocationRoomID":
-        0, "LocationRoomName": "", "RefCode": "", "ServiceID": 0, "ServiceName": "None",
-        "ServiceOfferingID": 0, "ServiceOfferingName": "None", "ServiceCategoryID":
-        0, "ServiceCategoryName": "None", "ArticleID": 0, "ArticleSubject": "", "ArticleStatus":
-        0, "ArticleCategoryPathNames": "", "ArticleAppID": 0, "ArticleShortcutID":
-        null, "AppID": 66, "Attributes": [], "Attachments": [], "Tasks": [], "Notify":
-        [{"ItemRole": "Responsible Group", "Name": "Jane Foster", "Initials": null,
-        "Value": "nobody@example.com", "RefValue": 0, "ProfileImageFileName": null},
-        {"ItemRole": "Requestor", "Name": "CLEANED CLEANED", "Initials": null, "Value":
-        "CLEANED@illinois.edu", "RefValue": 0, "ProfileImageFileName": null}], "WorkflowID":
-        0, "WorkflowConfigurationID": 0, "WorkflowName": ""}'
+        "ResponsibleEmail": "", "ResponsibleGroupID": 0, "ResponsibleGroupName": "",
+        "RespondedDate": "0001-01-01T00:00:00", "RespondedUid": null, "RespondedFullName":
+        "", "CompletedDate": "0001-01-01T00:00:00", "CompletedUid": null, "CompletedFullName":
+        "", "ReviewerUid": null, "ReviewerFullName": "", "ReviewerEmail": "", "ReviewingGroupID":
+        0, "ReviewingGroupName": "", "TimeBudget": 0.0, "ExpensesBudget": 0.0, "TimeBudgetUsed":
+        0.0, "ExpensesBudgetUsed": 0.0, "IsConvertedToTask": false, "ConvertedToTaskDate":
+        "0001-01-01T00:00:00", "ConvertedToTaskUid": null, "ConvertedToTaskFullName":
+        "", "TaskProjectID": 0, "TaskProjectName": "", "TaskPlanID": 0, "TaskPlanName":
+        "", "TaskID": 0, "TaskTitle": "", "TaskStartDate": "0001-01-01T00:00:00",
+        "TaskEndDate": "0001-01-01T00:00:00", "TaskPercentComplete": 0, "LocationID":
+        0, "LocationName": "", "LocationRoomID": 0, "LocationRoomName": "", "RefCode":
+        "", "ServiceID": 0, "ServiceName": "None", "ServiceOfferingID": 0, "ServiceOfferingName":
+        "None", "ServiceCategoryID": 0, "ServiceCategoryName": "None", "ArticleID":
+        0, "ArticleSubject": "", "ArticleStatus": 0, "ArticleCategoryPathNames": "",
+        "ArticleAppID": 0, "ArticleShortcutID": null, "AppID": 66, "Attributes": [{"ID":
+        4902, "Name": "UIUC-TechSvc-CSOC Incident Severity", "Order": 0, "Description":
+        "", "SectionID": 0, "SectionName": null, "FieldType": "dropdown", "DataType":
+        "String", "Choices": [{"ID": 10539, "Name": "To Be Determined", "IsActive":
+        true, "DateCreated": "2023-04-17T20:47:47.447Z", "DateModified": "2023-04-17T20:47:47.447Z",
+        "Order": 0}, {"ID": 10541, "Name": "Non-Event", "IsActive": true, "DateCreated":
+        "2023-04-17T20:48:18.213Z", "DateModified": "2023-04-17T20:48:33.57Z", "Order":
+        1}, {"ID": 10540, "Name": "Low - Minor", "IsActive": true, "DateCreated":
+        "2023-04-17T20:48:05.88Z", "DateModified": "2023-04-17T20:48:24.127Z", "Order":
+        2}, {"ID": 10203, "Name": "Medium - Moderate", "IsActive": true, "DateCreated":
+        "2023-03-13T19:34:05.207Z", "DateModified": "2023-04-17T20:49:23.907Z", "Order":
+        3}, {"ID": 10204, "Name": "High - Serious", "IsActive": true, "DateCreated":
+        "2023-03-13T19:34:05.217Z", "DateModified": "2023-04-17T20:49:18.803Z", "Order":
+        4}, {"ID": 10542, "Name": "Critical - Major", "IsActive": true, "DateCreated":
+        "2023-04-17T20:49:12.407Z", "DateModified": "2023-04-17T20:49:12.407Z", "Order":
+        5}], "IsRequired": false, "IsUpdatable": true, "Value": "10539", "ValueText":
+        "To Be Determined", "ChoicesText": "To Be Determined", "AssociatedItemIDs":
+        [0]}, {"ID": 4363, "Name": "UIUC-TechSvc-Security TLP", "Order": 0, "Description":
+        "Traffic Light Protocol sharing classification - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP",
+        "SectionID": 0, "SectionName": null, "FieldType": "dropdown", "DataType":
+        "String", "Choices": [{"ID": 8175, "Name": "TLP:WHITE", "IsActive": true,
+        "DateCreated": "2022-06-29T20:23:50.033Z", "DateModified": "2022-06-29T20:23:50.033Z",
+        "Order": 0}, {"ID": 8174, "Name": "TLP:GREEN", "IsActive": true, "DateCreated":
+        "2022-06-29T20:23:49.927Z", "DateModified": "2022-06-29T20:23:49.927Z", "Order":
+        1}, {"ID": 8173, "Name": "TLP:AMBER", "IsActive": true, "DateCreated": "2022-06-29T20:23:49.827Z",
+        "DateModified": "2022-06-29T20:23:49.827Z", "Order": 2}, {"ID": 8172, "Name":
+        "TLP:RED", "IsActive": true, "DateCreated": "2022-06-29T20:23:49.723Z", "DateModified":
+        "2022-06-29T20:23:49.723Z", "Order": 3}], "IsRequired": false, "IsUpdatable":
+        true, "Value": "8172", "ValueText": "TLP:RED", "ChoicesText": "TLP:RED", "AssociatedItemIDs":
+        [0]}], "Attachments": [], "Tasks": [], "Notify": [{"ItemRole": "Requestor",
+        "Name": "Jane Foster", "Initials": null, "Value": "nobody@example.com", "RefValue":
+        0, "ProfileImageFileName": null}], "WorkflowID": 0, "WorkflowConfigurationID":
+        0, "WorkflowName": ""}'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '3225'
+      - '5101'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Jun 2023 19:52:08 GMT
+      - Mon, 11 Dec 2023 20:44:55 GMT
       Expires:
       - '-1'
       Pragma:
@@ -431,7 +575,7 @@ interactions:
       X-RateLimit-Remaining:
       - '119'
       X-RateLimit-Reset:
-      - Thu, 15 Jun 2023 19:53:08 GMT
+      - Mon, 11 Dec 2023 20:45:56 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -439,9 +583,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - a6dbfd95-d8e0-4168-ac94-e9a32dd406ea
+      - '2149316269131206143'
       X-TDX-UID:
-      - 0bfec2fa-e406-ee11-87dd-0050f2e6c034
+      - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
       - IE=edge
     status:

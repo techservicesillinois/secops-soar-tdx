@@ -128,7 +128,8 @@ class TdxConnector(BaseConnector):
                     {"ID": TLP_ID, "Value": tlp(param["TLP"])},
                     {"ID": SEVERITY_ID, "Value": severity(param["severity"])},
                 ],
-                "FormID": param['formid'],
+                "FormID": tdx.get_ticket_form_by_name_id(
+                    param['formid'])['ID']
             }
 
             if "description" in param and param["description"]:

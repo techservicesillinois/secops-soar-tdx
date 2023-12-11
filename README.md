@@ -32,6 +32,10 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
       + Duplicate
       + Spam
     + formid: Form of the ticket, default is 'UIUC-TechSvc-CSOC Incidents'
+      + [UIUC-TechSvc-CSOC Incidents] (ID 1069)
+      + [UIUC-TechSvc-CSOC Informational] (ID 1070)
+      + [UIUC-TechSvc-CSOC Events] (ID 1068)
+      + [UIUC-TechSvc-CSOC Processes] (ID 1071)
     + severity: 'UIUC-TechSvc-CSOC Incident Severity'
       + Low
       + Medium
@@ -55,7 +59,7 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
 
 ## Dependencies
 
-- **Splunk SOAR**: The application is designed to be deployed on the Splunk SOAR platform (formerly Phantom). 
+- **Splunk SOAR**: The application is designed to be deployed on the Splunk SOAR platform (formerly Phantom).
 
 - **Python 3.9**: The application is built with Python 3.9. The end-of-life date for this Python version is October 31, 2025.
 
