@@ -92,7 +92,16 @@ End-of-Life was decided upon based on these dependencies:
     - Python 3.9 (31 October 2025)
     - Splunk SOAR Cloud (Unknown)
 
-## Manual Deployment
+## Installation
+
+- Visit our [GitHub Actions](https://github.com/techservicesillinois/secops-soar-tdx/actions)
+- Find the most recent successful run of the create_tgz action
+- Download the SOAR TeamDynamix App zip file
+- Unzip to extract the app.tar file
+  - Note: Macs will unzip and untar the file automatically in Finder. You may need to use unzip at the command line to extract the tar file
+- Follow installation directions: [Export or import an app - Splunk documentation](https://docs.splunk.com/Documentation/SOAR/current/DevelopApps/ExportOrImportAnApp)
+
+## Manual Developer Deployment
 
 Set the environment variables `SOAR_TOKEN` and `SOAR_HOSTNAME`, then run `make deploy`.
 
