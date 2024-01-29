@@ -129,7 +129,8 @@ class TdxConnector(BaseConnector):
                     {"ID": SEVERITY_ID, "Value": severity(param["severity"])},
                 ],
                 "FormID": tdx.get_ticket_form_by_name_id(
-                    param['formid'])['ID']
+                    param['formid'])['ID'],
+                "Responsible": param['responsible']
             }
 
             if "description" in param and param["description"]:

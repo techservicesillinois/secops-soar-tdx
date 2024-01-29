@@ -163,6 +163,17 @@
                     "order": 5,
                     "name": "notify"
                 },
+                "responsible": {
+                    "description": "Group responsible for ticket",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "UIUC-TechServices-Cybersecurity Incident Response",
+                    "order": 6,
+                    "name": "responsible"
+                },
                 "status": {
                     "description": "Ticket status",
                     "data_type": "string",
@@ -171,7 +182,7 @@
                     "contains": [],
                     "value_list": [],
                     "default": "New",
-                    "order": 6,
+                    "order": 7,
                     "name": "status"
                 },
                 "TLP": {
@@ -182,7 +193,7 @@
                     "contains": [],
                     "value_list": [],
                     "default": "Amber",
-                    "order": 7,
+                    "order": 8,
                     "name": "TLP"
                 },
                 "formid": {
@@ -191,7 +202,7 @@
                     "required": true,
                     "primary": false,
                     "default": "UIUC-TechSvc-CSOC Incidents",
-                    "order": 8,
+                    "order": 9,
                     "name": "FormId"
                 },
                 "severity": {
@@ -200,7 +211,7 @@
                     "required": false,
                     "primary": false,
                     "default": "To Be Determined",
-                    "order": 9,
+                    "order": 10,
                     "name": "severity"
                 },
                 "priority": {
@@ -210,7 +221,7 @@
                     "primary": false,
                     "contains": [],
                     "default": "Low",
-                    "order": 10,
+                    "order": 11,
                     "name": "priority"
                 }
             },

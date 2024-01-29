@@ -13,6 +13,7 @@ APP_ID = "tacosalad"
 
 #  PROTIP: After re-recording test_create_ticket.yaml, update this Ticket ID.
 TICKET_ID = 564073
+DEFAULT_GROUP = "UIUC-TechServices-Cybersecurity Incident Response"
 
 
 def test_connectivity(cassette, connector: TdxConnector):
@@ -54,15 +55,19 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "TLP": "Red",
             "formid": "UIUC-TechSvc-CSOC Incidents",
             "severity": "To Be Determined",
+            "responsible":
+                "UIUC-TechServices-Cybersecurity Incident Response"
         }],
     }
 
-    result = json.loads(connector._handle_action(json.dumps(in_json), None))
+    raw_result = connector._handle_action(json.dumps(in_json), None)
+    result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
         assert result[0]["data"][0]["id"] == 564073
 
     assert result[0]["message"] == "Create ticket succeeded"
+    assert DEFAULT_GROUP in raw_result
 
 
 def test_failed_create(cassette, connector: TdxConnector):
