@@ -8,7 +8,11 @@ from app.app import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
 from conftest import VCR_RECORD, CASSETTE_NETID
 
 APP_ID = "tacosalad"
-TICKET_ID = 564073  # Must match cassette
+#  TICKET_ID must match ticket ID found in
+#  cassettes/test_create_ticket.yaml
+
+#  PROTIP: After re-recording test_create_ticket.yaml, update this Ticket ID.
+TICKET_ID = 564073
 
 
 def test_connectivity(cassette, connector: TdxConnector):
