@@ -5,7 +5,13 @@ from app.app import TdxConnector
 from conftest import CASSETTE_NETID
 
 APP_ID = "tacosalad"
-TICKET_ID = 564073  # Must match cassette
+#  TICKET_ID must match ticket ID found in
+#  cassettes/test_reassign_user.yaml
+#  cassettes/test_reassign_group.yaml
+
+#  PROTIP: After the TDX Sandbox environment gets reset, you'll have to
+#  go digging for a new ticket ID in order to re-record these cassettes.
+TICKET_ID = 1011312
 
 
 def test_reassign_group(cassette, connector: TdxConnector):
