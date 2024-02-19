@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIACCUumUC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        H4sIAAaU02UC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
         8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
         yQYA/EJXWGkAAAA=
     headers:
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:25 GMT
+      - Mon, 19 Feb 2024 17:46:41 GMT
       Expires:
       - '-1'
       Pragma:
@@ -48,11 +48,11 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:41:25 GMT
+      - Mon, 19 Feb 2024 17:47:41 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '6754950246019097024'
+      - '4956216429420351179'
       X-UA-Compatible:
       - IE=edge
     status:
@@ -95,7 +95,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:28 GMT
+      - Mon, 19 Feb 2024 17:46:43 GMT
       Expires:
       - '-1'
       Pragma:
@@ -109,7 +109,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:41:27 GMT
+      - Mon, 19 Feb 2024 17:47:43 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -117,7 +117,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '8566862768188044166'
+      - '8940413038996336542'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -155,7 +155,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:30 GMT
+      - Mon, 19 Feb 2024 17:46:44 GMT
       Expires:
       - '-1'
       Pragma:
@@ -169,7 +169,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:41:31 GMT
+      - Mon, 19 Feb 2024 17:47:44 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -177,7 +177,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '8800828208247051824'
+      - '5464224699360240406'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -204,7 +204,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=thor2&maxResults=1
   response:
     body:
-      string: '[{"UID": "b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 48141,
+      string: '[{"UID": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 48436,
         "BEID": "0f7df9ca-3924-4806-8adc-6e880a796ddc", "BEIDInt": 2, "IsActive":
         true, "IsConfidential": false, "UserName": "", "FullName": "Jane Foster",
         "FirstName": "Jane", "LastName": "Foster", "MiddleName": null, "Salutation":
@@ -231,11 +231,11 @@ interactions:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '1567'
+      - '1563'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:31 GMT
+      - Mon, 19 Feb 2024 17:46:44 GMT
       Expires:
       - '-1'
       Pragma:
@@ -249,7 +249,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:40:41 GMT
+      - Mon, 19 Feb 2024 17:46:55 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -257,7 +257,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '8750846893212312369'
+      - '7442565401066950913'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -315,7 +315,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:31 GMT
+      - Mon, 19 Feb 2024 17:46:44 GMT
       Expires:
       - '-1'
       Pragma:
@@ -329,7 +329,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:41:31 GMT
+      - Mon, 19 Feb 2024 17:47:45 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -337,7 +337,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '5694325632894723557'
+      - '100671540360824240'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -397,7 +397,7 @@ interactions:
         Shanahan","ModifiedDate":"2023-05-31T19:30:42.903Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
         CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1069,"Name":"UIUC-TechSvc-CSOC
         Incidents","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T19:56:54.657Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
-        Shanahan","ModifiedDate":"2023-11-09T20:28:50.84Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
+        Shanahan","ModifiedDate":"2024-02-13T21:55:26.723Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
         CLEANED","AssetsCount":-1,"ConfigurationItemsCount":-1},{"ID":1070,"Name":"UIUC-TechSvc-CSOC
         Informational","AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","ComponentID":9,"IsActive":true,"IsConfigured":true,"IsDefaultForApp":false,"IsPinned":false,"ShouldExpandHelp":false,"CreatedDate":"2022-06-29T20:06:49.573Z","CreatedUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Robert
         Shanahan","ModifiedDate":"2023-05-31T19:30:50.84Z","ModifiedUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"CLEANED
@@ -431,11 +431,11 @@ interactions:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '10688'
+      - '10689'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:31 GMT
+      - Mon, 19 Feb 2024 17:46:45 GMT
       Expires:
       - '-1'
       Pragma:
@@ -449,7 +449,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:41:31 GMT
+      - Mon, 19 Feb 2024 17:47:45 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -457,7 +457,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '4434036526904221740'
+      - '675792250524206921'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -466,7 +466,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"AccountID": 7902, "PriorityID": 19, "RequestorUid": "b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7",
+    body: '{"AccountID": 7902, "PriorityID": 19, "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7",
       "Title": "NewBoo", "TypeID": 312, "Attributes": [{"ID": "4363", "Value": "8172"},
       {"ID": "4902", "Value": "10539"}], "FormID": 1069}'
     headers:
@@ -500,50 +500,51 @@ interactions:
         "IsSlaRespondByViolated": false, "IsSlaResolveByViolated": false, "RespondByDate":
         "0001-01-01T00:00:00", "ResolveByDate": "0001-01-01T00:00:00", "SlaBeginDate":
         "0001-01-01T00:00:00", "IsOnHold": false, "PlacedOnHoldDate": "0001-01-01T00:00:00",
-        "GoesOffHoldDate": "0001-01-01T00:00:00", "CreatedDate": "2024-01-31T18:40:32.353Z",
+        "GoesOffHoldDate": "0001-01-01T00:00:00", "CreatedDate": "2024-02-19T17:46:46.17Z",
         "CreatedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "CreatedFullName": "Security
-        SOAR API Service Account", "CreatedEmail": "", "ModifiedDate": "2024-01-31T18:40:32.353Z",
+        SOAR API Service Account", "CreatedEmail": "", "ModifiedDate": "2024-02-19T17:46:46.17Z",
         "ModifiedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "ModifiedFullName":
         "Security SOAR API Service Account", "RequestorName": "Jane Foster", "RequestorFirstName":
         "Jane", "RequestorLastName": "Foster", "RequestorEmail": "nobody@example.com",
-        "RequestorPhone": null, "RequestorUid": "b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7",
+        "RequestorPhone": null, "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7",
         "ActualMinutes": 0, "EstimatedMinutes": 0, "DaysOld": 0, "StartDate": null,
         "EndDate": null, "ResponsibleUid": null, "ResponsibleFullName": "Unassigned",
-        "ResponsibleEmail": "", "ResponsibleGroupID": 0, "ResponsibleGroupName": "",
-        "RespondedDate": "0001-01-01T00:00:00", "RespondedUid": null, "RespondedFullName":
-        "", "CompletedDate": "0001-01-01T00:00:00", "CompletedUid": null, "CompletedFullName":
-        "", "ReviewerUid": null, "ReviewerFullName": "", "ReviewerEmail": "", "ReviewingGroupID":
-        0, "ReviewingGroupName": "", "TimeBudget": 0.0, "ExpensesBudget": 0.0, "TimeBudgetUsed":
-        0.0, "ExpensesBudgetUsed": 0.0, "IsConvertedToTask": false, "ConvertedToTaskDate":
-        "0001-01-01T00:00:00", "ConvertedToTaskUid": null, "ConvertedToTaskFullName":
-        "", "TaskProjectID": 0, "TaskProjectName": "", "TaskPlanID": 0, "TaskPlanName":
-        "", "TaskID": 0, "TaskTitle": "", "TaskStartDate": "0001-01-01T00:00:00",
-        "TaskEndDate": "0001-01-01T00:00:00", "TaskPercentComplete": 0, "LocationID":
-        0, "LocationName": "", "LocationRoomID": 0, "LocationRoomName": "", "RefCode":
-        "", "ServiceID": 0, "ServiceName": "None", "ServiceOfferingID": 0, "ServiceOfferingName":
-        "None", "ServiceCategoryID": 0, "ServiceCategoryName": "None", "ArticleID":
-        0, "ArticleSubject": "", "ArticleStatus": 0, "ArticleCategoryPathNames": "",
-        "ArticleAppID": 0, "ArticleShortcutID": null, "AppID": 66, "Attributes": [{"ID":
-        4902, "Name": "UIUC-TechSvc-CSOC Incident Severity", "Order": 0, "Description":
-        "", "SectionID": 0, "SectionName": null, "FieldType": "dropdown", "DataType":
-        "String", "Choices": [{"ID": 10539, "Name": "To Be Determined", "IsActive":
-        true, "DateCreated": "2023-04-17T20:47:47.447Z", "DateModified": "2023-04-17T20:47:47.447Z",
-        "Order": 0}, {"ID": 10541, "Name": "Non-Event", "IsActive": true, "DateCreated":
-        "2023-04-17T20:48:18.213Z", "DateModified": "2023-04-17T20:48:33.57Z", "Order":
-        1}, {"ID": 10540, "Name": "Low - Minor", "IsActive": true, "DateCreated":
-        "2023-04-17T20:48:05.88Z", "DateModified": "2023-04-17T20:48:24.127Z", "Order":
-        2}, {"ID": 10203, "Name": "Medium - Moderate", "IsActive": true, "DateCreated":
-        "2023-03-13T19:34:05.207Z", "DateModified": "2023-04-17T20:49:23.907Z", "Order":
-        3}, {"ID": 10204, "Name": "High - Serious", "IsActive": true, "DateCreated":
-        "2023-03-13T19:34:05.217Z", "DateModified": "2023-04-17T20:49:18.803Z", "Order":
-        4}, {"ID": 10542, "Name": "Critical - Major", "IsActive": true, "DateCreated":
-        "2023-04-17T20:49:12.407Z", "DateModified": "2023-04-17T20:49:12.407Z", "Order":
-        5}, {"ID": 15624, "Name": "Mutli-Campus", "IsActive": true, "DateCreated":
-        "2023-12-05T19:40:38.35Z", "DateModified": "2023-12-05T19:40:38.35Z", "Order":
-        6}], "IsRequired": false, "IsUpdatable": true, "Value": "10539", "ValueText":
-        "To Be Determined", "ChoicesText": "To Be Determined", "AssociatedItemIDs":
-        [0]}, {"ID": 4363, "Name": "UIUC-TechSvc-Security TLP", "Order": 0, "Description":
-        "Traffic Light Protocol sharing classification - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP",
+        "ResponsibleEmail": "", "ResponsibleGroupID": 788, "ResponsibleGroupName":
+        "UIUC-TechServices-Cybersecurity Incident Response", "RespondedDate": "0001-01-01T00:00:00",
+        "RespondedUid": null, "RespondedFullName": "", "CompletedDate": "0001-01-01T00:00:00",
+        "CompletedUid": null, "CompletedFullName": "", "ReviewerUid": null, "ReviewerFullName":
+        "", "ReviewerEmail": "", "ReviewingGroupID": 0, "ReviewingGroupName": "",
+        "TimeBudget": 0.0, "ExpensesBudget": 0.0, "TimeBudgetUsed": 0.0, "ExpensesBudgetUsed":
+        0.0, "IsConvertedToTask": false, "ConvertedToTaskDate": "0001-01-01T00:00:00",
+        "ConvertedToTaskUid": null, "ConvertedToTaskFullName": "", "TaskProjectID":
+        0, "TaskProjectName": "", "TaskPlanID": 0, "TaskPlanName": "", "TaskID": 0,
+        "TaskTitle": "", "TaskStartDate": "0001-01-01T00:00:00", "TaskEndDate": "0001-01-01T00:00:00",
+        "TaskPercentComplete": 0, "LocationID": 0, "LocationName": "", "LocationRoomID":
+        0, "LocationRoomName": "", "RefCode": "", "ServiceID": 0, "ServiceName": "None",
+        "ServiceOfferingID": 0, "ServiceOfferingName": "None", "ServiceCategoryID":
+        0, "ServiceCategoryName": "None", "ArticleID": 0, "ArticleSubject": "", "ArticleStatus":
+        0, "ArticleCategoryPathNames": "", "ArticleAppID": 0, "ArticleShortcutID":
+        null, "AppID": 66, "Attributes": [{"ID": 4902, "Name": "UIUC-TechSvc-CSOC
+        Incident Severity", "Order": 0, "Description": "", "SectionID": 0, "SectionName":
+        null, "FieldType": "dropdown", "DataType": "String", "Choices": [{"ID": 10539,
+        "Name": "To Be Determined", "IsActive": true, "DateCreated": "2023-04-17T20:47:47.447Z",
+        "DateModified": "2023-04-17T20:47:47.447Z", "Order": 0}, {"ID": 10541, "Name":
+        "Non-Event", "IsActive": true, "DateCreated": "2023-04-17T20:48:18.213Z",
+        "DateModified": "2023-04-17T20:48:33.57Z", "Order": 1}, {"ID": 10540, "Name":
+        "Low - Minor", "IsActive": true, "DateCreated": "2023-04-17T20:48:05.88Z",
+        "DateModified": "2023-04-17T20:48:24.127Z", "Order": 2}, {"ID": 10203, "Name":
+        "Medium - Moderate", "IsActive": true, "DateCreated": "2023-03-13T19:34:05.207Z",
+        "DateModified": "2023-04-17T20:49:23.907Z", "Order": 3}, {"ID": 10204, "Name":
+        "High - Serious", "IsActive": true, "DateCreated": "2023-03-13T19:34:05.217Z",
+        "DateModified": "2023-04-17T20:49:18.803Z", "Order": 4}, {"ID": 10542, "Name":
+        "Critical - Major", "IsActive": true, "DateCreated": "2023-04-17T20:49:12.407Z",
+        "DateModified": "2023-04-17T20:49:12.407Z", "Order": 5}, {"ID": 15624, "Name":
+        "Mutli-Campus", "IsActive": true, "DateCreated": "2023-12-05T19:40:38.35Z",
+        "DateModified": "2023-12-05T19:40:38.35Z", "Order": 6}], "IsRequired": false,
+        "IsUpdatable": true, "Value": "10539", "ValueText": "To Be Determined", "ChoicesText":
+        "To Be Determined", "AssociatedItemIDs": [0]}, {"ID": 4363, "Name": "UIUC-TechSvc-Security
+        TLP", "Order": 0, "Description": "Traffic Light Protocol sharing classification
+        - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP",
         "SectionID": 0, "SectionName": null, "FieldType": "dropdown", "DataType":
         "String", "Choices": [{"ID": 8175, "Name": "TLP:CLEAR", "IsActive": true,
         "DateCreated": "2022-06-29T20:23:50.033Z", "DateModified": "2023-09-14T17:33:23.823Z",
@@ -556,19 +557,21 @@ interactions:
         "TLP:RED", "IsActive": true, "DateCreated": "2022-06-29T20:23:49.723Z", "DateModified":
         "2023-09-14T17:33:16.707Z", "Order": 4}], "IsRequired": false, "IsUpdatable":
         true, "Value": "8172", "ValueText": "TLP:RED", "ChoicesText": "TLP:RED", "AssociatedItemIDs":
-        [0]}], "Attachments": [], "Tasks": [], "Notify": [{"ItemRole": "Requestor",
-        "Name": "Jane Foster", "Initials": null, "Value": "nobody@example.com", "RefValue":
+        [0]}], "Attachments": [], "Tasks": [], "Notify": [{"ItemRole": "Responsible
+        Group", "Name": "Jane Foster", "Initials": null, "Value": "nobody@example.com",
+        "RefValue": 0, "ProfileImageFileName": null}, {"ItemRole": "Requestor", "Name":
+        "CLEANED CLEANED", "Initials": null, "Value": "CLEANED@illinois.edu", "RefValue":
         0, "ProfileImageFileName": null}], "WorkflowID": 0, "WorkflowConfigurationID":
         0, "WorkflowName": ""}'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '5394'
+      - '5605'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:40:31 GMT
+      - Mon, 19 Feb 2024 17:46:45 GMT
       Expires:
       - '-1'
       Pragma:
@@ -582,7 +585,7 @@ interactions:
       X-RateLimit-Remaining:
       - '119'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:41:32 GMT
+      - Mon, 19 Feb 2024 17:47:45 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -590,7 +593,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '3849815518956002798'
+      - '1428244996824676252'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
