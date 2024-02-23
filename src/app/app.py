@@ -45,19 +45,11 @@ SEVERITY_TABLE = {
 
 
 def tlp(color: str):
-    try:
-        return TLP_TABLE[color.upper()]
-    except KeyError:
-        raise Exception(
-            f'Please enter a valid TLP Color: {TLP_TABLE.keys()}')
+    return TLP_TABLE[color.upper()]
 
 
 def severity(level: str):
-    try:
-        return SEVERITY_TABLE[level.upper()]
-    except KeyError:
-        raise Exception(
-            f'Please enter a valid severity: {SEVERITY_TABLE.keys()}')
+    return SEVERITY_TABLE[level.upper()]
 
 
 class OrgNameAndEndpointSet(Exception):
