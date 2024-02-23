@@ -110,7 +110,7 @@ class TdxConnector(BaseConnector):
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
                 "Attributes": [
                     {"ID": TLP_ID, "Value": TLP_TABLE[param["TLP"].upper()]},
-                    {"ID": SEVERITY_ID, 
+                    {"ID": SEVERITY_ID,
                      "Value": SEVERITY_TABLE[param["severity"].upper()]},
                 ],
                 "FormID": tdx.get_ticket_form_by_name_id(
