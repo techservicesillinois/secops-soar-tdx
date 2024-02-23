@@ -48,11 +48,39 @@ def test_create_ticket(cassette, connector: TdxConnector):
             "priority": "Low",
             "requestor": os.environ.get('TDX_NETID', CASSETTE_NETID),
             "title": "NewBoo",
-            "type": "Security Support",
+            "type": "CSOC",
             "notify": False,
-            "status": "Resolved",
+            "status": "New",
             "description": "",
-            "TLP": "Red",
+            "TLP": "Amber",
+            "formid": "UIUC-TechSvc-CSOC Incidents",
+            "severity": "To Be Determined",
+            "responsible":
+                "UIUC-TechServices-Cybersecurity Incident Response"
+        }],
+    }
+
+    raw_result = connector._handle_action(json.dumps(in_json), None)
+    result = json.loads(raw_result)
+
+    if not VCR_RECORD:  # Tests only valid when not recording
+        assert result[0]["data"][0]["id"] == 564073
+
+    assert result[0]["message"] == "Create ticket succeeded"
+    assert DEFAULT_GROUP in raw_result
+
+
+def test_create_ticket_defaults(cassette, connector: TdxConnector):
+    in_json = {
+        "appid": APP_ID,
+        "identifier": "create_ticket",
+        "parameters": [{
+            "priority": "Low",
+            "requestor": os.environ.get('TDX_NETID', CASSETTE_NETID),
+            "title": "NewBoo",
+            "notify": False,
+            "description": "",
+            "TLP": "Amber",
             "formid": "UIUC-TechSvc-CSOC Incidents",
             "severity": "To Be Determined",
             "responsible":

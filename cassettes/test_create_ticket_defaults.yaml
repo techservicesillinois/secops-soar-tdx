@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAJr82GUC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
+        H4sIAKQH2WUC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
         8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
         yQYA/EJXWGkAAAA=
     headers:
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Fri, 23 Feb 2024 20:14:12 GMT
+      - Fri, 23 Feb 2024 21:01:01 GMT
       Expires:
       - '-1'
       Pragma:
@@ -48,11 +48,11 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:15:12 GMT
+      - Fri, 23 Feb 2024 21:02:00 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '6930707915606112874'
+      - '8558262610673204551'
       X-UA-Compatible:
       - IE=edge
     status:
@@ -95,7 +95,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 23 Feb 2024 20:14:14 GMT
+      - Fri, 23 Feb 2024 21:01:02 GMT
       Expires:
       - '-1'
       Pragma:
@@ -109,7 +109,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:15:14 GMT
+      - Fri, 23 Feb 2024 21:02:02 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -117,7 +117,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '2334303595940753147'
+      - '3844706662025132693'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -155,7 +155,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 23 Feb 2024 20:14:14 GMT
+      - Fri, 23 Feb 2024 21:01:03 GMT
       Expires:
       - '-1'
       Pragma:
@@ -169,7 +169,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:15:15 GMT
+      - Fri, 23 Feb 2024 21:02:04 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -177,7 +177,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '5465818640112116798'
+      - '2015378266755191677'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -235,7 +235,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 23 Feb 2024 20:14:15 GMT
+      - Fri, 23 Feb 2024 21:01:03 GMT
       Expires:
       - '-1'
       Pragma:
@@ -249,7 +249,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:14:25 GMT
+      - Fri, 23 Feb 2024 21:01:14 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -257,87 +257,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '573381636041279246'
-      X-TDX-UID:
-      - a68e93bc-e406-ee11-87dd-0050f2e6c034
-      X-UA-Compatible:
-      - IE=edge
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Bearer FAKE_TOKEN
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - python-requests/2.31.0
-    method: GET
-    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/types
-  response:
-    body:
-      string: '[{"ID":364,"AppID":66,"AppName":"UIUC - Tech Services Privacy and Cybersecurity","Name":"Copyright","Description":"Copyright
-        infringement tickets","CategoryID":89,"CategoryName":"UIUC-Privacy and Cybersecurity","FullName":"UIUC-Privacy
-        and Cybersecurity / Copyright","IsActive":true,"CreatedDate":"2022-12-16T20:37:08.87Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-12-16T20:37:08.87Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":310,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"CSOC","Description":"Work
-        done by the Cybersecurity Operations Center","CategoryID":89,"CategoryName":"UIUC-Privacy
-        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / CSOC","IsActive":true,"CreatedDate":"2022-06-29T20:23:50.147Z","CreatedByUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-06-29T20:23:50.147Z","ModifiedByUid":"4d0d8b10-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":341,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"GRC","Description":"","CategoryID":89,"CategoryName":"UIUC-Privacy
-        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / GRC","IsActive":true,"CreatedDate":"2022-10-27T19:53:12.023Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-10-27T19:53:16.893Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":230,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"Privacy","Description":"","CategoryID":64,"CategoryName":"UIUC
-        - Tech Services Privacy General","FullName":"UIUC - Tech Services Privacy
-        General / Privacy","IsActive":true,"CreatedDate":"2021-07-14T12:38:22.667Z","CreatedByUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-10-27T19:14:08.51Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":342,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"Security Developers","Description":"Tickets
-        for SecDevOps","CategoryID":89,"CategoryName":"UIUC-Privacy and Cybersecurity","FullName":"UIUC-Privacy
-        and Cybersecurity / Security Developers","IsActive":true,"CreatedDate":"2022-11-09T19:18:12.793Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-11-09T19:18:12.793Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":340,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"Security Engineering","Description":"Move
-        tickets to this category if SecEng should work it","CategoryID":89,"CategoryName":"UIUC-Privacy
-        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Security Engineering","IsActive":true,"CreatedDate":"2022-10-27T19:51:58.59Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-10-27T19:52:06.457Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":312,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"Security Support","Description":"Tickets
-        that come in from securitysupport@ or security@ that have not yet been triaged.","CategoryID":89,"CategoryName":"UIUC-Privacy
-        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Security Support","IsActive":true,"CreatedDate":"2022-06-30T19:43:49.887Z","CreatedByUid":"fdb3b2ee-90c9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-10-27T19:52:38.63Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false},{"ID":345,"AppID":66,"AppName":"UIUC
-        - Tech Services Privacy and Cybersecurity","Name":"Vulnerability","Description":"Vulnerability
-        management tickets, currently worked by SecEng","CategoryID":89,"CategoryName":"UIUC-Privacy
-        and Cybersecurity","FullName":"UIUC-Privacy and Cybersecurity / Vulnerability","IsActive":true,"CreatedDate":"2022-11-22T20:38:32.15Z","CreatedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ModifiedDate":"2022-12-19T20:26:47.343Z","ModifiedByUid":"a3e79204-8fc9-ea11-a81d-000d3a8ea9f7","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","NotifyReviewer":false,"OtherNotificationEmailAddresses":"","DefaultSLAID":0,"DefaultSLAName":"None","DefaultSLAIsActive":false,"WorkspaceID":0,"WorkspaceName":"","ShouldAlertResponsibleOnTaskClose":false}]'
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Length:
-      - '6385'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Fri, 23 Feb 2024 20:14:15 GMT
-      Expires:
-      - '-1'
-      Pragma:
-      - no-cache
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      X-RateLimit-Limit:
-      - '60'
-      X-RateLimit-Remaining:
-      - '59'
-      X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:15:16 GMT
-      X-TDX-Entity:
-      - '2'
-      X-TDX-EntityName:
-      - University of Illinois System
-      X-TDX-Partition:
-      - '26'
-      X-TDX-TraceID:
-      - '8050961052561478509'
+      - '3808007867620541184'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -435,7 +355,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 23 Feb 2024 20:14:15 GMT
+      - Fri, 23 Feb 2024 21:01:04 GMT
       Expires:
       - '-1'
       Pragma:
@@ -449,7 +369,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:15:16 GMT
+      - Fri, 23 Feb 2024 21:02:04 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -457,7 +377,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '4456885232061738469'
+      - '2741249217198283319'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
@@ -500,9 +420,9 @@ interactions:
         "IsSlaRespondByViolated": false, "IsSlaResolveByViolated": false, "RespondByDate":
         "0001-01-01T00:00:00", "ResolveByDate": "0001-01-01T00:00:00", "SlaBeginDate":
         "0001-01-01T00:00:00", "IsOnHold": false, "PlacedOnHoldDate": "0001-01-01T00:00:00",
-        "GoesOffHoldDate": "0001-01-01T00:00:00", "CreatedDate": "2024-02-23T20:14:18.75Z",
+        "GoesOffHoldDate": "0001-01-01T00:00:00", "CreatedDate": "2024-02-23T21:01:24.327Z",
         "CreatedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "CreatedFullName": "Security
-        SOAR API Service Account", "CreatedEmail": "", "ModifiedDate": "2024-02-23T20:14:18.75Z",
+        SOAR API Service Account", "CreatedEmail": "", "ModifiedDate": "2024-02-23T21:01:24.327Z",
         "ModifiedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "ModifiedFullName":
         "Security SOAR API Service Account", "RequestorName": "Jane Foster", "RequestorFirstName":
         "Jane", "RequestorLastName": "Foster", "RequestorEmail": "nobody@example.com",
@@ -567,11 +487,11 @@ interactions:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '5597'
+      - '5599'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 23 Feb 2024 20:14:18 GMT
+      - Fri, 23 Feb 2024 21:01:23 GMT
       Expires:
       - '-1'
       Pragma:
@@ -585,7 +505,7 @@ interactions:
       X-RateLimit-Remaining:
       - '119'
       X-RateLimit-Reset:
-      - Fri, 23 Feb 2024 20:15:18 GMT
+      - Fri, 23 Feb 2024 21:02:23 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -593,7 +513,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '8127626857676099173'
+      - '1937871060629059113'
       X-TDX-UID:
       - a68e93bc-e406-ee11-87dd-0050f2e6c034
       X-UA-Compatible:
