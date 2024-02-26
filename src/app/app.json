@@ -174,17 +174,6 @@
                     "order": 6,
                     "name": "responsible"
                 },
-                "status": {
-                    "description": "Ticket status",
-                    "data_type": "string",
-                    "required": true,
-                    "primary": false,
-                    "contains": [],
-                    "value_list": [],
-                    "default": "New",
-                    "order": 7,
-                    "name": "status"
-                },
                 "TLP": {
                     "description": "TLP Level",
                     "data_type": "string",

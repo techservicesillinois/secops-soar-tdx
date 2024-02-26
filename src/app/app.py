@@ -25,6 +25,8 @@ __deployed__ = 'BUILD_TIME'
 TLP_ID = "4363"
 # Custom Attribute 'UIUC-TechSvc-CSOC Incident Severity' has ID 4902
 SEVERITY_ID = "4902"
+# Ticket Type 'CSOC' has ID 310
+TYPE_ID = 310
 
 TLP_TABLE = {
     "CLEAR": "8175",
@@ -107,7 +109,8 @@ class TdxConnector(BaseConnector):
                 "RequestorUid": tdx.get_person_by_name_email(
                     param['requestor'])['UID'],
                 "Title": param['title'],
-                "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
+                "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID']
+                if 'type' in param else TYPE_ID,
                 "Attributes": [
                     {"ID": TLP_ID, "Value": TLP_TABLE[param["TLP"].upper()]},
                     {"ID": SEVERITY_ID,
