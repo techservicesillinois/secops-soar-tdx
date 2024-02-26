@@ -44,22 +44,6 @@ SEVERITY_TABLE = {
 }
 
 
-def tlp(color: str):
-    try:
-        return TLP_TABLE[color.upper()]
-    except KeyError:
-        raise Exception(
-            f'Please enter a valid TLP Color: {TLP_TABLE.keys()}')
-
-
-def severity(level: str):
-    try:
-        return SEVERITY_TABLE[level.upper()]
-    except KeyError:
-        raise Exception(
-            f'Please enter a valid severity: {SEVERITY_TABLE.keys()}')
-
-
 class OrgNameAndEndpointSet(Exception):
     def __init__(self):
         super().__init__(
@@ -125,8 +109,9 @@ class TdxConnector(BaseConnector):
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID'],
                 "Attributes": [
-                    {"ID": TLP_ID, "Value": tlp(param["TLP"])},
-                    {"ID": SEVERITY_ID, "Value": severity(param["severity"])},
+                    {"ID": TLP_ID, "Value": TLP_TABLE[param["TLP"].upper()]},
+                    {"ID": SEVERITY_ID,
+                     "Value": SEVERITY_TABLE[param["severity"].upper()]},
                 ],
                 "FormID": tdx.get_ticket_form_by_name_id(
                     param['formid'])['ID'],
