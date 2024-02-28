@@ -216,7 +216,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data.*.id",
+                    "data_path": "action_result.data.*.ticket_id",
                     "data_type": "string"
                 }
             ],
@@ -292,7 +292,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data.*.id",
+                    "data_path": "action_result.data.*.ticket_id",
                     "data_type": "string"
                 }
             ],
@@ -334,7 +334,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data.*.id",
+                    "data_path": "action_result.data.*.ticket_id",
                     "data_type": "string"
                 }
             ],
