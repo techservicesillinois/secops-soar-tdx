@@ -290,12 +290,7 @@
                     "name": "requestor"
                 }
             },
-            "output": [
-                {
-                    "data_path": "action_result.data.*.ticket_id",
-                    "data_type": "string"
-                }
-            ],
+            "output": [],
             "render": {
                 "type": "table"
             },
@@ -332,12 +327,7 @@
                     "name": "requestor"
                 }
             },
-            "output": [
-                {
-                    "data_path": "action_result.data.*.ticket_id",
-                    "data_type": "string"
-                }
-            ],
+            "output": [],
             "render": {
                 "type": "table"
             },
