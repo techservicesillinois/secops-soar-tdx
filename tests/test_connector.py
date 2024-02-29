@@ -64,7 +64,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["id"] == 564073
+        assert result[0]["data"][0]["ticket_id"] == 564073
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result
@@ -92,7 +92,7 @@ def test_create_ticket_defaults(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["id"] == 564073
+        assert result[0]["data"][0]["ticket_id"] == 564073
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result

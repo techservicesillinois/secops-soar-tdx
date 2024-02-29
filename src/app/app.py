@@ -134,7 +134,7 @@ class TdxConnector(BaseConnector):
 
         keys = ["ID"]
         action_result.add_data(
-            {k.lower(): response.ticket_data[k] for k in keys})
+            {f"ticket_{k.lower()}": response.ticket_data[k] for k in keys})
 
         return action_result.set_status(
             phantom.APP_SUCCESS, "Create ticket succeeded")
