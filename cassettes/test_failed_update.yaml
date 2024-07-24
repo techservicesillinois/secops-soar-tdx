@@ -18,7 +18,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
-      string: !!binary |
+      string: !!binary |  # pragma: allowlist secret
         H4sIAPBri2QC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
         8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
         yQYA/EJXWGkAAAA=

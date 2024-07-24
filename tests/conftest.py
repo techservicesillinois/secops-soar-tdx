@@ -15,7 +15,7 @@ from vcr_cleaner.cleaners.env_strings import clean_env_strings
 pytest_plugins = ("splunk-soar-connectors")
 
 CASSETTE_USERNAME = "FAKE_USERNAME"
-CASSETTE_PASSWORD = "FAKE_PASSWORD"
+CASSETTE_PASSWORD = "FAKE_PASSWORD"    # pragma: allowlist secret
 CASSETTE_NETID = 'thor2'
 CASSETTE_ENDPOINT = "help.uillinois.edu"
 # TODO: Pull from config as part of issue #13
