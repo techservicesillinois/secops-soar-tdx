@@ -8,9 +8,9 @@ mypy
 pytest
 types-beautifulsoup4
 vcrpy
-# The latest versions of the following dependencies require Python>=3.10 
+# The latest versions of the following dependencies require Python>=3.10
 # https://github.com/kevin1024/vcrpy/issues/688
-urllib3==1.26.15 
+urllib3==1.26.19
 types-requests==2.31.0.2
 #  ⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀
 #⠀⠀⣿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣿⠀⠀
