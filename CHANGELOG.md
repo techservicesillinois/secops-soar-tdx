@@ -7,6 +7,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [2.1.0] - 2024-07-31
+
+- Add `update` action block
+- Add ability to set `Description`, `Incident Severity`, `Form`, `Assignee`, `Responsible Group`
+- Fix for unset `Status` field
+- Update `create` action to return `ticket_id`
+
 ### [2.0.0] - 2023-09-21
 
 ### Breaking Changes
@@ -15,7 +22,7 @@ This release requires deleting the previous deployed TDX SOAR App.
 This release requires deleting and re-creating the SOAR `configured asset`.
 
 - Update package metadata
-- Update config keys (#48) 
+- Update config keys (#48)
   - Organization Name is no longer required (#40)
   - Pin TDXLIB (#44)
 
