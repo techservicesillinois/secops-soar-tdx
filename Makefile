@@ -34,6 +34,7 @@ ifeq (tag, $(GITHUB_REF_TYPE))
 else
 	TAG?=$(shell printf "0.0.%d" 0x$(shell git rev-parse --short=6 HEAD))
 endif
+TAG="2.0.0"
 GITHUB_SHA?=$(shell git rev-parse HEAD)
 
 all: build
@@ -72,8 +73,8 @@ $(SRCS_DIR)/$(PACKAGE).json: $(WHEELS)
 	sed $(SED_INPLACE) "s/MODULE/$(MODULE)/" $@
 	sed $(SED_INPLACE) "s/WHEEL/$(shell ls $(WHEELS))/" $@
 
-deploy: $(PACKAGE).tar
-	python deploy.py $^
+deploy: $(PACKAGE).tar venv
+	$(VENV_PYTHON) -m phtoolbox deploy --file $<
 
 venv: requirements-test.txt requirements.in
 	rm -rf $@
@@ -87,12 +88,14 @@ $(WHEELS): requirements.in
 
 requirements-test.txt: export PYTEST_SOAR_REPO=git+https://github.com/splunk/pytest-splunk-soar-connectors.git
 requirements-test.txt: export VCR_CLEANER_REPO=git+https://github.com/techservicesillinois/vcrpy-cleaner.git
-requirements-test.txt: requirements-test.in
+requirements-test.txt: requirements.in requirements-test.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
-	$(VENV_REQS)/bin/python -m pip install -r $^
+	$(VENV_REQS)/bin/python -m pip install --upgrade pip
+	$(VENV_REQS)/bin/python -m pip install -r requirements.in
+	$(VENV_REQS)/bin/python -m pip install -r requirements-test.in
 	$(VENV_REQS)/bin/python -m pip freeze -qqq > $@
-# REMOVE once pytest-splunk-soar-connectors is on pypi
+	# REMOVE once pytest-splunk-soar-connectors is on pypi
 	sed $(SED_INPLACE) "s;^pytest-splunk-soar-connectors==.*;$(PYTEST_SOAR_REPO);" $@
 	sed $(SED_INPLACE) "s;^vcr-cleaner==.*;$(VCR_CLEANER_REPO);" $@
 
