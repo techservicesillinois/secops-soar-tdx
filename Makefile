@@ -4,7 +4,7 @@
 include config.mk
 
 MODULE:=app
-TEST_APP_NAME:=Test $(PROD_APP_NAME) 2024SEP
+TEST_APP_NAME:=Test $(PROD_APP_NAME)
 
 PACKAGE:=app
 SRCS_DIR:=src/$(MODULE)
