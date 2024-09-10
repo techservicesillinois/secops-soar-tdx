@@ -71,7 +71,8 @@ $(SRCS_DIR)/$(PACKAGE).json: $(WHEELS)
 	sed $(SED_INPLACE) "s/APP_ID/$(APP_ID)/" $@
 	sed $(SED_INPLACE) "s/APP_NAME/$(APP_NAME)/" $@
 	sed $(SED_INPLACE) "s/MODULE/$(MODULE)/" $@
-	sed $(SED_INPLACE) "s/WHEEL/$(shell ls $(WHEELS))/" $@
+	sed $(SED_INPLACE) "s/WHEEL_TDX/$(shell ls $(WHEELS))/ | grep TDX*whl" $@
+	sed $(SED_INPLACE) "s/WHEEL_TOOLBOX/$(shell ls $(WHEELS))/ | grep phantom_toolbox*whl" $@
 
 deploy: $(PACKAGE).tar venv
 	$(VENV_PYTHON) -m phtoolbox deploy --file $<

@@ -338,11 +338,11 @@
         "wheel": [
             {
                 "module": "TDXLib",
-                "input_file": "wheels/TDXLib-0.5.2-py3-none-any.whl"
+                "input_file": "wheels/WHEEL_TDX"
             },
             {
                 "module": "phantom-toolbox",
-                "input_file": "wheels/phantom_toolbox-0.1.dev27-py3-none-any.whl"
+                "input_file": "wheels/WHEEL_TOOLBOX"
             }
         ]
     }
