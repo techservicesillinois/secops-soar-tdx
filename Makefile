@@ -70,12 +70,12 @@ $(SRCS_DIR)/$(PACKAGE).json: $(WHEELS)
 	sed $(SED_INPLACE) "s/APP_ID/$(APP_ID)/" $@
 	sed $(SED_INPLACE) "s/APP_NAME/$(APP_NAME)/" $@
 	sed $(SED_INPLACE) "s/MODULE/$(MODULE)/" $@
+	@echo "WHEELS: $(WHEELS)"
 	sed $(SED_INPLACE) "s/WHEEL_TDX/$(shell ls $(WHEELS) | grep TDX*whl)/" $@
 	sed $(SED_INPLACE) "s/WHEEL_TOOLBOX/$(shell ls $(WHEELS) | grep phantom_toolbox*whl)/" $@
 
 deploy: $(PACKAGE).tar venv
-# $(VENV_PYTHON) -m phtoolbox deploy --file $<
-	echo "Disabled for testing"
+	$(VENV_PYTHON) -m phtoolbox deploy --file $<
 
 venv: requirements-test.txt requirements.in
 	rm -rf $@
