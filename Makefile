@@ -74,7 +74,8 @@ $(SRCS_DIR)/$(PACKAGE).json: $(WHEELS)
 	sed $(SED_INPLACE) "s/WHEEL_TOOLBOX/$(shell ls $(WHEELS) | grep phantom_toolbox*whl)/" $@
 
 deploy: $(PACKAGE).tar venv
-	$(VENV_PYTHON) -m phtoolbox deploy --file $<
+# $(VENV_PYTHON) -m phtoolbox deploy --file $<
+	echo "Disabled for testing"
 
 venv: requirements-test.txt requirements.in
 	rm -rf $@
