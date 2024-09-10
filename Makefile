@@ -34,7 +34,7 @@ ifeq (tag, $(GITHUB_REF_TYPE))
 else
 	TAG?=$(shell printf "0.0.%d" 0x$(shell git rev-parse --short=6 HEAD))
 endif
-TAG="2.0.0"
+TAG="2.0.1"
 GITHUB_SHA?=$(shell git rev-parse HEAD)
 
 all: build
