@@ -9,7 +9,7 @@ from __future__ import print_function, unicode_literals
 
 # Phantom App imports
 import phantom.app as phantom
-from phantom.base_connector import BaseConnector
+from phantom.base_connector import NiceBaseConnector
 from phantom.action_result import ActionResult
 
 
@@ -64,15 +64,9 @@ class RetVal(tuple):
         return tuple.__new__(RetVal, (val1, val2))
 
 
-class TdxConnector(BaseConnector):
+class TdxConnector(NiceBaseConnector):
 
-    def __init__(self):
-
-        # Call the BaseConnectors init first
-        super(TdxConnector, self).__init__()
-
-        self._state = None
-
+    @handle('test_connectivity')
     def _handle_test_connectivity(self, param):
         action_result = self.add_action_result(ActionResult(dict(param)))
         self.save_progress("Connecting to endpoint")
@@ -91,11 +85,12 @@ class TdxConnector(BaseConnector):
             return action_result.set_status(
                 phantom.APP_ERROR, "Failed connection")
 
+    @handle('create_ticket')
     def _handle_create_ticket(self, param):
         self.save_progress("In action handler for: {0}".format(
             self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector)
+        # Add an action result object to self (NiceBaseConnector)
         # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
@@ -139,11 +134,12 @@ class TdxConnector(BaseConnector):
         return action_result.set_status(
             phantom.APP_SUCCESS, "Create ticket succeeded")
 
+    @handle('update_ticket')
     def _handle_update_ticket(self, param):
         self.save_progress("In action handler for: {0}".format(
             self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector)
+        # Add an action result object to self (NiceBaseConnector)
         # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
@@ -160,17 +156,20 @@ class TdxConnector(BaseConnector):
 
         return action_result.set_status(phantom.APP_SUCCESS, "Ticket updated")
 
+    @handle('reassign_group')
     def _handle_reassign_group(self, param):
         return self._handle_reassign(param, group=True)
 
+    @handle('reassign_user')
     def _handle_reassign_user(self, param):
         return self._handle_reassign(param, group=False)
 
+    @handle('reassign')
     def _handle_reassign(self, param, group=False):
         self.save_progress("In action handler for: {0}".format(
             self.get_action_identifier()))
 
-        # Add an action result object to self (BaseConnector)
+        # Add an action result object to self (NiceBaseConnector)
         # to represent the action for this param
         action_result = self.add_action_result(ActionResult(dict(param)))
 
@@ -187,32 +186,6 @@ class TdxConnector(BaseConnector):
 
         return action_result.set_status(
             phantom.APP_SUCCESS, "Ticket reassigned")
-
-    def handle_action(self, param):
-        ret_val = phantom.APP_ERROR
-
-        # Get the action that we are supposed to execute for this App Run
-        action_id = self.get_action_identifier()
-
-        self.debug_print("action_id", self.get_action_identifier())
-        self.debug_print("git_hash", __git_hash__)
-
-        if action_id == 'create_ticket':
-            ret_val = self._handle_create_ticket(param)
-
-        if action_id == 'update_ticket':
-            ret_val = self._handle_update_ticket(param)
-
-        if action_id == 'reassign_group':
-            ret_val = self._handle_reassign_group(param)
-
-        if action_id == 'reassign_user':
-            ret_val = self._handle_reassign_user(param)
-
-        if action_id == 'test_connectivity':
-            ret_val = self._handle_test_connectivity(param)
-
-        return ret_val
 
     def initialize(self):
         # Load the state in initialize, use it to store data
