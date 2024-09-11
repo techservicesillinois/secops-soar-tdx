@@ -338,7 +338,11 @@
         "wheel": [
             {
                 "module": "TDXLib",
-                "input_file": "wheels/WHEEL"
+                "input_file": "wheels/WHEEL_TDX"
+            },
+            {
+                "module": "phantom-toolbox",
+                "input_file": "wheels/WHEEL_TOOLBOX"
             }
         ]
     }
