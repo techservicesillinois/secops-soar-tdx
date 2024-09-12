@@ -13,10 +13,11 @@ import phantom.app as phantom
 from phantom.base_connector import BaseConnector
 from phantom.action_result import ActionResult
 
-
 # Third-party
 import tdxlib
 from tdxlib import tdx_api_exceptions as tdx_ex
+from phtoolbox.app.base_connector import NiceBaseConnector
+
 
 __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
@@ -75,7 +76,6 @@ class TdxConnector(BaseConnector):
         self._state = None
 
     def _handle_test_connectivity(self, param):
-        from phtoolbox.app.base_connector import NiceBaseConnector
         action_result = self.add_action_result(ActionResult(dict(param)))
         self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
