@@ -1,3 +1,7 @@
+# REVERT ME
+
+Throw out this branch. This change is just for testing.
+
 # About
 
 This Splunk SOAR Python application is designed to integrate Splunk SOAR with the TeamDynamix ticketing system. Through this integration, the application streamlines and automates cybersecurity workflows by creating and managing tickets in TeamDynamix directly from the Splunk SOAR platform. This app is particularly useful for Security Operations Centers (SOCs), IT departments, and incident response teams that use Splunk SOAR for orchestrating their security workflows and TeamDynamix for ticket management. By integrating these platforms, the application enables automatic ticket creation and management based on security events, thus speeding up incident response and improving operational efficiency.
