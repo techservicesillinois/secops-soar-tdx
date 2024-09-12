@@ -12,7 +12,7 @@ from __future__ import print_function, unicode_literals
 import phantom.app as phantom
 from phantom.base_connector import BaseConnector
 from phtoolbox.app.base_connector import (  # noqa: F401
-    NiceBaseConnector, handle)  # noqa: F401
+    NiceBaseConnector)  # noqa: F401
 from phantom.action_result import ActionResult
 
 
