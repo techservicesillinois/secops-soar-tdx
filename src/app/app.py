@@ -11,8 +11,6 @@ from __future__ import print_function, unicode_literals
 # Phantom App imports
 import phantom.app as phantom
 from phantom.base_connector import BaseConnector
-from phtoolbox.app.base_connector import (  # noqa: F401
-    NiceBaseConnector)  # noqa: F401
 from phantom.action_result import ActionResult
 
 
@@ -77,6 +75,7 @@ class TdxConnector(BaseConnector):
         self._state = None
 
     def _handle_test_connectivity(self, param):
+        from phtoolbox.app.base_connector import NiceBaseConnector
         action_result = self.add_action_result(ActionResult(dict(param)))
         self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
