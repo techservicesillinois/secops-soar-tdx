@@ -10,6 +10,7 @@ from __future__ import print_function, unicode_literals
 # Phantom App imports
 import phantom.app as phantom
 from phantom.base_connector import BaseConnector
+from phtoolbox.app.base_connector import NiceBaseConnector, handle
 from phantom.action_result import ActionResult
 
 
