@@ -70,7 +70,7 @@ class TdxConnector(BaseConnector):
 
         # Call the BaseConnectors init first
         super(TdxConnector, self).__init__()
-
+        self.actions = {}  # Added this line to see if it breaks `app.json` parsing on SOAR 
         self._state = None
 
     def _handle_test_connectivity(self, param):
