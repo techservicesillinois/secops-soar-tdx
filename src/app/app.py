@@ -143,6 +143,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
             self, phantom.APP_SUCCESS, phantom.APP_ERROR)
 
     def handle_action(self, param):
+        # handle_action is an abstract method; it MUST be implemented here.
         self.nice_handle_action(param)
 
     @handle('test_connectivity')
