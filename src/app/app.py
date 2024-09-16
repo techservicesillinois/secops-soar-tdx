@@ -138,6 +138,7 @@ class RetVal(tuple):
 class TdxConnector(BaseConnector, NiceBaseConnector):
     def __init__(self):
         BaseConnector.__init__(self)
+        # It acts like BaseConnector does not call super().__init__()
         NiceBaseConnector.__init__(
             self, phantom.APP_SUCCESS, phantom.APP_ERROR)
 
