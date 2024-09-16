@@ -83,6 +83,8 @@ class NiceBaseConnector():
         self._app_error = app_error_code
 
     def nice_handle_action(self, param):
+        """A function to implement handle_action.
+        The handle_action method MUST be defined in the child class."""
         action_id = self.get_action_identifier()
         self.debug_version_info()
         self.debug_print("action_id", self.get_action_identifier())
