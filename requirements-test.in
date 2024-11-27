@@ -3,8 +3,10 @@ beautifulsoup4
 
 # Testing dependencies
 autopep8
+detect-secrets
 flake8
 mypy
+pre-commit
 pytest
 types-beautifulsoup4
 vcrpy
