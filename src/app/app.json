@@ -107,8 +107,8 @@
             "name": "severity_id",
             "id": 9
         },
-        "type_id": {
-            "description": "Type ID for 'CSOC' type field.",
+        "ticket_type_id": {
+            "description": "Default ticket type ID if unspecified",
             "data_type": "string",
             "required": false,
             "default": "310",

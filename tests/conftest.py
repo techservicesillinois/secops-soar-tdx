@@ -107,7 +107,7 @@ def connector(monkeypatch) -> TdxConnector:
     conn = TdxConnector()
     if not VCR_RECORD:  # Always use cassette values when using cassette
         #  TODO: Lots more configs!
-        conn.config = {
+        cassette_configs = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
             "endpoint": CASSETTE_ENDPOINT,
@@ -122,14 +122,21 @@ def connector(monkeypatch) -> TdxConnector:
                     'endpoint', 'appid',
                     'timezone', 'loglevel']
 
+        cassette_configs = {}
+
         for key in env_keys:
             env_key = f"TDX_{key.upper()}"
-            conn.config[key] = os.environ.get(env_key, None)
-            if not conn.config[key]:
+            cassette_configs[key] = os.environ.get(env_key, None)
+            if not cassette_configs[key]:
                 raise ValueError(f'{env_key} unset or empty with record mode')
 
-        # Always True - no testing in production.
-        conn.config['sandbox'] = True
+    # Always True - no testing in production.
+    # conn._load_app_json()
+    # conn.config = conn.get_app_config()
+    print("#####DEBUG#####")
+    print(len(conn.config.keys()))
+    conn.config.update(cassette_configs)
+    conn.config['sandbox'] = True
 
     conn.logger.setLevel(logging.INFO)
     return conn
