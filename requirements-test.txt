@@ -3,6 +3,7 @@ beautifulsoup4==4.12.3
 certifi==2024.8.30
 cfgv==3.4.0
 charset-normalizer==3.4.0
+detect-secrets==1.5.0
 distlib==0.3.9
 exceptiongroup==1.2.2
 filelock==3.16.1
@@ -22,12 +23,12 @@ phantom-toolbox @ git+https://github.com/techservicesillinois/phantom-toolbox.gi
 platformdirs==4.3.6
 pluggy==1.5.0
 pre_commit==4.0.1
-propcache==0.2.0
+propcache==0.2.1
 pycodestyle==2.12.1
 pyflakes==3.2.0
 Pygments==2.18.0
-PyJWT==2.10.0
-pytest==8.3.3
+PyJWT==2.10.1
+pytest==8.3.4
 pytest-splunk-soar-connectors @ git+https://github.com/splunk/pytest-splunk-soar-connectors.git@400d45b90d73a1220e38bd4a7d7a4b77cc495bd0
 python-dateutil==2.9.0.post0
 PyYAML==6.0.2
@@ -37,7 +38,7 @@ setuptools-scm==8.1.0
 six==1.16.0
 soupsieve==2.6
 TDXLib==0.5.2
-tomli==2.1.0
+tomli==2.2.1
 types-beautifulsoup4==4.12.0.20241020
 types-html5lib==1.1.11.20241018
 types-requests==2.31.0.2
@@ -48,4 +49,4 @@ vcr_cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@82bd
 vcrpy==6.0.2
 virtualenv==20.28.0
 wrapt==1.17.0
-yarl==1.18.0
+yarl==1.18.3
