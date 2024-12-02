@@ -88,6 +88,132 @@
             "order": 7,
             "name": "orgname",
             "id": 7
+        },
+        "tlp_id": {
+            "description": "TeamDynamix field ID for Traffic Light Protocol.",
+            "data_type": "string",
+            "required": false,
+            "default": "4363",
+            "order": 8,
+            "name": "tlp_id",
+            "id": 8
+        },
+        "severity_id": {
+            "description": "Custom Attribute ID for 'UIUC-TechSvc-CSOC Incident Severity' field.",
+            "data_type": "string",
+            "required": false,
+            "default": "4902",
+            "order": 9,
+            "name": "severity_id",
+            "id": 9
+        },
+        "type_id": {
+            "description": "Type ID for 'CSOC' type field.",
+            "data_type": "string",
+            "required": false,
+            "default": "310",
+            "order": 10,
+            "name": "type_id",
+            "id": 10
+        },
+        "tlp_clear_id": {
+            "description": "ID for Traffic Light Protocol 'CLEAR'.",
+            "data_type": "string",
+            "required": false,
+            "default": "8175",
+            "order": 11,
+            "name": "tlp_clear_id",
+            "id": 11
+        },
+        "tlp_green_id": {
+            "description": "ID for Traffic Light Protocol 'GREEN'.",
+            "data_type": "string",
+            "required": false,
+            "default": "8174",
+            "order": 12,
+            "name": "tlp_green_id",
+            "id": 12
+        },
+        "tlp_amber_id": {
+            "description": "ID for Traffic Light Protocol 'AMBER'.",
+            "data_type": "string",
+            "required": false,
+            "default": "8173",
+            "order": 13,
+            "name": "tlp_amber_id",
+            "id": 13
+        },
+        "tlp_amberstrict_id": {
+            "description": "ID for Traffic Light Protocol 'AMBER+STRICT'.",
+            "data_type": "string",
+            "required": false,
+            "default": "14037",
+            "order": 14,
+            "name": "tlp_amberstrict_id",
+            "id": 14
+        },
+        "tlp_red_id": {
+            "description": "ID for Traffic Light Protocol 'RED'.",
+            "data_type": "string",
+            "required": false,
+            "default": "8172",
+            "order": 15,
+            "name": "tlp_red_id",
+            "id": 15
+        },
+        "severity_tbd_id": {
+            "description": "ID for 'TO BE DETERMINED' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10539",
+            "order": 16,
+            "name": "severity_tbd_id",
+            "id": 16
+        },
+        "severity_nonevent_id": {
+            "description": "ID for 'NON-EVENT' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10541",
+            "order": 17,
+            "name": "severity_nonevent_id",
+            "id": 17
+        },
+        "severity_low_id": {
+            "description": "ID for 'LOW' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10540",
+            "order": 18,
+            "name": "severity_low_id",
+            "id": 18
+        },
+        "severity_medium_id": {
+            "description": "ID for 'MEDIUM' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10203",
+            "order": 19,
+            "name": "severity_medium_id",
+            "id": 19
+        },
+        "severity_high_id": {
+            "description": "ID for 'HIGH' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10204",
+            "order": 20,
+            "name": "severity_high_id",
+            "id": 20
+        },
+        "severity_critical_id": {
+            "description": "ID for 'HIGH' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10542",
+            "order": 21,
+            "name": "severity_critical_id",
+            "id": 21
         }
     },
     "actions": [
