@@ -131,10 +131,6 @@ def connector(monkeypatch) -> TdxConnector:
                 raise ValueError(f'{env_key} unset or empty with record mode')
 
     # Always True - no testing in production.
-    # conn._load_app_json()
-    # conn.config = conn.get_app_config()
-    print("#####DEBUG#####")
-    print(len(conn.config.keys()))
     conn.config.update(cassette_configs)
     conn.config['sandbox'] = True
 

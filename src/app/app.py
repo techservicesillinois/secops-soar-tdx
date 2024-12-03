@@ -47,6 +47,25 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         NiceBaseConnector.__init__(
             self, phantom.APP_SUCCESS, phantom.APP_ERROR)
 
+    def get_tlp_table(self):
+        return {
+            "CLEAR": self.config['tlp_clear_id'],
+            "GREEN": self.config['tlp_green_id'],
+            "AMBER": self.config['tlp_amber_id'],
+            "AMBER+STRICT": self.config['tlp_amberstrict_id'],
+            "RED": self.config['tlp_red_id'],
+        }
+
+    def get_severity_table(self):
+        return {
+            "TO BE DETERMINED": self.config['severity_tbd_id'],
+            "NON-EVENT": self.config['severity_nonevent_id'],
+            "LOW": self.config['severity_low_id'],
+            "MEDIUM": self.config['severity_medium_id'],
+            "HIGH": self.config['severity_high_id'],
+            "CRITICAL": self.config['severity_critical_id'],
+        }
+
     def handle_action(self, param):
         # handle_action is an abstract method; it MUST be implemented here.
         self.nice_handle_action(param)
@@ -93,9 +112,10 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
                 if 'type' in param else self.config['ticket_type_id'],
                 "Attributes": [
                     {"ID": self.config['tlp_id'],
-                     "Value": self.tlp_table[param["TLP"].upper()]},
+                     "Value": self.get_tlp_table()[param["TLP"].upper()]},
                     {"ID": self.config['severity_id'],
-                     "Value": self.severity_table[param["severity"].upper()]},
+                     "Value": self.get_severity_table()[param["severity"]
+                                                        .upper()]},
                 ],
                 "FormID": tdx.get_ticket_form_by_name_id(
                     param['formid'])['ID'],
@@ -178,8 +198,6 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         # that needs to be accessed across actions
         self._state = self.load_state()
 
-        # self._load_app_json()
-        # self.config = self.get_app_config()
         # get the asset config
         self.config = self.get_config()
         """
@@ -193,22 +211,6 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         """
 
         self.account_name = "None/Not found"  # TODO: pull from config
-        self.tlp_table = {
-            "CLEAR": self.config['tlp_clear_id'],
-            "GREEN": self.config['tlp_green_id'],
-            "AMBER": self.config['tlp_amber_id'],
-            "AMBER+STRICT": self.config['tlp_amberstrict_id'],
-            "RED": self.config['tlp_red_id'],
-        }
-
-        self.severity_table = {
-            "TO BE DETERMINED": self.config['severity_tbd_id'],
-            "NON-EVENT": self.config['severity_nonevent_id'],
-            "LOW": self.config['severity_low_id'],
-            "MEDIUM": self.config['severity_medium_id'],
-            "HIGH": self.config['severity_high_id'],
-            "CRITICAL": self.config['severity_critical_id'],
-        }
 
         tdxlib_config = {
             "full_host": self.config.get('endpoint', ''),
