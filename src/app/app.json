@@ -109,9 +109,9 @@
         },
         "ticket_type_id": {
             "description": "Default ticket type ID if unspecified",
-            "data_type": "string",
+            "data_type": "numeric",
             "required": false,
-            "default": "310",
+            "default": 310,
             "order": 10,
             "name": "type_id",
             "id": 10
