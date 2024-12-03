@@ -107,7 +107,7 @@ def connector(monkeypatch) -> TdxConnector:
     conn = TdxConnector()
     if not VCR_RECORD:  # Always use cassette values when using cassette
         #  TODO: Lots more configs!
-        conn.config = {
+        cassette_configs = {
             "username": CASSETTE_USERNAME,
             "password": CASSETTE_PASSWORD,
             "endpoint": CASSETTE_ENDPOINT,
@@ -122,17 +122,31 @@ def connector(monkeypatch) -> TdxConnector:
                     'endpoint', 'appid',
                     'timezone', 'loglevel']
 
+        cassette_configs = {}
+
         for key in env_keys:
             env_key = f"TDX_{key.upper()}"
-            conn.config[key] = os.environ.get(env_key, None)
-            if not conn.config[key]:
+            cassette_configs[key] = os.environ.get(env_key, None)
+            if not cassette_configs[key]:
                 raise ValueError(f'{env_key} unset or empty with record mode')
 
-        # Always True - no testing in production.
-        conn.config['sandbox'] = True
+    # Always True - no testing in production.
+    conn.config = get_config_defaults(conn)
+    conn.config.update(cassette_configs)
+    conn.config['sandbox'] = True
 
     conn.logger.setLevel(logging.INFO)
     return conn
+
+
+def get_config_defaults(conn):
+    conn._load_app_json()
+
+    result = {}
+    for key in conn.get_app_config()['configuration'].keys():
+        result[key] = conn.get_app_config()['configuration'][key].get(
+            'default', '')
+    return result
 
 
 def remove_creds(request):

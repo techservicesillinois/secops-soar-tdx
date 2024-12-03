@@ -21,30 +21,6 @@ __version__ = 'GITHUB_TAG'
 __git_hash__ = 'GITHUB_SHA'
 __deployed__ = 'BUILD_TIME'
 
-# Custom Attribute 'UIUC-TechSvc-Security TLP' has ID 4363
-TLP_ID = "4363"
-# Custom Attribute 'UIUC-TechSvc-CSOC Incident Severity' has ID 4902
-SEVERITY_ID = "4902"
-# Ticket Type 'CSOC' has ID 310
-TYPE_ID = 310
-
-TLP_TABLE = {
-    "CLEAR": "8175",
-    "GREEN": "8174",
-    "AMBER": "8173",
-    "AMBER+STRICT": "14037",
-    "RED": "8172",
-}
-
-SEVERITY_TABLE = {
-    "TO BE DETERMINED": "10539",
-    "NON-EVENT": "10541",
-    "LOW": "10540",
-    "MEDIUM": "10203",
-    "HIGH": "10204",
-    "CRITICAL": "10542",
-}
-
 
 class OrgNameAndEndpointSet(Exception):
     def __init__(self):
@@ -70,6 +46,25 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         # It acts like BaseConnector does not call super().__init__()
         NiceBaseConnector.__init__(
             self, phantom.APP_SUCCESS, phantom.APP_ERROR)
+
+    def get_tlp_table(self):
+        return {
+            "CLEAR": self.config['tlp_clear_id'],
+            "GREEN": self.config['tlp_green_id'],
+            "AMBER": self.config['tlp_amber_id'],
+            "AMBER+STRICT": self.config['tlp_amberstrict_id'],
+            "RED": self.config['tlp_red_id'],
+        }
+
+    def get_severity_table(self):
+        return {
+            "TO BE DETERMINED": self.config['severity_tbd_id'],
+            "NON-EVENT": self.config['severity_nonevent_id'],
+            "LOW": self.config['severity_low_id'],
+            "MEDIUM": self.config['severity_medium_id'],
+            "HIGH": self.config['severity_high_id'],
+            "CRITICAL": self.config['severity_critical_id'],
+        }
 
     def handle_action(self, param):
         # handle_action is an abstract method; it MUST be implemented here.
@@ -114,11 +109,13 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
                     param['requestor'])['UID'],
                 "Title": param['title'],
                 "TypeID": tdx.get_ticket_type_by_name_id(param['type'])['ID']
-                if 'type' in param else TYPE_ID,
+                if 'type' in param else self.config['ticket_type_id'],
                 "Attributes": [
-                    {"ID": TLP_ID, "Value": TLP_TABLE[param["TLP"].upper()]},
-                    {"ID": SEVERITY_ID,
-                     "Value": SEVERITY_TABLE[param["severity"].upper()]},
+                    {"ID": self.config['tlp_id'],
+                     "Value": self.get_tlp_table()[param["TLP"].upper()]},
+                    {"ID": self.config['severity_id'],
+                     "Value": self.get_severity_table()[param["severity"]
+                                                        .upper()]},
                 ],
                 "FormID": tdx.get_ticket_form_by_name_id(
                     param['formid'])['ID'],
@@ -202,7 +199,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         self._state = self.load_state()
 
         # get the asset config
-        config = self.get_config()
+        self.config = self.get_config()
         """
         # Access values in asset config by the name
 
@@ -216,16 +213,16 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         self.account_name = "None/Not found"  # TODO: pull from config
 
         tdxlib_config = {
-            "full_host": config.get('endpoint', ''),
-            "org_name": config.get('orgname', ''),
-            "sandbox": config['sandbox'],
-            "username": config['username'],
-            "password": config['password'],
-            "ticket_app_id": config['appid'],
+            "full_host": self.config.get('endpoint', ''),
+            "org_name": self.config.get('orgname', ''),
+            "sandbox": self.config['sandbox'],
+            "username": self.config['username'],
+            "password": self.config['password'],
+            "ticket_app_id": self.config['appid'],
             "asset_app_id": "",
             "caching": False,
-            "timezone": config['timezone'],
-            "logLevel": config['loglevel'],
+            "timezone": self.config['timezone'],
+            "logLevel": self.config['loglevel'],
         }
 
         if tdxlib_config['org_name'] and tdxlib_config['full_host']:
