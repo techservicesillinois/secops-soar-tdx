@@ -131,11 +131,22 @@ def connector(monkeypatch) -> TdxConnector:
                 raise ValueError(f'{env_key} unset or empty with record mode')
 
     # Always True - no testing in production.
+    conn.config = get_config_defaults(conn)
     conn.config.update(cassette_configs)
     conn.config['sandbox'] = True
 
     conn.logger.setLevel(logging.INFO)
     return conn
+
+
+def get_config_defaults(conn):
+    conn._load_app_json()
+
+    result = {}
+    for key in conn.get_app_config()['configuration'].keys():
+        result[key] = conn.get_app_config()['configuration'][key].get(
+            'default', '')
+    return result
 
 
 def remove_creds(request):
