@@ -19,7 +19,7 @@ mypy==1.13.0
 mypy-extensions==1.0.0
 nodeenv==1.9.1
 packaging==24.2
-phantom-toolbox @ git+https://github.com/techservicesillinois/phantom-toolbox.git@8f4314d7159a75a4e8911d8fdda21f2e854f0fc1
+phantom-toolbox @ git+https://github.com/techservicesillinois/phantom-toolbox.git@63b038ccddb2d9fd32e4c8a51bb6ea2fc8b70a48
 platformdirs==4.3.6
 pluggy==1.5.0
 pre_commit==4.0.1
@@ -35,7 +35,7 @@ PyYAML==6.0.2
 requests==2.32.3
 rich==13.9.4
 setuptools-scm==8.1.0
-six==1.16.0
+six==1.17.0
 soupsieve==2.6
 TDXLib==0.5.2
 tomli==2.2.1
