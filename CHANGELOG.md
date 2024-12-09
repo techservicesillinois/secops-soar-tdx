@@ -22,8 +22,12 @@ End-of-Life was decided upon based on these dependencies:
 
 ## [Unreleased]
 
+## [2.2.0] - 2024-12-09
+
 - Update to use NiceBaseConnector (#116)
 - Add phantom-toolbox to requirements files and `Makefile` (#114)
+- Move hard coded translation tables to app.json config (#126)
+- Add 'Get Current Release' and 'Upload Release Asset' steps to deploy.yml (#118)
 
 ## [2.1.0] - 2024-07-31
 
