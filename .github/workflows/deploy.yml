@@ -10,8 +10,7 @@ on:
   release:
     types:
       - edited
-      - released
-      - prereleased
+      - published
 
 jobs:
   deploy:
