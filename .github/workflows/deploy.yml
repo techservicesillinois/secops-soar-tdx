@@ -41,7 +41,7 @@ jobs:
       run: |
         make build-test
     - name: Store build as an artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: deployed tar file
         path: app.tar
