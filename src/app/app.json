@@ -380,6 +380,26 @@
                     "default": "",
                     "order": 1,
                     "name": "comment"
+                },
+                "new_status": {
+                    "description": "Ticket status",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": null,
+                    "order": 2,
+                    "name": "status"
+                },
+                "private": {
+                    "description": "Update to task is private",
+                    "data_type": "boolean",
+                    "required": false,
+                    "primary": false,
+                    "default": false,
+                    "order": 3,
+                    "name": "private"
                 }
             },
             "output": [],
