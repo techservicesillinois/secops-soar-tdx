@@ -126,7 +126,8 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
                 params["Description"] = param["description"]
 
             ticket = tdxlib.tdx_ticket.TDXTicket(tdx, params)
-            response = tdx.create_ticket(ticket, silent=(not param['notify']))
+            response = tdx.create_ticket(ticket, silent=(not param.get(
+                                         'notify', False)))
         except Exception as ex:
             if ex.__class__.__name__ not in dir(tdx_ex):
                 raise ex  # Raise unexpected exceptions
