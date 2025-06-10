@@ -19,34 +19,30 @@ mypy==1.13.0
 mypy-extensions==1.0.0
 nodeenv==1.9.1
 packaging==24.2
-phantom-toolbox @ git+https://github.com/techservicesillinois/phantom-toolbox.git@63b038ccddb2d9fd32e4c8a51bb6ea2fc8b70a48
 platformdirs==4.3.6
 pluggy==1.5.0
-pre_commit==4.0.1
+pre-commit==4.0.1
 propcache==0.2.1
 pycodestyle==2.12.1
 pyflakes==3.2.0
-Pygments==2.18.0
-PyJWT==2.10.1
+pygments==2.18.0
+pyjwt==2.10.1
 pytest==8.3.4
-pytest-splunk-soar-connectors @ git+https://github.com/splunk/pytest-splunk-soar-connectors.git@400d45b90d73a1220e38bd4a7d7a4b77cc495bd0
-python-dateutil==2.9.0.post0
-PyYAML==6.0.2
-requests==2.32.3
+pytest-splunk-soar-connectors @ git+https://github.com/splunk/pytest-splunk-soar-connectors.git
+pyyaml==6.0.2
+requests==2.32.4
 rich==13.9.4
-setuptools-scm==8.1.0
-six==1.17.0
 soupsieve==2.6
-TDXLib==0.5.2
 tomli==2.2.1
 types-beautifulsoup4==4.12.0.20241020
 types-html5lib==1.1.11.20241018
 types-requests==2.31.0.2
 types-urllib3==1.26.25.14
-typing_extensions==4.12.2
+typing-extensions==4.12.2
 urllib3==1.26.19
-vcr_cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@82bd9745642e81b2f794781aec89676540fab5cc
+vcr-cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git
 vcrpy==6.0.2
 virtualenv==20.28.0
+wheel==0.45.1
 wrapt==1.17.0
 yarl==1.18.3
