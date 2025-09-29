@@ -10,7 +10,7 @@ ifeq (src/app/readme.html, $(wildcard src/app/readme.html))
 	DIST_OPT:=readme.html
 endif
 
-DIST_SRCS:=$(addprefix dist/app/, app.json app.py logo.png $(DIST_OPT))
+DIST_SRCS:=$(addprefix dist/app/, app.json app.py app.png $(DIST_OPT))
 SRCS:=$(shell find src/app -name '*.py')
 TSCS:=$(shell find tests -name '*.py')
 BUILD_TIME:=$(shell date -u +%FT%X.%6NZ)
@@ -47,7 +47,7 @@ dist/app/app.py: src/app/app.py dist/app
 	sed "s/GITHUB_TAG/$(TAG)/;s/GITHUB_SHA/$(GITHUB_SHA)/;s/BUILD_TIME/$(BUILD_TIME)/" $< > $@
 dist/app/app.json: src/app/app.json dist/app venv wheels
     # LC_ALL=C is needed on macOS to avoid illegal byte sequence error
-	LC_ALL=C sed "s/APP_ID/$(APP_ID)/;s/APP_NAME/$(APP_NAME)/;s/MODULE/app/" $< |\
+	LC_ALL=C sed "s/APP_ID/$(APP_ID)/;s/APP_NAME/$(APP_NAME)/;s/GITHUB_TAG/$(TAG)/;s/BUILD_TIME/$(BUILD_TIME)/" $< |\
 	$(VENV_PYTHON) -m phtoolbox deps -o $@ dist/app/wheels
 dist/app/%: src/app/% dist/app
 	cp -r $< $@
@@ -75,10 +75,11 @@ dist/app/wheels: requirements.in
 	pip wheel --no-deps --wheel-dir=$@ -r $^
 
 requirements-test.txt: export PYTEST_SOAR_REPO=git+https://github.com/splunk/pytest-splunk-soar-connectors.git
-requirements-test.txt: requirements-test.in
+requirements-test.txt: requirements-test.in requirements.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
-	$(VENV_REQS)/bin/python -m pip install -r $^
+	$(VENV_REQS)/bin/python -m pip install -r requirements.in
+	$(VENV_REQS)/bin/python -m pip install -r requirements-test.in
 	$(VENV_REQS)/bin/python -m pip freeze -qqq | \
 	sed "s;^pytest-splunk-soar-connectors==.*;$(PYTEST_SOAR_REPO);" >  $@
 # REMOVE sed line above once pytest-splunk-soar-connectors is on pypi

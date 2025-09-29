@@ -5,7 +5,7 @@ import os
 import pytest
 import vcr
 
-from app.app import TdxConnector
+from app import TdxConnector
 
 from vcr_cleaner import CleanYAMLSerializer, clean_if
 from vcr_cleaner.cleaners.jwt_token import clean_token
