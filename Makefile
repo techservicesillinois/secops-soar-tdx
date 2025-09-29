@@ -1,33 +1,22 @@
 # DO NOT EDIT - All project-specific values belong in config.mk!
 
-.PHONY: all build clean lint static wheels
+.PHONY: all build build-test clean lint static python-version wheels check_template
 include config.mk
 
-MODULE:=app
 TEST_APP_NAME:=Test $(PROD_APP_NAME)
+SOAR_PYTHON_VERSION:=$(shell PYTHONPATH=tests python -c 'from test_python_version import SOAR_PYTHON_VERSION as V; print(f"{V[0]}.{V[1]}")')
 
-PACKAGE:=app
-SRCS_DIR:=src/$(MODULE)
-TSCS_DIR:=tests
-SOAR_SRCS:=$(shell find $(SRCS_DIR) -type f)
-SRCS:=$(shell find $(SRCS_DIR) -name '*.py')
-TSCS:=$(shell find $(TSCS_DIR) -name '*.py')
-VERSIONED_FILES:=$(addprefix $(SRCS_DIR)/, $(PACKAGE).json *.py)
+ifeq (src/app/readme.html, $(wildcard src/app/readme.html))
+	DIST_OPT:=readme.html
+endif
+
+DIST_SRCS:=$(addprefix dist/app/, app.json app.py logo.png $(DIST_OPT))
+SRCS:=$(shell find src/app -name '*.py')
+TSCS:=$(shell find tests -name '*.py')
 BUILD_TIME:=$(shell date -u +%FT%X.%6NZ)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 UNAME:=$(shell uname -s)
-WHEELS:=$(SRCS_DIR)/wheels
-
-# BSD `sed` treats the `-i` option differently than Linux and others.
-# Check for Mac OS X 'Darwin' and set our `-i` option accordingly.
-ifeq ($(UNAME), Darwin) 
-# macOS (BSD sed) 
-	SED_INPLACE := -i '' 
-else 
-# Linux and others (GNU sed) 
-	SED_INPLACE := -i 
-endif 
 
 ifeq (tag, $(GITHUB_REF_TYPE))
 	TAG?=$(GITHUB_REF_NAME)
@@ -40,68 +29,62 @@ all: build
 
 build: export APP_ID=$(PROD_APP_ID)
 build: export APP_NAME=$(PROD_APP_NAME)
-build: $(PACKAGE).tar
+build: app.tar
 
 build-test: export APP_ID=$(TEST_APP_ID)
 build-test: export APP_NAME=$(TEST_APP_NAME)
-build-test: $(PACKAGE).tar
+build-test: app.tar
 
-$(PACKAGE).tar: version $(SOAR_SRCS) wheels
-	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
-	tar cvf $@ -C src $(MODULE)
 
-version: .tag .commit .deployed $(SRCS_DIR)/$(PACKAGE).json
-.tag: $(VERSIONED_FILES)
-	echo version $(TAG)
-	sed $(SED_INPLACE) "s/GITHUB_TAG/$(TAG)/" $^
-	touch $@
-.commit: $(VERSIONED_FILES)
-	echo commit $(GITHUB_SHA)
-	sed $(SED_INPLACE) "s/GITHUB_SHA/$(GITHUB_SHA)/" $^
-	touch $@
-.deployed: $(VERSIONED_FILES)
-	echo deployed $(BUILD_TIME)
-	sed $(SED_INPLACE) "s/BUILD_TIME/$(BUILD_TIME)/" $^
-	touch $@
-$(SRCS_DIR)/$(PACKAGE).json: $(WHEELS)
-	echo appid: $(APP_ID)
-	echo name:  $(APP_NAME)
-	echo wheel: $(shell ls $(WHEELS))
-	sed $(SED_INPLACE) "s/APP_ID/$(APP_ID)/" $@
-	sed $(SED_INPLACE) "s/APP_NAME/$(APP_NAME)/" $@
-	sed $(SED_INPLACE) "s/MODULE/$(MODULE)/" $@
-	@echo "WHEELS: $(WHEELS)"
-	sed $(SED_INPLACE) "s/WHEEL_TDX/$(shell ls $(WHEELS) | grep -E 'TDX.*\.whl')/" $@
-	sed $(SED_INPLACE) "s/WHEEL_TOOLBOX/$(shell ls ./$(WHEELS) | grep -E 'phantom_toolbox.*\.whl')/" $@
+deps: deps-deploy
+deps-deploy: # Install deps for deploy.py on Github
+	pip install requests
 
-deploy: $(PACKAGE).tar venv
+dist: $(DIST_SRCS)
+dist/app:
+	mkdir -p $@
+dist/app/app.py: src/app/app.py dist/app
+	sed "s/GITHUB_TAG/$(TAG)/;s/GITHUB_SHA/$(GITHUB_SHA)/;s/BUILD_TIME/$(BUILD_TIME)/" $< > $@
+dist/app/app.json: src/app/app.json dist/app venv wheels
+    # LC_ALL=C is needed on macOS to avoid illegal byte sequence error
+	LC_ALL=C sed "s/APP_ID/$(APP_ID)/;s/APP_NAME/$(APP_NAME)/;s/MODULE/app/" $< |\
+	$(VENV_PYTHON) -m phtoolbox deps -o $@ dist/app/wheels
+dist/app/%: src/app/% dist/app
+	cp -r $< $@
+
+app.tar: $(DIST_SRCS)
+	tar cvf $@ -C dist app
+
+deploy: app.tar venv
 	$(VENV_PYTHON) -m phtoolbox deploy --file $<
 
-venv: requirements-test.txt requirements.in
+python-version:
+	@echo $(SOAR_PYTHON_VERSION)
+
+.python-version: tests/test_python_version.py
+	pyenv install -s $(SOAR_PYTHON_VERSION)
+	pyenv local $(SOAR_PYTHON_VERSION)
+
+venv: requirements-test.txt .python-version
 	rm -rf $@
 	python -m venv venv
-	$(VENV_PYTHON) -m pip install -r requirements-test.txt
-	$(VENV_PYTHON) -m pip install -r requirements.in
+	$(VENV_PYTHON) -m pip install -r $<
 
-wheels: $(WHEELS)
-$(WHEELS): requirements.in
+wheels: dist/app dist/app/wheels
+dist/app/wheels: requirements.in
 	pip wheel --no-deps --wheel-dir=$@ -r $^
 
 requirements-test.txt: export PYTEST_SOAR_REPO=git+https://github.com/splunk/pytest-splunk-soar-connectors.git
-requirements-test.txt: export VCR_CLEANER_REPO=git+https://github.com/techservicesillinois/vcrpy-cleaner.git
-requirements-test.txt: requirements.in requirements-test.in
+requirements-test.txt: requirements-test.in
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
-	$(VENV_REQS)/bin/python -m pip install --upgrade pip
-	$(VENV_REQS)/bin/python -m pip install -r requirements.in
-	$(VENV_REQS)/bin/python -m pip install -r requirements-test.in
-	$(VENV_REQS)/bin/python -m pip freeze -qqq > $@
-	# REMOVE once pytest-splunk-soar-connectors is on pypi
-	sed $(SED_INPLACE) "s;^pytest-splunk-soar-connectors==.*;$(PYTEST_SOAR_REPO);" $@
-	sed $(SED_INPLACE) "s;^vcr-cleaner==.*;$(VCR_CLEANER_REPO);" $@
+	$(VENV_REQS)/bin/python -m pip install -r $^
+	$(VENV_REQS)/bin/python -m pip freeze -qqq | \
+	sed "s;^pytest-splunk-soar-connectors==.*;$(PYTEST_SOAR_REPO);" >  $@
+# REMOVE sed line above once pytest-splunk-soar-connectors is on pypi
 
 lint: venv .lint
-.lint: $(SRCS) $(TSCS)
+.lint: $(SRCS) $(TSCS) soar_template
 	$(VENV_PYTHON) -m flake8 $?
 	touch $@
 
@@ -112,19 +95,24 @@ static: venv .static
 	$(VENV_PYTHON) -m mypy $^
 	touch $@
 
+unit: venv
+	$(VENV_PYTHON) -m pytest
+
 autopep8:
 	autopep8 --in-place $(SRCS)
 
-test: venv lint static
-	$(VENV_PYTHON) -m pytest
-	
+check_template: venv .check_template
+.check_template: Makefile soar_template .github/workflows/deploy.yml tests/test_python_version.py
+	$(VENV_PYTHON) soar_template compare
+
+test: lint static check_template unit
+
 clean:
 	rm -rf venv $(VENV_REQS)
 	rm -rf .lint .static
 	rm -rf .mypy_cache
-	rm -f $(PACKAGE).tar .tag .wheel .commit .deployed
-	-find src -type d -name __pycache__ -exec rm -fr "{}" \;
-	git checkout -- $(TAG_FILES)
+	rm -rf dist
+	rm -f app.tar
 
 force-clean: clean
-	rm -f requirements-test.txt
+	rm -f requirements-test.txt .python-version
