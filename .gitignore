@@ -1,15 +1,15 @@
+# DO NOT EDIT - Update techservicesillinois/splunk-soar-template first
 # SOAR
+*.ini
 *.tar
 *.tgz
 *.vscode
 
 # Our Makefile
-.commit
-.deploy
+.check_template
 .lint
 .requirements.venv
 .static
-.tag
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -33,7 +33,6 @@ parts/
 sdist/
 var/
 wheels/
-*.whl
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
@@ -64,9 +63,6 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-.commit
-.tag
-.deployed
 
 # Translations
 *.mo
