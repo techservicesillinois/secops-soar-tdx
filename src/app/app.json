@@ -179,7 +179,7 @@
             "name": "severity_nonevent_id",
             "id": 17
         },
-        "severity_kinda_low_id": {
+        "severity_very_low_id": {
             "description": "ID for 'VERY LOW' severity level.",
             "data_type": "string",
             "required": false,
