@@ -179,41 +179,50 @@
             "name": "severity_nonevent_id",
             "id": 17
         },
+        "severity_kinda_low_id": {
+            "description": "ID for 'VERY LOW' severity level.",
+            "data_type": "string",
+            "required": false,
+            "default": "10541",
+            "order": 18,
+            "name": "severity_very_low_id",
+            "id": 18
+        },
         "severity_low_id": {
             "description": "ID for 'LOW' severity level.",
             "data_type": "string",
             "required": false,
             "default": "10540",
-            "order": 18,
+            "order": 19,
             "name": "severity_low_id",
-            "id": 18
+            "id": 19
         },
         "severity_medium_id": {
             "description": "ID for 'MEDIUM' severity level.",
             "data_type": "string",
             "required": false,
             "default": "10203",
-            "order": 19,
+            "order": 20,
             "name": "severity_medium_id",
-            "id": 19
+            "id": 20
         },
         "severity_high_id": {
             "description": "ID for 'HIGH' severity level.",
             "data_type": "string",
             "required": false,
             "default": "10204",
-            "order": 20,
+            "order": 21,
             "name": "severity_high_id",
-            "id": 20
+            "id": 21
         },
         "severity_critical_id": {
-            "description": "ID for 'HIGH' severity level.",
+            "description": "ID for 'CRITICAL' severity level.",
             "data_type": "string",
             "required": false,
             "default": "10542",
-            "order": 21,
+            "order": 22,
             "name": "severity_critical_id",
-            "id": 21
+            "id": 22
         }
     },
     "actions": [
