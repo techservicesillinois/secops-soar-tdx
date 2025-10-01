@@ -22,6 +22,8 @@ End-of-Life was decided upon based on these dependencies:
 
 ## [Unreleased]
 
+- Add new severity level 'VERY LOW' (#148)
+
 ## [2.2.0] - 2024-12-09
 
 - Update to use NiceBaseConnector (#116)
