@@ -183,7 +183,7 @@
             "description": "ID for 'VERY LOW' severity level.",
             "data_type": "string",
             "required": false,
-            "default": "10541",
+            "default": "22869",
             "order": 18,
             "name": "severity_very_low_id",
             "id": 18
