@@ -37,6 +37,7 @@ This Splunk SOAR Python application is designed to integrate Splunk SOAR with th
       + [UIUC-TechSvc-CSOC Events] (ID 1068)
       + [UIUC-TechSvc-CSOC Processes] (ID 1071)
     + severity: 'UIUC-TechSvc-CSOC Incident Severity'
+      + Very Low
       + Low
       + Medium
       + High

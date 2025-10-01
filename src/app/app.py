@@ -60,6 +60,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         return {
             "TO BE DETERMINED": self.config['severity_tbd_id'],
             "NON-EVENT": self.config['severity_nonevent_id'],
+            "VERY LOW": self.config['severity_very_low_id'],
             "LOW": self.config['severity_low_id'],
             "MEDIUM": self.config['severity_medium_id'],
             "HIGH": self.config['severity_high_id'],
