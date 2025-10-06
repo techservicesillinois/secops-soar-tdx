@@ -5,9 +5,9 @@ import os
 import pytest
 import vcr
 
-from app.app import TdxConnector
+from app import TdxConnector
 
-from vcr_cleaner import CleanYAMLSerializer, clean_if
+from vcr_cleaner import CleanYAMLSerializer
 from vcr_cleaner.cleaners.jwt_token import clean_token
 from vcr_cleaner.cleaners.env_strings import clean_env_strings
 
@@ -31,10 +31,6 @@ VCR_RECORD = "VCR_RECORD" in os.environ
 
 
 def clean_search(request: dict, response: dict):
-    uri = f"{URL}/SBTDWebApi/api/accounts/search"
-    if request['uri'] != uri:
-        return
-
     body = json.loads(response['body']['string'])
     result = {}
     for item in body:
@@ -47,13 +43,6 @@ def clean_search(request: dict, response: dict):
 
 def clean_new_ticket(request: dict, response: dict):
     id = 564073
-    uri = f"{URL}/SBTDWebApi/api/{APPID}/tickets/" + \
-          "?EnableNotifyReviewer=False" + \
-          "&NotifyRequestor=False&NotifyResponsible=False" + \
-          "&AllowRequestorCreation=False"
-
-    if request['uri'] != uri:
-        return
 
     body = json.loads(response['body']['string'])
     body['Uri'] = body['Uri'].replace(str(body['ID']), str(id))
@@ -71,11 +60,7 @@ def clean_new_ticket(request: dict, response: dict):
 
 def clean_people_lookup(request: dict, response: dict):
     # TODO: Switch the NetID here based on ENV settings and record mode
-    netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
     uri = "%s/SBTDWebApi/api/people/lookup?searchText=%s&maxResults=1"
-
-    if request['uri'] != uri % (URL, netid):
-        return
 
     request['uri'] = uri % (URL, 'thor2')
     body = json.loads(response['body']['string'])
@@ -163,12 +148,10 @@ def remove_creds(request):
     return request
 
 
-@clean_if(uri=f"{URL}/SBTDWebApi/api/auth")
 def clean_auth(request, response):
     clean_token(request, response)
 
 
-@clean_if(uri=f"{URL}/SBTDWebApi/api/groups/search")
 def clean_so_many_groups(request, response):
     cleaned_groups = """[{
         "ID": 787,
@@ -194,12 +177,24 @@ def cassette(request) -> vcr.cassette.Cassette:
     )
     yaml_cleaner = CleanYAMLSerializer()
     my_vcr.register_serializer("cleanyaml", yaml_cleaner)
-    yaml_cleaner.register_cleaner(clean_auth)
-    yaml_cleaner.register_cleaner(clean_search)
-    yaml_cleaner.register_cleaner(clean_new_ticket)
-    yaml_cleaner.register_cleaner(clean_people_lookup)
+    yaml_cleaner.register_cleaner_if_path_endswith(
+        clean_auth, "/SBTDWebApi/api/auth")
+    yaml_cleaner.register_cleaner_if_path_endswith(
+        clean_search, "/SBTDWebApi/api/accounts/search")
+    yaml_cleaner.register_cleaner_if_path_endswith(
+        clean_new_ticket, "/SBTDWebApi/api/{APPID}/tickets/" +
+                          "?EnableNotifyReviewer=False" +
+                          "&NotifyRequestor=False&NotifyResponsible=False" +
+                          "&AllowRequestorCreation=False")
+    netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
+    yaml_cleaner.register_cleaner_if_path_endswith(
+        clean_people_lookup,
+        f"/SBTDWebApi/api/people/lookup?searchText={netid}&maxResults=1"
+    )
     yaml_cleaner.register_cleaner(clean_env_strings)
-    yaml_cleaner.register_cleaner(clean_so_many_groups)
+    yaml_cleaner.register_cleaner_if_path_endswith(
+        clean_so_many_groups,
+        "/SBTDWebApi/api/groups/search")
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:

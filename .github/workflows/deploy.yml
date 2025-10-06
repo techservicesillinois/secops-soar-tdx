@@ -1,5 +1,4 @@
-# Based on techservicesillinois/splunk-soar-template
-# Adds TAR file as a release asset
+# DO NOT EDIT - Update techservicesillinois/splunk-soar-template first
 name: CI/CD
 
 on:
@@ -10,16 +9,34 @@ on:
   release:
     types:
       - edited
-      - published
+      - released
+  workflow_dispatch:  # Allows creation of .tar release for peers.
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
 
 jobs:
-  deploy:
+  test_build_deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.9"]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+    - name: Set Python version file
+      run: |
+        make python-version >> .python-version
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version-file: '.python-version' # Read version from a file
+    - name: Install deps
+      run: |
+        make deps
     - name: Virtual Env
       run: |
         make venv
@@ -29,11 +46,19 @@ jobs:
     - name: Static checks
       run: |
         make static 
+    - name: Check SOAR template files have not changed
+      if: github.event.repository.name != 'splunk-soar-template'
+      run: |
+        make check_template
+    - name: Skip template check in template repo
+      if: github.event.repository.name == 'splunk-soar-template'
+      run: |
+        touch .check_template
     - name: Tests
       run: |
         make test
     - name: Build Package (Prod)
-      if: github.event_name == 'release'
+      if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
       run: |
         make build
     - name: Build Package (Test)
@@ -45,29 +70,11 @@ jobs:
       with:
         name: deployed tar file
         path: app.tar
-        retention-days: 7
+        retention-days: 90
     - name: Post to Splunk SOAR API
-      if: github.event_name == 'release' && github.event.action != 'prereleased' || github.event_name == 'pull_request'
+      if: (github.event_name == 'release' || github.event_name == 'pull_request') && github.event.repository.name != 'splunk-soar-template'
       run: |
         make deploy
       env:
         SOAR_TOKEN: ${{ secrets.SOAR_TOKEN }}
         SOAR_HOSTNAME: ${{ secrets.SOAR_HOSTNAME }}
-    - name: Get Current Release
-      id: get_current_release
-      uses: joutvhu/get-release@v1
-      with:
-        debug: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload Release Asset
-      if: github.event_name == 'release'
-      id: upload-release-asset 
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.get_current_release.outputs.upload_url }} 
-        asset_path: app.tar
-        asset_name: soar-tdx-app.tar
-        asset_content_type: application/zip

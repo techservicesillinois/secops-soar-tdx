@@ -13,7 +13,7 @@ from phantom.action_result import ActionResult
 from phantom.base_connector import BaseConnector
 
 # Third-party
-import tdxlib
+import tdxlib  # type: ignore[import]
 from tdxlib import tdx_api_exceptions as tdx_ex
 from phtoolbox.app.base_connector import NiceBaseConnector, handle
 

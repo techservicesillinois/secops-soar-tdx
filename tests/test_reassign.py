@@ -1,7 +1,7 @@
 import json
 import os
 
-from app.app import TdxConnector
+from app import TdxConnector
 from conftest import CASSETTE_NETID
 
 APP_ID = "tacosalad"

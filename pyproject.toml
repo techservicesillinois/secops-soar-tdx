@@ -1,4 +1,5 @@
+# DO NOT EDIT - Update techservicesillinois/splunk-soar-template first
 [tool.pytest.ini_options]
 pythonpath = [
-  "src"
+  "src/app"
 ]

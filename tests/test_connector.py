@@ -2,8 +2,8 @@ import json
 import os
 import pytest
 
-from app.app import TdxConnector
-from app.app import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
+from app import TdxConnector
+from app import OrgNameAndEndpointSet, OrgNameAndEndpointNotSet
 
 from conftest import VCR_RECORD, CASSETTE_NETID
 
