@@ -1,3 +1,2 @@
-PROD_APP_ID:=3685f573-89ce-4c4e-9ce5-196e3aa3fb55
-PROD_APP_NAME:=Team Dynamix
-TEST_APP_ID:=5a633bce-abfb-4826-9ed1-b7231a00a048
+APP_ID:=3685f573-89ce-4c4e-9ce5-196e3aa3fb55
+APP_NAME:=Team Dynamix
