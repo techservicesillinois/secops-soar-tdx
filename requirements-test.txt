@@ -46,7 +46,8 @@ types-requests==2.31.0.2
 types-urllib3==1.26.25.14
 typing_extensions==4.15.0
 urllib3==1.26.19
-vcr_cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@be2bf6e0b8e4eda9416d3131611306084377009d
+# TODO: update VCR Cleaner to latest ver
+vcr_cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@4080a92216ed8e0b3f916349cf1819d581f74232
 vcrpy==7.0.0
 virtualenv==20.35.4
 wrapt==2.0.1
