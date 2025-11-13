@@ -10,6 +10,7 @@ from app import TdxConnector
 from vcr_cleaner import CleanYAMLSerializer
 from vcr_cleaner.cleaners.jwt_token import clean_token
 from vcr_cleaner.cleaners.env_strings import clean_env_strings
+from vcr_cleaner.filters import if_uri_endswith
 
 # Required pytest plugins
 pytest_plugins = ("splunk-soar-connectors")
@@ -177,24 +178,26 @@ def cassette(request) -> vcr.cassette.Cassette:
     )
     yaml_cleaner = CleanYAMLSerializer()
     my_vcr.register_serializer("cleanyaml", yaml_cleaner)
-    yaml_cleaner.register_cleaner_if_path_endswith(
-        clean_auth, "/SBTDWebApi/api/auth")
-    yaml_cleaner.register_cleaner_if_path_endswith(
-        clean_search, "/SBTDWebApi/api/accounts/search")
-    yaml_cleaner.register_cleaner_if_path_endswith(
-        clean_new_ticket, "/SBTDWebApi/api/{APPID}/tickets/" +
-                          "?EnableNotifyReviewer=False" +
-                          "&NotifyRequestor=False&NotifyResponsible=False" +
-                          "&AllowRequestorCreation=False")
+    yaml_cleaner.register_cleaner(
+        if_uri_endswith("/SBTDWebApi/api/auth", clean_auth))
+    yaml_cleaner.register_cleaner(
+        if_uri_endswith("/SBTDWebApi/api/accounts/search", clean_search))
+    yaml_cleaner.register_cleaner(if_uri_endswith(
+            "/SBTDWebApi/api/{APPID}/tickets/?EnableNotifyReviewer=False"
+            "&NotifyRequestor=False&NotifyResponsible=False"
+            "&AllowRequestorCreation=False",
+            clean_new_ticket,
+    ))
     netid = os.environ.get('TDX_NETID', CASSETTE_NETID)
-    yaml_cleaner.register_cleaner_if_path_endswith(
+    yaml_cleaner.register_cleaner(if_uri_endswith(
+        f"/SBTDWebApi/api/people/lookup?searchText={netid}&maxResults=1",
         clean_people_lookup,
-        f"/SBTDWebApi/api/people/lookup?searchText={netid}&maxResults=1"
-    )
+    ))
     yaml_cleaner.register_cleaner(clean_env_strings)
-    yaml_cleaner.register_cleaner_if_path_endswith(
+    yaml_cleaner.register_cleaner(if_uri_endswith(
+        "/SBTDWebApi/api/groups/search",
         clean_so_many_groups,
-        "/SBTDWebApi/api/groups/search")
+    ))
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:

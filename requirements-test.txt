@@ -5,7 +5,6 @@ cfgv==3.4.0
 charset-normalizer==3.4.4
 detect-secrets==1.5.0
 distlib==0.4.0
-exceptiongroup==1.3.0
 filelock==3.20.0
 flake8==7.3.0
 identify==2.6.15
@@ -30,25 +29,25 @@ pyflakes==3.4.0
 Pygments==2.19.2
 PyJWT==2.10.1
 pytest==9.0.1
-git+https://github.com/splunk/pytest-splunk-soar-connectors.git
+pytest-splunk-soar-connectors @ git+https://github.com/splunk/pytest-splunk-soar-connectors.git@9eb14d6af47add9aded4eebdbaa843473ed5be20
 python-dateutil==2.9.0.post0
 PyYAML==6.0.3
 requests==2.32.5
 rich==14.2.0
+setuptools==80.9.0
 setuptools-scm==9.2.2
 six==1.17.0
 soupsieve==2.8
 TDXLib==0.5.2
-tomli==2.3.0
 types-beautifulsoup4==4.12.0.20250516
 types-html5lib==1.1.11.20251014
 types-requests==2.31.0.2
 types-urllib3==1.26.25.14
 typing_extensions==4.15.0
 urllib3==1.26.19
-# TODO: update VCR Cleaner to latest ver
-vcr_cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@4080a92216ed8e0b3f916349cf1819d581f74232
+vcr_cleaner @ git+https://github.com/techservicesillinois/vcrpy-cleaner.git@be2bf6e0b8e4eda9416d3131611306084377009d
 vcrpy==7.0.0
 virtualenv==20.35.4
+wheel==0.45.1
 wrapt==2.0.1
 yarl==1.22.0
