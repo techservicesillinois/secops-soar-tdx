@@ -22,7 +22,11 @@ End-of-Life was decided upon based on these dependencies:
 
 ## [2.3.0] - 2025-12-03
 
+- Update for Python 3.13 (#150)
 - Add new severity level 'VERY LOW' (#148)
+- Add protection against missing 'notify' param (#142)
+- Add status field to update_ticket (#139)
+- Add .tar releases (#131)
 
 ## [2.2.0] - 2024-12-09
 
