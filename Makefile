@@ -1,9 +1,17 @@
 # DO NOT EDIT - All project-specific values belong in config.mk!
 
+# NOTE: From the GNU Make manual: A phony target should not be a
+# prerequisite of a real target file; if it is, its recipe will be
+# run every time make considers that file.
+# https://www.gnu.org/software/make/manual/make.html#Phony-Targets
 .PHONY: all autopep8 build build-test clean lint static python-version wheels check_template
-include config.mk
 
-TEST_APP_NAME:=Test $(PROD_APP_NAME)
+ifdef SOAR_TEST_APP
+    include config-test.mk
+else
+    include config.mk
+endif
+
 SOAR_PYTHON_VERSION:=$(shell PYTHONPATH=tests python -c 'from test_python_version import SOAR_PYTHON_VERSION as V; print(f"{V[0]}.{V[1]}")')
 
 ifeq (src/app/readme.html, $(wildcard src/app/readme.html))
@@ -27,28 +35,46 @@ GITHUB_SHA?=$(shell git rev-parse HEAD)
 
 all: build
 
-build: export APP_ID=$(PROD_APP_ID)
-build: export APP_NAME=$(PROD_APP_NAME)
 build: app.tar
-
-build-test: export APP_ID=$(TEST_APP_ID)
-build-test: export APP_NAME=$(TEST_APP_NAME)
-build-test: app.tar
-
 
 deps: deps-deploy
 deps-deploy: # Install deps for deploy.py on Github
 	pip install requests
 
 dist: $(DIST_SRCS)
+# NOTE: Make uses modification time (mtime) to determine if a target
+# should be rebuilt. For a file this simply means whenever the contents
+# are changed the mtime is updated. For a directory the mtime is
+# updated whenever files or subdirectories are added, removed, or
+# renamed within it.
+#
+# dist/app is a dependency for all the files that reside within it.
+# This is necessary to ensure the directory is created before we add
+# files.  Unfortunately, this has the side effect that the timestamp
+# for dist/app is always ahead of the timestamps of its contents
+# because each time a file is created dist/app's mtime is updated by
+# the operating system.  Therefore, on subsequent runs Make will
+# ALWAYS rebuild every file residing within dist/app.
+#
+# To avoid these unnecessary rebuilds we can use order-only prerequisites.
+# An order-only prerequisite NEVER causes a target to rebuild, the
+# prerequisite will be built if it does not exist but when updated
+# will NOT cause a rebuild of the target.  This is exactly the behavior
+# we want in this case. The directory dist/app must exist before
+# building a file, but changes to dist/app's mtime do not warrant a
+# rebuild of one of dist/app's files. To specify a list of order-only
+# prerequisites simply add a pipe | before them and after any normal
+# prerequisites like so:
+#
+# targets : normal-prerequisites | order-only-prerequisites
 dist/app:
 	mkdir -p $@
-dist/app/app.py: src/app/app.py dist/app
+dist/app/app.py: src/app/app.py | dist/app
 	sed "s/GITHUB_TAG/$(TAG)/;s/GITHUB_SHA/$(GITHUB_SHA)/;s/BUILD_TIME/$(BUILD_TIME)/" $< > $@
-dist/app/app.json: src/app/app.json dist/app venv wheels
+dist/app/app.json: src/app/app.json venv dist/app/wheels | dist/app
     # LC_ALL=C is needed on macOS to avoid illegal byte sequence error
 	LC_ALL=C sed "s/APP_ID/$(APP_ID)/;s/APP_NAME/$(APP_NAME)/;s/GITHUB_TAG/$(TAG)/;s/BUILD_TIME/$(BUILD_TIME)/" $< |\
-	$(VENV_PYTHON) -m phtoolbox deps -o $@ dist/app/wheels
+	$(VENV_PYTHON) -m phtoolbox deps -o $@ -C dist/app wheels
 dist/app/%: src/app/% dist/app
 	cp -r $< $@
 
@@ -65,17 +91,20 @@ python-version:
 	pyenv install -s $(SOAR_PYTHON_VERSION)
 	pyenv local $(SOAR_PYTHON_VERSION)
 
+.gitattributes: soar_template
+	./soar_template gen $@
+
 venv: requirements-test.txt .python-version
 	rm -rf $@
 	python -m venv venv
 	$(VENV_PYTHON) -m pip install -r $<
 
-wheels: dist/app dist/app/wheels
+wheels: dist/app/wheels
 dist/app/wheels: requirements.in
 	pip wheel --no-deps --wheel-dir=$@ -r $^
 
 requirements-test.txt: export PYTEST_SOAR_REPO=git+https://github.com/splunk/pytest-splunk-soar-connectors.git
-requirements-test.txt: requirements-test.in requirements.in
+requirements-test.txt: requirements-test.in requirements.in .python-version
 	rm -rf $(VENV_REQS)
 	python -m venv $(VENV_REQS)
 	$(VENV_REQS)/bin/python -m pip install -r requirements.in
