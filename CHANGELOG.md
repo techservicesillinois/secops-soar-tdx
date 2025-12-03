@@ -20,12 +20,13 @@ End-of-Life was decided upon based on these dependencies:
   - TeamDynamix (May 2025 - Unknown, but estimate breaking changes by second
   Quarterly Release After Nov 2024 Release)
 
-## [Unreleased]
+## [2.3.0] - 2025-12-03
 
 - Add new severity level 'VERY LOW' (#148)
 
 ## [2.2.0] - 2024-12-09
 
+- Released only for UIC
 - Update to use NiceBaseConnector (#116)
 - Add phantom-toolbox to requirements files and `Makefile` (#114)
 - Move hard coded translation tables to app.json config (#126)
