@@ -82,16 +82,27 @@ To configure the TDX SOAR app to connect to your TeamDynamix instance, add an as
 
 Use the `Test Connectivity` button in SOAR to verify your settings.
 
-## Support
+## Product Support
 
-This product is supported by Cybersecurity on a best-effort basis.
+This product is supported by Cybersecurity teams at the
+University of Illinois Urbana-Champaign on a best-effort basis.
 
-As of the last update to this README, the expected End-of-Life and End-of-Support dates of this product are October 2025.
+As of the last update to this README, the expected End-of-Life and 
+End-of-Support dates of this product are May 2026.
+
+We estimate Splunk SOAR end-of-support by assuming it roughly follows Splunk,
+and that the SOAR cloud has the latest version installed.
+
+We estimate end-of-support for TeamDynamix by assuming that any of their 
+twice annual releases could include breaking API changes.
 
 End-of-Life was decided upon based on these dependencies:
 
-    - Python 3.9 (31 October 2025)
-    - Splunk SOAR Cloud (Unknown)
+  - Python 3.13 (Oct 2029)
+  - phantom-toolbox Python library (Sep 2027)
+  - Splunk SOAR (Estimated July 2027)
+  - TeamDynamix (Estimated May 2026)
+
 
 ## Installation
 
