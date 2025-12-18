@@ -11,25 +11,26 @@ This product is supported by Cybersecurity teams at the
 University of Illinois Urbana-Champaign on a best-effort basis.
 
 As of the last update to this README, the expected End-of-Life and 
-End-of-Support dates of this product are May 2025.
+End-of-Support dates of this product are May 2026.
 
 End-of-Life was decided upon based on these dependencies:
 
-  - phantom-toolbox Python library (Oct 2025)
+  - phantom-toolbox Python library (Sep 2027)
   - Splunk SOAR (Nov 2026)
-  - TeamDynamix (May 2025 - Unknown, but estimate breaking changes by second
-  Quarterly Release After Nov 2024 Release)
+  - TeamDynamix (May 2026 - Unknown, but TDX's twice annual release cycle may contain breaking changes)
 
-## [2.3.0] - Unreleased
 
-- Update for Python 3.13 (#150)
+## [2.3.0] - 2025-12-03
+
 - Add new severity level 'VERY LOW' (#148)
+- Update for Python 3.13 (#150)
 - Add protection against missing 'notify' param (#142)
 - Add status field to update_ticket (#139)
 - Add .tar releases (#131)
 
 ## [2.2.0] - 2024-12-09
 
+- Released only for UIC
 - Update to use NiceBaseConnector (#116)
 - Add phantom-toolbox to requirements files and `Makefile` (#114)
 - Move hard coded translation tables to app.json config (#126)
