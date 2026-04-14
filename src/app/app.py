@@ -83,7 +83,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         except Exception as ex:
             msg = ex
 
-        success = self.tdx.auth()
+        # success = self.tdx.auth()
 
         action_result.add_data({})
 
