@@ -84,11 +84,11 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
             raise Exception("This is a test")
         except Exception as ex:
             msg = ex
-            # tb = traceback.format_exc()
+            tb = traceback.format_exc()
 
         # success = self.tdx.auth()
 
-        # action_result.add_data({tb})
+        action_result.add_data({"traceback": tb})
 
         if False:
             self.save_progress("Test Connectivity Passed")
