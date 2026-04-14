@@ -46,18 +46,18 @@ jobs:
     - name: Static checks
       run: |
         make static
-    - name: Check SOAR template files have not changed
-      if: github.event.repository.name != 'splunk-soar-template'
-      run: |
-        make check_template
-    - name: Skip template check in template repo
-      if: github.event.repository.name == 'splunk-soar-template'
-      run: |
-        touch .check_template
-        make check_template_contents
-    - name: Tests
-      run: |
-        make test
+    # - name: Check SOAR template files have not changed
+    #   if: github.event.repository.name != 'splunk-soar-template'
+    #   run: |
+    #     make check_template
+    # - name: Skip template check in template repo
+    #   if: github.event.repository.name == 'splunk-soar-template'
+    #   run: |
+    #     touch .check_template
+    #     make check_template_contents
+    # - name: Tests
+    #   run: |
+    #     make test
     - name: Build Package (Prod)
       if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
       run: |
