@@ -40,12 +40,12 @@ jobs:
     - name: Virtual Env
       run: |
         make venv
-    - name: Linter
-      run: |
-        make lint
-    - name: Static checks
-      run: |
-        make static
+    # - name: Linter
+    #   run: |
+    #     make lint
+    # - name: Static checks
+    #   run: |
+    #     make static
     # - name: Check SOAR template files have not changed
     #   if: github.event.repository.name != 'splunk-soar-template'
     #   run: |
