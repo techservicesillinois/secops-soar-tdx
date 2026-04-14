@@ -9,6 +9,7 @@ from __future__ import print_function, unicode_literals
 
 # Phantom App imports
 import phantom.app as phantom
+import traceback
 from phantom.action_result import ActionResult
 from phantom.base_connector import BaseConnector
 
@@ -77,15 +78,17 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
         # This call results in a second call to `auth`
+        tb = None
         msg = None
         try:
             raise Exception("This is a test")
         except Exception as ex:
             msg = ex
+            tb = traceback.format_exc()
 
         # success = self.tdx.auth()
 
-        action_result.add_data({msg.print_exc()})
+        action_result.add_data({tb})
 
         if False:
             self.save_progress("Test Connectivity Passed")
