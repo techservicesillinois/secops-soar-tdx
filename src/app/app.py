@@ -77,19 +77,24 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
         # This call results in a second call to `auth`
-        raise Exception("This is a test")
+        msg = None
+        try:
+            raise Exception("This is a test")
+        except Exception as ex:
+            msg = ex
+
         success = self.tdx.auth()
 
         action_result.add_data({})
 
-        if success:
+        if False:
             self.save_progress("Test Connectivity Passed")
             return action_result.set_status(
                 phantom.APP_SUCCESS, "Active connection")
         else:
             self.save_progress("Test Connectivity Failed")
             return action_result.set_status(
-                phantom.APP_ERROR, "Failed connection")
+                phantom.APP_ERROR, f"Failed connection: {msg}")
 
     @handle('create_ticket')
     def _handle_create_ticket(self, param):
