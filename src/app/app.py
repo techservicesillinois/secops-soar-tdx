@@ -77,6 +77,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
         self.save_progress("Connecting to endpoint")
         # Note: There was an `auth` call when the `tdx` object was created.
         # This call results in a second call to `auth`
+        Exception("This is a test")
         success = self.tdx.auth()
 
         action_result.add_data({})
