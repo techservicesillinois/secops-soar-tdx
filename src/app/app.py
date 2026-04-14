@@ -85,7 +85,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
 
         # success = self.tdx.auth()
 
-        action_result.add_data({})
+        action_result.add_data({msg.print_exc()})
 
         if False:
             self.save_progress("Test Connectivity Passed")
