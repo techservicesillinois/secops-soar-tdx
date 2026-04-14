@@ -84,7 +84,7 @@ class TdxConnector(BaseConnector, NiceBaseConnector):
             raise Exception("This is a test")
         except Exception as ex:
             msg = ex
-            tb = traceback.format_exc()
+            # tb = traceback.format_exc()
 
         # success = self.tdx.auth()
 
