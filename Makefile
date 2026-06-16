@@ -25,6 +25,7 @@ BUILD_TIME:=$(shell date -u +%FT%X.%6NZ)
 VENV_PYTHON:=venv/bin/python
 VENV_REQS:=.requirements.venv
 UNAME:=$(shell uname -s)
+BORG:=venv/bin/borg -u https://raw.githubusercontent.com/techservicesillinois/splunk-soar-template/refs/heads/main/.borg.toml
 
 ifeq (tag, $(GITHUB_REF_TYPE))
 	TAG?=$(GITHUB_REF_NAME)
@@ -91,8 +92,8 @@ python-version:
 	pyenv install -s $(SOAR_PYTHON_VERSION)
 	pyenv local $(SOAR_PYTHON_VERSION)
 
-.gitattributes: soar_template
-	./soar_template gen $@
+.gitattributes: venv
+	$(BORG)	gen $@
 
 venv: requirements-test.txt .python-version
 	rm -rf $@
@@ -138,8 +139,9 @@ autopep8: .autopep8
 -include .check_template.d
 check_template: venv .check_template check_template_contents
 .check_template:
-	$(VENV_PYTHON) soar_template -m $@ compare
+	$(BORG) compare --make-target $@
 	touch $@
+
 
 check_template_contents:
 	@ ! grep -l PROD_ config.mk || echo "config.mk should not contain PROD_"
