@@ -48,7 +48,7 @@ soupsieve==2.8.4
 TDXLib==0.5.2
 types-beautifulsoup4==4.12.0.20250516
 types-html5lib==1.1.11.20260518
-types-requests==2.31.0.2
+types-requests==2.31.0.6
 types-urllib3==1.26.25.14
 types-webencodings==0.5.0.20260408
 typing_extensions==4.15.0
