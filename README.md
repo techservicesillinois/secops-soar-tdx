@@ -88,7 +88,7 @@ This product is supported by Cybersecurity teams at the
 University of Illinois Urbana-Champaign on a best-effort basis.
 
 As of the last update to this README, the expected End-of-Life and 
-End-of-Support dates of this product are May 2026.
+End-of-Support dates of this product are December 2026.
 
 We estimate Splunk SOAR end-of-support by assuming it roughly follows Splunk,
 and that the SOAR cloud has the latest version installed.
