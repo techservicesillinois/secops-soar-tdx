@@ -99,9 +99,9 @@ twice annual releases could include breaking API changes.
 End-of-Life was decided upon based on these dependencies:
 
   - Python 3.13 (Oct 2029)
-  - phantom-toolbox Python library (Sep 2027)
-  - Splunk SOAR (Estimated July 2027)
-  - TeamDynamix (Estimated May 2026)
+  - phantom-toolbox Python library (April 2028)
+  - Splunk SOAR (April 2028)
+  - TeamDynamix (Estimated December 2026)
 
 
 ## Installation
