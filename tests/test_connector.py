@@ -12,7 +12,7 @@ APP_ID = "tacosalad"
 #  cassettes/test_create_ticket.yaml
 
 #  PROTIP: After re-recording test_create_ticket.yaml, update this Ticket ID.
-TICKET_ID = 564073
+TICKET_ID = 2262411
 DEFAULT_GROUP = "UIUC-TechServices-Cybersecurity Incident Response"
 
 
@@ -64,7 +64,7 @@ def test_create_ticket(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["ticket_id"] == 564073
+        assert result[0]["data"][0]["ticket_id"] == 2262411
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result
@@ -92,7 +92,7 @@ def test_create_ticket_defaults(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["ticket_id"] == 564073
+        assert result[0]["data"][0]["ticket_id"] == 2262412
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result

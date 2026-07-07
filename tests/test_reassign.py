@@ -11,7 +11,7 @@ APP_ID = "tacosalad"
 
 #  PROTIP: After the TDX Sandbox environment gets reset, you'll have to
 #  go digging for a new ticket ID in order to re-record these cassettes.
-TICKET_ID = 1011312
+TICKET_ID = 2262411
 
 
 def test_reassign_group(cassette, connector: TdxConnector):

@@ -3,12 +3,13 @@ import logging
 import os
 
 import pytest
+import jwt
 import vcr
 
 from app import TdxConnector
 
 from vcr_cleaner import CleanYAMLSerializer
-from vcr_cleaner.cleaners.jwt_token import clean_token
+from vcr_cleaner.cleaners.jwt_token import CLEANER_JWT_TOKEN, CLEANER_SALT
 from vcr_cleaner.cleaners.env_strings import clean_env_strings
 from vcr_cleaner.filters import if_uri_endswith
 
@@ -151,6 +152,15 @@ def remove_creds(request):
 
 def clean_auth(request, response):
     clean_token(request, response)
+
+
+def clean_token(request: dict, response: dict):
+    '''Clean a JWT token.'''
+
+    jwt_token = jwt.encode(CLEANER_JWT_TOKEN, CLEANER_SALT, algorithm="HS256")
+    if 'Content-Encoding' in response['headers'].keys() and \
+            response['headers']['Content-Encoding'] == ['gzip']:
+        response['body']['string'] = jwt_token
 
 
 def clean_so_many_groups(request, response):
