@@ -40,7 +40,7 @@ def test_failed_connectivity(cassette, connector: TdxConnector):
     assert result[0]["message"] == "Failed connection"
 
 
-def test_create_ticket(cassette, connector: TdxConnector):
+def test_create_ticket_simple(cassette, connector: TdxConnector):
     in_json = {
         "appid": APP_ID,
         "identifier": "create_ticket",
@@ -64,7 +64,8 @@ def test_create_ticket(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["ticket_id"] == 2262411
+        # Update this ticket number after re-recording the cassette.  
+        assert result[0]["data"][0]["ticket_id"] == 2262425  # Update me! 
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result

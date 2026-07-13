@@ -177,6 +177,28 @@ def clean_so_many_groups(request, response):
     response['body']['string'] = cleaned_groups
 
 
+foo = """
+
+        "AppName":"UIUC - Tech Services Privacy and Cybersecurity",
+        "ComponentID":9,"IsActive":true,
+        "IsConfigured":true,
+        "IsDefaultForApp":false,
+        "IsPinned":true,
+        "ShouldExpandHelp":false,
+        "CreatedDate":"2021-07-13T18:48:46.043Z","CreatedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","CreatedFullName":"Nathan
+        Carpenter","ModifiedDate":"2021-07-13T18:48:46.177Z","ModifiedUid":"a2ff1781-8ec9-ea11-a81d-000d3a8ea9f7","ModifiedFullName":"Nathan
+        Carpenter","AssetsCount":-1,"ConfigurationItemsCount":-1}
+"""
+
+
+def clean_so_many_forms(request, response):
+    cleaned_forms = """[{
+        "ID":999,
+        "Name": "UIUC-TechSvc-CSOC Incidents"
+    }]"""
+    response['body']['string'] = cleaned_forms
+
+
 @pytest.fixture
 def cassette(request) -> vcr.cassette.Cassette:
     my_vcr = vcr.VCR(
@@ -207,6 +229,10 @@ def cassette(request) -> vcr.cassette.Cassette:
     yaml_cleaner.register_cleaner(if_uri_endswith(
         "/SBTDWebApi/api/groups/search",
         clean_so_many_groups,
+    ))
+    yaml_cleaner.register_cleaner(if_uri_endswith(
+        "/SBTDWebApi/api/66/tickets/forms",
+        clean_so_many_forms,
     ))
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
