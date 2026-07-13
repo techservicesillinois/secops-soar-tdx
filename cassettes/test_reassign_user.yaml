@@ -9,36 +9,33 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '102'
+      - '72'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.34.2
     method: POST
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
-      string: !!binary |  # pragma: allowlist secret
-        H4sIALWWumUC/0ut9MpIck/O9M/08gyt8jT0y/Qs9swLMk129jTzzC6ICHP2stRLrfTKSfVwzPTP
-        8jT0dUmv8A/xLPd1cbLUy48KSdI1T8mpKvRISQ5394kI8851LDXLNfQqDTGqjE8vNffUDYn0czML
-        yQYA/EJXWGkAAAA=
+      string: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjI1MDgxOTIwMDB9.RbB4nHgmsME4ZFjdRi1pjeEtx_FL1yiNEoFA6ug9eb0 #pragma: allowlist secret
     headers:
       Cache-Control:
       - no-cache
-      Connection:
-      - close
       Content-Encoding:
       - gzip
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:51:31 GMT
+      - Mon, 13 Jul 2026 16:40:16 GMT
       Expires:
       - '-1'
       Pragma:
       - no-cache
       Strict-Transport-Security:
       - max-age=31536000
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Accept-Encoding
       X-Content-Type-Options:
@@ -48,11 +45,11 @@ interactions:
       X-RateLimit-Remaining:
       - '58'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:52:28 GMT
+      - Mon, 13 Jul 2026 16:41:12 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '4659215183223390867'
+      - '14641231127541251115'
       X-UA-Compatible:
       - IE=edge
     status:
@@ -72,43 +69,45 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.34.2
     method: GET
     uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=thor2&maxResults=1
   response:
     body:
-      string: '[{"UID": "b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 48141,
+      string: '[{"UID": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 8831,
         "BEID": "0f7df9ca-3924-4806-8adc-6e880a796ddc", "BEIDInt": 2, "IsActive":
-        true, "IsConfidential": false, "UserName": "", "FullName": "Jane Foster",
-        "FirstName": "Jane", "LastName": "Foster", "MiddleName": null, "Salutation":
-        "Doctor", "Nickname": "The Mighty Thor", "DefaultAccountID": 4807, "DefaultAccountName":
-        "Technology Services - CIO (1-798001)", "PrimaryEmail": "nobody@example.com",
-        "AlternateEmail": "nobody@example.com", "ExternalID": null, "AlternateID":
-        null, "Applications": null, "SecurityRoleName": "", "SecurityRoleID": "",
-        "Permissions": null, "OrgApplications": null, "PrimaryClientPortalApplicationID":
+        true, "IsConfidential": false, "IsEmailSuppressed": false, "EmailSuppressedDateUtc":
+        null, "IsAutomaticTicketAssignmentEnabled": true, "UserName": "", "FullName":
+        "Jane Foster", "FirstName": "Jane", "LastName": "Foster", "MiddleName": null,
+        "Salutation": "Doctor", "Nickname": "The Mighty Thor", "DefaultAccountID":
+        4807, "DefaultAccountName": "Technology Services - CIO (1-798001)", "PrimaryEmail":
+        "nobody@example.com", "AlternateEmail": "nobody@example.com", "ExternalID":
+        null, "AlternateID": null, "Applications": null, "SecurityRoleName": "", "SecurityRoleID":
+        "", "Permissions": null, "OrgApplications": null, "PrimaryClientPortalApplicationID":
         null, "GroupIDs": null, "AlertEmail": "nobody@example.com", "ProfileImageFileName":
         "", "Company": null, "Title": null, "HomePhone": null, "PrimaryPhone": null,
         "WorkPhone": null, "Pager": null, "OtherPhone": null, "MobilePhone": null,
-        "Fax": null, "DefaultPriorityID": 0, "DefaultPriorityName": "None", "AboutMe":
-        null, "WorkAddress": "", "WorkCity": "", "WorkState": "", "WorkZip": null,
-        "WorkCountry": "", "HomeAddress": "", "HomeCity": "", "HomeState": "", "HomeZip":
-        "", "HomeCountry": "", "LocationID": 0, "LocationName": null, "LocationRoomID":
-        0, "LocationRoomName": null, "DefaultRate": 0.0, "CostRate": 0.0, "IsEmployee":
-        false, "WorkableHours": 8.0, "IsCapacityManaged": false, "ReportTimeAfterDate":
-        "0001-01-01T00:00:00", "EndDate": "0001-01-01T00:00:00", "ShouldReportTime":
-        false, "ReportsToUID": "", "ReportsToFullName": "", "ResourcePoolID": -1,
-        "ResourcePoolName": "", "TZID": 0, "TZName": "", "TypeID": 0, "AuthenticationUserName":
+        "Fax": null, "DefaultPriorityID": 24, "DefaultPriorityName": "IT Pro", "AboutMe":
+        null, "TechnicianSignature": null, "ApplyTechnicianSignatureToUpdatesAndComments":
+        false, "ApplyTechnicianSignatureToReplies": false, "WorkAddress": "", "WorkCity":
+        "", "WorkState": "", "WorkZip": null, "WorkCountry": "", "HomeAddress": "",
+        "HomeCity": "", "HomeState": "", "HomeZip": "", "HomeCountry": "", "LocationID":
+        0, "LocationName": null, "LocationRoomID": 0, "LocationRoomName": null, "DefaultRate":
+        0.0, "CostRate": 0.0, "IsEmployee": false, "WorkableHours": 8.0, "IsCapacityManaged":
+        false, "ReportTimeAfterDate": "0001-01-01T00:00:00", "EndDate": "0001-01-01T00:00:00",
+        "ShouldReportTime": false, "ReportsToUID": "", "ReportsToFullName": "", "ResourcePoolID":
+        -1, "ResourcePoolName": "", "TZID": 0, "TZName": "", "TypeID": 0, "AuthenticationUserName":
         "", "AuthenticationProviderID": null, "Attributes": null, "IMProvider": null,
         "IMHandle": null}]'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '1567'
+      - '1809'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:51:32 GMT
+      - Mon, 13 Jul 2026 16:40:18 GMT
       Expires:
       - '-1'
       Pragma:
@@ -122,7 +121,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:51:42 GMT
+      - Mon, 13 Jul 2026 16:40:28 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -130,9 +129,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '8778399771814605818'
+      - '5193591438000471393'
       X-TDX-UID:
-      - a68e93bc-e406-ee11-87dd-0050f2e6c034
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
       - IE=edge
     status:
@@ -152,38 +151,44 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.34.2
     method: GET
-    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/1011312
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/2262411
   response:
     body:
-      string: '{"ID":1011312,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":312,"TypeName":"Security
-        Support","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy and Cybersecurity","Classification":46,"ClassificationName":"Service
-        Request","FormID":1069,"FormName":"UIUC-TechSvc-CSOC Incidents","Title":"NewBoo","Description":"","IsRichHtml":false,"Uri":"api/66/tickets/1011312","AccountID":7902,"AccountName":"None/Not
-        Found","SourceID":0,"SourceName":"","StatusID":357,"StatusName":"New","StatusClass":1,"ImpactID":0,"ImpactName":"","UrgencyID":0,"UrgencyName":"","PriorityID":19,"PriorityName":"Low","PriorityOrder":1.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2024-01-31T18:40:32.353Z","CreatedUid":"a68e93bc-e406-ee11-87dd-0050f2e6c034","CreatedFullName":"Security
-        SOAR API Service Account","CreatedEmail":"","ModifiedDate":"2024-01-31T18:51:30.607Z","ModifiedUid":"a68e93bc-e406-ee11-87dd-0050f2e6c034","ModifiedFullName":"Security
-        SOAR API Service Account","RequestorName":"CLEANED CLEANED","RequestorFirstName":"CLEANED","RequestorLastName":"CLEANED","RequestorEmail":"CLEANED@illinois.edu","RequestorPhone":"","RequestorUid":"b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7","ActualMinutes":0,"EstimatedMinutes":0,"DaysOld":0,"StartDate":null,"EndDate":null,"ResponsibleUid":null,"ResponsibleFullName":"Unassigned","ResponsibleEmail":"","ResponsibleGroupID":787,"ResponsibleGroupName":"UIUC-TechServices-Cybersecurity
-        Developers","RespondedDate":"0001-01-01T00:00:00","RespondedUid":null,"RespondedFullName":"","CompletedDate":"0001-01-01T00:00:00","CompletedUid":null,"CompletedFullName":"","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","TimeBudget":0.0,"ExpensesBudget":0.0,"TimeBudgetUsed":0.0,"ExpensesBudgetUsed":0.0,"IsConvertedToTask":false,"ConvertedToTaskDate":"0001-01-01T00:00:00","ConvertedToTaskUid":null,"ConvertedToTaskFullName":"","TaskProjectID":0,"TaskProjectName":"","TaskPlanID":0,"TaskPlanName":"","TaskID":0,"TaskTitle":"","TaskStartDate":"0001-01-01T00:00:00","TaskEndDate":"0001-01-01T00:00:00","TaskPercentComplete":0,"LocationID":0,"LocationName":"","LocationRoomID":0,"LocationRoomName":"","RefCode":"","ServiceID":0,"ServiceName":"None","ServiceOfferingID":0,"ServiceOfferingName":"None","ServiceCategoryID":0,"ServiceCategoryName":"None","ArticleID":0,"ArticleSubject":"","ArticleStatus":0,"ArticleCategoryPathNames":"","ArticleAppID":0,"ArticleShortcutID":null,"AppID":66,"Attributes":[{"ID":4902,"Name":"UIUC-TechSvc-CSOC
+      string: '{"ID":2262411,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":310,"TypeName":"CSOC","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy
+        and Cybersecurity","Classification":32,"ClassificationName":"Incident","FormID":1069,"FormName":"UIUC-TechSvc-CSOC
+        Incidents","Title":"NewBoo","Description":"","Tags":[],"IsRichHtml":false,"Uri":"api/66/tickets/2262411","AccountID":4807,"AccountName":"Technology
+        Services - CIO (1-798001)","SourceID":0,"SourceName":"","StatusID":360,"StatusName":"Resolved","StatusClass":3,"ImpactID":0,"ImpactName":"","UrgencyID":0,"UrgencyName":"","PriorityID":19,"PriorityName":"Low","PriorityOrder":1.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2026-07-07T19:57:39.7Z","CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedFullName":"Tech
+        Services Security API","CreatedEmail":"noreply@illinois.edu","ModifiedDate":"2026-07-13T16:30:58.877Z","ModifiedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","ModifiedFullName":"Tech
+        Services Security API","RequestorName":"CLEANED CLEANED","RequestorFirstName":"CLEANED","RequestorLastName":"CLEANED","RequestorEmail":"CLEANED@illinois.edu","RequestorPhone":"","RequestorUid":"54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7","ActualMinutes":0,"EstimatedMinutes":0,"DaysOld":0,"StartDate":null,"EndDate":null,"ResponsibleUid":"bbd30493-8ec9-ea11-a81d-000d3a8ea9f7","ResponsibleFullName":"CLEANED
+        CLEANED","ResponsibleEmail":"CLEANED@illinois.edu","ResponsibleGroupID":787,"ResponsibleGroupName":"UIUC-TechServices-Cybersecurity
+        Developers","RespondedDate":"2026-07-07T20:04:17.92Z","RespondedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","RespondedFullName":"Tech
+        Services Security API","CompletedDate":"2026-07-07T20:04:17.92Z","CompletedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CompletedFullName":"Tech
+        Services Security API","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","TimeBudget":0.0,"ExpensesBudget":0.0,"TimeBudgetUsed":0.0,"ExpensesBudgetUsed":0.0,"IsConvertedToTask":false,"ConvertedToTaskDate":"0001-01-01T00:00:00","ConvertedToTaskUid":null,"ConvertedToTaskFullName":"","TaskProjectID":0,"TaskProjectName":"","TaskPlanID":0,"TaskPlanName":"","TaskID":0,"TaskTitle":"","TaskStartDate":"0001-01-01T00:00:00","TaskEndDate":"0001-01-01T00:00:00","TaskPercentComplete":0,"LocationID":0,"LocationName":"","LocationRoomID":0,"LocationRoomName":"","RefCode":"","ServiceID":0,"ServiceName":"None","ServiceOfferingID":0,"ServiceOfferingName":"None","ServiceCategoryID":0,"ServiceCategoryName":"None","ArticleID":0,"ArticleSubject":"","ArticleStatus":0,"ArticleCategoryPathNames":"","ArticleAppID":0,"ArticleShortcutID":null,"AppID":66,"Attributes":[{"ID":4902,"Name":"UIUC-TechSvc-CSOC
         Incident Severity","Order":0,"Description":"","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":10539,"Name":"To
-        Be Determined","IsActive":true,"DateCreated":"2023-04-17T20:47:47.447Z","DateModified":"2023-04-17T20:47:47.447Z","Order":0},{"ID":10541,"Name":"Non-Event","IsActive":true,"DateCreated":"2023-04-17T20:48:18.213Z","DateModified":"2023-04-17T20:48:33.57Z","Order":1},{"ID":10540,"Name":"Low
+        Be Determined","IsActive":true,"DateCreated":"2023-04-17T20:47:47.447Z","DateModified":"2023-04-17T20:47:47.447Z","Order":0},{"ID":10541,"Name":"Non-Event","IsActive":true,"DateCreated":"2023-04-17T20:48:18.213Z","DateModified":"2023-04-17T20:48:33.57Z","Order":1},{"ID":22869,"Name":"Very
+        Low - Minimal","IsActive":true,"DateCreated":"2025-10-01T19:41:13.92Z","DateModified":"2025-10-01T19:41:13.92Z","Order":1},{"ID":10540,"Name":"Low
         - Minor","IsActive":true,"DateCreated":"2023-04-17T20:48:05.88Z","DateModified":"2023-04-17T20:48:24.127Z","Order":2},{"ID":10203,"Name":"Medium
         - Moderate","IsActive":true,"DateCreated":"2023-03-13T19:34:05.207Z","DateModified":"2023-04-17T20:49:23.907Z","Order":3},{"ID":10204,"Name":"High
         - Serious","IsActive":true,"DateCreated":"2023-03-13T19:34:05.217Z","DateModified":"2023-04-17T20:49:18.803Z","Order":4},{"ID":10542,"Name":"Critical
         - Major","IsActive":true,"DateCreated":"2023-04-17T20:49:12.407Z","DateModified":"2023-04-17T20:49:12.407Z","Order":5},{"ID":15624,"Name":"Mutli-Campus","IsActive":true,"DateCreated":"2023-12-05T19:40:38.35Z","DateModified":"2023-12-05T19:40:38.35Z","Order":6}],"IsRequired":false,"IsUpdatable":true,"Value":"10539","ValueText":"To
         Be Determined","ChoicesText":"To Be Determined","AssociatedItemIDs":[0]},{"ID":4363,"Name":"UIUC-TechSvc-Security
         TLP","Order":0,"Description":"Traffic Light Protocol sharing classification
-        - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":8175,"Name":"TLP:CLEAR","IsActive":true,"DateCreated":"2022-06-29T20:23:50.033Z","DateModified":"2023-09-14T17:33:23.823Z","Order":0},{"ID":8174,"Name":"TLP:GREEN","IsActive":true,"DateCreated":"2022-06-29T20:23:49.927Z","DateModified":"2022-06-29T20:23:49.927Z","Order":1},{"ID":8173,"Name":"TLP:AMBER","IsActive":true,"DateCreated":"2022-06-29T20:23:49.827Z","DateModified":"2022-06-29T20:23:49.827Z","Order":2},{"ID":14037,"Name":"TLP:AMBER+STRICT","IsActive":true,"DateCreated":"2023-09-14T17:33:09.307Z","DateModified":"2023-09-14T17:33:09.307Z","Order":3},{"ID":8172,"Name":"TLP:RED","IsActive":true,"DateCreated":"2022-06-29T20:23:49.723Z","DateModified":"2023-09-14T17:33:16.707Z","Order":4}],"IsRequired":false,"IsUpdatable":true,"Value":"8172","ValueText":"TLP:RED","ChoicesText":"TLP:RED","AssociatedItemIDs":[0]}],"Attachments":[],"Tasks":[],"Notify":[{"ItemRole":"Responsible
+        - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":8175,"Name":"TLP:CLEAR","IsActive":true,"DateCreated":"2022-06-29T20:23:50.033Z","DateModified":"2023-09-14T17:33:23.823Z","Order":0},{"ID":8174,"Name":"TLP:GREEN","IsActive":true,"DateCreated":"2022-06-29T20:23:49.927Z","DateModified":"2022-06-29T20:23:49.927Z","Order":1},{"ID":8173,"Name":"TLP:AMBER","IsActive":true,"DateCreated":"2022-06-29T20:23:49.827Z","DateModified":"2022-06-29T20:23:49.827Z","Order":2},{"ID":14037,"Name":"TLP:AMBER+STRICT","IsActive":true,"DateCreated":"2023-09-14T17:33:09.307Z","DateModified":"2023-09-14T17:33:09.307Z","Order":3},{"ID":8172,"Name":"TLP:RED","IsActive":true,"DateCreated":"2022-06-29T20:23:49.723Z","DateModified":"2023-09-14T17:33:16.707Z","Order":4}],"IsRequired":false,"IsUpdatable":true,"Value":"8173","ValueText":"TLP:AMBER","ChoicesText":"TLP:AMBER","AssociatedItemIDs":[0]}],"Attachments":[],"Tasks":[],"TaskTemplateApplications":[],"Notify":[{"ItemRole":"Responsible","Name":"CLEANED
+        CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Responsible
         Group","Name":"UIUC-TechServices-Cybersecurity Developers","Initials":null,"Value":"787","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Requestor","Name":"CLEANED
-        CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null}],"WorkflowID":0,"WorkflowConfigurationID":0,"WorkflowName":""}'
+        CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Creator","Name":"Tech
+        Services Security API","Initials":null,"Value":"noreply@illinois.edu","RefValue":0,"ProfileImageFileName":null}],"WorkflowID":0,"WorkflowConfigurationID":0,"WorkflowName":""}'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '5594'
+      - '6275'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:51:32 GMT
+      - Mon, 13 Jul 2026 16:40:18 GMT
       Expires:
       - '-1'
       Pragma:
@@ -197,7 +202,7 @@ interactions:
       X-RateLimit-Remaining:
       - '58'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:52:30 GMT
+      - Mon, 13 Jul 2026 16:41:15 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -205,36 +210,43 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '8077045183216944231'
+      - '4933237575338550266'
       X-TDX-UID:
-      - a68e93bc-e406-ee11-87dd-0050f2e6c034
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
       - IE=edge
     status:
       code: 200
       message: OK
 - request:
-    body: '{"ID": 1011312, "TypeID": 312, "TypeName": "Security Support", "TypeCategoryID":
-      89, "TypeCategoryName": "UIUC-Privacy and Cybersecurity", "Classification":
-      46, "ClassificationName": "Service Request", "FormID": 1069, "FormName": "UIUC-TechSvc-CSOC
-      Incidents", "Title": "NewBoo", "Uri": "api/66/tickets/1011312", "AccountID":
-      7902, "AccountName": "None/Not Found", "StatusID": 357, "StatusName": "New",
-      "StatusClass": 1, "PriorityID": 19, "PriorityName": "Low", "PriorityOrder":
-      1.0, "CreatedDate": "2024-01-31T18:40:32+0000", "CreatedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034",
-      "CreatedFullName": "Security SOAR API Service Account", "ModifiedDate": "2024-01-31T18:51:30+0000",
-      "ModifiedUid": "a68e93bc-e406-ee11-87dd-0050f2e6c034", "ModifiedFullName": "Security
-      SOAR API Service Account", "RequestorName": "CLEANED CLEANED", "RequestorFirstName":
+    body: '{"ID": 2262411, "TypeID": 310, "TypeName": "CSOC", "TypeCategoryID": 89,
+      "TypeCategoryName": "UIUC-Privacy and Cybersecurity", "Classification": 32,
+      "ClassificationName": "Incident", "FormID": 1069, "FormName": "UIUC-TechSvc-CSOC
+      Incidents", "Title": "NewBoo", "Uri": "api/66/tickets/2262411", "AccountID":
+      4807, "AccountName": "Technology Services - CIO (1-798001)", "StatusID": 360,
+      "StatusName": "Resolved", "StatusClass": 3, "PriorityID": 19, "PriorityName":
+      "Low", "PriorityOrder": 1.0, "CreatedDate": "2026-07-07T19:57:39+0000", "CreatedUid":
+      "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "CreatedFullName": "Tech Services Security
+      API", "CreatedEmail": "noreply@illinois.edu", "ModifiedDate": "2026-07-13T16:30:58+0000",
+      "ModifiedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "ModifiedFullName": "Tech
+      Services Security API", "RequestorName": "CLEANED CLEANED", "RequestorFirstName":
       "CLEANED", "RequestorLastName": "CLEANED", "RequestorEmail": "CLEANED@illinois.edu",
-      "RequestorUid": "b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7", "ResponsibleUid": "b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7",
-      "ResponsibleFullName": "Unassigned", "ResponsibleGroupID": 787, "ResponsibleGroupName":
-      "UIUC-TechServices-Cybersecurity Developers", "ServiceName": "None", "ServiceOfferingName":
+      "RequestorUid": "54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7", "ResponsibleUid": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7",
+      "ResponsibleFullName": "CLEANED CLEANED", "ResponsibleEmail": "CLEANED@illinois.edu",
+      "ResponsibleGroupID": 787, "ResponsibleGroupName": "UIUC-TechServices-Cybersecurity
+      Developers", "RespondedDate": "2026-07-07T20:04:17+0000", "RespondedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b",
+      "RespondedFullName": "Tech Services Security API", "CompletedDate": "2026-07-07T20:04:17+0000",
+      "CompletedUid": "3c3caa7d-c365-ed11-ade6-0050f2e6378b", "CompletedFullName":
+      "Tech Services Security API", "ServiceName": "None", "ServiceOfferingName":
       "None", "ServiceCategoryName": "None", "AppID": 66, "Attributes": [{"ID": 4902,
       "Name": "UIUC-TechSvc-CSOC Incident Severity", "Order": 0, "Description": "",
       "SectionID": 0, "SectionName": null, "FieldType": "dropdown", "DataType": "String",
       "Choices": [{"ID": 10539, "Name": "To Be Determined", "IsActive": true, "DateCreated":
       "2023-04-17T20:47:47.447Z", "DateModified": "2023-04-17T20:47:47.447Z", "Order":
       0}, {"ID": 10541, "Name": "Non-Event", "IsActive": true, "DateCreated": "2023-04-17T20:48:18.213Z",
-      "DateModified": "2023-04-17T20:48:33.57Z", "Order": 1}, {"ID": 10540, "Name":
+      "DateModified": "2023-04-17T20:48:33.57Z", "Order": 1}, {"ID": 22869, "Name":
+      "Very Low - Minimal", "IsActive": true, "DateCreated": "2025-10-01T19:41:13.92Z",
+      "DateModified": "2025-10-01T19:41:13.92Z", "Order": 1}, {"ID": 10540, "Name":
       "Low - Minor", "IsActive": true, "DateCreated": "2023-04-17T20:48:05.88Z", "DateModified":
       "2023-04-17T20:48:24.127Z", "Order": 2}, {"ID": 10203, "Name": "Medium - Moderate",
       "IsActive": true, "DateCreated": "2023-03-13T19:34:05.207Z", "DateModified":
@@ -259,12 +271,16 @@ interactions:
       "IsActive": true, "DateCreated": "2023-09-14T17:33:09.307Z", "DateModified":
       "2023-09-14T17:33:09.307Z", "Order": 3}, {"ID": 8172, "Name": "TLP:RED", "IsActive":
       true, "DateCreated": "2022-06-29T20:23:49.723Z", "DateModified": "2023-09-14T17:33:16.707Z",
-      "Order": 4}], "IsRequired": false, "IsUpdatable": true, "Value": "8172", "ValueText":
-      "TLP:RED", "ChoicesText": "TLP:RED", "AssociatedItemIDs": [0]}], "Attachments":
-      [], "Tasks": [], "Notify": [{"ItemRole": "Responsible Group", "Name": "UIUC-TechServices-Cybersecurity
+      "Order": 4}], "IsRequired": false, "IsUpdatable": true, "Value": "8173", "ValueText":
+      "TLP:AMBER", "ChoicesText": "TLP:AMBER", "AssociatedItemIDs": [0]}], "Attachments":
+      [], "Tasks": [], "Notify": [{"ItemRole": "Responsible", "Name": "CLEANED CLEANED",
+      "Initials": null, "Value": "CLEANED@illinois.edu", "RefValue": 0, "ProfileImageFileName":
+      null}, {"ItemRole": "Responsible Group", "Name": "UIUC-TechServices-Cybersecurity
       Developers", "Initials": null, "Value": "787", "RefValue": 0, "ProfileImageFileName":
       null}, {"ItemRole": "Requestor", "Name": "CLEANED CLEANED", "Initials": null,
-      "Value": "CLEANED@illinois.edu", "RefValue": 0, "ProfileImageFileName": null}]}'
+      "Value": "CLEANED@illinois.edu", "RefValue": 0, "ProfileImageFileName": null},
+      {"ItemRole": "Creator", "Name": "Tech Services Security API", "Initials": null,
+      "Value": "noreply@illinois.edu", "RefValue": 0, "ProfileImageFileName": null}]}'
     headers:
       Accept:
       - '*/*'
@@ -275,43 +291,48 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '4301'
+      - '5166'
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.34.2
     method: POST
-    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/1011312?notifyNewResponsible=False
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/2262411?notifyNewResponsible=False
   response:
     body:
-      string: '{"ID":1011312,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":312,"TypeName":"Security
-        Support","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy and Cybersecurity","Classification":46,"ClassificationName":"Service
-        Request","FormID":1069,"FormName":"UIUC-TechSvc-CSOC Incidents","Title":"NewBoo","Description":"","IsRichHtml":false,"Uri":"api/66/tickets/1011312","AccountID":7902,"AccountName":"None/Not
-        Found","SourceID":0,"SourceName":"","StatusID":357,"StatusName":"New","StatusClass":1,"ImpactID":0,"ImpactName":"","UrgencyID":0,"UrgencyName":"","PriorityID":19,"PriorityName":"Low","PriorityOrder":1.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2024-01-31T18:40:32.353Z","CreatedUid":"a68e93bc-e406-ee11-87dd-0050f2e6c034","CreatedFullName":"Security
-        SOAR API Service Account","CreatedEmail":"","ModifiedDate":"2024-01-31T18:51:33.573Z","ModifiedUid":"a68e93bc-e406-ee11-87dd-0050f2e6c034","ModifiedFullName":"Security
-        SOAR API Service Account","RequestorName":"CLEANED CLEANED","RequestorFirstName":"CLEANED","RequestorLastName":"CLEANED","RequestorEmail":"CLEANED@illinois.edu","RequestorPhone":"","RequestorUid":"b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7","ActualMinutes":0,"EstimatedMinutes":0,"DaysOld":0,"StartDate":null,"EndDate":null,"ResponsibleUid":"b4b7b6e8-90c9-ea11-a81d-000d3a8ea9f7","ResponsibleFullName":"CLEANED
+      string: '{"ID":2262411,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":310,"TypeName":"CSOC","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy
+        and Cybersecurity","Classification":32,"ClassificationName":"Incident","FormID":1069,"FormName":"UIUC-TechSvc-CSOC
+        Incidents","Title":"NewBoo","Description":"","Tags":[],"IsRichHtml":false,"Uri":"api/66/tickets/2262411","AccountID":4807,"AccountName":"Technology
+        Services - CIO (1-798001)","SourceID":0,"SourceName":"","StatusID":360,"StatusName":"Resolved","StatusClass":3,"ImpactID":0,"ImpactName":"","UrgencyID":0,"UrgencyName":"","PriorityID":19,"PriorityName":"Low","PriorityOrder":1.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2026-07-07T19:57:39.7Z","CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedFullName":"Tech
+        Services Security API","CreatedEmail":"noreply@illinois.edu","ModifiedDate":"2026-07-13T16:30:58.877Z","ModifiedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","ModifiedFullName":"Tech
+        Services Security API","RequestorName":"CLEANED CLEANED","RequestorFirstName":"CLEANED","RequestorLastName":"CLEANED","RequestorEmail":"CLEANED@illinois.edu","RequestorPhone":"","RequestorUid":"54b3b2ee-90c9-ea11-a81d-000d3a8ea9f7","ActualMinutes":0,"EstimatedMinutes":0,"DaysOld":0,"StartDate":null,"EndDate":null,"ResponsibleUid":"bbd30493-8ec9-ea11-a81d-000d3a8ea9f7","ResponsibleFullName":"CLEANED
         CLEANED","ResponsibleEmail":"CLEANED@illinois.edu","ResponsibleGroupID":787,"ResponsibleGroupName":"UIUC-TechServices-Cybersecurity
-        Developers","RespondedDate":"0001-01-01T00:00:00","RespondedUid":null,"RespondedFullName":"","CompletedDate":"0001-01-01T00:00:00","CompletedUid":null,"CompletedFullName":"","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","TimeBudget":0.0,"ExpensesBudget":0.0,"TimeBudgetUsed":0.0,"ExpensesBudgetUsed":0.0,"IsConvertedToTask":false,"ConvertedToTaskDate":"0001-01-01T00:00:00","ConvertedToTaskUid":null,"ConvertedToTaskFullName":"","TaskProjectID":0,"TaskProjectName":"","TaskPlanID":0,"TaskPlanName":"","TaskID":0,"TaskTitle":"","TaskStartDate":"0001-01-01T00:00:00","TaskEndDate":"0001-01-01T00:00:00","TaskPercentComplete":0,"LocationID":0,"LocationName":"","LocationRoomID":0,"LocationRoomName":"","RefCode":"","ServiceID":0,"ServiceName":"None","ServiceOfferingID":0,"ServiceOfferingName":"None","ServiceCategoryID":0,"ServiceCategoryName":"None","ArticleID":0,"ArticleSubject":"","ArticleStatus":0,"ArticleCategoryPathNames":"","ArticleAppID":0,"ArticleShortcutID":null,"AppID":66,"Attributes":[{"ID":4902,"Name":"UIUC-TechSvc-CSOC
+        Developers","RespondedDate":"2026-07-07T20:04:17.92Z","RespondedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","RespondedFullName":"Tech
+        Services Security API","CompletedDate":"2026-07-07T20:04:17.92Z","CompletedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CompletedFullName":"Tech
+        Services Security API","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","TimeBudget":0.0,"ExpensesBudget":0.0,"TimeBudgetUsed":0.0,"ExpensesBudgetUsed":0.0,"IsConvertedToTask":false,"ConvertedToTaskDate":"0001-01-01T00:00:00","ConvertedToTaskUid":null,"ConvertedToTaskFullName":"","TaskProjectID":0,"TaskProjectName":"","TaskPlanID":0,"TaskPlanName":"","TaskID":0,"TaskTitle":"","TaskStartDate":"0001-01-01T00:00:00","TaskEndDate":"0001-01-01T00:00:00","TaskPercentComplete":0,"LocationID":0,"LocationName":"","LocationRoomID":0,"LocationRoomName":"","RefCode":"","ServiceID":0,"ServiceName":"None","ServiceOfferingID":0,"ServiceOfferingName":"None","ServiceCategoryID":0,"ServiceCategoryName":"None","ArticleID":0,"ArticleSubject":"","ArticleStatus":0,"ArticleCategoryPathNames":"","ArticleAppID":0,"ArticleShortcutID":null,"AppID":66,"Attributes":[{"ID":4902,"Name":"UIUC-TechSvc-CSOC
         Incident Severity","Order":0,"Description":"","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":10539,"Name":"To
-        Be Determined","IsActive":true,"DateCreated":"2023-04-17T20:47:47.447Z","DateModified":"2023-04-17T20:47:47.447Z","Order":0},{"ID":10541,"Name":"Non-Event","IsActive":true,"DateCreated":"2023-04-17T20:48:18.213Z","DateModified":"2023-04-17T20:48:33.57Z","Order":1},{"ID":10540,"Name":"Low
+        Be Determined","IsActive":true,"DateCreated":"2023-04-17T20:47:47.447Z","DateModified":"2023-04-17T20:47:47.447Z","Order":0},{"ID":10541,"Name":"Non-Event","IsActive":true,"DateCreated":"2023-04-17T20:48:18.213Z","DateModified":"2023-04-17T20:48:33.57Z","Order":1},{"ID":22869,"Name":"Very
+        Low - Minimal","IsActive":true,"DateCreated":"2025-10-01T19:41:13.92Z","DateModified":"2025-10-01T19:41:13.92Z","Order":1},{"ID":10540,"Name":"Low
         - Minor","IsActive":true,"DateCreated":"2023-04-17T20:48:05.88Z","DateModified":"2023-04-17T20:48:24.127Z","Order":2},{"ID":10203,"Name":"Medium
         - Moderate","IsActive":true,"DateCreated":"2023-03-13T19:34:05.207Z","DateModified":"2023-04-17T20:49:23.907Z","Order":3},{"ID":10204,"Name":"High
         - Serious","IsActive":true,"DateCreated":"2023-03-13T19:34:05.217Z","DateModified":"2023-04-17T20:49:18.803Z","Order":4},{"ID":10542,"Name":"Critical
         - Major","IsActive":true,"DateCreated":"2023-04-17T20:49:12.407Z","DateModified":"2023-04-17T20:49:12.407Z","Order":5},{"ID":15624,"Name":"Mutli-Campus","IsActive":true,"DateCreated":"2023-12-05T19:40:38.35Z","DateModified":"2023-12-05T19:40:38.35Z","Order":6}],"IsRequired":false,"IsUpdatable":true,"Value":"10539","ValueText":"To
         Be Determined","ChoicesText":"To Be Determined","AssociatedItemIDs":[0]},{"ID":4363,"Name":"UIUC-TechSvc-Security
         TLP","Order":0,"Description":"Traffic Light Protocol sharing classification
-        - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":8175,"Name":"TLP:CLEAR","IsActive":true,"DateCreated":"2022-06-29T20:23:50.033Z","DateModified":"2023-09-14T17:33:23.823Z","Order":0},{"ID":8174,"Name":"TLP:GREEN","IsActive":true,"DateCreated":"2022-06-29T20:23:49.927Z","DateModified":"2022-06-29T20:23:49.927Z","Order":1},{"ID":8173,"Name":"TLP:AMBER","IsActive":true,"DateCreated":"2022-06-29T20:23:49.827Z","DateModified":"2022-06-29T20:23:49.827Z","Order":2},{"ID":14037,"Name":"TLP:AMBER+STRICT","IsActive":true,"DateCreated":"2023-09-14T17:33:09.307Z","DateModified":"2023-09-14T17:33:09.307Z","Order":3},{"ID":8172,"Name":"TLP:RED","IsActive":true,"DateCreated":"2022-06-29T20:23:49.723Z","DateModified":"2023-09-14T17:33:16.707Z","Order":4}],"IsRequired":false,"IsUpdatable":true,"Value":"8172","ValueText":"TLP:RED","ChoicesText":"TLP:RED","AssociatedItemIDs":[0]}],"Attachments":[],"Tasks":[],"Notify":[{"ItemRole":"Responsible,
-        Requestor","Name":"CLEANED CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Responsible
-        Group","Name":"UIUC-TechServices-Cybersecurity Developers","Initials":null,"Value":"787","RefValue":0,"ProfileImageFileName":null}],"WorkflowID":0,"WorkflowConfigurationID":0,"WorkflowName":""}'
+        - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":8175,"Name":"TLP:CLEAR","IsActive":true,"DateCreated":"2022-06-29T20:23:50.033Z","DateModified":"2023-09-14T17:33:23.823Z","Order":0},{"ID":8174,"Name":"TLP:GREEN","IsActive":true,"DateCreated":"2022-06-29T20:23:49.927Z","DateModified":"2022-06-29T20:23:49.927Z","Order":1},{"ID":8173,"Name":"TLP:AMBER","IsActive":true,"DateCreated":"2022-06-29T20:23:49.827Z","DateModified":"2022-06-29T20:23:49.827Z","Order":2},{"ID":14037,"Name":"TLP:AMBER+STRICT","IsActive":true,"DateCreated":"2023-09-14T17:33:09.307Z","DateModified":"2023-09-14T17:33:09.307Z","Order":3},{"ID":8172,"Name":"TLP:RED","IsActive":true,"DateCreated":"2022-06-29T20:23:49.723Z","DateModified":"2023-09-14T17:33:16.707Z","Order":4}],"IsRequired":false,"IsUpdatable":true,"Value":"8173","ValueText":"TLP:AMBER","ChoicesText":"TLP:AMBER","AssociatedItemIDs":[0]}],"Attachments":[],"Tasks":[],"TaskTemplateApplications":[],"Notify":[{"ItemRole":"Responsible","Name":"CLEANED
+        CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Responsible
+        Group","Name":"UIUC-TechServices-Cybersecurity Developers","Initials":null,"Value":"787","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Requestor","Name":"CLEANED
+        CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Creator","Name":"Tech
+        Services Security API","Initials":null,"Value":"noreply@illinois.edu","RefValue":0,"ProfileImageFileName":null}],"WorkflowID":0,"WorkflowConfigurationID":0,"WorkflowName":""}'
     headers:
       Cache-Control:
       - no-cache
       Content-Length:
-      - '5664'
+      - '6275'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 31 Jan 2024 18:51:33 GMT
+      - Mon, 13 Jul 2026 16:40:19 GMT
       Expires:
       - '-1'
       Pragma:
@@ -325,7 +346,7 @@ interactions:
       X-RateLimit-Remaining:
       - '58'
       X-RateLimit-Reset:
-      - Wed, 31 Jan 2024 18:52:30 GMT
+      - Mon, 13 Jul 2026 16:41:15 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -333,9 +354,9 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '2565068148529634202'
+      - '6226886265856313004'
       X-TDX-UID:
-      - a68e93bc-e406-ee11-87dd-0050f2e6c034
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
       - IE=edge
     status:

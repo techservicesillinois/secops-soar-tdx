@@ -3,12 +3,13 @@ import logging
 import os
 
 import pytest
+import jwt
 import vcr
 
 from app import TdxConnector
 
 from vcr_cleaner import CleanYAMLSerializer
-from vcr_cleaner.cleaners.jwt_token import clean_token
+from vcr_cleaner.cleaners.jwt_token import CLEANER_JWT_TOKEN, CLEANER_SALT
 from vcr_cleaner.cleaners.env_strings import clean_env_strings
 from vcr_cleaner.filters import if_uri_endswith
 
@@ -153,6 +154,15 @@ def clean_auth(request, response):
     clean_token(request, response)
 
 
+def clean_token(request: dict, response: dict):
+    '''Clean a JWT token.'''
+
+    jwt_token = jwt.encode(CLEANER_JWT_TOKEN, CLEANER_SALT, algorithm="HS256")
+    if 'Content-Encoding' in response['headers'].keys() and \
+            response['headers']['Content-Encoding'] == ['gzip']:
+        response['body']['string'] = jwt_token
+
+
 def clean_so_many_groups(request, response):
     cleaned_groups = """[{
         "ID": 787,
@@ -165,6 +175,22 @@ def clean_so_many_groups(request, response):
         "PlatformApplications": []
     }]"""
     response['body']['string'] = cleaned_groups
+
+
+def clean_so_many_forms(request, response):
+    cleaned_forms = """[{
+        "ID":999,
+        "Name": "UIUC-TechSvc-CSOC Incidents"
+    }]"""
+    response['body']['string'] = cleaned_forms
+
+
+def clean_so_many_types(request, response):
+    cleaned_forms = """[{
+        "ID":999,
+        "Name": "CSOC"
+    }]"""
+    response['body']['string'] = cleaned_forms
 
 
 @pytest.fixture
@@ -197,6 +223,14 @@ def cassette(request) -> vcr.cassette.Cassette:
     yaml_cleaner.register_cleaner(if_uri_endswith(
         "/SBTDWebApi/api/groups/search",
         clean_so_many_groups,
+    ))
+    yaml_cleaner.register_cleaner(if_uri_endswith(
+        "/SBTDWebApi/api/66/tickets/forms",
+        clean_so_many_forms,
+    ))
+    yaml_cleaner.register_cleaner(if_uri_endswith(
+        "/SBTDWebApi/api/66/tickets/types",
+        clean_so_many_types,
     ))
 
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',

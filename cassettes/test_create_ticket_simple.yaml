@@ -27,7 +27,7 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 13 Jul 2026 16:30:27 GMT
+      - Mon, 13 Jul 2026 16:26:53 GMT
       Expires:
       - '-1'
       Pragma:
@@ -43,13 +43,13 @@ interactions:
       X-RateLimit-Limit:
       - '60'
       X-RateLimit-Remaining:
-      - '55'
+      - '59'
       X-RateLimit-Reset:
-      - Mon, 13 Jul 2026 16:31:17 GMT
+      - Mon, 13 Jul 2026 16:27:52 GMT
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '2838090118791145868'
+      - '9313685639770007681'
       X-UA-Compatible:
       - IE=edge
     status:
@@ -92,7 +92,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 13 Jul 2026 16:30:29 GMT
+      - Mon, 13 Jul 2026 16:26:54 GMT
       Expires:
       - '-1'
       Pragma:
@@ -106,7 +106,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 13 Jul 2026 16:31:29 GMT
+      - Mon, 13 Jul 2026 16:27:54 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -114,7 +114,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '7262514461542584144'
+      - '2157727613927837632'
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -152,7 +152,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 13 Jul 2026 16:30:32 GMT
+      - Mon, 13 Jul 2026 16:26:57 GMT
       Expires:
       - '-1'
       Pragma:
@@ -166,7 +166,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 13 Jul 2026 16:31:33 GMT
+      - Mon, 13 Jul 2026 16:27:58 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -174,7 +174,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '14567739737070898777'
+      - '11893177288694526476'
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -234,7 +234,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 13 Jul 2026 16:30:33 GMT
+      - Mon, 13 Jul 2026 16:26:58 GMT
       Expires:
       - '-1'
       Pragma:
@@ -248,7 +248,7 @@ interactions:
       X-RateLimit-Remaining:
       - '74'
       X-RateLimit-Reset:
-      - Mon, 13 Jul 2026 16:30:43 GMT
+      - Mon, 13 Jul 2026 16:27:08 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -256,7 +256,65 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '11031134052133636678'
+      - '144803025151414024'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/types
+  response:
+    body:
+      string: "[{\n        \"ID\":999,\n        \"Name\": \"CSOC\"\n    }]"
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '7389'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:58 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:59 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '10429462916163884715'
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -293,7 +351,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 13 Jul 2026 16:30:33 GMT
+      - Mon, 13 Jul 2026 16:26:59 GMT
       Expires:
       - '-1'
       Pragma:
@@ -307,7 +365,7 @@ interactions:
       X-RateLimit-Remaining:
       - '59'
       X-RateLimit-Reset:
-      - Mon, 13 Jul 2026 16:31:34 GMT
+      - Mon, 13 Jul 2026 16:27:59 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -315,7 +373,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '5553733767391678002'
+      - '1922613400443015925'
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
@@ -346,12 +404,12 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False&NotifyRequestor=False&NotifyResponsible=False&AllowRequestorCreation=False
   response:
     body:
-      string: '{"ID":2262431,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":310,"TypeName":"CSOC","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy
+      string: '{"ID":2262430,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":310,"TypeName":"CSOC","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy
         and Cybersecurity","Classification":32,"ClassificationName":"Incident","FormID":1069,"FormName":"UIUC-TechSvc-CSOC
-        Incidents","Title":"NewBoo","Description":"","Tags":[],"IsRichHtml":false,"Uri":"api/66/tickets/2262431","AccountID":4807,"AccountName":"Technology
+        Incidents","Title":"NewBoo","Description":"","Tags":[],"IsRichHtml":false,"Uri":"api/66/tickets/2262430","AccountID":4807,"AccountName":"Technology
         Services - CIO (1-798001)","SourceID":0,"SourceName":"","StatusID":357,"StatusName":"New","StatusClass":1,"ImpactID":0,"ImpactName":"","UrgencyID":0,"UrgencyName":"","PriorityID":24,"PriorityName":"IT
-        Pro","PriorityOrder":6.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2026-07-13T16:30:35.24Z","CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedFullName":"Tech
-        Services Security API","CreatedEmail":"noreply@illinois.edu","ModifiedDate":"2026-07-13T16:30:35.24Z","ModifiedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","ModifiedFullName":"Tech
+        Pro","PriorityOrder":6.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2026-07-13T16:27:00.48Z","CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedFullName":"Tech
+        Services Security API","CreatedEmail":"noreply@illinois.edu","ModifiedDate":"2026-07-13T16:27:00.48Z","ModifiedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","ModifiedFullName":"Tech
         Services Security API","RequestorName":"CLEANED CLEANED","RequestorFirstName":"CLEANED","RequestorLastName":"CLEANED","RequestorEmail":"CLEANED@illinois.edu","RequestorPhone":"217-244-4763","RequestorUid":"bbd30493-8ec9-ea11-a81d-000d3a8ea9f7","ActualMinutes":0,"EstimatedMinutes":0,"DaysOld":0,"StartDate":null,"EndDate":null,"ResponsibleUid":null,"ResponsibleFullName":"Unassigned","ResponsibleEmail":"","ResponsibleGroupID":788,"ResponsibleGroupName":"UIUC-TechServices-Cybersecurity
         Incident Response","RespondedDate":"0001-01-01T00:00:00","RespondedUid":null,"RespondedFullName":"","CompletedDate":"0001-01-01T00:00:00","CompletedUid":null,"CompletedFullName":"","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","TimeBudget":0.0,"ExpensesBudget":0.0,"TimeBudgetUsed":0.0,"ExpensesBudgetUsed":0.0,"IsConvertedToTask":false,"ConvertedToTaskDate":"0001-01-01T00:00:00","ConvertedToTaskUid":null,"ConvertedToTaskFullName":"","TaskProjectID":0,"TaskProjectName":"","TaskPlanID":0,"TaskPlanName":"","TaskID":0,"TaskTitle":"","TaskStartDate":"0001-01-01T00:00:00","TaskEndDate":"0001-01-01T00:00:00","TaskPercentComplete":0,"LocationID":0,"LocationName":"","LocationRoomID":0,"LocationRoomName":"","RefCode":"","ServiceID":0,"ServiceName":"None","ServiceOfferingID":0,"ServiceOfferingName":"None","ServiceCategoryID":0,"ServiceCategoryName":"None","ArticleID":0,"ArticleSubject":"","ArticleStatus":0,"ArticleCategoryPathNames":"","ArticleAppID":0,"ArticleShortcutID":null,"AppID":66,"Attributes":[{"ID":4902,"Name":"UIUC-TechSvc-CSOC
         Incident Severity","Order":0,"Description":"","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":10539,"Name":"To
@@ -375,7 +433,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 13 Jul 2026 16:30:35 GMT
+      - Mon, 13 Jul 2026 16:27:00 GMT
       Expires:
       - '-1'
       Pragma:
@@ -389,7 +447,7 @@ interactions:
       X-RateLimit-Remaining:
       - '119'
       X-RateLimit-Reset:
-      - Mon, 13 Jul 2026 16:31:34 GMT
+      - Mon, 13 Jul 2026 16:28:00 GMT
       X-TDX-Entity:
       - '2'
       X-TDX-EntityName:
@@ -397,7 +455,7 @@ interactions:
       X-TDX-Partition:
       - '26'
       X-TDX-TraceID:
-      - '13972949246649490105'
+      - '4349175344558872714'
       X-TDX-UID:
       - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
       X-UA-Compatible:
