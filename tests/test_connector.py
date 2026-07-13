@@ -11,7 +11,8 @@ APP_ID = "tacosalad"
 #  TICKET_ID must match ticket ID found in
 #  cassettes/test_create_ticket_simple.yaml
 
-#  PROTIP: After re-recording test_create_ticket_simple.yaml, update this Ticket ID.
+#  PROTIP: After re-recording test_create_ticket_simple.yaml,
+#  update this Ticket ID.
 TICKET_ID_SIMPLE = 2262430
 TICKET_ID_DEFAULT = 2262431
 DEFAULT_GROUP = "UIUC-TechServices-Cybersecurity Incident Response"
@@ -55,7 +56,7 @@ def test_create_ticket_simple(cassette, connector: TdxConnector):
             "description": "",
             "TLP": "Amber",
             # Form cleaner name in conftest.py must match this formid
-            "formid": "UIUC-TechSvc-CSOC Incidents",  
+            "formid": "UIUC-TechSvc-CSOC Incidents",
             "severity": "To Be Determined",
             "responsible":
                 "UIUC-TechServices-Cybersecurity Incident Response"
@@ -66,7 +67,7 @@ def test_create_ticket_simple(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        # Update TICKET_ID above, after re-recording the cassette.  
+        # Update TICKET_ID above, after re-recording the cassette.
         assert result[0]["data"][0]["ticket_id"] == TICKET_ID_SIMPLE
 
     assert result[0]["message"] == "Create ticket succeeded"

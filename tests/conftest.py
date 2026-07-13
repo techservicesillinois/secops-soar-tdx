@@ -233,7 +233,6 @@ def cassette(request) -> vcr.cassette.Cassette:
         clean_so_many_types,
     ))
 
-
     with my_vcr.use_cassette(f'{request.function.__name__}.yaml',
                              serializer="cleanyaml") as tape:
         yield tape
