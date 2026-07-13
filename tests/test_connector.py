@@ -12,7 +12,7 @@ APP_ID = "tacosalad"
 #  cassettes/test_create_ticket_simple.yaml
 
 #  PROTIP: After re-recording test_create_ticket_simple.yaml, update this Ticket ID.
-TICKET_ID = 2262425
+TICKET_ID = 2262426
 DEFAULT_GROUP = "UIUC-TechServices-Cybersecurity Incident Response"
 
 
@@ -48,12 +48,13 @@ def test_create_ticket_simple(cassette, connector: TdxConnector):
             "priority": "Low",
             "requestor": os.environ.get('TDX_NETID', CASSETTE_NETID),
             "title": "NewBoo",
-            "type": "CSOC",
+            "type": "CSOC",  # Type cleaner in conftest.py must match
             "notify": False,
             "status": "New",
             "description": "",
             "TLP": "Amber",
-            "formid": "UIUC-TechSvc-CSOC Incidents",
+            # Form cleaner name in conftest.py must match this formid
+            "formid": "UIUC-TechSvc-CSOC Incidents",  
             "severity": "To Be Determined",
             "responsible":
                 "UIUC-TechServices-Cybersecurity Incident Response"
