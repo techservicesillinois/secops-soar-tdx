@@ -9,10 +9,10 @@ from conftest import VCR_RECORD, CASSETTE_NETID
 
 APP_ID = "tacosalad"
 #  TICKET_ID must match ticket ID found in
-#  cassettes/test_create_ticket.yaml
+#  cassettes/test_create_ticket_simple.yaml
 
-#  PROTIP: After re-recording test_create_ticket.yaml, update this Ticket ID.
-TICKET_ID = 2262411
+#  PROTIP: After re-recording test_create_ticket_simple.yaml, update this Ticket ID.
+TICKET_ID = 2262425
 DEFAULT_GROUP = "UIUC-TechServices-Cybersecurity Incident Response"
 
 
@@ -64,8 +64,8 @@ def test_create_ticket_simple(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        # Update this ticket number after re-recording the cassette.  
-        assert result[0]["data"][0]["ticket_id"] == 2262425  # Update me! 
+        # Update TICKET_ID above, after re-recording the cassette.  
+        assert result[0]["data"][0]["ticket_id"] == TICKET_ID
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result
