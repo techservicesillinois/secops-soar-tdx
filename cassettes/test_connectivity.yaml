@@ -74,7 +74,7 @@ interactions:
     uri: https://help.uillinois.edu/SBTDWebApi/api/auth
   response:
     body:
-      string: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjI1MDgxOTIwMDB9.RbB4nHgmsME4ZFjdRi1pjeEtx_FL1yiNEoFA6ug9eb0
+      string: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjI1MDgxOTIwMDB9.RbB4nHgmsME4ZFjdRi1pjeEtx_FL1yiNEoFA6ug9eb0 #pragma: allowlist secret
     headers:
       Cache-Control:
       - no-cache
