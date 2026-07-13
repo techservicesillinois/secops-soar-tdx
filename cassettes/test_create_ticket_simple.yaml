@@ -1,0 +1,466 @@
+interactions:
+- request:
+    body: '{"username": "FAKE_USERNAME", "password": "FAKE_PASSWORD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '72'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/auth
+  response:
+    body:
+      string: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjI1MDgxOTIwMDB9.RbB4nHgmsME4ZFjdRi1pjeEtx_FL1yiNEoFA6ug9eb0
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:53 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:52 GMT
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '9313685639770007681'
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"search": {"SearchText": "None/Not found", "IsActive": true, "MaxResults":
+      5}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '79'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/accounts/search
+  response:
+    body:
+      string: '[{"ID": 7902, "Name": "None/Not Found", "ParentID": null, "ParentName":
+        null, "IsActive": true, "Address1": "", "Address2": "", "Address3": "", "Address4":
+        "", "City": "", "StateName": "", "StateAbbr": "  ", "PostalCode": "", "Country":
+        "", "Phone": "", "Fax": "", "Url": "", "Notes": "", "CreatedDate": "2020-12-04T16:55:00Z",
+        "ModifiedDate": "2020-12-04T16:55:00Z", "Code": "", "IndustryID": 0, "IndustryName":
+        null, "ManagerUID": "00000000-0000-0000-0000-000000000000", "ManagerFullName":
+        null, "Attributes": []}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '4237618'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:54 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:54 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '2157727613927837632'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/priorities
+  response:
+    body:
+      string: '[{"ID":19,"Name":"Low","Description":null,"Order":1.0,"IsActive":true,"IsDefault":false},{"ID":20,"Name":"Medium","Description":null,"Order":2.0,"IsActive":true,"IsDefault":true},{"ID":21,"Name":"High","Description":null,"Order":3.0,"IsActive":true,"IsDefault":false},{"ID":22,"Name":"Emergency","Description":null,"Order":4.0,"IsActive":true,"IsDefault":false},{"ID":23,"Name":"VIP","Description":"Used
+        to flag people as VIPs on tickets","Order":5.0,"IsActive":true,"IsDefault":false},{"ID":24,"Name":"IT
+        Pro","Description":"Used to flag people as IT Pros on tickets","Order":6.0,"IsActive":true,"IsDefault":false}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:57 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:58 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '11893177288694526476'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/people/lookup?searchText=thor2&maxResults=1
+  response:
+    body:
+      string: '[{"UID": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7", "ReferenceID": 8831,
+        "BEID": "0f7df9ca-3924-4806-8adc-6e880a796ddc", "BEIDInt": 2, "IsActive":
+        true, "IsConfidential": false, "IsEmailSuppressed": false, "EmailSuppressedDateUtc":
+        null, "IsAutomaticTicketAssignmentEnabled": true, "UserName": "", "FullName":
+        "Jane Foster", "FirstName": "Jane", "LastName": "Foster", "MiddleName": null,
+        "Salutation": "Doctor", "Nickname": "The Mighty Thor", "DefaultAccountID":
+        4807, "DefaultAccountName": "Technology Services - CIO (1-798001)", "PrimaryEmail":
+        "nobody@example.com", "AlternateEmail": "nobody@example.com", "ExternalID":
+        null, "AlternateID": null, "Applications": null, "SecurityRoleName": "", "SecurityRoleID":
+        "", "Permissions": null, "OrgApplications": null, "PrimaryClientPortalApplicationID":
+        null, "GroupIDs": null, "AlertEmail": "nobody@example.com", "ProfileImageFileName":
+        "", "Company": null, "Title": null, "HomePhone": null, "PrimaryPhone": null,
+        "WorkPhone": null, "Pager": null, "OtherPhone": null, "MobilePhone": null,
+        "Fax": null, "DefaultPriorityID": 24, "DefaultPriorityName": "IT Pro", "AboutMe":
+        null, "TechnicianSignature": null, "ApplyTechnicianSignatureToUpdatesAndComments":
+        false, "ApplyTechnicianSignatureToReplies": false, "WorkAddress": "", "WorkCity":
+        "", "WorkState": "", "WorkZip": null, "WorkCountry": "", "HomeAddress": "",
+        "HomeCity": "", "HomeState": "", "HomeZip": "", "HomeCountry": "", "LocationID":
+        0, "LocationName": null, "LocationRoomID": 0, "LocationRoomName": null, "DefaultRate":
+        0.0, "CostRate": 0.0, "IsEmployee": false, "WorkableHours": 8.0, "IsCapacityManaged":
+        false, "ReportTimeAfterDate": "0001-01-01T00:00:00", "EndDate": "0001-01-01T00:00:00",
+        "ShouldReportTime": false, "ReportsToUID": "", "ReportsToFullName": "", "ResourcePoolID":
+        -1, "ResourcePoolName": "", "TZID": 0, "TZName": "", "TypeID": 0, "AuthenticationUserName":
+        "", "AuthenticationProviderID": null, "Attributes": null, "IMProvider": null,
+        "IMHandle": null}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '1809'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:58 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '75'
+      X-RateLimit-Remaining:
+      - '74'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:08 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '144803025151414024'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/types
+  response:
+    body:
+      string: "[{\n        \"ID\":999,\n        \"Name\": \"CSOC\"\n    }]"
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '7389'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:58 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:59 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '10429462916163884715'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/forms
+  response:
+    body:
+      string: "[{\n        \"ID\":999,\n        \"Name\": \"UIUC-TechSvc-CSOC Incidents\"\n
+        \   }]"
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '19225'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:26:59 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:27:59 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '1922613400443015925'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"AccountID": 7902, "PriorityID": 19, "RequestorUid": "bbd30493-8ec9-ea11-a81d-000d3a8ea9f7",
+      "Title": "NewBoo", "TypeID": 310, "Attributes": [{"ID": "4363", "Value": "8173"},
+      {"ID": "4902", "Value": "10539"}], "FormID": 1069}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer FAKE_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - python-requests/2.34.2
+    method: POST
+    uri: https://help.uillinois.edu/SBTDWebApi/api/66/tickets/?EnableNotifyReviewer=False&NotifyRequestor=False&NotifyResponsible=False&AllowRequestorCreation=False
+  response:
+    body:
+      string: '{"ID":2262430,"ParentID":0,"ParentTitle":"","ParentClass":0,"TypeID":310,"TypeName":"CSOC","TypeCategoryID":89,"TypeCategoryName":"UIUC-Privacy
+        and Cybersecurity","Classification":32,"ClassificationName":"Incident","FormID":1069,"FormName":"UIUC-TechSvc-CSOC
+        Incidents","Title":"NewBoo","Description":"","Tags":[],"IsRichHtml":false,"Uri":"api/66/tickets/2262430","AccountID":4807,"AccountName":"Technology
+        Services - CIO (1-798001)","SourceID":0,"SourceName":"","StatusID":357,"StatusName":"New","StatusClass":1,"ImpactID":0,"ImpactName":"","UrgencyID":0,"UrgencyName":"","PriorityID":24,"PriorityName":"IT
+        Pro","PriorityOrder":6.0,"SlaID":0,"SlaName":"","IsSlaViolated":false,"IsSlaRespondByViolated":false,"IsSlaResolveByViolated":false,"RespondByDate":"0001-01-01T00:00:00","ResolveByDate":"0001-01-01T00:00:00","SlaBeginDate":"0001-01-01T00:00:00","IsOnHold":false,"PlacedOnHoldDate":"0001-01-01T00:00:00","GoesOffHoldDate":"0001-01-01T00:00:00","CreatedDate":"2026-07-13T16:27:00.48Z","CreatedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","CreatedFullName":"Tech
+        Services Security API","CreatedEmail":"noreply@illinois.edu","ModifiedDate":"2026-07-13T16:27:00.48Z","ModifiedUid":"3c3caa7d-c365-ed11-ade6-0050f2e6378b","ModifiedFullName":"Tech
+        Services Security API","RequestorName":"CLEANED CLEANED","RequestorFirstName":"CLEANED","RequestorLastName":"CLEANED","RequestorEmail":"CLEANED@illinois.edu","RequestorPhone":"217-244-4763","RequestorUid":"bbd30493-8ec9-ea11-a81d-000d3a8ea9f7","ActualMinutes":0,"EstimatedMinutes":0,"DaysOld":0,"StartDate":null,"EndDate":null,"ResponsibleUid":null,"ResponsibleFullName":"Unassigned","ResponsibleEmail":"","ResponsibleGroupID":788,"ResponsibleGroupName":"UIUC-TechServices-Cybersecurity
+        Incident Response","RespondedDate":"0001-01-01T00:00:00","RespondedUid":null,"RespondedFullName":"","CompletedDate":"0001-01-01T00:00:00","CompletedUid":null,"CompletedFullName":"","ReviewerUid":null,"ReviewerFullName":"","ReviewerEmail":"","ReviewingGroupID":0,"ReviewingGroupName":"","TimeBudget":0.0,"ExpensesBudget":0.0,"TimeBudgetUsed":0.0,"ExpensesBudgetUsed":0.0,"IsConvertedToTask":false,"ConvertedToTaskDate":"0001-01-01T00:00:00","ConvertedToTaskUid":null,"ConvertedToTaskFullName":"","TaskProjectID":0,"TaskProjectName":"","TaskPlanID":0,"TaskPlanName":"","TaskID":0,"TaskTitle":"","TaskStartDate":"0001-01-01T00:00:00","TaskEndDate":"0001-01-01T00:00:00","TaskPercentComplete":0,"LocationID":0,"LocationName":"","LocationRoomID":0,"LocationRoomName":"","RefCode":"","ServiceID":0,"ServiceName":"None","ServiceOfferingID":0,"ServiceOfferingName":"None","ServiceCategoryID":0,"ServiceCategoryName":"None","ArticleID":0,"ArticleSubject":"","ArticleStatus":0,"ArticleCategoryPathNames":"","ArticleAppID":0,"ArticleShortcutID":null,"AppID":66,"Attributes":[{"ID":4902,"Name":"UIUC-TechSvc-CSOC
+        Incident Severity","Order":0,"Description":"","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":10539,"Name":"To
+        Be Determined","IsActive":true,"DateCreated":"2023-04-17T20:47:47.447Z","DateModified":"2023-04-17T20:47:47.447Z","Order":0},{"ID":10541,"Name":"Non-Event","IsActive":true,"DateCreated":"2023-04-17T20:48:18.213Z","DateModified":"2023-04-17T20:48:33.57Z","Order":1},{"ID":22869,"Name":"Very
+        Low - Minimal","IsActive":true,"DateCreated":"2025-10-01T19:41:13.92Z","DateModified":"2025-10-01T19:41:13.92Z","Order":1},{"ID":10540,"Name":"Low
+        - Minor","IsActive":true,"DateCreated":"2023-04-17T20:48:05.88Z","DateModified":"2023-04-17T20:48:24.127Z","Order":2},{"ID":10203,"Name":"Medium
+        - Moderate","IsActive":true,"DateCreated":"2023-03-13T19:34:05.207Z","DateModified":"2023-04-17T20:49:23.907Z","Order":3},{"ID":10204,"Name":"High
+        - Serious","IsActive":true,"DateCreated":"2023-03-13T19:34:05.217Z","DateModified":"2023-04-17T20:49:18.803Z","Order":4},{"ID":10542,"Name":"Critical
+        - Major","IsActive":true,"DateCreated":"2023-04-17T20:49:12.407Z","DateModified":"2023-04-17T20:49:12.407Z","Order":5},{"ID":15624,"Name":"Mutli-Campus","IsActive":true,"DateCreated":"2023-12-05T19:40:38.35Z","DateModified":"2023-12-05T19:40:38.35Z","Order":6}],"IsRequired":false,"IsUpdatable":true,"Value":"10539","ValueText":"To
+        Be Determined","ChoicesText":"To Be Determined","AssociatedItemIDs":[0]},{"ID":4363,"Name":"UIUC-TechSvc-Security
+        TLP","Order":0,"Description":"Traffic Light Protocol sharing classification
+        - See also https://wiki.illinois.edu/wiki/display/SEC/Traffic+Light+Protocol+-TLP","SectionID":0,"SectionName":null,"FieldType":"dropdown","DataType":"String","Choices":[{"ID":8175,"Name":"TLP:CLEAR","IsActive":true,"DateCreated":"2022-06-29T20:23:50.033Z","DateModified":"2023-09-14T17:33:23.823Z","Order":0},{"ID":8174,"Name":"TLP:GREEN","IsActive":true,"DateCreated":"2022-06-29T20:23:49.927Z","DateModified":"2022-06-29T20:23:49.927Z","Order":1},{"ID":8173,"Name":"TLP:AMBER","IsActive":true,"DateCreated":"2022-06-29T20:23:49.827Z","DateModified":"2022-06-29T20:23:49.827Z","Order":2},{"ID":14037,"Name":"TLP:AMBER+STRICT","IsActive":true,"DateCreated":"2023-09-14T17:33:09.307Z","DateModified":"2023-09-14T17:33:09.307Z","Order":3},{"ID":8172,"Name":"TLP:RED","IsActive":true,"DateCreated":"2022-06-29T20:23:49.723Z","DateModified":"2023-09-14T17:33:16.707Z","Order":4}],"IsRequired":false,"IsUpdatable":true,"Value":"8173","ValueText":"TLP:AMBER","ChoicesText":"TLP:AMBER","AssociatedItemIDs":[0]}],"Attachments":[],"Tasks":[],"TaskTemplateApplications":[],"Notify":[{"ItemRole":"Responsible
+        Group","Name":"UIUC-TechServices-Cybersecurity Incident Response","Initials":null,"Value":"788","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Requestor","Name":"CLEANED
+        CLEANED","Initials":null,"Value":"CLEANED@illinois.edu","RefValue":0,"ProfileImageFileName":null},{"ItemRole":"Creator","Name":"Tech
+        Services Security API","Initials":null,"Value":"noreply@illinois.edu","RefValue":0,"ProfileImageFileName":null}],"WorkflowID":0,"WorkflowConfigurationID":0,"WorkflowName":""}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Length:
+      - '5981'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jul 2026 16:27:00 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-RateLimit-Limit:
+      - '120'
+      X-RateLimit-Remaining:
+      - '119'
+      X-RateLimit-Reset:
+      - Mon, 13 Jul 2026 16:28:00 GMT
+      X-TDX-Entity:
+      - '2'
+      X-TDX-EntityName:
+      - University of Illinois System
+      X-TDX-Partition:
+      - '26'
+      X-TDX-TraceID:
+      - '4349175344558872714'
+      X-TDX-UID:
+      - 3c3caa7d-c365-ed11-ade6-0050f2e6378b
+      X-UA-Compatible:
+      - IE=edge
+    status:
+      code: 201
+      message: Created
+version: 1
