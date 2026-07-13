@@ -12,7 +12,8 @@ APP_ID = "tacosalad"
 #  cassettes/test_create_ticket_simple.yaml
 
 #  PROTIP: After re-recording test_create_ticket_simple.yaml, update this Ticket ID.
-TICKET_ID = 2262430
+TICKET_ID_SIMPLE = 2262430
+TICKET_ID_DEFAULT = 2262431
 DEFAULT_GROUP = "UIUC-TechServices-Cybersecurity Incident Response"
 
 
@@ -66,7 +67,7 @@ def test_create_ticket_simple(cassette, connector: TdxConnector):
 
     if not VCR_RECORD:  # Tests only valid when not recording
         # Update TICKET_ID above, after re-recording the cassette.  
-        assert result[0]["data"][0]["ticket_id"] == TICKET_ID
+        assert result[0]["data"][0]["ticket_id"] == TICKET_ID_SIMPLE
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result
@@ -94,7 +95,7 @@ def test_create_ticket_defaults(cassette, connector: TdxConnector):
     result = json.loads(raw_result)
 
     if not VCR_RECORD:  # Tests only valid when not recording
-        assert result[0]["data"][0]["ticket_id"] == 2262412
+        assert result[0]["data"][0]["ticket_id"] == TICKET_ID_DEFAULT
 
     assert result[0]["message"] == "Create ticket succeeded"
     assert DEFAULT_GROUP in raw_result
@@ -129,7 +130,7 @@ def test_update_ticket(cassette, connector: TdxConnector):
         "appid": APP_ID,
         "identifier": "update_ticket",
         "parameters": [{
-            "ticket_id": TICKET_ID,
+            "ticket_id": TICKET_ID_SIMPLE,
             "comments": "This is a test comment.",
             "new_status": "Resolved",
             "notify": [],
@@ -147,7 +148,7 @@ def test_failed_update(cassette, connector: TdxConnector):
         "appid": APP_ID,
         "identifier": "update_ticket",
         "parameters": [{
-            "ticket_id": TICKET_ID,
+            "ticket_id": TICKET_ID_SIMPLE,
             "comments": "This is a test comment.",
             "new_status": "GARBAGE",
             "notify": [],
